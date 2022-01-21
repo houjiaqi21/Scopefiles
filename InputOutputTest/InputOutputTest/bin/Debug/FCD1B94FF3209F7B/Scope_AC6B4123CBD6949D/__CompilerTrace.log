@@ -1,0 +1,105 @@
+﻿2021-03-24T14:07:32.9255268+08:00	UnknownJobId_2108930560	0.0327	CFE	VC	SetupAadCredentials	(vcName:"https://cosmos09.osdinfra.net/cosmos/cosmosAdmin",proxy:"<noproxy>",restClientCredentials:Microsoft.Rest.TokenCredentials) =>	null
+2021-03-24T14:07:32.9695225+08:00	UnknownJobId_2108930560	0.0024	Compiler	ScopeRoslynBinder	BuildScriptEnvironment	Starting
+2021-03-24T14:07:33.0784967+08:00	UnknownJobId_2108930560		Compiler	DeepCompilePipeline	InitializeCompiler	Start Compilation: JobId=, HostEnvironment=CCS, HostMachineName=V-HOZHAO2, ApplicationId=, CompilerStartTime=2021-03-24T06:07:32.8734967Z, CompileOnVC = False, DataRoot = https://cosmos09.osdinfra.net/cosmos/cosmosAdmin, Version = 10.2.2.0
+2021-03-24T14:07:33.0794970+08:00	UnknownJobId_2108930560		Compiler	DeepCompilePipeline	InitializeCompiler	CommandLine =>	""c:\program files (x86)\microsoft visual studio\2017\enterprise\common7\ide\extensions\microsoft\scopestudio\2.9.0000.1\CompilerHost.exe" e0f5435f-9475-4b1c-89c1-f52407fc1dc4 3840 False C:\Users\v-hozhao\AppData\Local\Temp\DataLakeTemp"
+2021-03-24T14:07:33.0794970+08:00	UnknownJobId_2108930560		Compiler	DeepCompilePipeline	InitializeCompiler	Settings =>	{DataRoot:https://cosmos09.osdinfra.net/cosmos/cosmosAdmin,ResolverTypeForResource:Local,ResolverTypeForInput:InputPath,ResolverTypeForOutput:OutputPath,SecureInfoFile:null,SecurityKeyInfo:byte[11270],NebulaCommandLine:-c++ -Inputs D:\Scope2015\InputOutputTest\InputOutputTest\bin\Debug\Scope.script -Debug -pdb Full -off EnableScopeDdl -on ReflectStageToScript -on EnableScopeDml -on EnableSStreamContractV4 -on UseAadAuthentication -ClientVersion 10.2.2.0}
+2021-03-24T14:07:33.0894969+08:00	UnknownJobId_2108930560		Compiler	DeepCompilePipeline	InitializeCompiler	Stack =>	"   at ScopeCompiler.Dependencies.Cosmos.ParseSandboxer.CompileInSeparateAppDomain(String[] scripts, Settings settings)\r\n   at ScopeCompiler.Parser.FullParse(String[] scripts, String filePath, CompilerEnvironment environment, Settings settings, Func`4 funcParse, String nebulaCommandLine)\r\n   at ScopeCompiler.Dependencies.Cosmos.ParseSandboxer.FullParseInSeparateAppDomain(String[] scripts, String filePath, Settings settings)\r\n   at ScopeClient.Scope.TryToParse(String[] scripts, String scriptFileName, Settings compSet, CompilerEnvironment enviroment, ParseInformation& info)\r\n   at ScopeClient.Scope.PrivateCompileSuppressException(Settings compSet, CompilerSwitches compilerSwitches, CompilerEnvironment environment, String outputXmlFileName, Dictionary`2 parameters, Boolean isParseOnly, Boolean verbose)\r\n   at ScopeClient.ScopeStudio.ScopeStudioInterface.Compile(Dictionary`2 parameters, Int32 version)\r\n   at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)\r\n   at System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)\r\n   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)\r\n   at System.RuntimeType.InvokeMember(String name, BindingFlags bindingFlags, Binder binder, Object target, Object[] providedArgs, ParameterModifier[] modifiers, CultureInfo culture, String[] namedParams)\r\n   at Microsoft.Cosmos.ScopeStudio.BusinessObjects.Common.CompilerProxy.DoInvork(String method, Object[] parameters, String outputXmlFileName)\r\n"
+2021-03-24T14:07:33.0954980+08:00	UnknownJobId_2108930560		Compiler	DeepCompilePipeline	BeforeCompile	Client Version: 10.2.2.0
+2021-03-24T14:07:33.0954980+08:00	UnknownJobId_2108930560		Compiler	DeepCompilePipeline	BeforeCompile	Target: SingleBox
+2021-03-24T14:07:33.0964980+08:00	UnknownJobId_2108930560		Compiler	DeepCompilePipeline	BeforeCompile	Stat: FetchReal
+2021-03-24T14:07:33.0964980+08:00	UnknownJobId_2108930560		Compiler	DeepCompilePipeline	BeforeCompile	SkipPath: False
+2021-03-24T14:07:33.1054976+08:00	UnknownJobId_2108930560		Compiler	ScopeFrontEndRunner	Execute	Starting FrontEndRun...
+2021-03-24T14:07:33.1604981+08:00	UnknownJobId_2108930560	0.1927	Compiler	ScopeRoslynBinder	BuildScriptEnvironment	Finished
+2021-03-24T14:07:33.5030712+08:00	UnknownJobId_2108930560	0.1665	Compiler	ScopeLocalCompileStrategy	ExecuteCompilePass	SyntaxVerifier	Scope.script
+2021-03-24T14:07:33.5420716+08:00	UnknownJobId_2108930560	0.0315	Compiler	ScopeLocalCompileStrategy	ExecuteCompilePass	DdlResolver	Scope.script
+2021-03-24T14:07:33.5450713+08:00	UnknownJobId_2108930560	0.0024	Compiler	ScopeLocalCompileStrategy	ExecuteCompilePass	ViewResolver	Scope.script
+2021-03-24T14:07:33.5450713+08:00	UnknownJobId_2108930560	0.4279	Compiler	ScopeLocalCompileStrategy	ExecuteCompilePass	AstBuilder	Scope.script
+2021-03-24T14:07:33.5490715+08:00	UnknownJobId_2108930560	0.0038	Compiler	ScopeLocalCompileStrategy	ExecuteCompilePass	ViewResolver	Scope.script
+2021-03-24T14:07:33.5510715+08:00	UnknownJobId_2108930560	0.0005	Compiler	ScopeLocalCompileStrategy	ExecuteCompilePass	ClassifierPass	Scope.script
+2021-03-24T14:07:33.5530714+08:00	UnknownJobId_2108930560	0.0017	Compiler	ScopeLocalCompileStrategy	ExecuteCompilePass	AssemblyResolverPass	Scope.script
+2021-03-24T14:07:33.5540715+08:00	UnknownJobId_2108930560	0.0006	Compiler	ScopeLocalCompileStrategy	ExecuteCompilePass	ResourceReferencePass	Scope.script
+2021-03-24T14:07:33.5570714+08:00	UnknownJobId_2108930560		Compiler	ScopeLocalResourceStorage	DownloadResources	Resources to download =>	[/*count:0*/]
+2021-03-24T14:07:33.5610715+08:00	UnknownJobId_2108930560	0.0005	Compiler	ScopeLocalCompileStrategy	ExecuteCompilePass	ProcessUsingsPass	Scope.script
+2021-03-24T14:07:33.6050737+08:00	UnknownJobId_2108930560	0.0003	Compiler	FileSetExpander	ExpandAsync	(inputFileSet:"C:\test\users\v-hozhao\SampleScope\SearchLog.txt") =>	"Starting..."
+2021-03-24T14:07:33.6531054+08:00	UnknownJobId_2108930560		CqoCompilerCallback	FileSetPartitionEliminator	.ctor	ShouldEvaluatePredicate =>	False
+2021-03-24T14:07:33.6551054+08:00	UnknownJobId_2108930560	0.0499	Compiler	FileSetExpander	ExpandAsync	(inputFileSet:"C:\test\users\v-hozhao\SampleScope\SearchLog.txt") =>	"1 file(s)"
+2021-03-24T14:07:33.6731052+08:00	UnknownJobId_2108930560	0.1111	Compiler	ScopeLocalCompileStrategy	ExecuteCompilePass	InputOutputPass	Scope.script
+2021-03-24T14:07:34.2652467+08:00	UnknownJobId_2108930560	0.0005	UserCode	<>c__DisplayClass106_0`1	Constructor	() =>	ScopeRuntime.DefaultTextExtractor
+2021-03-24T14:07:34.2682466+08:00	UnknownJobId_2108930560	0.0001	UserCode	DefaultTextExtractor	AtomicFileProcessing	() =>	False
+2021-03-24T14:07:34.2802470+08:00	UnknownJobId_2108930560	0.0097	UserCode	DefaultTextExtractor	Produces	() =>	UserId:string,Start:string,Region:string,Query:string,Duration:string,Urls:string,ClickedUrls:string
+2021-03-24T14:07:34.3042769+08:00	UnknownJobId_2108930560	0.0002	UserCode	<>c__DisplayClass106_0`1	Constructor	() =>	ScopeRuntime.DefaultTextOutputter
+2021-03-24T14:07:34.3092775+08:00	UnknownJobId_2108930560	0.6352	Compiler	ScopeLocalCompileStrategy	ExecuteCompilePass	BinderPass	Scope.script
+2021-03-24T14:07:34.3232470+08:00	UnknownJobId_2108930560	0.0115	Compiler	ScopeLocalCompileStrategy	ExecuteCompilePass	SemanticAnalyzerPass	Scope.script
+2021-03-24T14:07:34.3362457+08:00	UnknownJobId_2108930560	0.0115	Compiler	ScopeLocalCompileStrategy	ExecuteCompilePass	ErrorReporterPass	Scope.script
+2021-03-24T14:07:34.3362457+08:00	UnknownJobId_2108930560	1.2315	Compiler	ScopeFrontEndRunner	CleanUp	Finished FrontEndRun...
+2021-03-24T14:07:34.3472462+08:00	UnknownJobId_2108930560		Compiler	ScopeBackEndRunner	OptimizerRun	Starting OptimizerRun...
+2021-03-24T14:07:34.3582462+08:00	UnknownJobId_2108930560	0.0088	Compiler	ScopeLocalResourceStorage	AddGeneratedFile	(path:"D:\Scope2015\InputOutputTest\InputOutputTest\bin\Debug\FCD1B94FF3209F7B\Scope_AC6B4123CBD6949D\__CompilerTimers.xml",type:CompilerTimers) =>	null
+2021-03-24T14:07:34.3772459+08:00	UnknownJobId_2108930560	0.0001	UserCode	DefaultTextOutputter	AtomicFileProcessing	() =>	False
+2021-03-24T14:07:34.3902461+08:00	UnknownJobId_2108930560	0.0392	Compiler	ScopeLocalCompileStrategy	ExecuteCompilePass	GenerateOptTreePass	Scope.script
+2021-03-24T14:07:34.3972616+08:00	UnknownJobId_2108930560		Compiler	PlaybackDbWriter	SerializeSStreamMeta	SStreamMetadata converted to base64 string, size is4
+2021-03-24T14:07:34.4162631+08:00	UnknownJobId_2108930560	0.0244	Compiler	ScopeLocalResourceStorage	AddGeneratedFile	(path:"D:\Scope2015\InputOutputTest\InputOutputTest\bin\Debug\FCD1B94FF3209F7B\Scope_AC6B4123CBD6949D\ScopeInternalStatistics.xml",type:StatisticsResource, PlaybackDb) =>	null
+2021-03-24T14:07:34.4552633+08:00	UnknownJobId_2108930560	0.0000	UserCode	DefaultTextExtractor	AtomicFileProcessing	() =>	False
+2021-03-24T14:07:34.4992630+08:00	UnknownJobId_2108930560		Compiler	PlaybackDbWriter	SerializeSStreamMeta	SStreamMetadata converted to base64 string, size is4
+2021-03-24T14:07:34.5002643+08:00	UnknownJobId_2108930560	0.0015	Compiler	ScopeLocalResourceStorage	AddGeneratedFile	(path:"D:\Scope2015\InputOutputTest\InputOutputTest\bin\Debug\FCD1B94FF3209F7B\Scope_AC6B4123CBD6949D\ScopeInternalStatistics.xml",type:StatisticsResource, PlaybackDb) =>	null
+2021-03-24T14:07:34.5042635+08:00	UnknownJobId_2108930560	0.0056	Compiler	ScopeLocalResourceStorage	AddGeneratedFile	(path:"D:\Scope2015\InputOutputTest\InputOutputTest\bin\Debug\FCD1B94FF3209F7B\Scope_AC6B4123CBD6949D\__CompilerTimers.xml",type:CompilerTimers) =>	null
+2021-03-24T14:07:34.5052632+08:00	UnknownJobId_2108930560	0.0001	UserCode	DefaultTextExtractor	AllowArgsInSignature	() =>	True
+2021-03-24T14:07:34.5102626+08:00	UnknownJobId_2108930560	0.0000	UserCode	DefaultTextExtractor	AllowArgsInSignature	() =>	True
+2021-03-24T14:07:34.5212642+08:00	UnknownJobId_2108930560	0.0223	Compiler	ScopeLocalResourceStorage	AddGeneratedFile	(path:"D:\Scope2015\InputOutputTest\InputOutputTest\bin\Debug\FCD1B94FF3209F7B\Scope_AC6B4123CBD6949D\__Ast__.bin",type:StatisticsResource) =>	null
+2021-03-24T14:07:34.5272624+08:00	UnknownJobId_2108930560	0.0001	UserCode	DefaultTextExtractor	AllowColumnPruning	() =>	True
+2021-03-24T14:07:34.5272624+08:00	UnknownJobId_2108930560	0.0000	UserCode	DefaultTextExtractor	AllowColumnPruning	() =>	True
+2021-03-24T14:07:34.5282630+08:00	UnknownJobId_2108930560	0.0000	UserCode	DefaultTextExtractor	AllowColumnPruning	() =>	True
+2021-03-24T14:07:34.5282630+08:00	UnknownJobId_2108930560	0.0000	UserCode	DefaultTextExtractor	AllowColumnPruning	() =>	True
+2021-03-24T14:07:34.5282630+08:00	UnknownJobId_2108930560	0.0000	UserCode	DefaultTextExtractor	AllowColumnPruning	() =>	True
+2021-03-24T14:07:34.5282630+08:00	UnknownJobId_2108930560	0.0000	UserCode	DefaultTextExtractor	AllowColumnPruning	() =>	True
+2021-03-24T14:07:34.5282630+08:00	UnknownJobId_2108930560	0.0000	UserCode	DefaultTextExtractor	AllowColumnPruning	() =>	True
+2021-03-24T14:07:34.5292634+08:00	UnknownJobId_2108930560	0.0001	UserCode	DefaultTextExtractor	AllowFilterHinting	() =>	False
+2021-03-24T14:07:34.5312632+08:00	UnknownJobId_2108930560	0.0001	UserCode	DefaultTextExtractor	RunSingleThreaded	() =>	False
+2021-03-24T14:07:34.6333252+08:00	UnknownJobId_2108930560	0.2317	Compiler	TimedOptimizer	OptimizeImpl	CQO: Optimization succeeded.
+2021-03-24T14:07:34.6333252+08:00	UnknownJobId_2108930560		Compiler	ScopeBackEndRunner	Execute	Total input file count: 1
+2021-03-24T14:07:34.6343322+08:00	UnknownJobId_2108930560		Compiler	ScopeBackEndRunner	Execute	Total output file count: 2
+2021-03-24T14:07:34.6353314+08:00	UnknownJobId_2108930560		Compiler	ScopeBackEndRunner	BackEndRun	Starting BackEndRun...
+2021-03-24T14:07:34.7076830+08:00	UnknownJobId_2108930560	0.0000	UserCode	DefaultTextExtractor	AtomicFileProcessing	() =>	False
+2021-03-24T14:07:34.7577150+08:00	UnknownJobId_2108930560	0.0014	UserCode	DefaultTextExtractor	UdoProperties	() =>	null
+2021-03-24T14:07:34.7706816+08:00	UnknownJobId_2108930560	0.0000	UserCode	DefaultTextExtractor	AtomicFileProcessing	() =>	False
+2021-03-24T14:07:34.7706816+08:00	UnknownJobId_2108930560	0.0000	UserCode	DefaultTextExtractor	AtomicFileProcessing	() =>	False
+2021-03-24T14:07:34.8007138+08:00	UnknownJobId_2108930560	0.0000	UserCode	DefaultTextExtractor	UdoProperties	() =>	null
+2021-03-24T14:07:34.8007138+08:00	UnknownJobId_2108930560	0.0000	UserCode	DefaultTextExtractor	AtomicFileProcessing	() =>	False
+2021-03-24T14:07:34.8007138+08:00	UnknownJobId_2108930560	0.0000	UserCode	DefaultTextExtractor	AtomicFileProcessing	() =>	False
+2021-03-24T14:07:34.8057148+08:00	UnknownJobId_2108930560	0.0000	UserCode	DefaultTextExtractor	UdoProperties	() =>	null
+2021-03-24T14:07:34.8057148+08:00	UnknownJobId_2108930560	0.0000	UserCode	DefaultTextExtractor	AtomicFileProcessing	() =>	False
+2021-03-24T14:07:34.8057148+08:00	UnknownJobId_2108930560	0.0000	UserCode	DefaultTextExtractor	AtomicFileProcessing	() =>	False
+2021-03-24T14:07:34.8147122+08:00	UnknownJobId_2108930560	0.1784	Compiler	ScopeBackEndRunner	PostprocessStageModel	Algebra and managed code generation finished.
+2021-03-24T14:07:34.8147122+08:00	UnknownJobId_2108930560	1.9417	Compiler	ScopeBackEndRunner	BackEndRun	*** Exiting post-optimization
+2021-03-24T14:07:34.8206826+08:00	UnknownJobId_2108930560	0.0016	Compiler	ScopeLocalResourceStorage	AddGeneratedFile	(path:"D:\Scope2015\InputOutputTest\InputOutputTest\bin\Debug\FCD1B94FF3209F7B\Scope_AC6B4123CBD6949D\9.userdata",type:VertexPartitionSpec) =>	null
+2021-03-24T14:07:34.8206826+08:00	UnknownJobId_2108930560	0.0040	Compiler	ScopeLocalResourceStorage	AddGeneratedFile	(path:"D:\Scope2015\InputOutputTest\InputOutputTest\bin\Debug\FCD1B94FF3209F7B\Scope_AC6B4123CBD6949D\__ScopeDiagnosisInfo__.xml",type:StatisticsResource) =>	null
+2021-03-24T14:07:34.8216816+08:00	UnknownJobId_2108930560	0.0047	Compiler	ScopeLocalResourceStorage	AddGeneratedFile	(path:"D:\Scope2015\InputOutputTest\InputOutputTest\bin\Debug\FCD1B94FF3209F7B\Scope_AC6B4123CBD6949D\PartitionLastRows.bin",type:VertexPartitionSpec) =>	null
+2021-03-24T14:07:34.8226820+08:00	UnknownJobId_2108930560	0.0053	Compiler	ScopeLocalResourceStorage	AddGeneratedFile	(path:"D:\Scope2015\InputOutputTest\InputOutputTest\bin\Debug\FCD1B94FF3209F7B\Scope_AC6B4123CBD6949D\__SStreamInfo__.xml",type:SStreamInfo) =>	null
+2021-03-24T14:07:34.8246812+08:00	UnknownJobId_2108930560	0.0079	Compiler	ScopeLocalResourceStorage	AddGeneratedFile	(path:"D:\Scope2015\InputOutputTest\InputOutputTest\bin\Debug\FCD1B94FF3209F7B\Scope_AC6B4123CBD6949D\ScopeScript.xml",type:StatisticsResource) =>	null
+2021-03-24T14:07:34.8286807+08:00	UnknownJobId_2108930560	0.0095	Compiler	ScopeBackEndRunner	BackEndRun	C# code emission finished.
+2021-03-24T14:07:34.8427137+08:00	UnknownJobId_2108930560	0.0267	Compiler	ScopeLocalResourceStorage	AddGeneratedFile	(path:"D:\Scope2015\InputOutputTest\InputOutputTest\bin\Debug\FCD1B94FF3209F7B\Scope_AC6B4123CBD6949D\ScopeVertexDef.xml",type:VertexDef) =>	null
+2021-03-24T14:07:35.0728397+08:00	UnknownJobId_2108930560	0.0000	UserCode	DefaultTextExtractor	AtomicFileProcessing	() =>	False
+2021-03-24T14:07:35.1208396+08:00	UnknownJobId_2108930560	0.2901	Compiler	ScopeBackEndRunner	GenerateCppCode	C++ CodeGen finished.
+2021-03-24T14:07:39.4186568+08:00	UnknownJobId_2108930560	4.2960	Compiler	ScopeBackEndRunner	BuildGeneratedCode	Generated Code Compilation finished.
+2021-03-24T14:07:39.4196569+08:00	UnknownJobId_2108930560	4.7839	Compiler	ScopeBackEndRunner	BackEndRun	Finished BackEndRun...
+2021-03-24T14:07:39.4276573+08:00	UnknownJobId_2108930560		Compiler	DeepCompilePipeline	FinalizeArtifacts	Starting Compiler Artifacts Finalization...
+2021-03-24T14:07:39.4296577+08:00	UnknownJobId_2108930560	0.0095	Compiler	ScopeLocalResourceStorage	AddGeneratedFile	(path:"D:\Scope2015\InputOutputTest\InputOutputTest\bin\Debug\FCD1B94FF3209F7B\Scope_AC6B4123CBD6949D\__ScopeInternalInfo__.xml",type:OptPlanInfo) =>	null
+2021-03-24T14:07:39.4616901+08:00	UnknownJobId_2108930560	0.0000	UserCode	DefaultTextExtractor	UdoProperties	() =>	null
+2021-03-24T14:07:39.4626890+08:00	UnknownJobId_2108930560	0.0000	UserCode	DefaultTextExtractor	UdoProperties	() =>	null
+2021-03-24T14:07:39.4736898+08:00	UnknownJobId_2108930560	0.0000	UserCode	DefaultTextExtractor	AtomicFileProcessing	() =>	False
+2021-03-24T14:07:39.4736898+08:00	UnknownJobId_2108930560	0.0000	UserCode	DefaultTextExtractor	AtomicFileProcessing	() =>	False
+2021-03-24T14:07:39.4936917+08:00	UnknownJobId_2108930560	0.0738	Compiler	ScopeLocalResourceStorage	AddGeneratedFile	(path:"D:\Scope2015\InputOutputTest\InputOutputTest\bin\Debug\FCD1B94FF3209F7B\Scope_AC6B4123CBD6949D\__script__.abr",type:Algebra) =>	null
+2021-03-24T14:07:39.4986810+08:00	UnknownJobId_2108930560	0.0049	Compiler	ScopeLocalResourceStorage	AddGeneratedFile	(path:"D:\Scope2015\InputOutputTest\InputOutputTest\bin\Debug\FCD1B94FF3209F7B\Scope_AC6B4123CBD6949D\__CompilerTimers.xml",type:CompilerTimers) =>	null
+2021-03-24T14:07:39.5056802+08:00	UnknownJobId_2108930560		Compiler	DeepCompilePipeline	FinalizeArtifacts	Finished Compiler Artifacts Finalization...
+2021-03-24T14:07:39.5056802+08:00	UnknownJobId_2108930560		Compiler	DeepCompilePipeline	DoCompile	Finished compilation!
+2021-03-24T14:07:39.5066852+08:00	UnknownJobId_2108930560		Compiler	DeepCompilePipeline	FinalizeCompilation	Start compilation finalization...
+2021-03-24T14:07:39.5096905+08:00	UnknownJobId_2108930560		Compiler	DeepCompilePipeline	DisposeCompiler	Start disposing the compiler...
+2021-03-24T14:07:39.5106895+08:00	UnknownJobId_2108930560		Compiler	ScopeSStreamMetadataManager	Cleanup	Cancelling any ongoing requests
+2021-03-24T14:07:39.5116920+08:00	UnknownJobId_2108930560		Compiler	DeepCompilePipeline	DisposeCompiler	Finished compilation finalization
+2021-03-24T14:07:39.5116920+08:00	UnknownJobId_2108930560	6.6389	Compiler	DeepCompilePipeline	FinalizeCompilation	End Compilation
+2021-03-24T14:07:39.5146891+08:00	UnknownJobId_2108930560		Compiler	DeepCompilePipeline	WriteTimers	COMPILATIONTIME|JobId:|FriendlyName:|Mode:Default|Overall: 6.6s 4.5cpu|FrontEndRun: 1.2s 3.2cpu|RoslynTimers: 28x 2.0s 72.0ms/x 6.3cpu|Preprocessing: 0.1s 0.2cpu|OptimizerRun: 0.2s 0.2cpu|BackEndRun: 4.8s 0.6cpu|ExternalTimers: 35x 0.1s 2.0ms/x 0.1cpu
+2021-03-24T14:07:39.5161265+08:00	UnknownJobId_2108930560		Compiler	DeepCompilePipeline	WriteTimers	FrontEndTimers|FrontEndRun: 1.2s 3.2cpu|AssemblyResolverPass:|AstBuilder: 0.4s 0.9cpu|BinderPass: 0.6s 2.0cpu|ClassifierPass:|DdlResolver: 0.1cpu|ErrorReporterPass:|FileSetExpansionAsync: 0.1s 0.1cpu wait 0.1s|FileSetPEAsync:|ProcessUsingsPass:|InputOutputPass: 0.1s 0.2cpu|GenerateOptTreePass:|GeneratedFilesAsync: 11x 0.1s 11.0ms/x 0.2cpu wait 0.1s|Parser: 0.1s 0.2cpu|ReferenceLoading:|ResourceReferencePass:|ResourcesDownloading:|SemanticAnalyzerPass:|SyntaxVerifier: 0.2s 0.3cpu|TraceFile: 99x|ViewResolver: 2x 3.0ms/x
+2021-03-24T14:07:39.5161265+08:00	UnknownJobId_2108930560		Compiler	DeepCompilePipeline	WriteTimers	RoslynTimers|RoslynBinding: 2x 0.5s 274.0ms/x 1.9cpu|RoslynEnvironmentAsync: 0.2s 0.4cpu wait 0.3s|RoslynFirstCall: 0.5s 1.9cpu|ConstantFolding: 2x 5.0ms/x|RoslynParsing: 2x 22.0ms/x 0.1cpu|RoslynPostBind: 2x 0.1s 47.0ms/x 0.1cpu|RoslynPreBind: 2x 13.0ms/x 0.1cpu|RoslynSemantic: 2x 0.4s 187.0ms/x 1.6cpu|SimpleLiteralBinding: 3x|NonRoslynBinding: 2x 5.0ms/x|ExpressionAnnotation: 2x 14.0ms/x|ExpressionAnnotationSemantic: 4x 6.0ms/x|CreateSemanticModel: 3x 0.1s 42.0ms/x 0.2cpu
+2021-03-24T14:07:39.5161265+08:00	UnknownJobId_2108930560		Compiler	DeepCompilePipeline	WriteTimers	PreProcessorTimers|PreProcessorParser:|Preprocessing: 0.1s 0.2cpu
+2021-03-24T14:07:39.5161265+08:00	UnknownJobId_2108930560		Compiler	DeepCompilePipeline	WriteTimers	OptimizerTimers|OptimizerRun: 0.2s 0.2cpu|OptimizerWait:|ComputeSignature:|CreateSplitsOrSpools: 0.1s|PostProcessExecutionPlan:|CreateWhereSelectEnumerators:|ComputePayloadMetadata:|SStreamStageProcessing:|ValidateStages:|CompileToAlgebra:|EstimateMemorySize: 3x 6.0ms/x|CalculateBubbles:
+2021-03-24T14:07:39.5171327+08:00	UnknownJobId_2108930560		Compiler	DeepCompilePipeline	WriteTimers	BackendTimers|BackEndRun: 4.8s 0.6cpu|AdornAllWithMemoryModel: 3x 12.0ms/x|AlgebraAndManagedCodeGen: 0.2s 0.2cpu|AnnotateIntermediateResults:|CodeCompiling: 4.3s 0.1cpu|CodeGeneration: 0.3s 0.3cpu|CppCompilationNative: 1.7s|CppLinking: 0.2s|CreateCppReadyStage:|CSharpCompilation: 2.3s|ManagedCodeEmission:|NativeCodeGeneration: 0.3s 0.3cpu
+2021-03-24T14:07:39.5171327+08:00	UnknownJobId_2108930560		Compiler	DeepCompilePipeline	WriteTimers	ExternalTimers|VcClient:|PlaybackAsync: 2x 13.0ms/x|UserCode: 32x

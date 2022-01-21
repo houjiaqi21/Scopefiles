@@ -1,0 +1,53 @@
+@ECHO OFF
+REM Rename this file to *.bat file to recompile the code locally
+
+SETLOCAL
+
+REM Adjust the following three variables as needed
+SET SCOPE_CPP_SDK=d:\data\CPPSDK
+SET SCOPE_DIR=d:\vs2017\microsoft visual studio\2017\enterprise\common7\ide\extensions\microsoft\scopestudio\3.1.0000.1\CosmosRuntimeSDK
+SET SCOPE_DOTNET_DIR=%PkgDotNetFxGAC_Corext%\v4.0.30319
+
+REM These variables generally do not need to be adjusted
+SET SCOPE_SCRIPT_BIN_DIR=.
+SET SCOPE_CPP_DIR=%SCOPE_CPP_SDK%
+SET SCOPE_CPP_BIN_DIR=d:\vs2017\microsoft visual studio\2017\enterprise\SDK\ScopeCppSDK\vc15\VC\bin
+SET SCOPE_SDK_DIR=%SCOPE_CPP_SDK%
+
+REM These variables provide predefined options for the presence / absence of PDBs and to change the optimization level.
+REM They are intended to allow for easy recompilation by changing CL_OPTIMIZE_LEVEL / LINK_GENERATE_DEBUG_INFO to one of the values below.
+SET CL_OPTIMIZE_LEVEL_SIZE=/O1
+SET CL_OPTIMIZE_LEVEL_SPEED=/O2
+SET CL_OPTIMIZE_LEVEL_DEBUG=/Od
+SET LINK_GENERATE_DEBUG_INFO_TRUE=/DEBUG /PDB:__ScopeCodeGenEngine__.pdb
+SET LINK_GENERATE_DEBUG_INFO_FALSE=/DEBUG:NONE
+
+REM Add or remove the options above to modify compiler behavior. These variables are used in the command lines below.
+SET CL_OPTIMIZE_LEVEL=%CL_OPTIMIZE_LEVEL_DEBUG%
+SET LINK_GENERATE_DEBUG_INFO=%LINK_GENERATE_DEBUG_INFO_TRUE%
+SET EXTRA_CS_FLAGS=
+SET EXTRA_CC_FLAGS=/I"%SCOPE_DIR%" /I"%SCOPE_CPP_DIR%\VC\include" /I"%SCOPE_SDK_DIR%\SDK\include"
+SET EXTRA_LINK_FLAGS=/LIBPATH:"%SCOPE_DIR%" /LIBPATH:"%SCOPE_CPP_DIR%\VC\lib" /LIBPATH:"%SCOPE_SDK_DIR%\SDK\lib"
+SET EXTRA_NATIVE_CC_FLAGS=%EXTRA_CC_FLAGS%
+SET EXTRA_MANAGED_CC_FLAGS=%EXTRA_CC_FLAGS%
+
+REM *** Prepare all prerequisites for local compilation
+
+%CoreXTTools%\x86\unzip.exe -q -u "%SCOPE_SCRIPT_BIN_DIR%\__ScopeCodeGenEngine__.cppresources"
+copy /Y "%SCOPE_DIR%\ScopeCompiler.dll" "%SCOPE_SCRIPT_BIN_DIR%"
+
+REM *** C# compile step
+
+"%SCOPE_DOTNET_DIR%\csc.exe" /unsafe /target:library /optimize  /reference:System.dll /reference:System.Data.dll /reference:System.Core.dll /reference:System.Runtime.Serialization.dll /reference:%SCOPE_DIR%\Microsoft.Analytics.Interfaces.dll /reference:%SCOPE_DIR%\Microsoft.Analytics.Types.dll /reference:%SCOPE_DIR%\ScopeEngineManaged.dll /reference:%SCOPE_DIR%\Microsoft.Scope.Interfaces.dll /reference:%SCOPE_DIR%\ScopeRuntime.exe /reference:%SCOPE_DIR%\Microsoft.Analytics.Common.dll /reference:%SCOPE_DIR%\ScopeCompiler.dll /reference:%SCOPE_DIR%\Microsoft.Scope.Dependencies.Cosmos.dll /reference:%SCOPE_DIR%\Microsoft.Scope.Dependencies.dll /debug+ /warnaserror- /warn:2 /out:%SCOPE_SCRIPT_BIN_DIR%\__ScopeCodeGen__.dll %EXTRA_CS_FLAGS% __ScopeCodeGen__.dll.cs
+
+REM *** C++ compile step -- Native
+
+"%SCOPE_CPP_BIN_DIR%\cl.exe" /nologo /c /bigobj /Bt+ /DWIN32_LEAN_AND_MEAN /EHa /MD /Z7 /Zo /homeparams %CL_OPTIMIZE_LEVEL% /Bd /d2cgsummary /DCOMPILE_NATIVE /DUSE_SSE4_2 /W4 /WX /wd4125 /wd4627 /wd4800 /wd4702  /I"%SCOPE_CPP_DIR%\VC\include" /I"%SCOPE_CPP_DIR%\SDK\include" /I"%SCOPE_CPP_DIR%\SDK\include\um" /I"%SCOPE_CPP_DIR%\SDK\include\shared" /I"%SCOPE_CPP_DIR%\SDK\include\ucrt" /I"%SCOPE_DIR%" /I%SCOPE_SCRIPT_BIN_DIR%  /DCOMPILE_ALL_VERTICES /DCOMPILE_INIT_SHUTDOWN %EXTRA_NATIVE_CC_FLAGS% __ScopeCodeGenEngine__.dll.cpp /Fo__ScopeCodeGenEngine__.dllNative.obj  
+
+REM *** C++ link step
+
+"%SCOPE_CPP_BIN_DIR%\link.exe" /NOLOGO /TIME+ /INCREMENTAL:NO /DLL /MACHINE:X64 /IGNORE:4248 /DEFAULTLIB:MSVCRT %LINK_GENERATE_DEBUG_INFO% /OPT:NOREF /OPT:NOICF __ScopeCodeGenEngine__.dllNative.obj kernel32.lib rpcrt4.lib winhttp.lib msvcprt.lib msvcrt.lib oldnames.lib vcruntime.lib ucrt.lib ScopeEngineManaged.lib ScopeEngine.lib ScopeRuntimeLib.lib /LIBPATH:"%SCOPE_CPP_DIR%\VC\lib" /LIBPATH:"%SCOPE_CPP_DIR%\SDK\lib" /LIBPATH:"%SCOPE_DIR%" /LIBPATH:%SCOPE_SCRIPT_BIN_DIR% %EXTRA_LINK_FLAGS% /OUT:__ScopeCodeGenEngine__.dll 
+
+ENDLOCAL
+
+:done

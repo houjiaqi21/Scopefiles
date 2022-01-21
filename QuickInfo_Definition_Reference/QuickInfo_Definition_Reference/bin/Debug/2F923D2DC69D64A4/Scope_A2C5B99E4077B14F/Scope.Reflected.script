@@ -1,0 +1,29 @@
+_var_100001_EXTRACT = EXTRACT AdId:int,IId:int,Impression:int,IsClicked:int FROM @"my/Inputs/AdsLog.txt" USING MyTSVExtractor();
+
+//Reflected script of operator <Split_1> is not available
+
+_var_100002_LSORT = SELECT AdId, IId, Impression FROM _var_100001_EXTRACT ORDER BY IId;
+
+_var_100003_EXTRACT = EXTRACT IId:int,UId:int,Start:DateTime,Market:string,Query:string,DwellTime:int,Results:string,ClickedUrls:string FROM @"my/Inputs/SearchLog.txt" USING ScopeRuntime.DefaultTextExtractor();
+
+//Reflected script of operator <Split_5> is not available
+
+_var_100004_LSORT = SELECT Query, IId1 FROM _var_100003_EXTRACT ORDER BY IId1;
+
+_var_100005_INTERNAL_COMBINE = SELECT AdId, IId, Impression, Query FROM _var_100002_LSORT AS AliasLeft INNER JOIN _var_100004_LSORT AS AliasRight ON AliasLeft.IId == AliasRight.IId1;
+
+OUTPUT _var_100005_INTERNAL_COMBINE TO @"https://cosmos08.osdinfra.net/cosmos/sandbox/my/Outputs/Processorlog.txt" USING ScopeRuntime.DefaultTextOutputter();
+
+_var_100007_CROSSAPPLY = SELECT Market, SplitResult FROM _var_100003_EXTRACT CROSS APPLY MyHelper.Split(Results, ';') AS SplitResult;
+
+_var_100008_TRANSFORM = SELECT Market AS Market, SplitResult AS Result FROM _var_100007_CROSSAPPLY;
+
+OUTPUT _var_100008_TRANSFORM TO @"https://cosmos08.osdinfra.net/cosmos/sandbox/my/Outputs/rs2.txt" USING ScopeRuntime.DefaultTextOutputter();
+
+_var_100010_LSORT = SELECT Market, DwellTimeDouble FROM _var_100003_EXTRACT ORDER BY Market;
+
+_var_100011_TRANSFORM = SELECT Market AS Market, DwellTimeDouble AS TotalDwellTime FROM _var_100010_LSORT;
+
+_var_100012_GROUPBY = SELECT FIRST(Market) AS Market, MySum(TotalDwellTime) AS TotalDwellTime FROM _var_100011_TRANSFORM GROUP BY Market;
+
+OUTPUT _var_100012_GROUPBY TO @"https://cosmos08.osdinfra.net/cosmos/sandbox/my/Outputs/rs3.txt" USING ScopeRuntime.DefaultTextOutputter();

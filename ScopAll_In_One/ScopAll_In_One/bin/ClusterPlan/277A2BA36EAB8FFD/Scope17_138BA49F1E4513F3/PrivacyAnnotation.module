@@ -1,0 +1,12 @@
+﻿//---------------------------------------------------------------------
+// <copyright file="PrivacyAnnotation.module" company="Microsoft">
+//      Copyright (c) Microsoft Corporation.  All rights reserved.
+// </copyright>
+//--------------------------------------------------------------------
+DEFINE MODULE PrivacyAnnotation 
+BEGIN 
+ 
+REFERENCE @"Microsoft.DataMap.CodeAnnotation.Cosmos.dll"; 
+REFERENCE @"Microsoft.PrivacyServices.PrivacyAnnotation.dll"; 
+ 
+END MODULE 

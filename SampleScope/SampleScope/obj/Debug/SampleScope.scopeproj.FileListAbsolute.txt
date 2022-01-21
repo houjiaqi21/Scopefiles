@@ -1,0 +1,8 @@
+D:\Scope2015\SampleScope\SampleScope\bin\Debug\Algebra.xml
+D:\Scope2015\SampleScope\SampleScope\obj\Debug\Algebra.xml
+D:\Sharing\Scope2015\SampleScope\SampleScope\bin\Debug\Algebra.xml
+D:\Sharing\Scope2015\SampleScope\SampleScope\obj\Debug\SampleScope.scopeproj.CoreCompileInputs.cache
+D:\Sharing\Scope2015\SampleScope\SampleScope\obj\Debug\Algebra.xml
+\\v-hozhao\Sharing\Scope2015\SampleScope\SampleScope\obj\Debug\SampleScope.scopeproj.CoreCompileInputs.cache
+\\v-hozhao\Sharing\Scope2015\SampleScope\SampleScope\obj\Debug\Algebra.xml
+D:\Sharing\Scope2015\SampleScope\SampleScope\obj\Debug\SampleScope.scopeprojAssemblyReference.cache

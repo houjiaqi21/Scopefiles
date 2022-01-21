@@ -1,0 +1,118 @@
+﻿//Script GUID:10a68cdb-d3fc-4daa-82e7-1a6e8c291cd1
+//Used for tracking history
+
+SET @@FeaturePreviews = "ScopeOutputFileSet:on";
+#DECLARE dateTime DateTime = DateTime.Now;
+#DECLARE date string = @dateTime.ToString("yyyyMMdd_HH-mm");
+
+
+#DECLARE outputVertex string = "/users/v-hozhao/FileSets/" + @date + "/{*}.csv";
+#DECLARE outputVertex1 string = "/users/v-hozhao/FileSets/" + @date + "/Vertex_{*}.csv";
+
+#DECLARE outputDataPartition string = "/users/v-hozhao/FileSets/" + @date + "/bucket_{bucket_id}.csv";
+#DECLARE outputDataPartition1 string = "/users/v-hozhao/FileSets/" + @date + "/{bucket_id}/abc.csv";
+
+#REGION  Multi Vertex
+
+//searchlog =
+//    EXTRACT A : string,
+//            B : string,
+//            C : string,
+//            D : string
+//    FROM @"/users/v-hozhao/FileSets/input/VertexInput8.tsv"
+//    USING DefaultTextExtractor();
+                                                                                           
+//OUTPUT searchlog
+//TO @outputVertex
+//USING DefaultTextOutputter(); 
+//
+//OUTPUT searchlog
+//TO @outputVertex1
+//USING DefaultTextOutputter();
+
+input1 = SELECT * FROM (VALUES( 1,1, "john", DateTime.Parse("2017/12/31"))
+                           , ( 2,1, "john", DateTime.Parse("2018/01/01"))
+                           , ( 3,1, "john", DateTime.Parse("2018/01/03"))
+                           , ( 4,1, "ed", DateTime.Parse("2018/01/01"))
+                           , ( 5,2, "ed", DateTime.Parse("2018/01/02"))
+                           , ( 6,2, "mike", DateTime.Parse("2018/01/01"))
+                           , ( 7,2, "Mike", DateTime.Parse("2018/01/01"))
+                           , ( 8,2, "marc", DateTime.Parse("2018/01/01"))
+                           , ( 9,3, "Shi", DateTime.Parse("2018/01/01"))
+                           , ( 10,3, "Shi", DateTime.Parse("2018/01/02"))
+                           , ( 11,3, "marc", DateTime.Parse("2018/01/01"))
+                           , ( 12,3, "Jimmy", DateTime.Parse("2018/02/01"))
+                           , ( 13,4, "Jimmy", DateTime.Parse("2018/02/02"))
+                           , ( 14,4, "Jimmy", DateTime.Parse("2018/02/03"))
+                           , ( 15,4, "Adrian", DateTime.Parse("2018/02/01"))
+                           , ( 16,4, "Adrian", DateTime.Parse("2018/01/01"))
+                      ) AS T(id, bucket_id, name, date);
+ 
+input2 = SELECT * FROM (VALUES( 1,1, "john2", DateTime.Parse("2017/12/31"))
+                           , ( 2,1, "john2", DateTime.Parse("2018/01/01"))
+                           , ( 3,1, "john2", DateTime.Parse("2018/01/03"))
+                           , ( 4,1, "ed2", DateTime.Parse("2018/01/01"))
+                           , ( 5,2, "ed2", DateTime.Parse("2018/01/02"))
+                           , ( 6,2, "mike2", DateTime.Parse("2018/01/01"))
+                           , ( 7,2, "Mike2", DateTime.Parse("2018/01/01"))
+                           , ( 8,2, "marc2", DateTime.Parse("2018/01/01"))
+                           , ( 9,3, "Shi2", DateTime.Parse("2018/01/01"))
+                           , ( 10,3, "Shi2", DateTime.Parse("2018/01/02"))
+                           , ( 11,3, "marc2", DateTime.Parse("2018/01/01"))
+                           , ( 12,3, "Jimmy2", DateTime.Parse("2018/02/01"))
+                           , ( 13,4, "Jimmy2", DateTime.Parse("2018/02/02"))
+                           , ( 14,4, "Jimmy2", DateTime.Parse("2018/02/03"))
+                           , ( 15,4, "Adrian2", DateTime.Parse("2018/02/01"))
+                           , ( 16,4, "Adrian2", DateTime.Parse("2018/01/01"))
+                      ) AS T(id, bucket_id, name, date);
+
+[PARTITION(id) =(PARTITIONCOUNT=10)]
+data = SELECT id, bucket_id, name, date
+FROM input1
+JOIN
+input2
+ON input1.id == input2.id;
+
+OUTPUT data 
+//TO "/users/zhanghao/hao_{*}.csv"
+TO @outputVertex
+USING Outputters.Csv();
+
+OUTPUT data 
+//TO "/users/zhanghao/hao_{*}.csv"
+TO @outputVertex1
+USING Outputters.Csv();
+
+#ENDREGION
+
+
+#REGION  Data Partition
+
+data = SELECT * FROM (VALUES(1,1,"john",DateTime.Parse("2017/12/31"))
+					      , (2,1,"john",DateTime.Parse("2018/12/31"))
+						  , (3,1,"john",DateTime.Parse("2018/1/31"))
+						  , (4,1,"ed",DateTime.Parse("2018/12/31"))
+						  , (5,2,"ed",DateTime.Parse("2017/12/31"))
+					      , (6,2,"mike",DateTime.Parse("2018/12/31"))
+						  , (7,2,"Mike",DateTime.Parse("2018/1/31"))
+						  , (8,2,"marc",DateTime.Parse("2018/12/31"))
+						  , (9,3,"shi",DateTime.Parse("2017/12/31"))
+					      , (10,3,"shi",DateTime.Parse("2018/12/31"))
+						  , (11,3,"marc",DateTime.Parse("2018/1/31"))
+						  , (12,3,"Jimmy",DateTime.Parse("2018/12/31"))
+						  , (13,4,"Jimmy",DateTime.Parse("2018/12/31"))
+						  , (14,4,"Jimmy",DateTime.Parse("2018/12/31"))
+						  , (15,4,"Adrian",DateTime.Parse("2018/12/31"))
+						  , (16,4,"Adrian",DateTime.Parse("2018/12/31"))
+						  ) AS T(id, bucket_id, name, date);
+
+OUTPUT data
+TO @outputDataPartition    //sample3
+USING Outputters.Csv(outputHeader:true);
+
+OUTPUT data
+TO @outputDataPartition1    //sample3
+USING Outputters.Csv(outputHeader:true);
+
+#ENDREGION
+

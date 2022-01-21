@@ -1,0 +1,9 @@
+_var_100001_EXTRACT = EXTRACT Region:string,Duration:int FROM @"users/v-hozhao/All_In_One/Input/SearchLog.txt" USING ScopeRuntime.DefaultTextExtractor();
+
+_var_100002_LSORT = SELECT Region, Duration FROM _var_100001_EXTRACT ORDER BY Region;
+
+_var_100003_TRANSFORM = SELECT Region AS Region, Duration AS TotalDuration FROM _var_100002_LSORT;
+
+_var_100004_GROUPBY = SELECT FIRST(Region) AS Region, TotalDuration() AS TotalDuration FROM _var_100003_TRANSFORM GROUP BY Region;
+
+OUTPUT _var_100004_GROUPBY TO @"https://cosmos09.osdinfra.net/cosmos/cosmosAdmin/users/v-hozhao/All_In_One/Output/CodeBehind_Aggregatesoutput.txt" USING ScopeRuntime.DefaultTextOutputter();

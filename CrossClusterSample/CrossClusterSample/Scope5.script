@@ -1,0 +1,28 @@
+﻿//Script GUID:8246b85f-2905-4bf8-b270-d54576f62244
+//Used for tracking history
+
+//Submit to sandbox-c08 
+#DECLARE inputFile_sample string = @"adl://sandbox-c08.azuredatalakestore.net/users/v-hozhao/All_In_One/Input/SearchLog.txt";  //input
+
+#DECLARE outputFile_sample string = @"adl://cosmosadmin-c09.azuredatalakestore.net/users/v-hozhao/All_In_One/Output/Sample_Output.txt";    //output
+#DECLARE outputFile_sampleSS string = @"adl://cosmosadmin-c09.azuredatalakestore.net/users/v-hozhao/All_In_One/Output/Sample_Output.ss";   //output
+
+  
+
+searchlog =
+    EXTRACT UserId : int,
+            Start : DateTime,
+            Region : string,
+            Query : string,
+            Duration : int,
+            Urls : string,
+            ClickedUrls : string
+    FROM @inputFile_sample
+    USING DefaultTextExtractor();
+
+OUTPUT searchlog
+TO @outputFile_sample
+USING DefaultTextOutputter(); 
+
+OUTPUT searchlog
+TO SSTREAM @outputFile_sampleSS;   //Generate ss file

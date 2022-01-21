@@ -1,0 +1,169 @@
+//Script GUID:10a68cdb-d3fc-4daa-82e7-1a6e8c291cd1
+//Used for tracking history
+
+SET @@FeaturePreviews = "ScopeOutputFileSet:on";
+#DECLARE dateTime DateTime = DateTime.Now;
+#DECLARE date string = @dateTime.ToString("yyyyMMdd_HH-mm");
+
+
+#DECLARE outputVertex string = "/users/v-hozhao/FileSets/" + @date + "/{*}.tsv";
+#DECLARE outputVertex1 string = "/users/v-hozhao/FileSets/" + @date + "/Vertex_{*}.tsv";
+
+#DECLARE outputDataPartition string = "/users/v-hozhao/FileSets/" + @date + "/bucket_{bucket_id}.csv";
+#DECLARE outputDataPartition1 string = "/users/v-hozhao/FileSets/" + @date + "/{bucket_id}/abc.csv";
+
+#REGION  Multi Vertex
+
+searchlog =
+    EXTRACT A : string,
+            B : string,
+            C : string,
+            D : string
+    FROM @"/users/v-hozhao/FileSets/input/VertexInput8.tsv"
+    USING DefaultTextExtractor();
+                                                                                           
+OUTPUT searchlog
+TO @outputVertex
+USING DefaultTextOutputter(); 
+
+OUTPUT searchlog
+TO @outputVertex1
+USING DefaultTextOutputter();
+
+#ENDREGION
+
+
+#REGION  Data Partition
+
+data = SELECT * FROM (VALUES(1,1,"john",DateTime.Parse("2017/12/31"))
+					      , (2,1,"john",DateTime.Parse("2018/12/31"))
+						  , (3,1,"john",DateTime.Parse("2018/1/31"))
+						  , (4,1,"ed",DateTime.Parse("2018/12/31"))
+						  , (5,2,"ed",DateTime.Parse("2017/12/31"))
+					      , (6,2,"mike",DateTime.Parse("2018/12/31"))
+						  , (7,2,"Mike",DateTime.Parse("2018/1/31"))
+						  , (8,2,"marc",DateTime.Parse("2018/12/31"))
+						  , (9,3,"shi",DateTime.Parse("2017/12/31"))
+					      , (10,3,"shi",DateTime.Parse("2018/12/31"))
+						  , (11,3,"marc",DateTime.Parse("2018/1/31"))
+						  , (12,3,"Jimmy",DateTime.Parse("2018/12/31"))
+						  , (13,4,"Jimmy",DateTime.Parse("2018/12/31"))
+						  , (14,4,"Jimmy",DateTime.Parse("2018/12/31"))
+						  , (15,4,"Adrian",DateTime.Parse("2018/12/31"))
+						  , (16,4,"Adrian",DateTime.Parse("2018/12/31"))
+						  ) AS T(id, bucket_id, name, date);
+
+OUTPUT data
+TO @outputDataPartition    //sample3
+USING Outputters.Csv(outputHeader:true);
+
+OUTPUT data
+TO @outputDataPartition1    //sample3
+USING Outputters.Csv(outputHeader:true);
+
+#ENDREGION
+
+/*
+//#DECLARE dateTime DateTime = DateTime.Now;
+//#DECLARE date string = @dateTime.ToString("yyyy/MM/dd/HH-mm");
+//#DECLARE outputPath string = "/users/v-hozhao/TeraGen" + "/" + @date + ".tsv";
+#DECLARE outputPath string = "/users/v-hozhao/TeraGen/5/{*}.tsv";
+//#DECLARE expireDays string = "3";
+    
+EXTRACT A : string,
+        B : string,
+        C : string,
+        D : string
+//FROM "/local/users/pank/TeraGenSource32.tsv"
+FROM "/users/v-hozhao/TeraGenSource32_5.tsv"
+USING RandomExtractor();
+
+OUTPUT
+TO @outputPath
+//WITH STREAMEXPIRY @expireDays
+USING VersionOutputter();
+
+#REGION  RandomExtractor + VersionOutputter
+
+#CS
+
+using System;
+using System.Collections.Generic;
+using System.IO;
+using ScopeRuntime;
+using System.Linq;
+
+
+public class RandomExtractor : Extractor
+{
+    private static Random random = new Random();
+
+    public override Schema Produces(string[] requestedColumns, string[] args)
+    {
+        return new Schema(requestedColumns);
+    }
+
+    public static string RandomString(int length)
+    {
+        const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        return new string(Enumerable.Repeat(chars, length)
+          .Select(s => s[random.Next(s.Length)]).ToArray());
+    }
+
+    public override IEnumerable<Row> Extract(StreamReader reader, Row outputRow, string[] args)
+    {
+        long numberOfRowsOuter = 4000;
+        for (long i = 0; i < numberOfRowsOuter; i++)
+        {
+            outputRow[0].UnsafeSet(RandomString(256) + "\t");
+            outputRow[1].UnsafeSet(RandomString(256) + "\t");
+            outputRow[2].UnsafeSet(RandomString(256) + "\t");
+            outputRow[3].UnsafeSet(RandomString(256));
+
+            yield return outputRow;
+        }
+    }
+}
+
+public class VersionOutputter : Outputter
+{
+    private static Random random = new Random();
+
+    public static string RandomString(int length)
+    {
+        const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        return new string(Enumerable.Repeat(chars, length)
+          .Select(s => s[random.Next(s.Length)]).ToArray());
+    }
+    public override void Output(RowSet input, StreamWriter writer, string[] args)
+    {
+        long numberOfRowsInner = 20;  //2000
+        foreach (Row row in input.Rows)
+        {
+            for (long j = 0; j < numberOfRowsInner; j++)
+            {
+                writer.Write(RandomString(256));
+                writer.Write('\t');
+
+                writer.Write(RandomString(256));
+                writer.Write('\t');
+
+                writer.Write(RandomString(256));
+                writer.Write('\t');
+
+                writer.Write(RandomString(256));
+
+                writer.WriteLine();
+                writer.Flush();
+            }
+        }
+    }
+}
+
+# ENDCS
+	
+#ENDREGION
+
+*/
+
+// Generated by ScopeStudio, version 2.5.1004.0

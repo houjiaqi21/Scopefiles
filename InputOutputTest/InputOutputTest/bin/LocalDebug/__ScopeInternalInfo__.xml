@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CSSRelatedInfo>
+  <OptimizerPlanInfo signatureVersion="1">
+    <TableScan present="True" occurrence="1" />
+    <PartitionSeek present="False" occurrence="0" />
+    <PartitionRange present="False" occurrence="0" />
+    <IndexSeek present="False" occurrence="0" />
+    <IndexRange present="False" occurrence="0" />
+    <Join present="False" occurrence="0" />
+    <GroupByAgg present="False" occurrence="0" />
+    <UDProcessor present="False" occurrence="0" />
+    <UDReducer present="False" occurrence="0" />
+    <UDCombiner present="False" occurrence="0" />
+    <UDMultiProcessor present="False" occurrence="0" />
+    <Top present="False" occurrence="0" />
+    <Costs>
+      <ExtractCardinality>33.98</ExtractCardinality>
+      <InputSize>3398</InputSize>
+      <OutputCardinality>67.96</OutputCardinality>
+      <NumTable>1</NumTable>
+      <DataTransferVolume>0</DataTransferVolume>
+      <Latency>0.0262366827027027</Latency>
+      <TotalCost>0.0524733654054054</TotalCost>
+      <EstimatedNumEdges>0</EstimatedNumEdges>
+    </Costs>
+    <OptimizerTrees>
+<InputTree>
+    <LogOp Id="LogOp_Sequence">
+      <OpInfo><TableGroupProperties Grp="Unknown" Remotable="False"/></OpInfo>
+      <LogOp Id="LogOp_Output" Table="C:\test\users\v-hozhao\SampleScope\zhao\SampleOutput.txt" XMode="All" Out="UserId,Start,Region,Query,Duration,Urls,ClickedUrls" Udf="DefaultTextOutputter">
+        <OpInfo><TableGroupProperties Grp="Unknown" Remotable="False"/></OpInfo>
+        <LogOp Id="LogOp_RestrRemap" Remove="UserId,Start,Region,Query,Duration,Urls,ClickedUrls" Remap="ClickedUrls#ClickedUrls,Duration#Duration,Query#Query,Region#Region,Start#Start,Urls#Urls,UserId#UserId">
+          <OpInfo><TableGroupProperties Grp="Unknown" Remotable="False"/></OpInfo>
+          <LogOp Id="LogOp_Spool" Name="__SCOPE_PARAMETER_PREFIX__searchlog" CSRoot="Common" TotalConsumers="2">
+            <OpInfo><TableGroupProperties Grp="Unknown" Remotable="False"/></OpInfo>
+            <LogOp Id="LogOp_Extract" Table="C:\test\users\v-hozhao\SampleScope\SearchLog.txt" XMode="Serial" Udf="DefaultTextExtractor">
+              <OpInfo><TableGroupProperties Grp="0.0" Remotable="False" Card="33.98" AvgRowLength="48"/></OpInfo>
+            </LogOp>
+          </LogOp>
+        </LogOp>
+      </LogOp>
+      <LogOp Id="LogOp_Write" Table="C:\test\users\v-hozhao\SampleScope\SampleOutput.ss" XMode="All" StreamId="c27fd9ce-b5de-4ffc-b57f-a054bfbf434f" Out="UserId,Start,Region,Query,Duration,Urls,ClickedUrls">
+        <OpInfo><TableGroupProperties Grp="Unknown" Remotable="False"/></OpInfo>
+        <LogOp Id="LogOp_RestrRemap" Remove="UserId,Start,Region,Query,Duration,Urls,ClickedUrls" Remap="ClickedUrls#ClickedUrls,Duration#Duration,Query#Query,Region#Region,Start#Start,Urls#Urls,UserId#UserId">
+          <OpInfo><TableGroupProperties Grp="Unknown" Remotable="False"/></OpInfo>
+          <LogOp Id="LogOp_Spool" Name="__SCOPE_PARAMETER_PREFIX__searchlog" CSRoot="Common" TotalConsumers="2">
+            <OpInfo><TableGroupProperties Grp="Unknown" Remotable="False"/></OpInfo>
+          </LogOp>
+        </LogOp>
+      </LogOp>
+    </LogOp>
+</InputTree>
+<OutputTree>
+    <PhyOp Id="PhyOp_Sequence">
+      <OpInfo><TableGroupProperties Grp="6.1" Remotable="False" Card="0" CardFromHint="True" AvgRowLength="1" PrtnSkewFactor="1" HT="5874049111189575987:237::4:8163282106467622117" HTS="8073765228944711738" HTN="13535879758465283627:12436431541801485938:2264026377801880386" HTC="10563848509624667386"/><PinnedPlan RuleId="70"/><Costs TotalCosts="0.0626657"/></OpInfo>
+      <PhyOp Id="PhyOp_Output" Table="C:\test\users\v-hozhao\SampleScope\zhao\SampleOutput.txt" XMode="Serial" Out="UserId,Start,Region,Query,Duration,Urls,ClickedUrls" Udf="DefaultTextOutputter">
+        <OpInfo><TableGroupProperties Grp="5.1" Remotable="False" Card="33.98" AvgRowLength="48" PrtnSkewFactor="1" HT="15134826654040777755:228::3:9772201982991631035" HTS="12106490133217109288" HTN="4590256482628425391:18214274289463786209:1132013188900940193" HTC="4501190669965076037"/><PinnedPlan RuleId="62"/><Costs TotalCosts="0.0313328"/></OpInfo>
+        <PhyOp Id="PhyOp_RestrRemap">
+          <OpInfo><TableGroupProperties Grp="4.1" Remotable="False" Card="33.98" AvgRowLength="48" PrtnSkewFactor="1" HT="9772201982991631035:120::2:4809044050627789497" HTS="9160119502487340202" HTN="6026655019635497957:18308856377858679923:1132013188900940193" HTC="2355945929196044934"/><PinnedPlan RuleId="73"/><Costs TotalCosts="0.00509616"/></OpInfo>
+          <PhyOp Id="PhyOp_Spool" Name="__SCOPE_PARAMETER_PREFIX__searchlog" CSRoot="Common" TotalConsumers="2">
+            <OpInfo><TableGroupProperties Grp="1.1" Remotable="False" Card="33.98" AvgRowLength="48" PrtnSkewFactor="1" HT="4809044050627789497:166::1:3804195379442567446" HTS="18296625912952208237" HTN="11508061823266073660:15006356796842784517:1132013188900940193" HTC="3763951994365086250"/><PinnedPlan RuleId="69"/><Costs TotalCosts="0.00509616"/></OpInfo>
+            <PhyOp Id="PhyOp_Extract" Table="C:\test\users\v-hozhao\SampleScope\SearchLog.txt" XMode="Serial" Udf="DefaultTextExtractor">
+              <OpInfo><TableGroupProperties Grp="0.1" Remotable="False" Card="33.98" AvgRowLength="48" PrtnSkewFactor="1" HT="3804195379442567446:115::0:0" HTS="4762932368665395239" HTN="14003843036360381377:7358768758053956660:1132013188900940193" HTC="16090681916407800658"/><PinnedPlan RuleId="60"/><Costs TotalCosts="0.00509616"/></OpInfo>
+            </PhyOp>
+          </PhyOp>
+        </PhyOp>
+      </PhyOp>
+      <PhyOp Id="PhyOp_Write" Table="C:\test\users\v-hozhao\SampleScope\SampleOutput.ss" XMode="Serial" StreamId="c27fd9ce-b5de-4ffc-b57f-a054bfbf434f" Column="UserId,Start,Region,Query,Duration,Urls,ClickedUrls">
+        <OpInfo><TableGroupProperties Grp="3.2" Remotable="False" Card="33.98" AvgRowLength="48" PrtnSkewFactor="1" HT="11475199526136395978:218::3:9772201982991631035" HTS="10953805759680010066" HTN="594762445843187046:347318228042097899:1132013188900940193" HTC="3465121110961944181"/><PinnedPlan RuleId="71"/><Costs TotalCosts="0.0313328"/></OpInfo>
+        <PhyOp Id="PhyOp_RestrRemap">
+          <OpInfo><TableGroupProperties Grp="2.1" Remotable="False" Card="33.98" AvgRowLength="48" PrtnSkewFactor="1" HT="9772201982991631035:120::2:4809044050627789497" HTS="9160119502487340202" HTN="6026655019635497957:18308856377858679923:1132013188900940193" HTC="2355945929196044934"/><PinnedPlan RuleId="73"/><Costs TotalCosts="0.00509616"/></OpInfo>
+          <PhyOp Id="PhyOp_Spool" Name="__SCOPE_PARAMETER_PREFIX__searchlog" CSRoot="Common" TotalConsumers="2">
+            <OpInfo><TableGroupProperties Grp="1.1" Remotable="False" Card="33.98" AvgRowLength="48" PrtnSkewFactor="1" HT="4809044050627789497:166::1:3804195379442567446" HTS="18296625912952208237" HTN="11508061823266073660:15006356796842784517:1132013188900940193" HTC="3763951994365086250"/><PinnedPlan RuleId="69"/><Costs TotalCosts="0.00509616"/></OpInfo>
+          </PhyOp>
+        </PhyOp>
+      </PhyOp>
+    </PhyOp>
+</OutputTree>
+<Rules Used="00000000000000000000000000000000000000000000000000000000000010100000011101000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"/></OptimizerTrees>
+  </OptimizerPlanInfo>
+  <QueryTracer>
+    <Input count="1">
+      <StreamProvenance>C:\test\users\v-hozhao\SampleScope\SearchLog.txt</StreamProvenance>
+      <dependency count="7">
+        <columnprovenance>UserId</columnprovenance>
+        <columnprovenance>Urls</columnprovenance>
+        <columnprovenance>Region</columnprovenance>
+        <columnprovenance>Start</columnprovenance>
+        <columnprovenance>Query</columnprovenance>
+        <columnprovenance>Duration</columnprovenance>
+        <columnprovenance>ClickedUrls</columnprovenance>
+      </dependency>
+    </Input>
+    <SelectedInput count="0" />
+    <Output count="0" />
+  </QueryTracer>
+</CSSRelatedInfo>

@@ -1,0 +1,2 @@
+D:\Scope2015\QuickInfo_Definition_Reference\QuickInfo_Definition_Reference\bin\Debug\Algebra.xml
+D:\Scope2015\QuickInfo_Definition_Reference\QuickInfo_Definition_Reference\obj\Debug\Algebra.xml

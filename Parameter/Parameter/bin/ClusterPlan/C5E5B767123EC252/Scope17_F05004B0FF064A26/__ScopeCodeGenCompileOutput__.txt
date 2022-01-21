@@ -1,0 +1,109 @@
+*** Entering compilation, time elapsed until this point: 00:00:01.6285851
+*** Done with C# compilation, time elapsed until this point: 00:00:01.9421250
+#CPP cl.exe compile (iteration 1/1) -- Native
+#CPP stdout:
+__ScopeCodeGenEngine__.dll.cpp
+ENC_CWD=D:\Sharing\Scope2015\Parameter\Parameter\bin\ClusterPlan\C5E5B767123EC252\Scope17_F05004B0FF064A26
+ENC_CL=c:\program files (x86)\microsoft visual studio\2017\enterprise\SDK\ScopeCppSDK\vc15\VC\bin\cl.exe
+ENC_SRC=__ScopeCodeGenEngine__.dll.cpp
+ENC_PDB=D:\Sharing\Scope2015\Parameter\Parameter\bin\ClusterPlan\C5E5B767123EC252\Scope17_F05004B0FF064A26\vc140.pdb
+ENC_CMD=-nologo -c -bigobj -Bt+ -DWIN32_LEAN_AND_MEAN -MD -W4 -WX -Zi -O2 -Bd -cgsummary -EHa -DCOMPILE_NATIVE -wd4125 -wd4627 -wd4800 -wd4702 -DUSE_SSE4_2 -I"c:\program files (x86)\microsoft visual studio\2017\enterprise\SDK\ScopeCppSDK\vc15\VC\include" -I"c:\program files (x86)\microsoft visual studio\2017\enterprise\SDK\ScopeCppSDK\vc15\SDK\include" -I"c:\program files (x86)\microsoft visual studio\2017\enterprise\SDK\ScopeCppSDK\vc15\SDK\include\um" -I"c:\program files (x86)\microsoft visual studio\2017\enterprise\SDK\ScopeCppSDK\vc15\SDK\include\shared" -I"c:\program files (x86)\microsoft visual studio\2017\enterprise\SDK\ScopeCppSDK\vc15\SDK\include\ucrt" -I"c:\program files (x86)\microsoft visual studio\2017\enterprise\common7\ide\extensions\microsoft\scopestudio\2.5.1000.4\CosmosRuntimeSDK" -ID:\Sharing\Scope2015\Parameter\Parameter\bin\ClusterPlan\C5E5B767123EC252\Scope17_F05004B0FF064A26 -DCOMPILE_ALL_VERTICES -DCOMPILE_INIT_SHUTDOWN -TP -X
+`c:\program files (x86)\microsoft visual studio\2017\enterprise\SDK\ScopeCppSDK\vc15\VC\bin\c1xx.dll -zm0x00007FF63014CA20 -il C:\Users\v-hozhao\AppData\Local\Temp\_CL_2b1ba036 -typedil -f __ScopeCodeGenEngine__.dll.cpp -Ze -D_MSC_EXTENSIONS -Zp16 -ZB64 -D_INTEGRAL_MAX_BITS=64 -pc \:/ -Fdvc140.pdb -D_MSC_VER=1912 -D_MSC_FULL_VER=191225835 -D_MSC_BUILD=0 -D_M_AMD64=100 -ZILP448 -D_M_X64=100 -D_WIN64 -D_WIN32 -GS -GR -D_CPPRTTI -Zc:forScope -Zc:wchar_t -nologo -DWIN32_LEAN_AND_MEAN -D_MT -D_DLL -W 4 -WX -Zi -GF -Og -Oi -Ot -Oy -Bd -EHa -D_CPPUNWIND -DCOMPILE_NATIVE -wd 4125 -wd 4627 -wd 4800 -wd 4702 -DUSE_SSE4_2 -I c:\program files (x86)\microsoft visual studio\2017\enterprise\SDK\ScopeCppSDK\vc15\VC\include -I c:\program files (x86)\microsoft visual studio\2017\enterprise\SDK\ScopeCppSDK\vc15\SDK\include -I c:\program files (x86)\microsoft visual studio\2017\enterprise\SDK\ScopeCppSDK\vc15\SDK\include\um -I c:\program files (x86)\microsoft visual studio\2017\enterprise\SDK\ScopeCppSDK\vc15\SDK\include\shared -I c:\program files (x86)\microsoft visual studio\2017\enterprise\SDK\ScopeCppSDK\vc15\SDK\include\ucrt -I c:\program files (x86)\microsoft visual studio\2017\enterprise\common7\ide\extensions\microsoft\scopestudio\2.5.1000.4\CosmosRuntimeSDK -I D:\Sharing\Scope2015\Parameter\Parameter\bin\ClusterPlan\C5E5B767123EC252\Scope17_F05004B0FF064A26 -DCOMPILE_ALL_VERTICES -DCOMPILE_INIT_SHUTDOWN -Fo__ScopeCodeGenEngine__.dllNative.obj'
+time(c:\program files (x86)\microsoft visual studio\2017\enterprise\SDK\ScopeCppSDK\vc15\VC\bin\c1xx.dll)=1.93343s < 3709382725139 - 3709402059445 > BB [D:\Sharing\Scope2015\Parameter\Parameter\bin\ClusterPlan\C5E5B767123EC252\Scope17_F05004B0FF064A26\__ScopeCodeGenEngine__.dll.cpp]
+`c:\program files (x86)\microsoft visual studio\2017\enterprise\SDK\ScopeCppSDK\vc15\VC\bin\c2.dll -il C:\Users\v-hozhao\AppData\Local\Temp\_CL_2b1ba036 -typedil -f __ScopeCodeGenEngine__.dll.cpp -dos -Fdvc140.pdb -GS -bigobj -MD -W 4 -WX -Zi -Og -Ob2 -Gy -Bd -cgsummary -EHa -Fo__ScopeCodeGenEngine__.dllNative.obj'
+Code Generation Summary
+	Total Function Count: 1642
+	Elapsed Time: 1.102 sec
+	Total Compilation Time: 3.787 sec
+	Average time per function: 0.002 sec
+	Anomalistic Compile Times: 38
+		?LoadingData@?$ParallelLoader@V?$FilterTransformer@V?$Extractor@VExtract_0_Data0@@V?$TextExtractPolicy@VExtract_0_Data0@@$00@ScopeEngine@@V?$TextInputStream@U?$TextInputStreamTraitsConst@$08$0A@$0A@$0A@$0A@$01$0A@$0A@$0A@$0A@$0A@$0A@$0A@@ScopeEngine@@VCosmosInput@2@@3@VExecutionStats@3@@ScopeEngine@@VExtract_0_Data0@@VProcess_1_Data0@@$02@ScopeEngine@@VProcess_1_Data0@@@ScopeEngine@@AEAA_NXZ: 0.115 sec, 0 instrs
+		?FormatCustomized@ScopeDateTime@ScopeEngine@@AEBAHPEADHPEBDHAEBVScopeDateTimeFormatInfo@2@@Z: 0.108 sec, 0 instrs
+		?WriteRuntimeStats@Statistics@IncrementalAllocator@ScopeEngine@@QEBAXAEAVTreeNode@3@J@Z: 0.108 sec, 0 instrs
+		SV1_Extract_execute: 0.072 sec, 0 instrs
+		?GetNextRowImpl@?$ParallelUnionAll@V?$FilterTransformer@V?$Extractor@VExtract_0_Data0@@V?$TextExtractPolicy@VExtract_0_Data0@@$00@ScopeEngine@@V?$TextInputStream@U?$TextInputStreamTraitsConst@$08$0A@$0A@$0A@$0A@$01$0A@$0A@$0A@$0A@$0A@$0A@$0A@@ScopeEngine@@VCosmosInput@2@@3@VExecutionStats@3@@ScopeEngine@@VExtract_0_Data0@@VProcess_1_Data0@@$02@ScopeEngine@@VProcess_1_Data0@@$00@ScopeEngine@@QEAA_NAEAVProcess_1_Data0@@@Z: 0.049 sec, 0 instrs
+		??0?$TextInputStream@U?$TextInputStreamTraitsConst@$08$0A@$0A@$0A@$0A@$01$0A@$0A@$0A@$0A@$0A@$0A@$0A@@ScopeEngine@@VCosmosInput@2@@ScopeEngine@@QEAA@AEBUInputFileInfo@1@PEAVIncrementalAllocator@1@_KHAEBUInputStreamParameters@1@@Z: 0.041 sec, 0 instrs
+		?WriteRuntimeStatsImpl@?$ParallelUnionAll@V?$FilterTransformer@V?$Extractor@VExtract_0_Data0@@V?$TextExtractPolicy@VExtract_0_Data0@@$00@ScopeEngine@@V?$TextInputStream@U?$TextInputStreamTraitsConst@$08$0A@$0A@$0A@$0A@$01$0A@$0A@$0A@$0A@$0A@$0A@$0A@@ScopeEngine@@VCosmosInput@2@@3@VExecutionStats@3@@ScopeEngine@@VExtract_0_Data0@@VProcess_1_Data0@@$02@ScopeEngine@@VProcess_1_Data0@@$00@ScopeEngine@@QEBAXAEAVTreeNode@2@@Z: 0.035 sec, 0 instrs
+		?WriteRuntimeStatsImpl@?$Outputter@V?$ParallelUnionAll@V?$FilterTransformer@V?$Extractor@VExtract_0_Data0@@V?$TextExtractPolicy@VExtract_0_Data0@@$00@ScopeEngine@@V?$TextInputStream@U?$TextInputStreamTraitsConst@$08$0A@$0A@$0A@$0A@$01$0A@$0A@$0A@$0A@$0A@$0A@$0A@@ScopeEngine@@VCosmosInput@2@@3@VExecutionStats@3@@ScopeEngine@@VExtract_0_Data0@@VProcess_1_Data0@@$02@ScopeEngine@@VProcess_1_Data0@@$00@ScopeEngine@@VProcess_1_Data0@@V?$TextOutputPolicy@VProcess_1_Data0@@$04@2@V?$TextOutputStream@U?$TextOutputStreamTraitsConst@$08$0A@$0A@$00$0A@$0A@$0A@$01$0A@$0A@@ScopeEngine@@VCosmosOutput@2@@2@$0A@VExecutionStats@2@VDummyStatsWriter@2@@ScopeEngine@@QEBAXAEAVTreeNode@2@@Z: 0.030 sec, 0 instrs
+		??$CreateBadConvertException@VAutoExpandBuffer@ScopeEngine@@@?$TextInputStream@U?$TextInputStreamTraitsConst@$08$0A@$0A@$0A@$0A@$01$0A@$0A@$0A@$0A@$0A@$0A@$0A@@ScopeEngine@@VCosmosInput@2@@ScopeEngine@@AEAA?AVTextConversionException@1@W4ConvertResult@1@AEBVAutoExpandBuffer@1@@Z: 0.030 sec, 0 instrs
+		?WriteRuntimeStatsImpl@?$FilterTransformer@V?$Extractor@VExtract_0_Data0@@V?$TextExtractPolicy@VExtract_0_Data0@@$00@ScopeEngine@@V?$TextInputStream@U?$TextInputStreamTraitsConst@$08$0A@$0A@$0A@$0A@$01$0A@$0A@$0A@$0A@$0A@$0A@$0A@@ScopeEngine@@VCosmosInput@2@@3@VExecutionStats@3@@ScopeEngine@@VExtract_0_Data0@@VProcess_1_Data0@@$02@ScopeEngine@@QEBAXAEAVTreeNode@2@@Z: 0.029 sec, 0 instrs
+		??0?$ParallelUnionAll@V?$FilterTransformer@V?$Extractor@VExtract_0_Data0@@V?$TextExtractPolicy@VExtract_0_Data0@@$00@ScopeEngine@@V?$TextInputStream@U?$TextInputStreamTraitsConst@$08$0A@$0A@$0A@$0A@$01$0A@$0A@$0A@$0A@$0A@$0A@$0A@@ScopeEngine@@VCosmosInput@2@@3@VExecutionStats@3@@ScopeEngine@@VExtract_0_Data0@@VProcess_1_Data0@@$02@ScopeEngine@@VProcess_1_Data0@@$00@ScopeEngine@@QEAA@PEAPEAV?$FilterTransformer@V?$Extractor@VExtract_0_Data0@@V?$TextExtractPolicy@VExtract_0_Data0@@$00@ScopeEngine@@V?$TextInputStream@U?$TextInputStreamTraitsConst@$08$0A@$0A@$0A@$0A@$01$0A@$0A@$0A@$0A@$0A@$0A@$0A@@ScopeEngine@@VCosmosInput@2@@3@VExecutionStats@3@@ScopeEngine@@VExtract_0_Data0@@VProcess_1_Data0@@$02@1@K_K1H@Z: 0.029 sec, 0 instrs
+		?AppendRuntimeStats@?$Extractor@VExtract_0_Data0@@V?$TextExtractPolicy@VExtract_0_Data0@@$00@ScopeEngine@@V?$TextInputStream@U?$TextInputStreamTraitsConst@$08$0A@$0A@$0A@$0A@$01$0A@$0A@$0A@$0A@$0A@$0A@$0A@@ScopeEngine@@VCosmosInput@2@@3@VExecutionStats@3@@ScopeEngine@@QEBAXAEAVTreeNode@2@@Z: 0.028 sec, 0 instrs
+		??$CreateBadConvertException@VFStringWithNull@ScopeEngine@@@?$TextInputStream@U?$TextInputStreamTraitsConst@$08$0A@$0A@$0A@$0A@$01$0A@$0A@$0A@$0A@$0A@$0A@$0A@@ScopeEngine@@VCosmosInput@2@@ScopeEngine@@AEAA?AVTextConversionException@1@W4ConvertResult@1@AEBVFStringWithNull@1@@Z: 0.028 sec, 0 instrs
+		?overflow@?$basic_stringbuf@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@MEAAHH@Z: 0.027 sec, 0 instrs
+		?StartRow@?$TextInputStream@U?$TextInputStreamTraitsConst@$08$0A@$0A@$0A@$0A@$01$0A@$0A@$0A@$0A@$0A@$0A@$0A@@ScopeEngine@@VCosmosInput@2@@ScopeEngine@@QEAA_NXZ: 0.026 sec, 0 instrs
+		??$_Stable_partition_unchecked1@PEAUInputFileInfo@ScopeEngine@@V<lambda_9cc5b082b08d9b568f2d660999e93318>@@_JU12@@std@@YA?AU?$pair@PEAUInputFileInfo@ScopeEngine@@_J@0@PEAUInputFileInfo@ScopeEngine@@0V<lambda_9cc5b082b08d9b568f2d660999e93318>@@_JAEAU?$_Temporary_buffer@UInputFileInfo@ScopeEngine@@@0@@Z: 0.026 sec, 0 instrs
+		?WriteRuntimeStats@?$ParallelLoader@V?$FilterTransformer@V?$Extractor@VExtract_0_Data0@@V?$TextExtractPolicy@VExtract_0_Data0@@$00@ScopeEngine@@V?$TextInputStream@U?$TextInputStreamTraitsConst@$08$0A@$0A@$0A@$0A@$01$0A@$0A@$0A@$0A@$0A@$0A@$0A@@ScopeEngine@@VCosmosInput@2@@3@VExecutionStats@3@@ScopeEngine@@VExtract_0_Data0@@VProcess_1_Data0@@$02@ScopeEngine@@VProcess_1_Data0@@@ScopeEngine@@QEBAXAEAVTreeNode@2@@Z: 0.025 sec, 0 instrs
+		?ReadString@?$TextInputStream@U?$TextInputStreamTraitsConst@$08$0A@$0A@$0A@$0A@$01$0A@$0A@$0A@$0A@$0A@$0A@$0A@@ScopeEngine@@VCosmosInput@2@@ScopeEngine@@AEAA?AW4TokenizerState@12@PEAVAutoExpandBuffer@2@@Z: 0.024 sec, 0 instrs
+		?WriteRuntimeStats@CosmosOutput@ScopeEngine@@QEBAXAEAVTreeNode@2@@Z: 0.023 sec, 0 instrs
+		??$?6U?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@PEBD@Z: 0.023 sec, 0 instrs
+		??$ConvertToUtf8@V?$TextEncodingConverter@$0BB@@ScopeEngine@@@?$TextEncodingReader@VCosmosInput@ScopeEngine@@$0A@$0A@@ScopeEngine@@AEAAXPEAV?$TextEncodingConverter@$0BB@@1@AEA_KAEA_N@Z: 0.022 sec, 0 instrs
+		??$ConvertToUtf8@V?$TextEncodingConverter@$00@ScopeEngine@@@?$TextEncodingReader@VCosmosInput@ScopeEngine@@$0A@$0A@@ScopeEngine@@AEAAXPEAV?$TextEncodingConverter@$00@1@AEA_KAEA_N@Z: 0.020 sec, 0 instrs
+		?WriteRuntimeStats@CosmosInput@ScopeEngine@@QEBAXAEAVTreeNode@2@@Z: 0.020 sec, 0 instrs
+		?str@?$basic_stringbuf@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@XZ: 0.019 sec, 0 instrs
+		??$ConvertBadValueHexText@VAutoExpandBuffer@ScopeEngine@@@?$TextInputStream@U?$TextInputStreamTraitsConst@$08$0A@$0A@$0A@$0A@$01$0A@$0A@$0A@$0A@$0A@$0A@$0A@@ScopeEngine@@VCosmosInput@2@@ScopeEngine@@AEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVAutoExpandBuffer@1@@Z: 0.018 sec, 0 instrs
+		??1?$TextEncodingReader@VCosmosInput@ScopeEngine@@$0A@$0A@@ScopeEngine@@QEAA@XZ: 0.018 sec, 0 instrs
+		??$_Insert_string@DU?$char_traits@D@std@@_K@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@QEBD_K@Z: 0.017 sec, 0 instrs
+		??$ConvertToUtf8@V?$TextEncodingConverter@$04@ScopeEngine@@@?$TextEncodingReader@VCosmosInput@ScopeEngine@@$0A@$0A@@ScopeEngine@@AEAAXPEAV?$TextEncodingConverter@$04@1@AEA_KAEA_N@Z: 0.017 sec, 0 instrs
+		??$ConvertBadValueHexText@VFStringWithNull@ScopeEngine@@@?$TextInputStream@U?$TextInputStreamTraitsConst@$08$0A@$0A@$0A@$0A@$01$0A@$0A@$0A@$0A@$0A@$0A@$0A@@ScopeEngine@@VCosmosInput@2@@ScopeEngine@@AEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVFStringWithNull@1@@Z: 0.017 sec, 0 instrs
+		??$ConvertToUtf8@V?$TextEncodingConverter@$05@ScopeEngine@@@?$TextEncodingReader@VCosmosInput@ScopeEngine@@$0A@$0A@@ScopeEngine@@AEAAXPEAV?$TextEncodingConverter@$05@1@AEA_KAEA_N@Z: 0.016 sec, 0 instrs
+		??$_Resize@V<lambda_a46a035c1a65e960d545ef2debaf34ef>@@@?$vector@_KV?$allocator@_K@std@@@std@@AEAAX_KV<lambda_a46a035c1a65e960d545ef2debaf34ef>@@@Z: 0.016 sec, 0 instrs
+		??$ConvertToUtf8@V?$TextEncodingConverter@$0N@@ScopeEngine@@@?$TextEncodingReader@VCosmosInput@ScopeEngine@@$0A@$0A@@ScopeEngine@@AEAAXPEAV?$TextEncodingConverter@$0N@@1@AEA_KAEA_N@Z: 0.016 sec, 0 instrs
+		?Deserialize@?$TextExtractPolicy@VExtract_0_Data0@@$00@ScopeEngine@@SA_NPEAV?$TextInputStream@U?$TextInputStreamTraitsConst@$08$0A@$0A@$0A@$0A@$01$0A@$0A@$0A@$0A@$0A@$0A@$0A@@ScopeEngine@@VCosmosInput@2@@2@AEAVExtract_0_Data0@@@Z: 0.016 sec, 0 instrs
+		??$ConvertToUtf8@V?$TextEncodingConverter@$07@ScopeEngine@@@?$TextEncodingReader@VCosmosInput@ScopeEngine@@$0A@$0A@@ScopeEngine@@AEAAXPEAV?$TextEncodingConverter@$07@1@AEA_KAEA_N@Z: 0.015 sec, 0 instrs
+		?ExpandPredefinedFormat@ScopeDateTime@ScopeEngine@@CAHPEADHAEBVScopeDateTimeFormatInfo@2@@Z: 0.015 sec, 0 instrs
+		??$ConvertBadValueText@VAutoExpandBuffer@ScopeEngine@@@?$TextInputStream@U?$TextInputStreamTraitsConst@$08$0A@$0A@$0A@$0A@$01$0A@$0A@$0A@$0A@$0A@$0A@$0A@@ScopeEngine@@VCosmosInput@2@@ScopeEngine@@AEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVAutoExpandBuffer@1@@Z: 0.015 sec, 0 instrs
+		?GetOrCreateFreeBatch@?$ConcurrentBatchQueue@VProcess_1_Data0@@@ScopeEngine@@QEAAXPEBDAEAV?$unique_ptr@V?$AutoRowArray@VProcess_1_Data0@@@ScopeEngine@@U?$default_delete@V?$AutoRowArray@VProcess_1_Data0@@@ScopeEngine@@@std@@@std@@@Z: 0.015 sec, 0 instrs
+		?underflow@?$basic_stringbuf@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@MEAAHXZ: 0.015 sec, 0 instrs
+RdrReadProc Caching Stats
+	Functions Cached: 20
+	Retrieved Count: 1421
+	Abandoned Retrieval Count: 0
+	Abandoned Caching Count: 0
+	Wasted Caching Attempts: 0
+	Functions Retrieved at Least Once: 20
+	Functions Cached and Never Retrieved: 0
+	Most Hits:
+		?_Get_data@?$_String_alloc@U?$_String_base_types@DV?$allocator@D@std@@@std@@@std@@QEAAAEAV?$_String_val@U?$_Simple_types@D@std@@@2@XZ: 314
+		?_Get_second@?$_Compressed_pair@V?$allocator@D@std@@V?$_String_val@U?$_Simple_types@D@std@@@2@$00@std@@QEAAAEAV?$_String_val@U?$_Simple_types@D@std@@@2@XZ: 314
+		?assign@?$char_traits@D@std@@SAXAEADAEBD@Z: 141
+		?_Get_second@?$_Compressed_pair@V?$allocator@V?$unique_ptr@V?$AutoRowArray@VProcess_1_Data0@@@ScopeEngine@@U?$default_delete@V?$AutoRowArray@VProcess_1_Data0@@@ScopeEngine@@@std@@@std@@@std@@V?$_Deque_val@U?$_Deque_simple_types@V?$unique_ptr@V?$AutoRowArray@VProcess_1_Data0@@@ScopeEngine@@U?$default_delete@V?$AutoRowArray@VProcess_1_Data0@@@ScopeEngine@@@std@@@std@@@std@@@2@$00@std@@QEAAAEAV?$_Deque_val@U?$_Deque_simple_types@V?$unique_ptr@V?$AutoRowArray@VProcess_1_Data0@@@ScopeEngine@@U?$default_delete@V?$AutoRowArray@VProcess_1_Data0@@@ScopeEngine@@@std@@@std@@@std@@@2@XZ: 133
+		?_Get_data@?$_Deque_alloc@U?$_Deque_base_types@V?$unique_ptr@V?$AutoRowArray@VProcess_1_Data0@@@ScopeEngine@@U?$default_delete@V?$AutoRowArray@VProcess_1_Data0@@@ScopeEngine@@@std@@@std@@V?$allocator@V?$unique_ptr@V?$AutoRowArray@VProcess_1_Data0@@@ScopeEngine@@U?$default_delete@V?$AutoRowArray@VProcess_1_Data0@@@ScopeEngine@@@std@@@std@@@2@@std@@@std@@QEAAAEAV?$_Deque_val@U?$_Deque_simple_types@V?$unique_ptr@V?$AutoRowArray@VProcess_1_Data0@@@ScopeEngine@@U?$default_delete@V?$AutoRowArray@VProcess_1_Data0@@@ScopeEngine@@@std@@@std@@@std@@@2@XZ: 133
+		?_Getal@?$_String_alloc@U?$_String_base_types@DV?$allocator@D@std@@@std@@@std@@QEAAAEAV?$allocator@D@2@XZ: 58
+		?_Get_first@?$_Compressed_pair@V?$allocator@D@std@@V?$_String_val@U?$_Simple_types@D@std@@@2@$00@std@@QEAAAEAV?$allocator@D@2@XZ: 58
+		?_Large_string_engaged@?$_String_val@U?$_Simple_types@D@std@@@std@@QEBA_NXZ: 47
+		?_Deallocate@std@@YAXPEAX_K1_K@Z: 34
+		?_Tidy_init@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAAXXZ: 33
+		?_Orphan_all@_Container_base0@std@@QEAAXXZ: 24
+	Least Hits:
+		?deallocate@?$allocator@D@std@@QEAAXQEAD_K@Z: 2
+		??0?$allocator@D@std@@QEAA@XZ: 3
+		??$addressof@PEAD@std@@YAPEAPEADAEAPEAD@Z: 3
+		??0?$_String_val@U?$_Simple_types@D@std@@@std@@QEAA@XZ: 19
+		??1?$_String_alloc@U?$_String_base_types@DV?$allocator@D@std@@@std@@@std@@QEAA@XZ: 21
+		??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@XZ: 21
+		??1?$_Compressed_pair@V?$allocator@D@std@@V?$_String_val@U?$_Simple_types@D@std@@@2@$00@std@@QEAA@XZ: 21
+		??1_Bxty@?$_String_val@U?$_Simple_types@D@std@@@std@@QEAA@XZ: 21
+		??1?$_String_val@U?$_Simple_types@D@std@@@std@@QEAA@XZ: 21
+		?_Orphan_all@_Container_base0@std@@QEAAXXZ: 24
+		?_Tidy_init@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAAXXZ: 33
+time(c:\program files (x86)\microsoft visual studio\2017\enterprise\SDK\ScopeCppSDK\vc15\VC\bin\c2.dll)=1.22924s < 3709402071181 - 3709414363542 > BB [D:\Sharing\Scope2015\Parameter\Parameter\bin\ClusterPlan\C5E5B767123EC252\Scope17_F05004B0FF064A26\__ScopeCodeGenEngine__.dll.cpp]
+
+#CPP stderr:
+
+*** Done with C++ compilation, time elapsed until this point: 00:00:05.2074318
+#LINK stdout:
+   Creating library __ScopeCodeGenEngine__.lib and object __ScopeCodeGenEngine__.exp
+Linker: LibDef Total time = 0.00155s PB: 24715264 [D:\Sharing\Scope2015\Parameter\Parameter\bin\ClusterPlan\C5E5B767123EC252\Scope17_F05004B0FF064A26\__ScopeCodeGenEngine__.dll] 
+Linker:   OptRef Total time = 0.00074s PB: 23961600 [D:\Sharing\Scope2015\Parameter\Parameter\bin\ClusterPlan\C5E5B767123EC252\Scope17_F05004B0FF064A26\__ScopeCodeGenEngine__.dll] 
+Linker:   OptIcf Total time = 0.00661s PB: 25153536 [D:\Sharing\Scope2015\Parameter\Parameter\bin\ClusterPlan\C5E5B767123EC252\Scope17_F05004B0FF064A26\__ScopeCodeGenEngine__.dll] 
+Linker: Pass 1: Interval #1, time = 0.12628s [D:\Sharing\Scope2015\Parameter\Parameter\bin\ClusterPlan\C5E5B767123EC252\Scope17_F05004B0FF064A26\__ScopeCodeGenEngine__.dll] 
+Linker:   Wait PDB close Total time = 0.02083s PB: 8568832 [D:\Sharing\Scope2015\Parameter\Parameter\bin\ClusterPlan\C5E5B767123EC252\Scope17_F05004B0FF064A26\__ScopeCodeGenEngine__.dll] 
+Linker:   Wait type merge Total time = 0.01205s PB: 8503296 [D:\Sharing\Scope2015\Parameter\Parameter\bin\ClusterPlan\C5E5B767123EC252\Scope17_F05004B0FF064A26\__ScopeCodeGenEngine__.dll] 
+Linker: Pass 2: Interval #2, time = 0.10069s [D:\Sharing\Scope2015\Parameter\Parameter\bin\ClusterPlan\C5E5B767123EC252\Scope17_F05004B0FF064A26\__ScopeCodeGenEngine__.dll] 
+Linker: Final Total time = 0.22701s < 3709415025646 - 3709417295701 > PB: 8921088 [D:\Sharing\Scope2015\Parameter\Parameter\bin\ClusterPlan\C5E5B767123EC252\Scope17_F05004B0FF064A26\__ScopeCodeGenEngine__.dll] 
+
+#LINK stderr:
+
+*** Done with C++ linking, time elapsed until this point: 00:00:05.4931565
+*** Exiting compilation, time elapsed until this point: 00:00:05.4932836

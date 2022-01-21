@@ -1,0 +1,47 @@
+REFERENCE @"c:\program files (x86)\microsoft visual studio\2017\enterprise\common7\ide\extensions\microsoft\scopestudio\2.7.0000.7\ScopeStudioDebugRuntime.dll";
+//Script GUID:336f13b9-d0e3-493f-9806-5759d35f2292
+//Used for tracking history
+
+       
+searchlog =
+    EXTRACT UserId : int,
+            Start : DateTime,
+            Region : string,
+            Query : string,
+            Duration : int,
+            Urls : string,
+            ClickedUrls : string
+    FROM @"/users/v-hozhao/SampleScope/SearchLog.txt"
+    USING DefaultTextExtractor();
+                                                                                           
+OUTPUT searchlog
+TO "/users/v-hozhao/SampleScope/SampleOutput.txt"
+USING DefaultTextOutputter(); 
+
+OUTPUT searchlog
+TO SSTREAM @"/users/v-hozhao/SampleScope/SampleOutput.ss";   //Generate ss file
+
+//MonthInput =
+//    EXTRACT BingAdsUserId:int,
+//           MsAlias:string,
+//           UcmUserId:int,
+//           NumofMonth:int,
+//           LastMonth:string,
+//           TotalUsage:int
+//    FROM @"/users/v-hozhao/Multiple/HealthCheckUCMUserUsage_MonthAgg.txt"
+//    USING DefaultTextExtractor(); 
+//
+//OUTPUT MonthInput
+//TO SSTREAM @"/users/v-hozhao/Multiple/HealthCheckUCMUserUsage_MonthAgg.ss";   //Generate ss file
+//
+//WeekInput =
+//    EXTRACT BingAdsUserId:int,
+//           MsAlias:string,
+//           UcmUserId:int,
+//           NumofWeek:int,
+//           TotalUsage:int
+//    FROM @"/users/v-hozhao/Multiple/HealthCheckUCMUserUsage_WeekAgg.txt"
+//    USING DefaultTextExtractor();
+//
+//OUTPUT WeekInput
+//TO SSTREAM @"/users/v-hozhao/Multiple/HealthCheckUCMUserUsage_WeekAgg.ss";   //Generate ss file

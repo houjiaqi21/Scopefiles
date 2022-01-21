@@ -1,0 +1,22 @@
+REFERENCE @"c:\program files (x86)\microsoft visual studio\2017\enterprise\common7\ide\extensions\microsoft\scopestudio\2.9.0000.1\ScopeStudioDebugRuntime.dll";
+//Script GUID:9aa644a9-0dbb-4e8a-abf8-10656e00b9eb
+//Used for tracking history
+
+
+searchlog =
+    EXTRACT UserId : int,
+            Start : DateTime,
+            Region : string,
+            Query : string,
+            Duration : int,
+            Urls : string,
+            ClickedUrls : string
+    FROM @"/users/v-hozhao/SampleScope/SearchLog.txt"
+    USING DefaultTextExtractor();
+                                                                                           
+OUTPUT searchlog
+TO "/users/v-hozhao/SampleScope/zhao/SampleOutput.txt"
+USING DefaultTextOutputter(); 
+
+OUTPUT searchlog
+TO SSTREAM @"/users/v-hozhao/SampleScope/SampleOutput.ss";  

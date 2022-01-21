@@ -1,0 +1,3 @@
+D:\Sharing\Scope2015\PythonUDO\PythonUDO\bin\Debug\Algebra.xml
+D:\Sharing\Scope2015\PythonUDO\PythonUDO\obj\Debug\PythonUDO.scopeproj.CoreCompileInputs.cache
+D:\Sharing\Scope2015\PythonUDO\PythonUDO\obj\Debug\Algebra.xml

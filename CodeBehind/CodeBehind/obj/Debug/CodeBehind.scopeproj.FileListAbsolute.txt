@@ -1,0 +1,4 @@
+D:\Sharing\Scope2015\CodeBehind\CodeBehind\bin\Debug\Algebra.xml
+D:\Sharing\Scope2015\CodeBehind\CodeBehind\obj\Debug\CodeBehind.scopeprojAssemblyReference.cache
+D:\Sharing\Scope2015\CodeBehind\CodeBehind\obj\Debug\CodeBehind.scopeproj.CoreCompileInputs.cache
+D:\Sharing\Scope2015\CodeBehind\CodeBehind\obj\Debug\Algebra.xml

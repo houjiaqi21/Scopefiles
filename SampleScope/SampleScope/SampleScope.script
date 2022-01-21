@@ -1,0 +1,28 @@
+﻿//Script GUID:427f5a5e-ea39-41fa-a0a8-b59ec1b1701b
+//Used for tracking history
+
+              
+#DECLARE inputFile_sample string = @"/users/v-hozhao/All_In_One/Input/SearchLog.txt";  //input
+
+#DECLARE outputFile_sample string = @"/users/v-hozhao/All_In_One/Output/Sample_Output.txt";    //output
+#DECLARE outputFile_sampleSS string = @"/users/v-hozhao/All_In_One/Output/Sample_Output.ss";   //output
+
+  
+
+searchlog =
+    EXTRACT UserId : int,
+            Start : DateTime,
+            Region : string,
+            Query : string,
+            Duration : int,
+            Urls : string,
+            ClickedUrls : string
+    FROM @inputFile_sample
+    USING DefaultTextExtractor();
+
+OUTPUT searchlog
+TO @outputFile_sample
+USING DefaultTextOutputter(); 
+
+OUTPUT searchlog
+TO SSTREAM @outputFile_sampleSS;   //Generate ss file

@@ -1,0 +1,58 @@
+﻿<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>3f063431-ff39-480a-a792-5af83e54c6be</ProjectGuid>
+    <OutputType>File</OutputType>
+    <AssemblyName>Algebra.xml</AssemblyName>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <Name>CrossClusterSample</Name>
+    <RootNamespace>CrossClusterSample</RootNamespace>
+    <VCSelectionInProjectProperty>&lt;Use Current VC in VC Selector&gt;</VCSelectionInProjectProperty>
+    <CosmosRuntimeVersion>Default</CosmosRuntimeVersion>
+    <ScopePath>%24(SCRIPT_DIR);%24(CLUSTER_ROOT);%24(SCOPE_DIR);%24(PROJECT_DIR)</ScopePath>
+    <InputStreamSearchPath>%24(PROJECT_DIR);%24(SCRIPT_DIR);%24(CLUSTER_ROOT)</InputStreamSearchPath>
+    <VertexDebugSolution>false</VertexDebugSolution>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>false</DebugSymbols>
+    <OutputPath>bin\Release\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Script Include="Scope1.script" />
+    <Script Include="Scope2.script" />
+    <Script Include="Scope3.script" />
+    <Script Include="Scope4.script" />
+    <Script Include="Scope5.script" />
+    <Script Include="Scope6.script" />
+    <Script Include="Scope7.script" />
+    <ScriptCode Include="Scope1.script.cs">
+      <DependentUpon>Scope1.script</DependentUpon>
+    </ScriptCode>
+    <ScriptCode Include="Scope2.script.cs">
+      <DependentUpon>Scope2.script</DependentUpon>
+    </ScriptCode>
+    <ScriptCode Include="Scope3.script.cs">
+      <DependentUpon>Scope3.script</DependentUpon>
+    </ScriptCode>
+    <ScriptCode Include="Scope4.script.cs">
+      <DependentUpon>Scope4.script</DependentUpon>
+    </ScriptCode>
+    <ScriptCode Include="Scope5.script.cs">
+      <DependentUpon>Scope5.script</DependentUpon>
+    </ScriptCode>
+    <ScriptCode Include="Scope6.script.cs">
+      <DependentUpon>Scope6.script</DependentUpon>
+    </ScriptCode>
+    <ScriptCode Include="Scope7.script.cs">
+      <DependentUpon>Scope7.script</DependentUpon>
+    </ScriptCode>
+  </ItemGroup>
+  <Import Project="$(AppData)\Microsoft\ScopeStudio\MsBuild\1.0\Scope.targets" />
+</Project>

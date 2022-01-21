@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScriptAndGraph GraphType="VertexCommands">
+  <Vertices count="3">
+    <Vertex index="1" command="-scopeVertex SV1_Extract  -i my/AdsLog.txt  -o D:\Scope2015\Diagram\Diagram\bin\Debug\2F923D2DC69D64A4\_Temp\Scope_87D9D81070D415E5\scopetmpfile._SV1_Extract_out0" />
+    <Vertex index="2" command="-scopeVertex SV2_Extract  -i my/SearchLog.txt  -o D:\Scope2015\Diagram\Diagram\bin\Debug\2F923D2DC69D64A4\_Temp\Scope_87D9D81070D415E5\scopetmpfile._SV2_Extract_out0" />
+    <Vertex index="3" command="-scopeVertex SV3_Combine  -i D:\Scope2015\Diagram\Diagram\bin\Debug\2F923D2DC69D64A4\_Temp\Scope_87D9D81070D415E5\scopetmpfile._SV1_Extract_out0 -ichannel SV1_Extract_out0 -i D:\Scope2015\Diagram\Diagram\bin\Debug\2F923D2DC69D64A4\_Temp\Scope_87D9D81070D415E5\scopetmpfile._SV2_Extract_out0 -ichannel SV2_Extract_out0  -o D:\Scope2015\Diagram\Diagram\bin\Debug\2F923D2DC69D64A4\_Temp\Scope_87D9D81070D415E5\scopetmpfile._SV3_Combine_out0" />
+    <Vertex command="-concatenate -i D:\Scope2015\Diagram\Diagram\bin\Debug\2F923D2DC69D64A4\_Temp\Scope_87D9D81070D415E5\scopetmpfile._SV3_Combine_out0 -o https://cosmos08.osdinfra.net/cosmos/sandbox/my/Impressions.txt" />
+  </Vertices>
+  <Outputs>
+    <Output path="https://cosmos08.osdinfra.net/cosmos/sandbox/my/Impressions.txt" isBinary="False" schema="AdId:int,IId:int,Impression:int,Query:string,DwellTime:int" />
+  </Outputs>
+  <graph JsonErrors="True" JobType="BatchScopeServerGC" vertexExecutable="scopehost.exe" BroadcastCopyThroughCommandLine="ScopeEngine.dll -scopeVertex SV_CopyThrough">
+    <process id="SV1_Extract" command="ScopeEngine.dll -scopeVertex SV1_Extract" nativeOnly="true" managedMemorySize="0" engineIOMemorySize="150994944" engineOperatorMemorySize="5767168000" DummyVertexOptimization="AllInputsEmptyImpliesOutputsEmpty|RunAtLeastOneVertex">
+      <input id="Extract_0[ALL]" streamSize="499500000000" cosmosStream="my/AdsLog.txt">
+        <cosmosStream cosmosPath="my/AdsLog.txt" />
+      </input>
+      <output id="SV1_Extract_out0" />
+    </process>
+    <process id="SV2_Extract" command="ScopeEngine.dll -scopeVertex SV2_Extract" nativeOnly="true" managedMemorySize="0" engineIOMemorySize="150994944" engineOperatorMemorySize="5767168000" DummyVertexOptimization="AllInputsEmptyImpliesOutputsEmpty|RunAtLeastOneVertex">
+      <input id="Extract_2[ALL]" streamSize="499500000000" cosmosStream="my/SearchLog.txt">
+        <cosmosStream cosmosPath="my/SearchLog.txt" />
+      </input>
+      <output id="SV2_Extract_out0" />
+    </process>
+    <process id="SV3_Combine" command="ScopeEngine.dll -scopeVertex SV3_Combine" managedMemorySize="1388314624" engineIOMemorySize="1681916144" engineOperatorMemorySize="5343543428" DummyVertexOptimization="AllInputsEmptyImpliesOutputsEmpty|RunAtLeastOneVertex">
+      <input id="SV1_Extract_out0" />
+      <input id="SV2_Extract_out0" />
+      <output id="SV3_Combine_out0" cosmosStream="https://cosmos08.osdinfra.net/cosmos/sandbox/my/Impressions.txt" />
+    </process>
+  </graph>
+  <Scopescript>REFERENCE @"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\System.Core.dll";
+//Script GUID:2c0dc1c5-82a8-4840-ab5b-ff8d779577b9
+//Used for tracking history
+
+adslog =
+    EXTRACT AdId : int,
+            IId : int,
+            Impression : int,
+            IsClicked : int
+    FROM @"/my/AdsLog.txt"
+    USING DefaultTextExtractor();
+
+searchlog =
+    EXTRACT IId : int,
+            UId : int,
+            Start : DateTime,
+            Market : string,
+            Query : string,
+            DwellTime : int,
+            Results : string,
+            ClickedUrls : string
+    FROM @"/my/SearchLog.txt"
+    USING DefaultTextExtractor();
+
+SELECT TOP 100 adslog.AdId AS AdId,
+               adslog.IId AS IId,
+               adslog.Impression AS Impression,
+               searchlog.Query AS Query,
+               searchlog.DwellTime AS DwellTime
+FROM adslog
+     INNER JOIN
+         searchlog
+     ON adslog.IId == searchlog.IId
+WHERE (searchlog.DwellTime &gt;= 2 * 60 AND searchlog.DwellTime &lt;= 5 * 60) OR (searchlog.Market == "en-gb")
+ORDER BY DwellTime DESC;
+
+PROCESS
+PRODUCE *
+USING ImpressionProcessor;
+
+OUTPUT
+TO @"/my/Impressions.txt";
+
+
+
+//debugstream =
+//    EXTRACT VertexName : string,
+//            Version : int?,
+//            VertexGuid : string,
+//            Truncated : bool?,
+//            GroupId : string,
+//            ThreadId : string?,
+//            OccurrenceTime : DateTime?,
+//            Content : string?
+//    FROM "/my/DebugStream.txt"
+//    USING DefaultDebugStreamExtractor;
+//OUTPUT
+//TO SSTREAM "my/mydebugstream.ss"; 
+#CS
+using Microsoft.SCOPE.Types;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Text;
+using ScopeRuntime;
+using ScopeRuntime.Diagnostics;
+
+
+/// &lt;summary&gt;
+/// 
+/// &lt;/summary&gt;
+public class ImpressionProcessor : Processor
+{
+    /// &lt;summary&gt;
+    /// 
+    /// &lt;/summary&gt;
+    /// &lt;param name="columns"&gt;&lt;/param&gt;
+    /// &lt;param name="args"&gt;&lt;/param&gt;
+    /// &lt;param name="input"&gt;&lt;/param&gt;
+    /// &lt;returns&gt;&lt;/returns&gt;
+    public override Schema Produces(string[] columns, string[] args, Schema input)
+    {
+        return input.Clone();
+    }
+    /// &lt;summary&gt;
+    ///
+    /// &lt;/summary&gt;
+    /// &lt;param name="input"&gt;&lt;/param&gt;
+    /// &lt;param name="output"&gt;&lt;/param&gt;
+    /// &lt;param name="args"&gt;&lt;/param&gt;
+    /// &lt;returns&gt;&lt;/returns&gt;    
+    public override IEnumerable&lt;Row&gt; Process(RowSet input, Row output, string[] args)
+    {
+
+        foreach (Row row in input.Rows)
+        {
+            row.CopyTo(output);
+            output[2].Set(10000000 / (row[2].Integer));
+            if (row[2].Integer &lt; 10000000)
+            {
+                DebugStream.WriteLine(String.Format("Impression = {0}", row[2].Integer));
+            }
+            //output[2].Set(10000000 / (row[2].Integer / 10000000));
+            yield return output;
+        }
+    }
+}
+
+#ENDCS
+
+// Generated by ScopeStudio, version 2.5.1000.2
+</Scopescript>
+  <Optimization succeeded="true" time="00:00:00.2511573" latency="4024768.56467248" totalCost="6025091.03827392" />
+  <ScopeVertexAnnotations />
+</ScriptAndGraph>

@@ -1,0 +1,92 @@
+﻿{
+"CompilerPlanStart":"11\/11\/2019 11:35:25 AM"
+,
+"Settings":"-c++ -pdb Full -On ReflectStageToScript -On EnableScopeDml -On EnableSStreamContractV4 -On UseAadAuthentication -ClientVersion 10.2.2.0"
+,
+"planNodes":
+[
+{
+"statementText":"REFERENCE @\"C:\\Program Files (x86)\\Reference Assemblies\\Microsoft\\Framework\\.NETFramework\\v4.5.2\\Sys"
+,
+"NodeName":"ReferenceStatement"
+}
+,
+{
+"statementText":"    EXTRACT AdId : int,            IId : int,            Impression : int,            IsClic"
+,
+"NodeName":"QueryStatement"
+}
+,
+{
+"statementText":"    EXTRACT IId : int,            UId : int,            Start : DateTime,            Market "
+,
+"NodeName":"QueryStatement"
+}
+,
+{
+"statementText":"SELECT TOP 100 adslog.AdId AS AdId,               adslog.IId AS IId,               adslog.Im"
+,
+"NodeName":"QueryStatement"
+}
+,
+{
+"statementText":"PROCESSPRODUCE *USING ImpressionProcessor"
+,
+"NodeName":"QueryStatement"
+}
+,
+{
+"statementText":"OUTPUTTO @\"\/my\/Impressions.txt\""
+,
+"NodeName":"OutputStatement"
+}
+]
+,
+"CompilerPlanEnd":"11\/11\/2019 11:35:25 AM"
+}
+{
+"CompilerPlanStart":"11\/11\/2019 11:43:45 AM"
+,
+"Settings":"-c++ -pdb Full -On ReflectStageToScript -Off Sirius -Off PolarisScaleUp -On EnableScopeDml -On EnableSStreamContractV4 -On UseAadAuthentication -buckets 1 -ClientVersion 10.2.2.0"
+,
+"planNodes":
+[
+{
+"statementText":"REFERENCE @\"C:\\Program Files (x86)\\Reference Assemblies\\Microsoft\\Framework\\.NETFramework\\v4.5.2\\Sys"
+,
+"NodeName":"ReferenceStatement"
+}
+,
+{
+"statementText":"    EXTRACT AdId : int,            IId : int,            Impression : int,            IsClic"
+,
+"NodeName":"QueryStatement"
+}
+,
+{
+"statementText":"    EXTRACT IId : int,            UId : int,            Start : DateTime,            Market "
+,
+"NodeName":"QueryStatement"
+}
+,
+{
+"statementText":"SELECT TOP 100 adslog.AdId AS AdId,               adslog.IId AS IId,               adslog.Im"
+,
+"NodeName":"QueryStatement"
+}
+,
+{
+"statementText":"PROCESSPRODUCE *USING ImpressionProcessor"
+,
+"NodeName":"QueryStatement"
+}
+,
+{
+"statementText":"OUTPUTTO @\"\/my\/Impressions.txt\""
+,
+"NodeName":"OutputStatement"
+}
+]
+,
+"CompilerPlanEnd":"11\/11\/2019 11:43:45 AM"
+}

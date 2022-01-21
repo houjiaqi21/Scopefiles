@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScopeScript>
+  <preScript><![CDATA[
+USING Microsoft.Analytics.Interfaces;
+USING System;
+USING System.Collections.Generic;
+USING System.Globalization;
+USING System.Text;
+USING System.Reflection;
+USING System.IO;
+USING System.Text.RegularExpressions;
+USING System.Threading;
+USING System.Runtime.Serialization;
+USING System.Linq;
+USING Microsoft.SCOPE.Types;
+USING ScopeRuntime;
+USING Privacy;
+
+REFERENCE @"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\System.Core.dll";
+REFERENCE @"/users/v-hozhao/ClusterReference/MyHelper.dll";
+RESOURCE @"Scope1.py";
+REFERENCE @"Microsoft.DataMap.CodeAnnotation.Cosmos.dll";
+REFERENCE @"Microsoft.PrivacyServices.PrivacyAnnotation.dll";
+]]></preScript>
+  <ScopeVertices>
+    <ScopeVertex id="SV1_Extract_Split" ScopeScriptEndPoint="true">
+      <input id="GetSStream_0" />
+      <output id="SV1_Extract_Split_out0" schema="Column1:string,Column2:string,Column3:string" scopeLabel="" />
+      <output id="SV1_Extract_Split_out1" schema="Column1:string,Column2:string,Column3:string" scopeLabel="" /><![CDATA[_var_100001_GET_SSTREAM = SSTREAM @"D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\users\v-hozhao\All_In_One\Input\Input.ss";
+]]></ScopeVertex>
+    <ScopeVertex id="SV2_Aggregate" ScopeScriptEndPoint="false">
+      <input id="SV1_Extract_Split_out1" />
+      <output id="SV2_Aggregate_out0" schema="Column1:string,Column2:string,Column3:string" /><![CDATA[]]></ScopeVertex>
+    <ScopeVertex id="Concatenate_5" ScopeScriptEndPoint="true">
+      <input id="SV1_Extract_Split_out0" />
+      <input id="SV2_Aggregate_out0" /><![CDATA[OUTPUT _var_100001_GET_SSTREAM TO SSTREAM @"https://cosmos09.osdinfra.net/cosmos/cosmosAdmin/users/v-hozhao/All_In_One/Output/DataMap_Output.ss";
+]]></ScopeVertex>
+    <ScopeVertex id="SV3_Extract" ScopeScriptEndPoint="true">
+      <input id="Extract_4" />
+      <output id="SV3_Extract_out0" schema="BingAdsUserId:int,MsAlias:string,UcmUserId:int" scopeLabel="_var_100004_EXTRACT" /><![CDATA[_var_100004_EXTRACT = EXTRACT BingAdsUserId:int,MsAlias:string,UcmUserId:int FROM @"users/v-hozhao/All_In_One/Input/UCMUser_20160711.txt" USING ScopeRuntime.DefaultTextExtractor();
+]]></ScopeVertex>
+    <ScopeVertex id="SV4_Extract_Split" ScopeScriptEndPoint="true">
+      <input id="Extract_16" />
+      <output id="SV4_Extract_Split_out0" schema="UserId:int,Start:DateTime,Region:string,Query:string,Duration:int,Urls:string,ClickedUrls:string" />
+      <output id="SV4_Extract_Split_out1" schema="UserId:int,Start:DateTime,Region:string,Query:string,Duration:int,Urls:string,ClickedUrls:string" />
+      <output id="SV4_Extract_Split_out2" schema="UserId:int,Start:DateTime,Region:string,Query:string,Duration:int,Urls:string,ClickedUrls:string" />
+      <output id="SV4_Extract_Split_out3" schema="UserId:int,Start:DateTime,Region:string,Query:string,Duration:int,Urls:string,ClickedUrls:string" />
+      <output id="SV4_Extract_Split_out4" schema="UserId:int,Start:DateTime,Region:string,Query:string,Duration:int,Urls:string,ClickedUrls:string" /><![CDATA[_var_100005_EXTRACT = EXTRACT UserId:int,Start:DateTime,Region:string,Query:string,Duration:int,Urls:string,ClickedUrls:string FROM @"users/v-hozhao/All_In_One/Input/SearchLog.txt" USING ScopeRuntime.DefaultTextExtractor();
+]]></ScopeVertex>
+    <ScopeVertex id="SV5_Aggregate" ScopeScriptEndPoint="false">
+      <input id="SV4_Extract_Split_out1" />
+      <output id="SV5_Aggregate_out0" schema="UserId:int,Start:DateTime,Region:string,Query:string,Duration:int,Urls:string,ClickedUrls:string" /><![CDATA[]]></ScopeVertex>
+    <ScopeVertex id="Concatenate_28" ScopeScriptEndPoint="false">
+      <input id="SV4_Extract_Split_out0" />
+      <input id="SV5_Aggregate_out0" /><![CDATA[]]></ScopeVertex>
+    <ScopeVertex id="SV6_Extract" ScopeScriptEndPoint="true">
+      <input id="Extract_20" />
+      <output id="SV6_Extract_out0" schema="Region:string,TotalDuration:int" scopeLabel="" /><![CDATA[_var_100006_EXTRACT = EXTRACT Region:string,Duration:int FROM @"users/v-hozhao/All_In_One/Input/SearchLog.txt" USING ScopeRuntime.DefaultTextExtractor();
+_var_100007_LSORT = SELECT Region, Duration FROM _var_100006_EXTRACT ORDER BY Region;
+_var_100008_TRANSFORM = SELECT Region AS Region, Duration AS TotalDuration FROM _var_100007_LSORT;
+_var_100009_GROUPBY = SELECT FIRST(Region) AS Region, TotalDuration() AS TotalDuration FROM _var_100008_TRANSFORM GROUP BY Region;
+OUTPUT _var_100009_GROUPBY TO @"https://cosmos09.osdinfra.net/cosmos/cosmosAdmin/users/v-hozhao/All_In_One/Output/CodeBehind_Aggregatesoutput.txt" USING ScopeRuntime.DefaultTextOutputter();
+]]></ScopeVertex>
+    <ScopeVertex id="SV7_Extract" ScopeScriptEndPoint="true">
+      <input id="Extract_25" />
+      <output id="SV7_Extract_out0" schema="IId:int,Start:DateTime,Market:string,Query:string,DwellTime:int,Results:string,ClickedUrls:string" scopeLabel="" /><![CDATA[_var_100011_EXTRACT = EXTRACT IId:int,Start:DateTime,Market:string,Query:string,DwellTime:int,Results:string,ClickedUrls:string FROM @"users/v-hozhao/All_In_One/Input/SearchLog.txt" USING MyTsvExtractor();
+OUTPUT _var_100011_EXTRACT TO @"https://cosmos09.osdinfra.net/cosmos/cosmosAdmin/users/v-hozhao/All_In_One/Output/DebugStream_Output.txt" USING ScopeRuntime.DefaultTextOutputter();
+]]></ScopeVertex>
+    <ScopeVertex id="SV8_Extract" ScopeScriptEndPoint="true">
+      <input id="Extract_27" />
+      <output id="SV8_Extract_out0" schema="SepalLength_Mean:double,SepalWidth_Mean:double,PetalLength_Mean:double,PetalWidth_Mean:double,Name:string,Count:int" scopeLabel="" /><![CDATA[_var_100013_EXTRACT = EXTRACT SepalLength:double,SepalWidth:double,PetalLength:double,PetalWidth:double,Name:string FROM @"users/v-hozhao/All_In_One/Input/Python_iris.csv" USING ScopeRuntime.DefaultTextExtractor();
+_var_100014_LSORT = SELECT SepalLength, SepalWidth, PetalLength, PetalWidth, Name FROM _var_100013_EXTRACT ORDER BY Name;
+_var_100015_REDUCE = REDUCE _var_100014_LSORT ON Name PRODUCE SepalLength_Mean, SepalWidth_Mean, PetalLength_Mean, PetalWidth_Mean, Name, Count USING Scope.SystemOperators.Reducers.Python();
+OUTPUT _var_100015_REDUCE TO @"https://cosmos09.osdinfra.net/cosmos/cosmosAdmin/users/v-hozhao/All_In_One/Output/Python_ClusterRun_DataFrame_Reducer_Demo_Output.txt" USING ScopeRuntime.DefaultTextOutputter();
+]]></ScopeVertex>
+    <ScopeVertex id="SV9_Extract" ScopeScriptEndPoint="true">
+      <input id="Extract_31" />
+      <output id="SV9_Extract_out0" schema="UserId:string,Start:string,Region:string,Query:string,Duration:string,Urls:string,ClickedUrls:string" scopeLabel="" /><![CDATA[_var_100017_EXTRACT = EXTRACT UserId:string,Start:string,Region:string,Query:string,Duration:string,Urls:string,ClickedUrls:string FROM @"users/v-hozhao/All_In_One/Input/Python_SearchLog.tsv" USING Scope.SystemOperators.Extractors.Python();
+OUTPUT _var_100017_EXTRACT TO @"https://cosmos09.osdinfra.net/cosmos/cosmosAdmin/users/v-hozhao/All_In_One/Output/Python_ClusterRun_Extractor_Demo_Output.txt" USING ScopeRuntime.DefaultTextOutputter();
+]]></ScopeVertex>
+    <ScopeVertex id="SV10_Extract" ScopeScriptEndPoint="true">
+      <input id="Extract_33" />
+      <output id="SV10_Extract_out0" schema="Id:int,Start:DateTime,Market:string,Query:string,DwellTime:int,Results:string,ClickedUrls:string" scopeLabel="" /><![CDATA[_var_100019_EXTRACT = EXTRACT Id:int,Start:DateTime,Market:string,Query:string,DwellTime:int,Results:string,ClickedUrls:string FROM @"D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\users\v-hozhao\All_In_One\Input\users/v-hozhao/All_In_One/Input/SearchLog.txt" USING ScopeRuntime.DefaultTextExtractor();
+OUTPUT _var_100019_EXTRACT TO @"https://cosmos09.osdinfra.net/cosmos/cosmosAdmin/users/v-hozhao/All_In_One/Output/Sample_ImportOutput.tsv" USING ScopeRuntime.DefaultTextOutputter();
+]]></ScopeVertex>
+    <ScopeVertex id="SV11_Extract" ScopeScriptEndPoint="true">
+      <input id="Extract_38" />
+      <output id="SV11_Extract_out0" schema="Start:DateTime,Market:string,DwellTimeInMinutes:double" scopeLabel="" /><![CDATA[_var_100021_EXTRACT = EXTRACT Start:DateTime,Market:string,DwellTime:int FROM @"users/v-hozhao/SearchLog.txt" USING ScopeRuntime.DefaultTextExtractor();
+_var_100022_TRANSFORM = SELECT MyHelper.ClassUDO.SecondsToMinutes(DwellTime) AS DwellTimeInMinutes, Start AS Start, Market AS Market FROM _var_100021_EXTRACT;
+_var_100023_TRANSFORM = SELECT Start AS Start, Market AS Market, DwellTimeInMinutes AS DwellTimeInMinutes FROM _var_100022_TRANSFORM;
+OUTPUT _var_100023_TRANSFORM TO @"https://cosmos09.osdinfra.net/cosmos/cosmosAdmin/users/v-hozhao/ClusterReference/SearchlogDwellTimeInMinutes.txt" USING ScopeRuntime.DefaultTextOutputter();
+]]></ScopeVertex>
+    <ScopeVertex id="SV12_Extract_Combine" ScopeScriptEndPoint="true">
+      <input id="GetSStream_5" />
+      <input id="GetSStream_6" />
+      <output id="SV12_Extract_Combine_out0" schema="NumofMonth:int,LastMonth:string,TotalUsage:int,NumofWeek:int,BingAdsUserId1:int,MsAlias2:string,UcmUserId3:int" scopeLabel="_var_100029_TRANSFORM" /><![CDATA[_var_100025_GET_SSTREAM = SSTREAM @"D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\users\v-hozhao\All_In_One\Input\HealthCheckUCMUserUsage_MonthAgg.ss";
+_var_100026_GET_SSTREAM = SSTREAM @"D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\users\v-hozhao\All_In_One\Input\HealthCheckUCMUserUsage_WeekAgg.ss";
+_var_100027_TRANSFORM = SELECT NumofWeek AS NumofWeek, BingAdsUserId AS BingAdsUserId1, MsAlias AS MsAlias2, UcmUserId AS UcmUserId3 FROM _var_100026_GET_SSTREAM;
+_var_100028_INTERNAL_COMBINE = SELECT BingAdsUserId, MsAlias, UcmUserId, NumofMonth, LastMonth, TotalUsage, NumofWeek FROM _var_100025_GET_SSTREAM AS AliasLeft INNER JOIN _var_100027_TRANSFORM AS AliasRight ON AliasLeft.BingAdsUserId == AliasRight.BingAdsUserId1 AND AliasLeft.MsAlias == AliasRight.MsAlias2 AND AliasLeft.UcmUserId == AliasRight.UcmUserId3;
+_var_100029_TRANSFORM = SELECT NumofMonth AS NumofMonth, LastMonth AS LastMonth, TotalUsage AS TotalUsage, NumofWeek AS NumofWeek, BingAdsUserId AS BingAdsUserId1, MsAlias AS MsAlias2, UcmUserId AS UcmUserId3 FROM _var_100028_INTERNAL_COMBINE;
+]]></ScopeVertex>
+    <ScopeVertex id="SV13_Combine_Split" ScopeScriptEndPoint="true">
+      <input id="SV3_Extract_out0" />
+      <input id="SV12_Extract_Combine_out0" />
+      <output id="SV13_Combine_Split_out0" schema="BingAdsUserId:int,MsAlias:string,UcmUserId:int,FreqSegment:string,NumofMonth:int,LastMonth:string,NumofWeek:int,TotalUsage:int" scopeLabel="" />
+      <output id="SV13_Combine_Split_out1" schema="BingAdsUserId:int,MsAlias:string,UcmUserId:int,FreqSegment:string,NumofMonth:int,LastMonth:string,NumofWeek:int,TotalUsage:int" scopeLabel="" /><![CDATA[_var_100030_INTERNAL_COMBINE = SELECT BingAdsUserId, MsAlias, UcmUserId, NumofMonth, LastMonth, TotalUsage, NumofWeek FROM _var_100004_EXTRACT AS AliasLeft LEFT OUTER JOIN _var_100029_TRANSFORM AS AliasRight ON AliasLeft.BingAdsUserId == AliasRight.BingAdsUserId1 AND AliasLeft.MsAlias == AliasRight.MsAlias2 AND AliasLeft.UcmUserId == AliasRight.UcmUserId3;
+_var_100031_TRANSFORM = SELECT NumofMonth ?? -1 AS NumofMonth, LastMonth ?? "Non" AS LastMonth, NumofWeek ?? -1 AS NumofWeek, TotalUsage ?? -1 AS TotalUsage, BingAdsUserId AS BingAdsUserId, MsAlias AS MsAlias, UcmUserId AS UcmUserId FROM _var_100030_INTERNAL_COMBINE;
+_var_100032_TRANSFORM = SELECT BingAdsUserId AS BingAdsUserId, MsAlias AS MsAlias, UcmUserId AS UcmUserId, NumofMonth AS NumofMonth, LastMonth AS LastMonth, NumofWeek AS NumofWeek, TotalUsage AS TotalUsage FROM _var_100031_TRANSFORM;
+_var_100033_PROCESS = PROCESS _var_100032_TRANSFORM PRODUCE BingAdsUserId, MsAlias, UcmUserId, FreqSegment, NumofMonth, LastMonth, NumofWeek, TotalUsage USING FreqProcessor(@"Jul", @"5", @"2");
+]]></ScopeVertex>
+    <ScopeVertex id="SV14_Aggregate" ScopeScriptEndPoint="false">
+      <input id="SV13_Combine_Split_out1" />
+      <output id="SV14_Aggregate_out0" schema="BingAdsUserId:int,MsAlias:string,UcmUserId:int,FreqSegment:string,NumofMonth:int,LastMonth:string,NumofWeek:int,TotalUsage:int" /><![CDATA[]]></ScopeVertex>
+    <ScopeVertex id="Concatenate_19" ScopeScriptEndPoint="true">
+      <input id="SV13_Combine_Split_out0" />
+      <input id="SV14_Aggregate_out0" /><![CDATA[OUTPUT _var_100033_PROCESS TO SSTREAM @"https://cosmos09.osdinfra.net/cosmos/cosmosAdmin/users/v-hozhao/All_In_One/Output/MultipleInputs_HealthCheckUCMUserUsage_Freq.ss";
+]]></ScopeVertex>
+  </ScopeVertices>
+  <postScript><![CDATA[#CS
+
+public class FreqProcessor : Processor
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="columns"></param>
+    /// <param name="args"></param>
+    /// <param name="input"></param>
+    /// <returns></returns>
+    public override Schema Produces(string[] columns, string[] args, Schema input)
+    {
+        return new Schema("BingAdsUserId:int, MsAlias:string,UcmUserId:int,FreqSegment:string,NumofMonth:int,LastMonth:string,NumofWeek:int,TotalUsage:int");
+    }
+    /// <summary>
+    ///
+    /// </summary>
+    /// <param name="input"></param>
+    /// <param name="output"></param>
+    /// <param name="args"></param>
+    /// <returns></returns>    
+    public override IEnumerable<Row> Process(RowSet input, Row output, string[] args)
+    {
+        string mm = args[0];
+        int w = Convert.ToInt32(args[1]); 
+        int m = Convert.ToInt32(args[2]);
+
+        int BingAdsUserId = 0;
+        string MsAlias = string.Empty;
+        int UcmUserId = 0;
+        string FreqSegment = string.Empty;
+        int NumofMonth = 0;
+        string LastMonth = string.Empty;
+        int NumofWeek = 0;
+        int TotalUsage = 0;
+        foreach (Row row in input.Rows)
+        {
+            BingAdsUserId = row["BingAdsUserId"].Integer;
+            MsAlias = row["MsAlias"].String;
+            UcmUserId = row["UcmUserId"].Integer;
+            NumofMonth = row["NumofMonth"].Integer;
+            LastMonth = row["LastMonth"].String;
+            NumofWeek = row["NumofWeek"].Integer;
+            TotalUsage = row["TotalUsage"].Integer;
+            if (NumofWeek == w)
+            {
+                FreqSegment = @"Fans User";
+            }
+            else if (NumofMonth == m)
+            {
+                FreqSegment = @"Stable User";
+            }
+            else if (NumofMonth == 1 && LastMonth == mm)
+            {
+                FreqSegment = @"New User";
+            }
+            else if (NumofWeek == -1 && NumofMonth == -1 && LastMonth == "Non")
+            {
+                FreqSegment = @"Non User";
+            }
+            else FreqSegment = @"Swing User";
+            output["BingAdsUserId"].Set(BingAdsUserId);
+            output["MsAlias"].Set(MsAlias);
+            output["UcmUserId"].Set(UcmUserId);
+            output["NumofMonth"].Set(NumofMonth);
+            output["LastMonth"].Set(LastMonth);
+            output["NumofWeek"].Set(NumofWeek);
+            output["TotalUsage"].Set(TotalUsage);
+            output["FreqSegment"].Set(FreqSegment);
+            yield return output;
+        }
+    }
+}
+public class MySum_Integer : Aggregate1<int, int>
+{
+    int sum = 0;
+
+    public override void Initialize()
+    {
+        sum = 0;
+    }
+
+    public override void Add(int y)
+    {
+        sum += y;
+    }
+
+    public override int Finalize()
+    {
+        return sum;
+    }
+}
+public class MyTsvExtractor : Extractor
+{
+    public override Schema Produces(string[] requested_columns, string[] args)
+    {
+        return new Schema(requested_columns);
+    }
+
+    public override IEnumerable<Row> Extract(StreamReader reader, Row output_row, string[] args)
+    {
+        char delimiter = '\t';
+        string line;
+
+        int debug_count = 0;
+
+        while ((line = reader.ReadLine()) != null)
+        {
+            var tokens = line.Split(delimiter);
+            for (int i = 0; i < tokens.Length; ++i)
+            {
+                output_row[i].UnsafeSet(tokens[i]);
+            }
+
+            string debug_msg = string.Format("Line {0}: {1}", debug_count, line.Trim());
+            ScopeRuntime.Diagnostics.DebugStream.WriteLine(debug_msg);
+
+            debug_count++;
+
+            yield return output_row;
+        }
+    }
+}
+#ENDCS]]></postScript>
+</ScopeScript>

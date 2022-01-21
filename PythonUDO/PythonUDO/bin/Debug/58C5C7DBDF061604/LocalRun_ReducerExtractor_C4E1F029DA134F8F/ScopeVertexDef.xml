@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScopeVertices helperAssembly="__ScopeCodeGen__.dll" signatureVersion="1">
+  <ScopeVertex id="SV1_Extract" cppReady="true">
+    <EstimatedLimitMemory processMemory="8226786392" managedMemory="0" adapterMemory="1283457024" engineMemory="6419041368" engineIOMemory="1698693456" engineOperatorMemory="4720347912" minEngineOperatorMemory="4720347912" />
+    <EstimatedOptimalMemory processMemory="6442450944" managedMemory="0" adapterMemory="1283457024" engineMemory="4634705920" engineIOMemory="150994944" engineOperatorMemory="4483710976" minEngineOperatorMemory="2075314952" />
+    <operator id="Extract_0" uid="1" line="12" assemblyName="ScopeRuntime.exe" className="ScopeRuntime.DefaultTextExtractor" signature="12643686177737730984!0!Strict">
+      <input id="Extract_0" uid="1" schema="SepalLength:double,SepalWidth:double,PetalLength:double,PetalWidth:double,Name:string" inputIndex="0" numberOfInputs="ALL" />
+      <output id="Extract_0_Data0" uid="2" schema="SepalLength:double,SepalWidth:double,PetalLength:double,PetalWidth:double,Name:string" />
+      <ReflectedScopeScript><![CDATA[_var_100001_EXTRACT = EXTRACT SepalLength:double,SepalWidth:double,PetalLength:double,PetalWidth:double,Name:string FROM @"users/v-hozhao/All_In_One/Input/Python_iris.csv" USING ScopeRuntime.DefaultTextExtractor();
+]]></ReflectedScopeScript>
+    </operator>
+    <operator id="Process_1" uid="3" line="12" assemblyName="__ScopeCodeGen__.dll" className="ScopeSorter_1" args="-keys Name" signature="12643686177737730984!0!Strict">
+      <input id="Extract_0_Data0" uid="2" schema="SepalLength:double,SepalWidth:double,PetalLength:double,PetalWidth:double,Name:string" />
+      <output id="Process_1_Data0" uid="4" schema="SepalLength:double,SepalWidth:double,PetalLength:double,PetalWidth:double,Name:string" />
+      <ReflectedScopeScript><![CDATA[_var_100002_LSORT = SELECT SepalLength, SepalWidth, PetalLength, PetalWidth, Name FROM _var_100001_EXTRACT ORDER BY Name;
+]]></ReflectedScopeScript>
+    </operator>
+    <operator id="Process_2" uid="5" line="21" assemblyName="" className="Scope.SystemOperators.Reducers.Python" signature="1598244648836399937!1!Strict">
+      <input id="Process_1_Data0" uid="4" schema="SepalLength:double,SepalWidth:double,PetalLength:double,PetalWidth:double,Name:string" />
+      <output id="Process_2_Data0" uid="6" schema="SepalLength_Mean:double,SepalWidth_Mean:double,PetalLength_Mean:double,PetalWidth_Mean:double,Name:string,Count:int" />
+      <ReflectedScopeScript><![CDATA[_var_100003_REDUCE = REDUCE _var_100002_LSORT ON Name PRODUCE SepalLength_Mean, SepalWidth_Mean, PetalLength_Mean, PetalWidth_Mean, Name, Count USING Scope.SystemOperators.Reducers.Python();
+]]></ReflectedScopeScript>
+    </operator>
+    <operator id="Output_3" uid="7" line="30" assemblyName="ScopeRuntime.exe" className="ScopeRuntime.DefaultTextOutputter" signature="10938675105916666116!2!Strict">
+      <input id="Process_2_Data0" uid="6" schema="SepalLength_Mean:double,SepalWidth_Mean:double,PetalLength_Mean:double,PetalWidth_Mean:double,Name:string,Count:int" />
+      <output id="SV1_Extract_out0" uid="7" schema="SepalLength_Mean:double,SepalWidth_Mean:double,PetalLength_Mean:double,PetalWidth_Mean:double,Name:string,Count:int" outputIndex="0" numberOfOutputs="1" finalOutput="true" />
+      <ReflectedScopeScript><![CDATA[OUTPUT _var_100003_REDUCE TO @"https://cosmos09.osdinfra.net/cosmos/cosmosAdmin/users/v-hozhao/All_In_One/Output/Python_ClusterRun_DataFrame_Reducer_Demo_Output.txt" USING ScopeRuntime.DefaultTextOutputter();
+]]></ReflectedScopeScript>
+    </operator>
+  </ScopeVertex>
+  <ScopeVertex id="SV2_Extract" cppReady="true">
+    <EstimatedLimitMemory processMemory="3651142416" managedMemory="0" adapterMemory="1283457024" engineMemory="1843397392" engineIOMemory="1581253280" engineOperatorMemory="262144112" minEngineOperatorMemory="262144112" />
+    <EstimatedOptimalMemory processMemory="1843134576" managedMemory="0" adapterMemory="1283457024" engineMemory="35389552" engineIOMemory="33554432" engineOperatorMemory="1835120" minEngineOperatorMemory="1835120" />
+    <operator id="Extract_4" uid="8" line="40" assemblyName="" className="Scope.SystemOperators.Extractors.Python" signature="967934006163347125!3!Strict">
+      <input id="Extract_4" uid="8" schema="UserId:string,Start:string,Region:string,Query:string,Duration:string,Urls:string,ClickedUrls:string" inputIndex="0" numberOfInputs="ALL" />
+      <output id="Extract_4_Data0" uid="9" schema="UserId:string,Start:string,Region:string,Query:string,Duration:string,Urls:string,ClickedUrls:string" />
+      <ReflectedScopeScript><![CDATA[_var_100005_EXTRACT = EXTRACT UserId:string,Start:string,Region:string,Query:string,Duration:string,Urls:string,ClickedUrls:string FROM @"users/v-hozhao/All_In_One/Input/Python_SearchLog.tsv" USING Scope.SystemOperators.Extractors.Python();
+]]></ReflectedScopeScript>
+    </operator>
+    <operator id="Output_5" uid="10" line="50" assemblyName="ScopeRuntime.exe" className="ScopeRuntime.DefaultTextOutputter" signature="6329600338258509098!4!Strict">
+      <input id="Extract_4_Data0" uid="9" schema="UserId:string,Start:string,Region:string,Query:string,Duration:string,Urls:string,ClickedUrls:string" />
+      <output id="SV2_Extract_out0" uid="10" schema="UserId:string,Start:string,Region:string,Query:string,Duration:string,Urls:string,ClickedUrls:string" outputIndex="0" numberOfOutputs="1" finalOutput="true" />
+      <ReflectedScopeScript><![CDATA[OUTPUT _var_100005_EXTRACT TO @"https://cosmos09.osdinfra.net/cosmos/cosmosAdmin/users/v-hozhao/All_In_One/Output/Python_ClusterRun_Extractor_Demo_Output.txt" USING ScopeRuntime.DefaultTextOutputter();
+]]></ReflectedScopeScript>
+    </operator>
+  </ScopeVertex>
+</ScopeVertices>

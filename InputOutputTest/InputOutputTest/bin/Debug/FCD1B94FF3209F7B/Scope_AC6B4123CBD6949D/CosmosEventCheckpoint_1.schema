@@ -1,0 +1,9 @@
+# Version: 1
+# Fields: Name,Type
+EventName,String
+CurrentTimeStamp,CurrentTimeStamp
+Machine,String
+CheckpointTime,CsTimeStamp
+ProcessName,String
+CheckpointInterval,Int64
+#EOF

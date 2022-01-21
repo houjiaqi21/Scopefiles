@@ -1,0 +1,28 @@
+﻿{
+"CompilerPlanStart":"2019\/12\/16 16:45:20"
+,
+"Settings":"-c++ -pdb Partial -On ADL -On ReflectStageToScript -Off Sirius -Off PolarisScaleUp -On EnableScopeDml -On EnableSStreamContractV4 -On UseAadAuthentication -buckets 250 -ClientVersion 10.2.2.0"
+,
+"planNodes":
+[
+{
+"statementText":"\/\/Script GUID:ffbb629f-5321-49cd-a5e7-0c552d6a43f4\/\/Used for tracking historyEXTRACT IId:int, "
+,
+"NodeName":"QueryStatement"
+}
+,
+{
+"statementText":"SELECT IId,        \/\/UId,       Start,       -1 AS b"
+,
+"NodeName":"QueryStatement"
+}
+,
+{
+"statementText":" OUTPUT TO @\"\/users\/v-hozhao\/out.txt\""
+,
+"NodeName":"OutputStatement"
+}
+]
+,
+"CompilerPlanEnd":"2019\/12\/16 16:45:20"
+}

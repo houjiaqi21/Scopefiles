@@ -1,0 +1,166 @@
+<ScopeCounters>
+  <Counter Name="Overall" Value="31.4621755" Unit="second" Intervals="1" />
+  <Counter Name="FrontEndRun" Value="10.6742597" Unit="second" Intervals="1" />
+  <Counter Name="AssemblyResolverPass" Value="0.0037629" Unit="second" Intervals="1" />
+  <Counter Name="AstBuilder" Value="2.5873857" Unit="second" Intervals="1" />
+  <Counter Name="BinderPass" Value="1.8729429" Unit="second" Intervals="1" />
+  <Counter Name="ClassifierPass" Value="0.0007391" Unit="second" Intervals="1" />
+  <Counter Name="DdlResolver" Value="1.1415893" Unit="second" Intervals="5" />
+  <Counter Name="ErrorReporterPass" Value="0.0436304" Unit="second" Intervals="1" />
+  <Counter Name="FileSetExpansionAsync" Value="0.0430338" Unit="second" Intervals="13" />
+  <Counter Name="FileSetPEAsync" Value="0.0057168" Unit="second" Intervals="13" />
+  <Counter Name="ProcessUsingsPass" Value="0.1131554" Unit="second" Intervals="2" />
+  <Counter Name="InputOutputPass" Value="2.7344255" Unit="second" Intervals="1" />
+  <Counter Name="GenerateOptTreePass" Value="0.1179313" Unit="second" Intervals="1" />
+  <Counter Name="GeneratedFilesAsync" Value="0.1721071" Unit="second" Intervals="13" />
+  <Counter Name="Parser" Value="0.1073447" Unit="second" Intervals="7" />
+  <Counter Name="ReferenceLoading" Value="0.034247" Unit="second" Intervals="1" />
+  <Counter Name="ResourceReferencePass" Value="0.005381" Unit="second" Intervals="1" />
+  <Counter Name="ResourcesDownloading" Value="0.731733" Unit="second" Intervals="1" />
+  <Counter Name="SemanticAnalyzerPass" Value="0.0488627" Unit="second" Intervals="1" />
+  <Counter Name="SyntaxVerifier" Value="0.1497874" Unit="second" Intervals="7" />
+  <Counter Name="TraceFile" Value="0.0461482" Unit="second" Intervals="469" />
+  <Counter Name="ViewResolver" Value="0.0277848" Unit="second" Intervals="6" />
+  <Counter Name="RoslynBinding" Value="1.2272526" Unit="second" Intervals="28" />
+  <Counter Name="RoslynEnvironmentAsync" Value="0.3638382" Unit="second" Intervals="2" />
+  <Counter Name="RoslynFirstCall" Value="0.7891377" Unit="second" Intervals="1" />
+  <Counter Name="ConstantFolding" Value="0.1263172" Unit="second" Intervals="36" />
+  <Counter Name="RoslynParsing" Value="0.1855003" Unit="second" Intervals="28" />
+  <Counter Name="RoslynPostBind" Value="0.293077" Unit="second" Intervals="28" />
+  <Counter Name="RoslynPreBind" Value="0.2406944" Unit="second" Intervals="28" />
+  <Counter Name="RoslynSemantic" Value="0.5902898" Unit="second" Intervals="26" />
+  <Counter Name="RoslynScripting" Value="1.3144257" Unit="second" Intervals="1" />
+  <Counter Name="OneColumnBinding" Value="0" Unit="second" Intervals="17" />
+  <Counter Name="QualifiedColumnBinding" Value="0" Unit="second" Intervals="7" />
+  <Counter Name="SimpleLiteralBinding" Value="0" Unit="second" Intervals="49" />
+  <Counter Name="NonRoslynBinding" Value="0.2017179" Unit="second" Intervals="28" />
+  <Counter Name="ExpressionAnnotation" Value="0.0712351" Unit="second" Intervals="50" />
+  <Counter Name="ExpressionAnnotationSemantic" Value="0.0567781" Unit="second" Intervals="79" />
+  <Counter Name="LazyExpressionAnnotation" Value="0.0033531" Unit="second" Intervals="1" />
+  <Counter Name="LazyExpressionAnnotationSemantic" Value="0.0021349" Unit="second" Intervals="3" />
+  <Counter Name="CreateSemanticModel" Value="0.2421041" Unit="second" Intervals="29" />
+  <Counter Name="BindingEvaluator" Value="0.8829592" Unit="second" Intervals="2" />
+  <Counter Name="CsBlock" Value="2.4599239" Unit="second" Intervals="1" />
+  <Counter Name="ExpressionProcessors" Value="0.0027072" Unit="second" Intervals="21" />
+  <Counter Name="PreProcessorParser" Value="0.0183548" Unit="second" Intervals="6" />
+  <Counter Name="Preprocessing" Value="1.1052731" Unit="second" Intervals="6" />
+  <Counter Name="OptimizerRun" Value="0.5350459" Unit="second" Intervals="1" />
+  <Counter Name="OptimizerWait" Value="4.3E-05" Unit="second" Intervals="1" />
+  <Counter Name="ComputeSignature" Value="0.0004472" Unit="second" Intervals="1" />
+  <Counter Name="CreateSplitsOrSpools" Value="0.0455077" Unit="second" Intervals="1" />
+  <Counter Name="PostProcessExecutionPlan" Value="0.0041206" Unit="second" Intervals="1" />
+  <Counter Name="CreateWhereSelectEnumerators" Value="0.0200294" Unit="second" Intervals="1" />
+  <Counter Name="ComputePayloadMetadata" Value="0.0012001" Unit="second" Intervals="1" />
+  <Counter Name="SStreamStageProcessing" Value="0.0023295" Unit="second" Intervals="1" />
+  <Counter Name="ValidateStages" Value="0.0017253" Unit="second" Intervals="1" />
+  <Counter Name="CompileToAlgebra" Value="0.0487976" Unit="second" Intervals="1" />
+  <Counter Name="EstimateMemorySize" Value="0.0260808" Unit="second" Intervals="3" />
+  <Counter Name="CalculateBubbles" Value="0.0001658" Unit="second" Intervals="1" />
+  <Counter Name="BackEndRun" Value="19.0314106" Unit="second" Intervals="1" />
+  <Counter Name="AdornAllWithMemoryModel" Value="0.06015" Unit="second" Intervals="3" />
+  <Counter Name="AlgebraAndManagedCodeGen" Value="0.2728952" Unit="second" Intervals="1" />
+  <Counter Name="AnnotateIntermediateResults" Value="0.0012111" Unit="second" Intervals="1" />
+  <Counter Name="CodeCompiling" Value="18.1611591" Unit="second" Intervals="1" />
+  <Counter Name="CodeGeneration" Value="0.5714243" Unit="second" Intervals="1" />
+  <Counter Name="CppCompilationManaged" Value="3.1939431" Unit="second" Intervals="1" />
+  <Counter Name="CppCompilationNative" Value="11.6733495" Unit="second" Intervals="1" />
+  <Counter Name="CppLinking" Value="0.842391" Unit="second" Intervals="1" />
+  <Counter Name="CreateCppReadyStage" Value="0.0268065" Unit="second" Intervals="1" />
+  <Counter Name="CSharpCompilation" Value="4.674338" Unit="second" Intervals="2" />
+  <Counter Name="ManagedCodeEmission" Value="0.0175135" Unit="second" Intervals="1" />
+  <Counter Name="NativeCodeGeneration" Value="0.5689276" Unit="second" Intervals="1" />
+  <Counter Name="VcClient" Value="3.3290795" Unit="second" Intervals="12" />
+  <Counter Name="SStreamMetadataAsync" Value="2.3215395" Unit="second" Intervals="3" />
+  <Counter Name="PlaybackAsync" Value="0.1589169" Unit="second" Intervals="2" />
+  <Counter Name="UserCode" Value="1.3527762" Unit="second" Intervals="300" />
+  <Counter Name="Table Files Read" Value="0" Unit="count" />
+  <Counter Name="ScopeScriptNode" Value="6" Unit="count" />
+  <Counter Name="ReferenceStatementNode" Value="4" Unit="count" />
+  <Counter Name="FilePathNode" Value="32" Unit="count" />
+  <Counter Name="ConstantExpressionNode" Value="32" Unit="count" />
+  <Counter Name="ExpressionNode" Value="72" Unit="count" />
+  <Counter Name="ResourceStatementNode" Value="1" Unit="count" />
+  <Counter Name="QueryStatementNode" Value="21" Unit="count" />
+  <Counter Name="AssignmentNode" Value="21" Unit="count" />
+  <Counter Name="ExtractQueryNode" Value="10" Unit="count" />
+  <Counter Name="ExtractFromClauseNode" Value="10" Unit="count" />
+  <Counter Name="SimpleStreamSpecNode" Value="13" Unit="count" />
+  <Counter Name="UsingClauseNode" Value="18" Unit="count" />
+  <Counter Name="NameValuePairNode" Value="7" Unit="count" />
+  <Counter Name="ReduceQueryNode" Value="1" Unit="count" />
+  <Counter Name="ReduceOnClauseNode" Value="1" Unit="count" />
+  <Counter Name="IdentifierNode" Value="1" Unit="count" />
+  <Counter Name="ProduceClauseNode" Value="2" Unit="count" />
+  <Counter Name="TableReferenceNode" Value="20" Unit="count" />
+  <Counter Name="LocalObjectReferenceNode" Value="20" Unit="count" />
+  <Counter Name="OutputStatementNode" Value="12" Unit="count" />
+  <Counter Name="ToUnstructuredStreamClauseNode" Value="9" Unit="count" />
+  <Counter Name="SelectQueryNode" Value="7" Unit="count" />
+  <Counter Name="AliasedExpressionNode" Value="30" Unit="count" />
+  <Counter Name="AliasNode" Value="7" Unit="count" />
+  <Counter Name="TableFromClauseNode" Value="7" Unit="count" />
+  <Counter Name="AliasedTableReferenceExpressionNode" Value="9" Unit="count" />
+  <Counter Name="ModuleStatementNode" Value="2" Unit="count" />
+  <Counter Name="ModuleDefinitionNode" Value="2" Unit="count" />
+  <Counter Name="UsingStatementNode" Value="1" Unit="count" />
+  <Counter Name="SelectStarNode" Value="1" Unit="count" />
+  <Counter Name="StarExpressionNode" Value="1" Unit="count" />
+  <Counter Name="NestedTableNode" Value="3" Unit="count" />
+  <Counter Name="StructuredStreamQueryNode" Value="3" Unit="count" />
+  <Counter Name="UserAttributeNode" Value="1" Unit="count" />
+  <Counter Name="ToStructuredStreamClauseNode" Value="3" Unit="count" />
+  <Counter Name="ViewQueryNode" Value="1" Unit="count" />
+  <Counter Name="ViewHeaderNode" Value="1" Unit="count" />
+  <Counter Name="TableColumnDefinitionNode" Value="28" Unit="count" />
+  <Counter Name="ScalarTypeDefinitionNode" Value="28" Unit="count" />
+  <Counter Name="CodeObjectHeaderNode" Value="3" Unit="count" />
+  <Counter Name="ScopeRowsetFunctionReturnNode" Value="3" Unit="count" />
+  <Counter Name="RowSetParameterNode" Value="3" Unit="count" />
+  <Counter Name="RowSetTypeNode" Value="3" Unit="count" />
+  <Counter Name="CodeObjectDefinitionNode" Value="2" Unit="count" />
+  <Counter Name="FunctionQueryNode" Value="1" Unit="count" />
+  <Counter Name="FunctionCallNode" Value="1" Unit="count" />
+  <Counter Name="PersistentObjectReferenceNode" Value="1" Unit="count" />
+  <Counter Name="MultiPartIdentifierNode" Value="1" Unit="count" />
+  <Counter Name="ImportStatementNode" Value="1" Unit="count" />
+  <Counter Name="GroupByClauseNode" Value="1" Unit="count" />
+  <Counter Name="GroupByExpressionNode" Value="1" Unit="count" />
+  <Counter Name="JoinOperatorExpressionNode" Value="2" Unit="count" />
+  <Counter Name="DerivedTableAliasNode" Value="2" Unit="count" />
+  <Counter Name="JoinOperatorNode" Value="2" Unit="count" />
+  <Counter Name="JoinOnClauseNode" Value="2" Unit="count" />
+  <Counter Name="ProcessQueryNode" Value="1" Unit="count" />
+  <Counter Name="StringLiteralNode" Value="3" Unit="count" />
+  <Counter Name="CQO - Init" Value="0.0167285" Unit="second" />
+  <Counter Name="CQO - CopyIn" Value="0.097846" Unit="second" />
+  <Counter Name="CQO - Search - Init" Value="7.47E-05" Unit="second" />
+  <Counter Name="CQO - Search - NNF" Value="0.0007727" Unit="second" />
+  <Counter Name="CQO - Search - PreOptimization" Value="0.0003305" Unit="second" />
+  <Counter Name="CQO - Search - Simplification" Value="0.0091205" Unit="second" />
+  <Counter Name="CQO - Search - Join Reordering" Value="4E-07" Unit="second" />
+  <Counter Name="CQO - Search - Expression Sharing" Value="0.0018125" Unit="second" />
+  <Counter Name="CQO - Search - Optimization" Value="0.0265929" Unit="second" />
+  <Counter Name="CQO - Search - Subtotal" Value="0.0590042" Unit="second" />
+  <Counter Name="CQO - Showplan" Value="0.0102596" Unit="second" />
+  <Counter Name="CQO - Stage Generation" Value="0.2639592" Unit="second" />
+  <Counter Name="CQO - PostOptimization" Value="0.0079322" Unit="second" />
+  <Counter Name="Working Set" Value="448956" Unit="KB" />
+  <Counter Name="Peak Working Set" Value="459408" Unit="KB" />
+  <Counter Name="Private Memory" Value="421160" Unit="KB" />
+  <Counter Name="Virtual Memory" Value="5347968" Unit="KB" />
+  <Counter Name="Total CPU" Value="20.0625" Unit="second" />
+  <Counter Name="CQO - Total" Value="0.4790761" Unit="second" />
+  <Counter Name="CQO_COUNTER_UnknownAssemblyResource" Value="1" Unit="count" />
+  <Counter Name="CQO_COUNTER_DISTINCT_USER_ASSEMBLIES" Value="9" Unit="count" />
+  <Counter Name="CQO_COUNTER_PHYSICAL_OPERATOR_TOTAL" Value="39" Unit="count" />
+  <Counter Name="CQO_COUNTER_PHYSICAL_OPERATOR_WITH_TOKEN" Value="32" Unit="count" />
+  <Counter Name="CQO_COUNTER_EXIT_OPTIMIZER" Value="1" Unit="count" />
+  <Counter Name="CQO_COUNTER_ENTER_OPTIMIZER" Value="1" Unit="count" />
+  <Counter Name="CQO_COUNTER_OUTPUT_PARTITION_WITHOUT_INTO" Value="1" Unit="count" />
+  <Counter Name="CQO_COUNTER_UNABLE_TRACE_WRITE" Value="16" Unit="count" />
+  <Counter Name="CQO_COUNTER_OverDistributedStructuredExtraction" Value="1" Unit="count" />
+  <Counter Name="CQO_COUNTER_DUPLICATED_SPLIT_PIPELINE" Value="4" Unit="count" />
+  <Counter Name="CQO_COUNTER_SSTREAMINFO_SIZE" Value="55" Unit="count" />
+  <Counter Name="CQO_COUNTER_VERTEX_OPERATOR_TOTAL" Value="41" Unit="count" />
+  <Counter Name="CQO_COUNTER_VERTEX_OPERATOR_WITH_TOKEN" Value="34" Unit="count" />
+</ScopeCounters>

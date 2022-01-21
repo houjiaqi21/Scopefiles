@@ -1,0 +1,1 @@
+-c++ -pdb Partial -jobId ab18627e-c8fd-44c9-ac2e-2a1a7b843358 -On ADL -On EnableScopeDml -On EnableSStreamContractV4 -ClientVersion 10.2.2.0

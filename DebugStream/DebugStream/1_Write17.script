@@ -1,0 +1,20 @@
+﻿//Script GUID:2da6eb58-759d-4971-a1de-64e4eaf81409
+//Used for tracking history
+
+//          /users/v-hozhao/DebugStream.txt
+
+searchlog =
+    EXTRACT IId : int,
+            //UId : int,
+            Start : DateTime,
+            Market : string,
+            Query : string,
+            DwellTime : int,
+            Results : string,
+            ClickedUrls : string
+    FROM @"/users/v-hozhao/DebugStream/SearchLog.txt"
+    USING MyTsvExtractor();
+
+
+OUTPUT searchlog
+TO @"/users/v-hozhao/DebugStream/Output.txt";

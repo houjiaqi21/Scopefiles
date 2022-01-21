@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <StartFile>ScopeInput.script</StartFile>
+    <CurrentWorkingVC>SynapseWorkspace:sandboxwcus (Microsoft.Cosmos.ClientTools.VisualStudio.BaseModels.AzureAccount)</CurrentWorkingVC>
+    <OutputStreamPath>%24(PROJECT_DIR)</OutputStreamPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <ScriptUserData Include="GenerateInput.script">
+      <UseLocalComputeAccount>false</UseLocalComputeAccount>
+      <ClusterComputeAccount>SynapseWorkspace:sandboxwcus (Microsoft.Cosmos.ClientTools.VisualStudio.BaseModels.AzureAccount)</ClusterComputeAccount>
+    </ScriptUserData>
+    <ScriptUserData Include="Scope.script">
+      <UseLocalComputeAccount>false</UseLocalComputeAccount>
+      <ClusterComputeAccount>SynapseWorkspace:sandboxwcus (Microsoft.Cosmos.ClientTools.VisualStudio.BaseModels.AzureAccount)</ClusterComputeAccount>
+      <PersistingSubmitJobAttributes>
+        <SubmitJobAttributes xmlns="">
+  <Vcws>SynapseWorkspace:sandboxwcus (Microsoft.Cosmos.ClientTools.VisualStudio.BaseModels.AzureAccount)</Vcws>
+  <FriendlyName>FileSetsVertex_Scope</FriendlyName>
+  <NotificationRecipients />
+  <Priority>10</Priority>
+  <VcPercentAllocation>0</VcPercentAllocation>
+  <AbsoluteTokenAllocation>0</AbsoluteTokenAllocation>
+  <MaxUnavability>100</MaxUnavability>
+</SubmitJobAttributes>
+      </PersistingSubmitJobAttributes>
+    </ScriptUserData>
+    <ScriptUserData Include="ScopeInput.script">
+      <UseLocalComputeAccount>false</UseLocalComputeAccount>
+      <ClusterComputeAccount>SynapseWorkspace:sandboxwcus (Microsoft.Cosmos.ClientTools.VisualStudio.BaseModels.AzureAccount)</ClusterComputeAccount>
+      <PersistingSubmitJobAttributes>
+        <SubmitJobAttributes xmlns="">
+  <Vcws>SynapseWorkspace:sandboxwcus (Microsoft.Cosmos.ClientTools.VisualStudio.BaseModels.AzureAccount)</Vcws>
+  <FriendlyName>FileSetsVertex_ScopeInput</FriendlyName>
+  <NotificationRecipients />
+  <Priority>10</Priority>
+  <VcPercentAllocation>0</VcPercentAllocation>
+  <AbsoluteTokenAllocation>0</AbsoluteTokenAllocation>
+  <MaxUnavability>100</MaxUnavability>
+</SubmitJobAttributes>
+      </PersistingSubmitJobAttributes>
+    </ScriptUserData>
+  </ItemGroup>
+</Project>

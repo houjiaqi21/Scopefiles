@@ -1,0 +1,33 @@
+﻿2019-11-11T14:47:29.3424038+08:00	UnknownJobId_0552543308	0.0742	Compiler	ScopeRoslynBinder	BuildScriptEnvironment	Starting
+2019-11-11T14:47:29.8051998+08:00	UnknownJobId_0552543308		Compiler	ScopeSubmissionCompilePipeline	InitializeCompiler	Start Compilation: CompileOnVC = False, DataRoot = adl://sandbox-c08.azuredatalakestore.net, Version = 10.2.2.0
+2019-11-11T14:47:29.8081990+08:00	UnknownJobId_0552543308		Compiler	ScopeSubmissionCompilePipeline	InitializeCompiler	CommandLine =>	""C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\Microsoft\ScopeStudio\2.5.1000.2\SubmitHost.exe" 2bdcb5b0-0c66-44dd-a332-e82739eba5f2 8792 False C:\Users\v-hozhao\AppData\Local\Temp\DataLakeTemp"
+2019-11-11T14:47:29.8132013+08:00	UnknownJobId_0552543308		Compiler	ScopeSubmissionCompilePipeline	InitializeCompiler	Settings =>	{DataRoot:adl://sandbox-c08.azuredatalakestore.net,ResolverTypeForResource:ScopePath,ResolverTypeForInput:RemoteRoot,ResolverTypeForOutput:Dummy,NebulaCommandLine:-c++ -pdb Partial -On ADL -On EnableScopeDml -On EnableSStreamContractV4 -ClientVersion 10.2.2.0}
+2019-11-11T14:47:29.9302087+08:00	UnknownJobId_0552543308		Compiler	ScopeSubmissionCompilePipeline	BeforeCompile	Client Version: 10.2.2.0
+2019-11-11T14:47:29.9322066+08:00	UnknownJobId_0552543308		Compiler	ScopeSubmissionCompilePipeline	BeforeCompile	Target: Cluster
+2019-11-11T14:47:29.9332062+08:00	UnknownJobId_0552543308		Compiler	ScopeSubmissionCompilePipeline	BeforeCompile	Stat: SimulateLarge
+2019-11-11T14:47:29.9332062+08:00	UnknownJobId_0552543308		Compiler	ScopeSubmissionCompilePipeline	BeforeCompile	SkipPath: True
+2019-11-11T14:47:29.9782153+08:00	UnknownJobId_0552543308		Compiler	ScopeFrontEndRunner	Execute	Starting FrontEndRun...
+2019-11-11T14:47:30.2382081+08:00	UnknownJobId_0552543308	0.9848	Compiler	ScopeRoslynBinder	BuildScriptEnvironment	Finished
+2019-11-11T14:47:37.8126215+08:00	UnknownJobId_0552543308	0.3826	Compiler	FrontEndRunner	Run	SyntaxVerifier
+2019-11-11T14:47:38.1746202+08:00	UnknownJobId_0552543308	0.3574	Compiler	FrontEndRunner	Run	DdlResolver
+2019-11-11T14:47:38.1886218+08:00	UnknownJobId_0552543308	0.0100	Compiler	FrontEndRunner	Run	ViewResolverPass
+2019-11-11T14:47:38.1886218+08:00	UnknownJobId_0552543308	8.1335	Compiler	FrontEndRunner	Run	AstBuilder
+2019-11-11T14:47:38.2106296+08:00	UnknownJobId_0552543308	0.0209	Compiler	FrontEndRunner	Run	ViewResolverPass
+2019-11-11T14:47:38.2206298+08:00	UnknownJobId_0552543308	0.0079	Compiler	FrontEndRunner	Run	AssemblyResolverPass
+2019-11-11T14:47:38.2256227+08:00	UnknownJobId_0552543308	0.0035	Compiler	FrontEndRunner	Run	ResourceReferencePass
+2019-11-11T14:47:38.2636231+08:00	UnknownJobId_0552543308		Compiler	ScopeSubmissionCompilePipeline	FinalizeArtifacts	Starting Compiler Artifacts Finalization...
+2019-11-11T14:47:38.3746252+08:00	UnknownJobId_0552543308	0.0956	Compiler	ScopeResourceStorage	AddGeneratedFile	AddGeneratedFile("D:\Scope2015\Parameter\Parameter\bin\Debug\2F923D2DC69D64A4\Scope_4CD79D7BCAD4C15A\__CompilerTimers.xml",CompilerTimers) =>	null
+2019-11-11T14:47:38.3967690+08:00	UnknownJobId_0552543308	0.0158	Compiler	ScopeResourceStorage	AddGeneratedFile	AddGeneratedFile("D:\Scope2015\Parameter\Parameter\bin\Debug\2F923D2DC69D64A4\Scope_4CD79D7BCAD4C15A\__CompilerTimers.xml",CompilerTimers) =>	null
+2019-11-11T14:47:38.4177766+08:00	UnknownJobId_0552543308		Compiler	ScopeSubmissionCompilePipeline	FinalizeArtifacts	Finished Compiler Artifacts Finalization...
+2019-11-11T14:47:38.4177766+08:00	UnknownJobId_0552543308		Compiler	ScopeSubmissionCompilePipeline	DoCompile	Finished compilation!
+2019-11-11T14:47:38.4207645+08:00	UnknownJobId_0552543308		Compiler	ScopeSubmissionCompilePipeline	FinalizeCompilation	Start compilation finalization...
+2019-11-11T14:47:38.4347695+08:00	UnknownJobId_0552543308		Compiler	ScopeSubmissionCompilePipeline	DisposeCompiler	Start disposing the compiler...
+2019-11-11T14:47:38.4397678+08:00	UnknownJobId_0552543308		Compiler	ScopeSStreamMetadataManager	Cleanup	Cancelling any ongoing requests
+2019-11-11T14:47:38.4437566+08:00	UnknownJobId_0552543308		Compiler	ScopeSubmissionCompilePipeline	DisposeCompiler	Finished compilation finalization
+2019-11-11T14:47:38.4447695+08:00	UnknownJobId_0552543308	9.4649	Compiler	ScopeSubmissionCompilePipeline	FinalizeCompilation	End Compilation
+2019-11-11T14:47:38.4557699+08:00	UnknownJobId_0552543308		Compiler	ScopeSubmissionCompilePipeline	WriteTimers	COMPILATIONTIME|JobId:|FriendlyName:|Mode:Default|Overall: 9.5s 19.0cpu|FrontEndRun: 8.5s|RoslynTimers: 3x 1.2s 402.0ms/x 2.2cpu
+2019-11-11T14:47:38.4577699+08:00	UnknownJobId_0552543308		Compiler	ScopeSubmissionCompilePipeline	WriteTimers	FrontEndTimers|FrontEndRun: 8.5s|AssemblyResolverPass:|AstBuilder: 8.1s 16.9cpu|DdlResolver: 0.4s 0.4cpu|GeneratedFilesAsync: 0.1s 0.1cpu wait 0.1s|Parser: 3x 0.5s 177.0ms/x 0.6cpu|Preprocessing: 6.7s 15.4cpu|ResourceReferencePass:|SyntaxVerifier: 0.4s 0.4cpu|TraceFile: 28x 0.1s 4.0ms/x 0.2cpu|ViewResolverPass: 2x 15.0ms/x
+2019-11-11T14:47:38.4587698+08:00	UnknownJobId_0552543308		Compiler	ScopeSubmissionCompilePipeline	WriteTimers	RoslynTimers|RoslynEnvironmentAsync: 1.0s 2.0cpu|ConstantFolding: 2x 0.2s 110.0ms/x 0.2cpu
+2019-11-11T14:47:38.4587698+08:00	UnknownJobId_0552543308		Compiler	ScopeSubmissionCompilePipeline	WriteTimers	OptimizerTimers
+2019-11-11T14:47:38.4597699+08:00	UnknownJobId_0552543308		Compiler	ScopeSubmissionCompilePipeline	WriteTimers	BackendTimers
+2019-11-11T14:47:38.4597699+08:00	UnknownJobId_0552543308		Compiler	ScopeSubmissionCompilePipeline	WriteTimers	ExternalTimers

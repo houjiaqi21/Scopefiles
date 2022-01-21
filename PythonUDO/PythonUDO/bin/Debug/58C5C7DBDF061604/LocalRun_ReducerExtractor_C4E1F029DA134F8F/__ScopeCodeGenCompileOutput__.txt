@@ -1,0 +1,191 @@
+*** Entering compilation, time elapsed until this point: 00:00:04.1520766
+*** Done with C# compilation, time elapsed until this point: 00:00:07.3585489
+*** Starting C++ compilation, time elapsed until this point: 00:00:07.3595088
+#CPP cl.exe compile (iteration 1/1) -- Native
+#CPP stdout:
+__ScopeCodeGenEngine__.dll.cpp
+ENC_CWD=D:\Sharing\Scope2015\PythonUDO\PythonUDO\bin\Debug\58C5C7DBDF061604\LocalRun_ReducerExtractor_C4E1F029DA134F8F
+ENC_CL=c:\program files (x86)\microsoft visual studio\2019\enterprise\SDK\ScopeCppSDK\vc15\VC\bin\cl.exe
+ENC_SRC=__ScopeCodeGenEngine__.dll.cpp
+ENC_PDB=D:\Sharing\Scope2015\PythonUDO\PythonUDO\bin\Debug\58C5C7DBDF061604\LocalRun_ReducerExtractor_C4E1F029DA134F8F\vc140.pdb
+ENC_CMD=-nologo -c -bigobj -Bt+ -DWIN32_LEAN_AND_MEAN -EHa -MD -Z7 -Zo -homeparams -Od -Bd -cgsummary -DCOMPILE_NATIVE -DUSE_SSE4_2 -W4 -WX -wd4125 -wd4627 -wd4800 -wd4702 -I"c:\program files (x86)\microsoft visual studio\2019\enterprise\SDK\ScopeCppSDK\vc15\VC\include" -I"c:\program files (x86)\microsoft visual studio\2019\enterprise\SDK\ScopeCppSDK\vc15\SDK\include" -I"c:\program files (x86)\microsoft visual studio\2019\enterprise\SDK\ScopeCppSDK\vc15\SDK\include\um" -I"c:\program files (x86)\microsoft visual studio\2019\enterprise\SDK\ScopeCppSDK\vc15\SDK\include\shared" -I"c:\program files (x86)\microsoft visual studio\2019\enterprise\SDK\ScopeCppSDK\vc15\SDK\include\ucrt" -I"c:\program files (x86)\microsoft visual studio\2019\enterprise\common7\ide\extensions\microsoft\scopestudio\2.9.0000.1\CosmosRuntimeSDK" -ID:\Sharing\Scope2015\PythonUDO\PythonUDO\bin\Debug\58C5C7DBDF061604\LocalRun_ReducerExtractor_C4E1F029DA134F8F -DCOMPILE_ALL_VERTICES -DCOMPILE_INIT_SHUTDOWN -TP -X
+`c:\program files (x86)\microsoft visual studio\2019\enterprise\SDK\ScopeCppSDK\vc15\VC\bin\c1xx.dll -zm0x00007FF7D9BECA20 -il C:\Users\v-hozhao\AppData\Local\Temp\_CL_7ea2aa72 -typedil -f __ScopeCodeGenEngine__.dll.cpp -Ze -D_MSC_EXTENSIONS -Zp16 -ZB64 -D_INTEGRAL_MAX_BITS=64 -pc \:/ -Fdvc140.pdb -D_MSC_VER=1912 -D_MSC_FULL_VER=191225835 -D_MSC_BUILD=0 -D_M_AMD64=100 -ZILP448 -D_M_X64=100 -D_WIN64 -D_WIN32 -GS -GR -D_CPPRTTI -Zc:forScope -Zc:wchar_t -nologo -DWIN32_LEAN_AND_MEAN -EHa -D_CPPUNWIND -D_MT -D_DLL -Z7 -Ot -Bd -DCOMPILE_NATIVE -DUSE_SSE4_2 -W 4 -WX -wd 4125 -wd 4627 -wd 4800 -wd 4702 -I c:\program files (x86)\microsoft visual studio\2019\enterprise\SDK\ScopeCppSDK\vc15\VC\include -I c:\program files (x86)\microsoft visual studio\2019\enterprise\SDK\ScopeCppSDK\vc15\SDK\include -I c:\program files (x86)\microsoft visual studio\2019\enterprise\SDK\ScopeCppSDK\vc15\SDK\include\um -I c:\program files (x86)\microsoft visual studio\2019\enterprise\SDK\ScopeCppSDK\vc15\SDK\include\shared -I c:\program files (x86)\microsoft visual studio\2019\enterprise\SDK\ScopeCppSDK\vc15\SDK\include\ucrt -I c:\program files (x86)\microsoft visual studio\2019\enterprise\common7\ide\extensions\microsoft\scopestudio\2.9.0000.1\CosmosRuntimeSDK -I D:\Sharing\Scope2015\PythonUDO\PythonUDO\bin\Debug\58C5C7DBDF061604\LocalRun_ReducerExtractor_C4E1F029DA134F8F -DCOMPILE_ALL_VERTICES -DCOMPILE_INIT_SHUTDOWN -Fo__ScopeCodeGenEngine__.dllNative.obj'
+time(c:\program files (x86)\microsoft visual studio\2019\enterprise\SDK\ScopeCppSDK\vc15\VC\bin\c1xx.dll)=3.06964s < 67913184121 - 67943880556 > BB [D:\Sharing\Scope2015\PythonUDO\PythonUDO\bin\Debug\58C5C7DBDF061604\LocalRun_ReducerExtractor_C4E1F029DA134F8F\__ScopeCodeGenEngine__.dll.cpp]
+`c:\program files (x86)\microsoft visual studio\2019\enterprise\SDK\ScopeCppSDK\vc15\VC\bin\c2.dll -il C:\Users\v-hozhao\AppData\Local\Temp\_CL_7ea2aa72 -typedil -f __ScopeCodeGenEngine__.dll.cpp -dos -Fdvc140.pdb -GS -bigobj -EHa -MD -Zi -Zi+ -home -Ob0 -Bd -cgsummary -W 4 -WX -Fo__ScopeCodeGenEngine__.dllNative.obj'
+Code Generation Summary
+	Total Function Count: 3753
+	Elapsed Time: 0.183 sec
+	Total Compilation Time: 0.705 sec
+	Average time per function: 0.000 sec
+	Anomalistic Compile Times: 143
+		?MarshalUdoRow@?$AdapterExtractorToHostRowCopyPolicy@VExtract_4_Data0@@$07@ScopeEngine@@SAXAEBVIAdapterUdoRow@UdoAdapter@@AEAVExtract_4_Data0@@AEAVIncrementalAllocator@2@@Z: 0.004 sec, 0 instrs
+		?MarshalUdoRow@?$AdapterToHostRowCopyPolicy@VExtract_0_Data0@@VProcess_2_Data0@@$04@ScopeEngine@@SAXAEBVIRowDataReader@UdoAdapter@@AEAVProcess_2_Data0@@AEBV?$ProxyHostPassTroughRow@VProcess_2_Data0@@@2@AEAVIncrementalAllocator@2@@Z: 0.004 sec, 0 instrs
+		SV1_Extract_execute: 0.004 sec, 0 instrs
+		??0ProxyHostEnvironmentHelper@ScopeEngine@@AEAA@PEBD@Z: 0.003 sec, 0 instrs
+		SV2_Extract_execute: 0.003 sec, 0 instrs
+		?Deserialize@?$TextExtractPolicy@VExtract_0_Data0@@$00@ScopeEngine@@SA_NPEAV?$TextInputStream@U?$TextInputStreamTraitsConst@$0CM@$0A@$0A@$0A@$0A@$01$0A@$0A@$0A@$0A@$0A@$0A@$0A@@ScopeEngine@@VCosmosInput@2@@2@AEAVExtract_0_Data0@@@Z: 0.003 sec, 0 instrs
+		??$_Insert_hint@AEAU?$pair@$$CBW4USqlColumnType@UdoAdapter@@PEBVIHostTypeData@2@@std@@PEAU?$_Tree_node@U?$pair@$$CBW4USqlColumnType@UdoAdapter@@PEBVIHostTypeData@2@@std@@PEAX@2@@?$_Tree@V?$_Tmap_traits@W4USqlColumnType@UdoAdapter@@PEBVIHostTypeData@2@U?$less@W4USqlColumnType@UdoAdapter@@@std@@V?$allocator@U?$pair@$$CBW4USqlColumnType@UdoAdapter@@PEBVIHostTypeData@2@@std@@@5@$0A@@std@@@std@@IEAA?AV?$_Tree_iterator@V?$_Tree_val@U?$_Tree_simple_types@U?$pair@$$CBW4USqlColumnType@UdoAdapter@@PEBVIHostTypeData@2@@std@@@std@@@std@@@1@V?$_Tree_const_iterator@V?$_Tree_val@U?$_Tree_simple_types@U?$pair@$$CBW4USqlColumnType@UdoAdapter@@PEBVIHostTypeData@2@@std@@@std@@@std@@@1@AEAU?$pair@$$CBW4USqlColumnType@UdoAdapter@@PEBVIHostTypeData@2@@1@PEAU?$_Tree_node@U?$pair@$$CBW4USqlColumnType@UdoAdapter@@PEBVIHostTypeData@2@@std@@PEAX@1@@Z: 0.003 sec, 0 instrs
+		?WriteRuntimeStatsImpl@?$Sorter@VExtract_0_Data0@@$0?0@ScopeEngine@@QEBAXAEAVTreeNode@2@@Z: 0.002 sec, 0 instrs
+		?MergeAndDump@?$Sorter@VExtract_0_Data0@@$0?0@ScopeEngine@@AEAA?AV?$shared_ptr@V?$SortingBucket@VExtract_0_Data0@@@ScopeEngine@@@std@@AEAV?$vector@V?$shared_ptr@V?$SortingBucket@VExtract_0_Data0@@@ScopeEngine@@@std@@V?$allocator@V?$shared_ptr@V?$SortingBucket@VExtract_0_Data0@@@ScopeEngine@@@std@@@2@@4@@Z: 0.002 sec, 0 instrs
+		??$ReadString@$0A@@?$TextInputStream@U?$TextInputStreamTraitsConst@$0CM@$0A@$0A@$0A@$0A@$01$0A@$0A@$0A@$0A@$0A@$0A@$0A@@ScopeEngine@@VCosmosInput@2@@ScopeEngine@@AEAA?AW4TokenizerState@01@PEAVAutoExpandBuffer@1@@Z: 0.002 sec, 0 instrs
+		?ReadInternal@?$ProxyHostRowCursorBase@VCosmosInput@ScopeEngine@@@ScopeEngine@@IEAA_KPEAD_K_N@Z: 0.002 sec, 0 instrs
+		?BitNthMsf@ScopeEngine@@YAHK@Z: 0.002 sec, 0 instrs
+		??_H@YAXPEAX_K1P6APEAX0@Z@Z: 0.002 sec, 0 instrs
+		?BitNthMsf@ScopeEngine@@YAH_K@Z: 0.002 sec, 0 instrs
+		??$MakeupOneCompleteCharacter@V?$TextEncodingConverter@$0L@@ScopeEngine@@@?$TextEncodingReader@VCosmosInput@ScopeEngine@@$0A@$0A@@ScopeEngine@@AEAA_KPEAV?$TextEncodingConverter@$0L@@1@PEAD_K12@Z: 0.002 sec, 0 instrs
+		??$ConvertToUtf8@V?$TextEncodingConverter@$00@ScopeEngine@@@?$TextEncodingReader@VCosmosInput@ScopeEngine@@$0A@$0A@@ScopeEngine@@AEAAXPEAV?$TextEncodingConverter@$00@1@AEA_KAEA_N@Z: 0.002 sec, 0 instrs
+		?WriteRuntimeStats@Statistics@IncrementalAllocator@ScopeEngine@@QEBAXAEAVTreeNode@3@J@Z: 0.002 sec, 0 instrs
+		?ByteSwap@ScopeEngine@@YAGG@Z: 0.002 sec, 0 instrs
+		??$GuardHostCode@V<lambda_79235a7a868993bb67348bad5989cd07>@@@ScopeEngine@@YA_N$$QEAV<lambda_79235a7a868993bb67348bad5989cd07>@@@Z: 0.001 sec, 0 instrs
+		??$CreateBadConvertException@VAutoExpandBuffer@ScopeEngine@@@?$TextInputStream@U?$TextInputStreamTraitsConst@$0CM@$0A@$0A@$0A@$0A@$01$0A@$0A@$0A@$0A@$0A@$0A@$0A@@ScopeEngine@@VCosmosInput@2@@ScopeEngine@@AEAA?AVTextConversionException@1@W4ConvertResult@1@AEBVAutoExpandBuffer@1@@Z: 0.001 sec, 0 instrs
+		??1ProxyHostEnvironmentHelper@ScopeEngine@@QEAA@XZ: 0.001 sec, 0 instrs
+		??$ConvertToUtf8@V?$TextEncodingConverter@$06@ScopeEngine@@@?$TextEncodingReader@VCosmosInput@ScopeEngine@@$0A@$0A@@ScopeEngine@@AEAAXPEAV?$TextEncodingConverter@$06@1@AEA_KAEA_N@Z: 0.001 sec, 0 instrs
+		??$ConvertToUtf8@V?$Utf8TextEncodingConverter@$0A@@ScopeEngine@@@?$TextEncodingReader@VCosmosInput@ScopeEngine@@$0A@$0A@@ScopeEngine@@AEAAXPEAV?$Utf8TextEncodingConverter@$0A@@1@AEA_KAEA_N@Z: 0.001 sec, 0 instrs
+		??$ConvertToUtf8@V?$TextEncodingConverter@$08@ScopeEngine@@@?$TextEncodingReader@VCosmosInput@ScopeEngine@@$0A@$0A@@ScopeEngine@@AEAAXPEAV?$TextEncodingConverter@$08@1@AEA_KAEA_N@Z: 0.001 sec, 0 instrs
+		??$ConvertToUtf8@V?$TextEncodingConverter@$0L@@ScopeEngine@@@?$TextEncodingReader@VCosmosInput@ScopeEngine@@$0A@$0A@@ScopeEngine@@AEAAXPEAV?$TextEncodingConverter@$0L@@1@AEA_KAEA_N@Z: 0.001 sec, 0 instrs
+		??$ConvertToUtf8@V?$TextEncodingConverter@$07@ScopeEngine@@@?$TextEncodingReader@VCosmosInput@ScopeEngine@@$0A@$0A@@ScopeEngine@@AEAAXPEAV?$TextEncodingConverter@$07@1@AEA_KAEA_N@Z: 0.001 sec, 0 instrs
+		??$ConvertToUtf8@V?$TextEncodingConverter@$05@ScopeEngine@@@?$TextEncodingReader@VCosmosInput@ScopeEngine@@$0A@$0A@@ScopeEngine@@AEAAXPEAV?$TextEncodingConverter@$05@1@AEA_KAEA_N@Z: 0.001 sec, 0 instrs
+		??$ConvertToUtf8@V?$TextEncodingConverter@$02@ScopeEngine@@@?$TextEncodingReader@VCosmosInput@ScopeEngine@@$0A@$0A@@ScopeEngine@@AEAAXPEAV?$TextEncodingConverter@$02@1@AEA_KAEA_N@Z: 0.001 sec, 0 instrs
+		??$ConvertToUtf8@V?$TextEncodingConverter@$04@ScopeEngine@@@?$TextEncodingReader@VCosmosInput@ScopeEngine@@$0A@$0A@@ScopeEngine@@AEAAXPEAV?$TextEncodingConverter@$04@1@AEA_KAEA_N@Z: 0.001 sec, 0 instrs
+		??$ConvertToUtf8@V?$TextEncodingConverter@$0P@@ScopeEngine@@@?$TextEncodingReader@VCosmosInput@ScopeEngine@@$0A@$0A@@ScopeEngine@@AEAAXPEAV?$TextEncodingConverter@$0P@@1@AEA_KAEA_N@Z: 0.001 sec, 0 instrs
+		??$ConvertToUtf8@V?$TextEncodingConverter@$0N@@ScopeEngine@@@?$TextEncodingReader@VCosmosInput@ScopeEngine@@$0A@$0A@@ScopeEngine@@AEAAXPEAV?$TextEncodingConverter@$0N@@1@AEA_KAEA_N@Z: 0.001 sec, 0 instrs
+		??$ConvertToUtf8@V?$TextEncodingConverter@$0O@@ScopeEngine@@@?$TextEncodingReader@VCosmosInput@ScopeEngine@@$0A@$0A@@ScopeEngine@@AEAAXPEAV?$TextEncodingConverter@$0O@@1@AEA_KAEA_N@Z: 0.001 sec, 0 instrs
+		??$ConvertToUtf8@V?$TextEncodingConverter@$09@ScopeEngine@@@?$TextEncodingReader@VCosmosInput@ScopeEngine@@$0A@$0A@@ScopeEngine@@AEAAXPEAV?$TextEncodingConverter@$09@1@AEA_KAEA_N@Z: 0.001 sec, 0 instrs
+		??$ConvertToUtf8@V?$TextEncodingConverter@$0M@@ScopeEngine@@@?$TextEncodingReader@VCosmosInput@ScopeEngine@@$0A@$0A@@ScopeEngine@@AEAAXPEAV?$TextEncodingConverter@$0M@@1@AEA_KAEA_N@Z: 0.001 sec, 0 instrs
+		??$ConvertToUtf8@V?$TextEncodingConverter@$0BA@@ScopeEngine@@@?$TextEncodingReader@VCosmosInput@ScopeEngine@@$0A@$0A@@ScopeEngine@@AEAAXPEAV?$TextEncodingConverter@$0BA@@1@AEA_KAEA_N@Z: 0.001 sec, 0 instrs
+		??$ConvertToUtf8@V?$TextEncodingConverter@$0BB@@ScopeEngine@@@?$TextEncodingReader@VCosmosInput@ScopeEngine@@$0A@$0A@@ScopeEngine@@AEAAXPEAV?$TextEncodingConverter@$0BB@@1@AEA_KAEA_N@Z: 0.001 sec, 0 instrs
+		??$_Insert_nohint@AEAU?$pair@QEBDH@std@@PEAU?$_Tree_node@U?$pair@QEBDH@std@@PEAX@2@@?$_Tree@V?$_Tmap_traits@PEBDHUCStringCompare@ScopeEngine@@V?$allocator@U?$pair@QEBDH@std@@@std@@$0A@@std@@@std@@IEAA?AU?$pair@V?$_Tree_iterator@V?$_Tree_val@U?$_Tree_simple_types@U?$pair@QEBDH@std@@@std@@@std@@@std@@_N@1@_NAEAU?$pair@QEBDH@1@PEAU?$_Tree_node@U?$pair@QEBDH@std@@PEAX@1@@Z: 0.001 sec, 0 instrs
+		?_Extract@?$_Tree@V?$_Tmap_traits@PEBDHUCStringCompare@ScopeEngine@@V?$allocator@U?$pair@QEBDH@std@@@std@@$0A@@std@@@std@@QEAAPEAU?$_Tree_node@U?$pair@QEBDH@std@@PEAX@2@V?$_Tree_const_iterator@V?$_Tree_val@U?$_Tree_simple_types@U?$pair@QEBDH@std@@@std@@@std@@@2@@Z: 0.001 sec, 0 instrs
+		?_Extract@?$_Tree@V?$_Tmap_traits@W4USqlColumnType@UdoAdapter@@PEBVIHostTypeData@2@U?$less@W4USqlColumnType@UdoAdapter@@@std@@V?$allocator@U?$pair@$$CBW4USqlColumnType@UdoAdapter@@PEBVIHostTypeData@2@@std@@@5@$0A@@std@@@std@@QEAAPEAU?$_Tree_node@U?$pair@$$CBW4USqlColumnType@UdoAdapter@@PEBVIHostTypeData@2@@std@@PEAX@2@V?$_Tree_const_iterator@V?$_Tree_val@U?$_Tree_simple_types@U?$pair@$$CBW4USqlColumnType@UdoAdapter@@PEBVIHostTypeData@2@@std@@@std@@@std@@@2@@Z: 0.001 sec, 0 instrs
+		??0?$ProxyHostRowPolicy@VExtract_4_Data0@@@ScopeEngine@@QEAA@AEBV?$vector@IV?$allocator@I@std@@@std@@@Z: 0.001 sec, 0 instrs
+		??0?$TextInputStream@U?$TextInputStreamTraitsConst@$0CM@$0A@$0A@$0A@$0A@$01$0A@$0A@$0A@$0A@$0A@$0A@$0A@@ScopeEngine@@VCosmosInput@2@@ScopeEngine@@QEAA@AEBUInputFileInfo@1@PEAVIncrementalAllocator@1@_KHAEBUInputStreamParameters@1@@Z: 0.001 sec, 0 instrs
+		??$CreateBadConvertException@VFStringWithNull@ScopeEngine@@@?$TextInputStream@U?$TextInputStreamTraitsConst@$0CM@$0A@$0A@$0A@$0A@$01$0A@$0A@$0A@$0A@$0A@$0A@$0A@@ScopeEngine@@VCosmosInput@2@@ScopeEngine@@AEAA?AVTextConversionException@1@W4ConvertResult@1@AEBVFStringWithNull@1@@Z: 0.001 sec, 0 instrs
+		?GetNextRow@?$RestrictedUnionAllMerger@UExtractorType1_SV2_Extr@@VExtract_4_Data0@@$0?0@ScopeEngine@@QEAA_NAEAVExtract_4_Data0@@@Z: 0.001 sec, 0 instrs
+		?GetCompilerSettings@@YA?AUCompilerSettings@ScopeEngine@@XZ: 0.001 sec, 0 instrs
+		??$GuardHostCode@V<lambda_12a42546ae1968bfc54b28148b17bd9b>@@@ScopeEngine@@YA_K$$QEAV<lambda_12a42546ae1968bfc54b28148b17bd9b>@@@Z: 0.001 sec, 0 instrs
+		?GetNextRow@?$ScopeLoserTree@V?$SortingBucket@VExtract_0_Data0@@@ScopeEngine@@VExtract_0_Data0@@$02@ScopeEngine@@QEAA_NAEAVExtract_0_Data0@@@Z: 0.001 sec, 0 instrs
+		??$GuardHostCode@V<lambda_a616a085f6cda99ff1c600b037da024a>@@@ScopeEngine@@YAX$$QEAV<lambda_a616a085f6cda99ff1c600b037da024a>@@@Z: 0.001 sec, 0 instrs
+		?MergeUntilFitsMemory@?$Sorter@VExtract_0_Data0@@$0?0@ScopeEngine@@QEAA_KAEAV?$vector@V?$shared_ptr@V?$SortingBucket@VExtract_0_Data0@@@ScopeEngine@@@std@@V?$allocator@V?$shared_ptr@V?$SortingBucket@VExtract_0_Data0@@@ScopeEngine@@@std@@@2@@std@@_J@Z: 0.001 sec, 0 instrs
+		??$GuardAdapterCode@V<lambda_441db2db401ff91cc37b86549df0a8e0>@@@ScopeEngine@@YAPEAVIAdapterUdoFactory@UdoAdapter@@$$QEAV<lambda_441db2db401ff91cc37b86549df0a8e0>@@@Z: 0.001 sec, 0 instrs
+		??$_Insert_nohint@AEAU?$pair@$$CBW4USqlColumnType@UdoAdapter@@PEBVIHostTypeData@2@@std@@PEAU?$_Tree_node@U?$pair@$$CBW4USqlColumnType@UdoAdapter@@PEBVIHostTypeData@2@@std@@PEAX@2@@?$_Tree@V?$_Tmap_traits@W4USqlColumnType@UdoAdapter@@PEBVIHostTypeData@2@U?$less@W4USqlColumnType@UdoAdapter@@@std@@V?$allocator@U?$pair@$$CBW4USqlColumnType@UdoAdapter@@PEBVIHostTypeData@2@@std@@@5@$0A@@std@@@std@@IEAA?AU?$pair@V?$_Tree_iterator@V?$_Tree_val@U?$_Tree_simple_types@U?$pair@$$CBW4USqlColumnType@UdoAdapter@@PEBVIHostTypeData@2@@std@@@std@@@std@@@std@@_N@1@_NAEAU?$pair@$$CBW4USqlColumnType@UdoAdapter@@PEBVIHostTypeData@2@@1@PEAU?$_Tree_node@U?$pair@$$CBW4USqlColumnType@UdoAdapter@@PEBVIHostTypeData@2@@std@@PEAX@1@@Z: 0.001 sec, 0 instrs
+		??$GuardHostCode@V<lambda_b34c8da3c99348abdb822f61772e77c6>@@@ScopeEngine@@YAX$$QEAV<lambda_b34c8da3c99348abdb822f61772e77c6>@@@Z: 0.001 sec, 0 instrs
+		??$GuardHostCode@V<lambda_298e4bffe507bfadf82f2525f8166c79>@@@ScopeEngine@@YAAEBVIHostColumnMeta@UdoAdapter@@$$QEAV<lambda_298e4bffe507bfadf82f2525f8166c79>@@@Z: 0.001 sec, 0 instrs
+		??$GuardHostCode@V<lambda_1e0445d571a8aae292f91d886cd514fe>@@@ScopeEngine@@YA_N$$QEAV<lambda_1e0445d571a8aae292f91d886cd514fe>@@@Z: 0.001 sec, 0 instrs
+		??$GuardHostCode@V<lambda_af6b09f1651c86279e943a291eb5400c>@@@ScopeEngine@@YA_K$$QEAV<lambda_af6b09f1651c86279e943a291eb5400c>@@@Z: 0.001 sec, 0 instrs
+		??0?$ProxyHostRowCursorBase@VCosmosInput@ScopeEngine@@@ScopeEngine@@QEAA@AEAVCosmosInput@1@PEBD_K_N_J@Z: 0.001 sec, 0 instrs
+		?overflow@?$basic_stringbuf@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@MEAAHH@Z: 0.001 sec, 0 instrs
+		??0ScopeErrorArg@ScopeCommon@@QEAA@H@Z: 0.001 sec, 0 instrs
+		?_Unchecked_end@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAAPEADXZ: 0.001 sec, 0 instrs
+		?WriteRuntimeStatsImpl@?$ParallelUnionAll@UExtractorType1_SV1_Extr@@VExtract_0_Data0@@$0A@@ScopeEngine@@QEBAXAEAVTreeNode@2@@Z: 0.001 sec, 0 instrs
+		?FreeMemory@?$Sorter@VExtract_0_Data0@@$0?0@ScopeEngine@@AEAA_J_J@Z: 0.001 sec, 0 instrs
+		??$GuardAdapterCode@V<lambda_b56451efe7949d69de1abbf27da4b4a6>@@@ScopeEngine@@YAPEAVIAdapterUdoFactory@UdoAdapter@@$$QEAV<lambda_b56451efe7949d69de1abbf27da4b4a6>@@@Z: 0.001 sec, 0 instrs
+		?Init@?$TextEncodingReader@VCosmosInput@ScopeEngine@@$0A@$0A@@ScopeEngine@@QEAAXPEAVCosmosInput@2@_K_N2@Z: 0.001 sec, 0 instrs
+		??$GuardHostCode@V<lambda_5aef36333f1377fa4a5d69d6c7e25315>@@@ScopeEngine@@YAAEAVIHostRowCursor@UdoAdapter@@$$QEAV<lambda_5aef36333f1377fa4a5d69d6c7e25315>@@@Z: 0.001 sec, 0 instrs
+		??$GuardAdapterCode@V<lambda_93deb0c3b8e9c268a8b93b2c282edc0a>@@@ScopeEngine@@YAPEBVIRowDataReader@UdoAdapter@@$$QEAV<lambda_93deb0c3b8e9c268a8b93b2c282edc0a>@@@Z: 0.001 sec, 0 instrs
+		??$GuardHostCode@V<lambda_ddc0f478dfa057cc3c7c6848c83fb1a8>@@@ScopeEngine@@YAI$$QEAV<lambda_ddc0f478dfa057cc3c7c6848c83fb1a8>@@@Z: 0.001 sec, 0 instrs
+		?LoadingData@?$ParallelLoader@UExtractorType1_SV1_Extr@@VExtract_0_Data0@@@ScopeEngine@@AEAA_NPEAUExtractorType1_SV1_Extr@@@Z: 0.001 sec, 0 instrs
+		??$GuardAdapterCode@V<lambda_cb36ba566c2fb96b0d443f8a2f07efd8>@@@ScopeEngine@@YAAEAVIAdapterReducer@UdoAdapter@@$$QEAV<lambda_cb36ba566c2fb96b0d443f8a2f07efd8>@@@Z: 0.001 sec, 0 instrs
+		??$GuardAdapterCode@V<lambda_ffebd7fdf5cb385dd4879ec639b361cd>@@@ScopeEngine@@YAAEAVIAdapterExtractor@UdoAdapter@@$$QEAV<lambda_ffebd7fdf5cb385dd4879ec639b361cd>@@@Z: 0.001 sec, 0 instrs
+		??0?$ProxyHostRowPolicy@VProcess_2_Data0@@@ScopeEngine@@QEAA@AEBV?$vector@IV?$allocator@I@std@@@std@@@Z: 0.001 sec, 0 instrs
+		??$GuardAdapterCode@V<lambda_3f149690b0c2481fc71575aed19b619a>@@@ScopeEngine@@YAPEBVIAdapterUdoRow@UdoAdapter@@$$QEAV<lambda_3f149690b0c2481fc71575aed19b619a>@@@Z: 0.001 sec, 0 instrs
+		??$?6U?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@PEBD@Z: 0.001 sec, 0 instrs
+		??$GuardHostCode@V<lambda_4c3eab3a633e675f8921ff50bdd4e1fe>@@@ScopeEngine@@YAX$$QEAV<lambda_4c3eab3a633e675f8921ff50bdd4e1fe>@@@Z: 0.001 sec, 0 instrs
+		??$?6U?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@D@Z: 0.001 sec, 0 instrs
+		?GetRowCursorImpl@?$ProxyHostUnstructuredReader@VCosmosInput@ScopeEngine@@@ScopeEngine@@AEAAAEAVIHostRowCursor@UdoAdapter@@PEBD_K@Z: 0.001 sec, 0 instrs
+		??$GuardHostCode@V<lambda_82b250079ec1f1bc7ab89990f88d963a>@@@ScopeEngine@@YAAEAVIHostInputByteStream@UdoAdapter@@$$QEAV<lambda_82b250079ec1f1bc7ab89990f88d963a>@@@Z: 0.001 sec, 0 instrs
+		??$GuardHostCode@V<lambda_e79d0b589728cf77f95bfe5476ec41f4>@@@ScopeEngine@@YAAEBVIHostColumnMeta@UdoAdapter@@$$QEAV<lambda_e79d0b589728cf77f95bfe5476ec41f4>@@@Z: 0.001 sec, 0 instrs
+		??$GuardHostCode@V<lambda_76980e67c3a1dd17e733b69cef832193>@@@ScopeEngine@@YAAEBVIHostColumnMeta@UdoAdapter@@$$QEAV<lambda_76980e67c3a1dd17e733b69cef832193>@@@Z: 0.001 sec, 0 instrs
+		?GetFixedLengthColumn@?$ProxyHostRowPolicy@VExtract_0_Data0@@@ScopeEngine@@QEBAXIAEAUFixedLengthColumnData@UdoAdapter@@AEBVExtract_0_Data0@@@Z: 0.001 sec, 0 instrs
+		??$_Insert_string@DU?$char_traits@D@std@@_K@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@QEBD_K@Z: 0.001 sec, 0 instrs
+		??$GuardHostCode@V<lambda_2df96453e8163118d49fe1bde1a38e74>@@@ScopeEngine@@YAX$$QEAV<lambda_2df96453e8163118d49fe1bde1a38e74>@@@Z: 0.001 sec, 0 instrs
+		??$GuardHostCode@V<lambda_a8d16bc1faa6b1f36f0b168217d7afbe>@@@ScopeEngine@@YAAEBVIHostColumnMeta@UdoAdapter@@$$QEAV<lambda_a8d16bc1faa6b1f36f0b168217d7afbe>@@@Z: 0.001 sec, 0 instrs
+		??$MakeupOneCompleteCharacter@V?$TextEncodingConverter@$0N@@ScopeEngine@@@?$TextEncodingReader@VCosmosInput@ScopeEngine@@$0A@$0A@@ScopeEngine@@AEAA_KPEAV?$TextEncodingConverter@$0N@@1@PEAD_K12@Z: 0.001 sec, 0 instrs
+		?WriteRuntimeStatsImpl@?$RestrictedUnionAllMerger@UExtractorType1_SV2_Extr@@VExtract_4_Data0@@$0?0@ScopeEngine@@QEBAXAEAVTreeNode@2@@Z: 0.001 sec, 0 instrs
+		?StartRow@?$TextInputStream@U?$TextInputStreamTraitsConst@$0CM@$0A@$0A@$0A@$0A@$01$0A@$0A@$0A@$0A@$0A@$0A@$0A@@ScopeEngine@@VCosmosInput@2@@ScopeEngine@@QEAA_NXZ: 0.001 sec, 0 instrs
+		?ReadAndSort@?$Sorter@VExtract_0_Data0@@$0?0@ScopeEngine@@AEAA_JXZ: 0.001 sec, 0 instrs
+		??0?$ProxyHostRowPolicy@VExtract_0_Data0@@@ScopeEngine@@QEAA@AEBV?$vector@IV?$allocator@I@std@@@std@@@Z: 0.001 sec, 0 instrs
+		??$GuardHostCode@V<lambda_eb9191d58a3663c6a023c5ef90e69718>@@@ScopeEngine@@YAX$$QEAV<lambda_eb9191d58a3663c6a023c5ef90e69718>@@@Z: 0.001 sec, 0 instrs
+		?Serialize@?$BinaryOutputPolicy@VExtract_0_Data0@@@ScopeEngine@@SAXPEAVBinaryOutputStream@2@AEAVExtract_0_Data0@@@Z: 0.001 sec, 0 instrs
+		??0?$TextEncodingReader@VCosmosInput@ScopeEngine@@$0A@$0A@@ScopeEngine@@QEAA@W4TextEncoding@1@@Z: 0.001 sec, 0 instrs
+		??0?$ProxyHostReducer@VExtract_0_Data0@@VProcess_2_Data0@@VReduceKey_Process_2@@V?$KeyComparePolicy@VExtract_0_Data0@@$04@ScopeEngine@@$04@ScopeEngine@@QEAA@AEAVIAdapterReducer@UdoAdapter@@PEAV?$OperatorDelegate@VExtract_0_Data0@@@1@@Z: 0.001 sec, 0 instrs
+		??$GuardAdapterCode@V<lambda_4f96716d8108a31c6036a17f75d14ae5>@@@ScopeEngine@@YAX$$QEAV<lambda_4f96716d8108a31c6036a17f75d14ae5>@@@Z: 0.001 sec, 0 instrs
+		?Increment@?$KeyIterator@V?$OperatorDelegate@VExtract_0_Data0@@@ScopeEngine@@VExtract_0_Data0@@V?$KeyComparePolicy@VExtract_0_Data0@@$04@2@@ScopeEngine@@QEAAXXZ: 0.001 sec, 0 instrs
+		??$GuardAdapterCode@V<lambda_f47fb2387db94d7f4cd1d9bd39257189>@@@ScopeEngine@@YAX$$QEAV<lambda_f47fb2387db94d7f4cd1d9bd39257189>@@@Z: 0.001 sec, 0 instrs
+		??$GuardHostCode@V<lambda_0be2adeaeeb05f92ce0d32f799e844ea>@@@ScopeEngine@@YAX$$QEAV<lambda_0be2adeaeeb05f92ce0d32f799e844ea>@@@Z: 0.001 sec, 0 instrs
+		??$GuardAdapterCode@V<lambda_ee28b951b36ed051bc037bb088417a8a>@@@ScopeEngine@@YAX$$QEAV<lambda_ee28b951b36ed051bc037bb088417a8a>@@@Z: 0.001 sec, 0 instrs
+		??$GuardAdapterCode@V<lambda_89ec832c8b3409625d97e4292642bb8c>@@@ScopeEngine@@YAX$$QEAV<lambda_89ec832c8b3409625d97e4292642bb8c>@@@Z: 0.001 sec, 0 instrs
+		??$GuardAdapterCode@V<lambda_eb50916be6ccf75ccec63c32c6d40c22>@@@ScopeEngine@@YAX$$QEAV<lambda_eb50916be6ccf75ccec63c32c6d40c22>@@@Z: 0.001 sec, 0 instrs
+		?WriteRuntimeStatsImpl@?$Outputter@UUnionAllType_extractor_serially_Extract_4_connector@@VExtract_4_Data0@@V?$TextOutputPolicy@VExtract_4_Data0@@$09@ScopeEngine@@V?$TextOutputStream@U?$TextOutputStreamTraitsConst@$0CM@$0A@$0A@$00$0A@$0A@$0A@$01$0A@$0A@@ScopeEngine@@VCosmosOutput@2@@4@$0A@VExecutionStats@4@VDummyStatsWriter@4@@ScopeEngine@@QEBAXAEAVTreeNode@2@@Z: 0.001 sec, 0 instrs
+		?GetVariableLengthColumn@?$ProxyHostRowPolicy@VReduceKey_Process_2@@@ScopeEngine@@QEBAXIAEAVIColumnDataWriter@UdoAdapter@@AEBVReduceKey_Process_2@@@Z: 0.001 sec, 0 instrs
+		??$GuardHostCode@V<lambda_c0afc277a41a1431f0e97746ade42da1>@@@ScopeEngine@@YAX$$QEAV<lambda_c0afc277a41a1431f0e97746ade42da1>@@@Z: 0.001 sec, 0 instrs
+		??$GuardHostCode@V<lambda_ccfe3667ca7e18cfd619c0041e7cc32b>@@@ScopeEngine@@YAX$$QEAV<lambda_ccfe3667ca7e18cfd619c0041e7cc32b>@@@Z: 0.001 sec, 0 instrs
+		?MakeBigString@ScopeEngine@@YA?AV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@PEB_W0ZZ: 0.001 sec, 0 instrs
+		??0?$ScopeProcessor@VExtract_0_Data0@@VProcess_2_Data0@@@ScopeEngine@@QEAA@PEAV?$ScopeProcessorManaged@VExtract_0_Data0@@VProcess_2_Data0@@@1@PEAV?$OperatorDelegate@VExtract_0_Data0@@@1@H@Z: 0.001 sec, 0 instrs
+		??$WriteString@$0A@@?$TextOutputStream@U?$TextOutputStreamTraitsConst@$0CM@$0A@$0A@$00$0A@$0A@$0A@$01$0A@$0A@@ScopeEngine@@VCosmosOutput@2@@ScopeEngine@@QEAAXPEBD_K@Z: 0.001 sec, 0 instrs
+		??$emplace_back@AEBV?$shared_ptr@V?$SortingBucket@VExtract_0_Data0@@@ScopeEngine@@@std@@@?$vector@V?$shared_ptr@V?$SortingBucket@VExtract_0_Data0@@@ScopeEngine@@@std@@V?$allocator@V?$shared_ptr@V?$SortingBucket@VExtract_0_Data0@@@ScopeEngine@@@std@@@2@@std@@QEAAXAEBV?$shared_ptr@V?$SortingBucket@VExtract_0_Data0@@@ScopeEngine@@@1@@Z: 0.001 sec, 0 instrs
+		?AssertFailed@ProxyHostException@ScopeEngine@@SAXPEBD0H00@Z: 0.001 sec, 0 instrs
+		??0?$ParallelUnionAll@UExtractorType1_SV1_Extr@@VExtract_0_Data0@@$0A@@ScopeEngine@@QEAA@PEAPEAUExtractorType1_SV1_Extr@@KK_K1H@Z: 0.001 sec, 0 instrs
+		?ssort2@?$MKQSortInternal@VExtract_0_Data0@@@ScopeEngine@@QEAAXPEAVExtract_0_Data0@@_JH@Z: 0.001 sec, 0 instrs
+		?GetVariableLengthColumn@?$ProxyHostRowPolicy@VExtract_0_Data0@@@ScopeEngine@@QEBAXIAEAVIColumnDataWriter@UdoAdapter@@AEBVExtract_0_Data0@@@Z: 0.001 sec, 0 instrs
+		?GetByteStreamImpl@?$ProxyHostUnstructuredReader@VCosmosInput@ScopeEngine@@@ScopeEngine@@AEAAAEAVIHostInputByteStream@UdoAdapter@@XZ: 0.001 sec, 0 instrs
+		?GetNextPage@?$TextEncodingReader@VCosmosInput@ScopeEngine@@$0A@$0A@@ScopeEngine@@QEAAPEADAEA_KAEA_N@Z: 0.001 sec, 0 instrs
+		?WriteRuntimeStatsImpl@?$Outputter@UReducerType_Process_2@@VProcess_2_Data0@@V?$TextOutputPolicy@VProcess_2_Data0@@$06@ScopeEngine@@V?$TextOutputStream@U?$TextOutputStreamTraitsConst@$0CM@$0A@$0A@$00$0A@$0A@$0A@$01$0A@$0A@@ScopeEngine@@VCosmosOutput@2@@4@$0A@VExecutionStats@4@VDummyStatsWriter@4@@ScopeEngine@@QEBAXAEAVTreeNode@2@@Z: 0.001 sec, 0 instrs
+		?GetVariableLengthColumn@?$ProxyHostRowPolicy@VProcess_2_Data0@@@ScopeEngine@@QEBAXIAEAVIColumnDataWriter@UdoAdapter@@AEBVProcess_2_Data0@@@Z: 0.001 sec, 0 instrs
+		?CreateInstance@ProxyHostEnvironmentHelper@ScopeEngine@@SAPEAV12@PEBD@Z: 0.001 sec, 0 instrs
+		?WriteRuntimeStatsImpl@?$ScopeExtractor@VCosmosInput@ScopeEngine@@VExtract_4_Data0@@$0?0VExecutionStats@2@@ScopeEngine@@QEBAXAEAVTreeNode@2@@Z: 0.001 sec, 0 instrs
+		?do_in@?$codecvt_utf8_utf16@_S$0BAPPPP@$00@std@@MEBAHAEAU_Mbstatet@@PEBD1AEAPEBDPEA_S3AEAPEA_S@Z: 0.001 sec, 0 instrs
+		?SkipInvalidLeadingBytes@?$TextEncodingReader@VCosmosInput@ScopeEngine@@$0A@$0A@@ScopeEngine@@QEAAXXZ: 0.001 sec, 0 instrs
+		?SpillingPhase@?$SortingBucket@VExtract_0_Data0@@@ScopeEngine@@QEAAXXZ: 0.001 sec, 0 instrs
+		??$_Partition_by_median_guess_unchecked@PEAVExtract_0_Data0@@P6A_NAEAV1@0@Z@std@@YA?AU?$pair@PEAVExtract_0_Data0@@PEAV1@@0@PEAVExtract_0_Data0@@0P6A_NAEAV2@1@Z@Z: 0.001 sec, 0 instrs
+		??0ProxyHostException@ScopeEngine@@QEAA@W4ErrorType@UdoAdapter@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@Vexception_ptr@5@@Z: 0.001 sec, 0 instrs
+		SV_CopyThrough_execute: 0.001 sec, 0 instrs
+		??1?$TextEncodingReader@VCosmosInput@ScopeEngine@@$0A@$0A@@ScopeEngine@@QEAA@XZ: 0.001 sec, 0 instrs
+		?GetFixedLengthColumn@?$ProxyHostRowPolicy@VProcess_2_Data0@@@ScopeEngine@@QEBAXIAEAUFixedLengthColumnData@UdoAdapter@@AEBVProcess_2_Data0@@@Z: 0.001 sec, 0 instrs
+		?InitSpilled@?$SortingBucket@VExtract_0_Data0@@@ScopeEngine@@AEAAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z: 0.001 sec, 0 instrs
+		??$_Throw_with_nested@VExtractException@ScopeEngine@@@std@@YAX$$QEAVExtractException@ScopeEngine@@U?$integral_constant@_N$00@0@@Z: 0.001 sec, 0 instrs
+		?CopyAndVerify@?$Utf8TextEncodingConverter@$0A@@ScopeEngine@@CAXPEBD0AEAPEBDPEAD2AEAPEAD@Z: 0.001 sec, 0 instrs
+		?MakeBigString@ScopeEngine@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBD0ZZ: 0.001 sec, 0 instrs
+		?AppendRuntimeStats@?$Extractor@VExtract_0_Data0@@V?$TextExtractPolicy@VExtract_0_Data0@@$00@ScopeEngine@@V?$TextInputStream@U?$TextInputStreamTraitsConst@$0CM@$0A@$0A@$0A@$0A@$01$0A@$0A@$0A@$0A@$0A@$0A@$0A@@ScopeEngine@@VCosmosInput@2@@3@VExecutionStats@3@@ScopeEngine@@QEBAXAEAVTreeNode@2@@Z: 0.001 sec, 0 instrs
+		?DetectAndValidateEncodingByBOM@?$TextEncodingReader@VCosmosInput@ScopeEngine@@$0A@$0A@@ScopeEngine@@AEAAXXZ: 0.001 sec, 0 instrs
+		?GetNextRowImpl@?$ParallelUnionAll@UExtractorType1_SV1_Extr@@VExtract_0_Data0@@$0A@@ScopeEngine@@QEAA_NAEAVExtract_0_Data0@@@Z: 0.001 sec, 0 instrs
+		?_Growmap@?$deque@V?$unique_ptr@V?$AutoRowArray@VExtract_0_Data0@@@ScopeEngine@@U?$default_delete@V?$AutoRowArray@VExtract_0_Data0@@@ScopeEngine@@@std@@@std@@V?$allocator@V?$unique_ptr@V?$AutoRowArray@VExtract_0_Data0@@@ScopeEngine@@U?$default_delete@V?$AutoRowArray@VExtract_0_Data0@@@ScopeEngine@@@std@@@std@@@2@@std@@IEAAX_K@Z: 0.001 sec, 0 instrs
+		??$?0AEAY0M@$$CBD@KeyAllocator@ScopeEngine@@QEAA@_KAEAY0M@$$CBD@Z: 0.001 sec, 0 instrs
+		?_Growmap@?$deque@V?$shared_ptr@V?$SortingBucket@VExtract_0_Data0@@@ScopeEngine@@@std@@V?$allocator@V?$shared_ptr@V?$SortingBucket@VExtract_0_Data0@@@ScopeEngine@@@std@@@2@@std@@IEAAX_K@Z: 0.001 sec, 0 instrs
+		??1UnionAllType_extractor_serially_Extract_4_connector@@QEAA@XZ: 0.001 sec, 0 instrs
+		??1?$ProxyHostTypeDataFixedLengthNonNull@$01X@ScopeEngine@@QEAA@XZ: 0.001 sec, 0 instrs
+		?GetMetadataImpl@?$Extractor@VExtract_0_Data0@@V?$TextExtractPolicy@VExtract_0_Data0@@$00@ScopeEngine@@V?$TextInputStream@U?$TextInputStreamTraitsConst@$0CM@$0A@$0A@$0A@$0A@$01$0A@$0A@$0A@$0A@$0A@$0A@$0A@@ScopeEngine@@VCosmosInput@2@@3@VExecutionStats@3@@ScopeEngine@@QEAAPEAVPartitionMetadata@2@W4MetadataAction@2@@Z: 0.001 sec, 0 instrs
+		??$_Insert_at@AEAU?$pair@$$CBW4USqlColumnType@UdoAdapter@@PEBVIHostTypeData@2@@std@@PEAU?$_Tree_node@U?$pair@$$CBW4USqlColumnType@UdoAdapter@@PEBVIHostTypeData@2@@std@@PEAX@2@@?$_Tree@V?$_Tmap_traits@W4USqlColumnType@UdoAdapter@@PEBVIHostTypeData@2@U?$less@W4USqlColumnType@UdoAdapter@@@std@@V?$allocator@U?$pair@$$CBW4USqlColumnType@UdoAdapter@@PEBVIHostTypeData@2@@std@@@5@$0A@@std@@@std@@IEAA?AV?$_Tree_iterator@V?$_Tree_val@U?$_Tree_simple_types@U?$pair@$$CBW4USqlColumnType@UdoAdapter@@PEBVIHostTypeData@2@@std@@@std@@@std@@@1@_NPEAU?$_Tree_node@U?$pair@$$CBW4USqlColumnType@UdoAdapter@@PEBVIHostTypeData@2@@std@@PEAX@1@AEAU?$pair@$$CBW4USqlColumnType@UdoAdapter@@PEBVIHostTypeData@2@@1@1@Z: 0.001 sec, 0 instrs
+		?CreateInstance@?$ProxyHostExtractor@VCosmosInput@ScopeEngine@@VExtract_4_Data0@@@ScopeEngine@@UEAAXAEBUInputFileInfo@2@_KH1@Z: 0.001 sec, 0 instrs
+		?str@?$basic_stringbuf@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@XZ: 0.001 sec, 0 instrs
+		??R<lambda_c0afc277a41a1431f0e97746ade42da1>@@QEBAXXZ: 0.001 sec, 0 instrs
+		??$_Insert_at@AEAU?$pair@QEBDH@std@@PEAU?$_Tree_node@U?$pair@QEBDH@std@@PEAX@2@@?$_Tree@V?$_Tmap_traits@PEBDHUCStringCompare@ScopeEngine@@V?$allocator@U?$pair@QEBDH@std@@@std@@$0A@@std@@@std@@IEAA?AV?$_Tree_iterator@V?$_Tree_val@U?$_Tree_simple_types@U?$pair@QEBDH@std@@@std@@@std@@@1@_NPEAU?$_Tree_node@U?$pair@QEBDH@std@@PEAX@1@AEAU?$pair@QEBDH@1@1@Z: 0.001 sec, 0 instrs
+		??$MakeupOneCompleteCharacter@V?$TextEncodingConverter@$0M@@ScopeEngine@@@?$TextEncodingReader@VCosmosInput@ScopeEngine@@$0A@$0A@@ScopeEngine@@AEAA_KPEAV?$TextEncodingConverter@$0M@@1@PEAD_K12@Z: 0.001 sec, 0 instrs
+		?Init@?$AutoRowArray@VExtract_0_Data0@@@ScopeEngine@@AEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_K1@Z: 0.001 sec, 0 instrs
+RdrReadProc Caching Stats
+	Functions Cached: 0
+	Retrieved Count: 0
+	Abandoned Retrieval Count: 0
+	Abandoned Caching Count: 0
+	Wasted Caching Attempts: 0
+	Functions Retrieved at Least Once: 0
+	Functions Cached and Never Retrieved: 0
+	Most Hits:
+	Least Hits:
+time(c:\program files (x86)\microsoft visual studio\2019\enterprise\SDK\ScopeCppSDK\vc15\VC\bin\c2.dll)=0.59953s < 67943892708 - 67949888032 > BB [D:\Sharing\Scope2015\PythonUDO\PythonUDO\bin\Debug\58C5C7DBDF061604\LocalRun_ReducerExtractor_C4E1F029DA134F8F\__ScopeCodeGenEngine__.dll.cpp]
+
+#CPP stderr:
+
+*** Done with C++ compilation, time elapsed until this point: 00:00:11.2023031
+#LINK stdout:
+   Creating library __ScopeCodeGenEngine__.lib and object __ScopeCodeGenEngine__.exp
+Linker: LibDef Total time = 0.00347s PB: 20889600 [D:\Sharing\Scope2015\PythonUDO\PythonUDO\bin\Debug\58C5C7DBDF061604\LocalRun_ReducerExtractor_C4E1F029DA134F8F\__ScopeCodeGenEngine__.dll] 
+Linker: Pass 1: Interval #1, time = 0.10169s [D:\Sharing\Scope2015\PythonUDO\PythonUDO\bin\Debug\58C5C7DBDF061604\LocalRun_ReducerExtractor_C4E1F029DA134F8F\__ScopeCodeGenEngine__.dll] 
+Linker:   Wait PDB close Total time = 0.04725s PB: 12574720 [D:\Sharing\Scope2015\PythonUDO\PythonUDO\bin\Debug\58C5C7DBDF061604\LocalRun_ReducerExtractor_C4E1F029DA134F8F\__ScopeCodeGenEngine__.dll] 
+Linker:   Wait type merge Total time = 0.03106s PB: 12537856 [D:\Sharing\Scope2015\PythonUDO\PythonUDO\bin\Debug\58C5C7DBDF061604\LocalRun_ReducerExtractor_C4E1F029DA134F8F\__ScopeCodeGenEngine__.dll] 
+Linker: Pass 2: Interval #2, time = 0.19413s [D:\Sharing\Scope2015\PythonUDO\PythonUDO\bin\Debug\58C5C7DBDF061604\LocalRun_ReducerExtractor_C4E1F029DA134F8F\__ScopeCodeGenEngine__.dll] 
+Linker: Final Total time = 0.29589s < 67951014776 - 67953973707 > PB: 12701696 [D:\Sharing\Scope2015\PythonUDO\PythonUDO\bin\Debug\58C5C7DBDF061604\LocalRun_ReducerExtractor_C4E1F029DA134F8F\__ScopeCodeGenEngine__.dll] 
+
+#LINK stderr:
+
+*** Done with C++ linking, time elapsed until this point: 00:00:11.6117504
+*** Exiting compilation, time elapsed until this point: 00:00:11.6159811

@@ -1,0 +1,33 @@
+﻿//Script GUID:a5b81722-79b5-475d-abe4-d627f23a879a
+//Used for tracking history
+
+
+Q =
+    EXTRACT Company : string,
+            MarketCap : int,
+            Headquarter : string
+    FROM "/users/v-hozhao/NA/companies.csv"
+    USING DefaultTextExtractor(delimiter: ',');
+
+;
+dummystream = SELECT MyHelper.DummyHelper(Company) AS b FROM Q;
+Q2 =
+SELECT Company,MarketCap,Headquarter
+FROM Q
+WHERE MarketCap >= 1000;
+
+OUTPUT dummystream TO "/users/v-hozhao/NA/companies_output_failed_integration.txt";
+
+#CS
+public static class MyHelper
+{
+    public static string DummyHelper (string input)
+    {
+        // sleep for x seconds, the place_holder will be replaced by
+        // cli class that calls on this script
+        throw new Exception("Testing debug data");
+        Thread.Sleep(1000);
+        return input;
+    }
+}
+#ENDCS

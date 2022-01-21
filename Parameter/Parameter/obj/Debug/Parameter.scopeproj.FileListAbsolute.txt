@@ -1,0 +1,4 @@
+\\v-hozhao\Sharing\Scope2015\Parameter\Parameter\obj\Debug\Parameter.scopeproj.CoreCompileInputs.cache
+\\v-hozhao\Sharing\Scope2015\Parameter\Parameter\bin\Debug\Algebra.xml
+\\v-hozhao\Sharing\Scope2015\Parameter\Parameter\obj\Debug\Parameter.scopeprojAssemblyReference.cache
+\\v-hozhao\Sharing\Scope2015\Parameter\Parameter\obj\Debug\Algebra.xml

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScopeVertices helperAssembly="__ScopeCodeGen__.dll" signatureVersion="1">
+  <ScopeVertex id="SV1_Extract" cppReady="true" nativeOnly="true">
+    <EstimatedLimitMemory processMemory="1650117136" managedMemory="0" adapterMemory="0" engineMemory="1125829136" engineIOMemory="125829120" engineOperatorMemory="1000000016" minEngineOperatorMemory="1000000016" />
+    <EstimatedOptimalMemory processMemory="1650117136" managedMemory="0" adapterMemory="0" engineMemory="1125829136" engineIOMemory="125829120" engineOperatorMemory="1000000016" minEngineOperatorMemory="1000000016" />
+    <operator id="Extract_0" uid="1" line="5" assemblyName="ScopeRuntime.exe" className="ScopeRuntime.DefaultTextExtractor" signature="4282390774761967034!0!Strict">
+      <input id="Extract_0" uid="1" schema="IId:int,Start:DateTime,Market:string,Query:string,DwellTime:int,Results:string,ClickedUrls:string" inputIndex="0" numberOfInputs="ALL" />
+      <output id="Extract_0_Data0" uid="2" schema="IId:int" />
+      <ReflectedScopeScript><![CDATA[_var_100001_EXTRACT = EXTRACT IId:int FROM @"users/v-hozhao/inputs/SearchLog.txt" USING ScopeRuntime.DefaultTextExtractor();
+]]></ReflectedScopeScript>
+    </operator>
+    <operator id="Process_1" uid="3" line="32" assemblyName="__ScopeCodeGen__.dll" className="ScopeFilterTransformer_3" signature="4282390774761967034!0!Strict">
+      <input id="Extract_0_Data0" uid="2" schema="IId:int" />
+      <output id="Process_1_Data0" uid="4" schema="IId:int,b:int" />
+      <ReflectedScopeScript><![CDATA[_var_100002_TRANSFORM = SELECT -1 AS b, IId AS IId FROM _var_100001_EXTRACT;
+_var_100003_TRANSFORM = SELECT IId AS IId, b AS b FROM _var_100002_TRANSFORM;
+]]></ReflectedScopeScript>
+    </operator>
+    <operator id="Output_2" uid="5" line="32" assemblyName="ScopeRuntime.exe" className="ScopeRuntime.DefaultTextOutputter" signature="7470376061009137274!5!Strict">
+      <input id="Process_1_Data0" uid="4" schema="IId:int,b:int" />
+      <output id="SV1_Extract_out0" uid="5" schema="IId:int,b:int" outputIndex="0" numberOfOutputs="1" finalOutput="true" />
+      <ReflectedScopeScript><![CDATA[OUTPUT _var_100003_TRANSFORM TO @"abfs://filesystem@ltianwestcentralusgen2.dfs.core.windows.net/users/v-hozhao/out.txt" USING ScopeRuntime.DefaultTextOutputter();
+]]></ReflectedScopeScript>
+    </operator>
+  </ScopeVertex>
+</ScopeVertices>

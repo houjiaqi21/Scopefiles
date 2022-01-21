@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <StartFile>Scope7.script</StartFile>
+    <CurrentWorkingVC>DataLakeCA:sandbox-c08 (v-hozhao@microsoft.com)</CurrentWorkingVC>
+    <OutputStreamPath>%24(PROJECT_DIR)</OutputStreamPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <ScriptUserData Include="Scope2.script">
+      <UseLocalComputeAccount>false</UseLocalComputeAccount>
+      <ClusterComputeAccount>DataLakeCA:sandbox-c08 (v-hozhao@microsoft.com)</ClusterComputeAccount>
+    </ScriptUserData>
+    <ScriptUserData Include="Scope3.script">
+      <UseLocalComputeAccount>false</UseLocalComputeAccount>
+      <ClusterComputeAccount>DataLakeCA:sandbox-c08 (v-hozhao@microsoft.com)</ClusterComputeAccount>
+    </ScriptUserData>
+    <ScriptUserData Include="Scope4.script">
+      <UseLocalComputeAccount>false</UseLocalComputeAccount>
+      <ClusterComputeAccount>DataLakeCA:sandbox-c08 (v-hozhao@microsoft.com)</ClusterComputeAccount>
+    </ScriptUserData>
+    <ScriptUserData Include="Scope5.script">
+      <UseLocalComputeAccount>false</UseLocalComputeAccount>
+      <ClusterComputeAccount>DataLakeCA:sandbox-c08 (v-hozhao@microsoft.com)</ClusterComputeAccount>
+    </ScriptUserData>
+    <ScriptUserData Include="Scope6.script">
+      <UseLocalComputeAccount>false</UseLocalComputeAccount>
+      <ClusterComputeAccount>DataLakeCA:sandbox-c08 (v-hozhao@microsoft.com)</ClusterComputeAccount>
+    </ScriptUserData>
+    <ScriptUserData Include="Scope7.script">
+      <UseLocalComputeAccount>false</UseLocalComputeAccount>
+      <ClusterComputeAccount>DataLakeCA:sandbox-c08 (v-hozhao@microsoft.com)</ClusterComputeAccount>
+    </ScriptUserData>
+  </ItemGroup>
+</Project>

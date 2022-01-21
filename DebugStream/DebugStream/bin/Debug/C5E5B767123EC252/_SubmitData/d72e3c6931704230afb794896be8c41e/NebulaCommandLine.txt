@@ -1,0 +1,1 @@
+-c++ -pdb Partial -UserDebugStream users/v-hozhao/DebugStream.txt -jobId d72e3c69-3170-4230-afb7-94896be8c41e -On ADL -On EnableScopeDml -On EnableSStreamContractV4 -ClientVersion 10.2.2.0

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScopeScript>
+  <preScript><![CDATA[
+USING Microsoft.Analytics.Interfaces;
+USING System;
+USING System.Collections.Generic;
+USING System.Globalization;
+USING System.Text;
+USING System.Reflection;
+USING System.IO;
+USING System.Text.RegularExpressions;
+USING System.Threading;
+USING System.Runtime.Serialization;
+USING System.Linq;
+USING Microsoft.SCOPE.Types;
+USING ScopeRuntime;
+
+REFERENCE @"c:\program files (x86)\microsoft visual studio\2017\enterprise\common7\ide\extensions\microsoft\scopestudio\2.7.0000.7\ScopeStudioDebugRuntime.dll";
+]]></preScript>
+  <ScopeVertices>
+    <ScopeVertex id="SV1_Extract_Split" ScopeScriptEndPoint="true">
+      <input id="Extract_0" />
+      <output id="SV1_Extract_Split_out0" schema="UserId:int,Start:DateTime,Region:string,Query:string,Duration:int,Urls:string,ClickedUrls:string" />
+      <output id="SV1_Extract_Split_out1" schema="UserId:int,Start:DateTime,Region:string,Query:string,Duration:int,Urls:string,ClickedUrls:string" />
+      <output id="SV1_Extract_Split_out2" schema="UserId:int,Start:DateTime,Region:string,Query:string,Duration:int,Urls:string,ClickedUrls:string" /><![CDATA[_var_100001_EXTRACT = EXTRACT UserId:int,Start:DateTime,Region:string,Query:string,Duration:int,Urls:string,ClickedUrls:string FROM @"D:\Sharing\Scope2015\Sample_1\Sample_1\users\v-hozhao\SampleScope\SearchLog.txt" USING ScopeRuntime.DefaultTextExtractor();
+]]></ScopeVertex>
+    <ScopeVertex id="SV2_Aggregate" ScopeScriptEndPoint="false">
+      <input id="SV1_Extract_Split_out1" />
+      <output id="SV2_Aggregate_out0" schema="UserId:int,Start:DateTime,Region:string,Query:string,Duration:int,Urls:string,ClickedUrls:string" /><![CDATA[]]></ScopeVertex>
+    <ScopeVertex id="Concatenate_6" ScopeScriptEndPoint="false">
+      <input id="SV1_Extract_Split_out0" />
+      <input id="SV2_Aggregate_out0" /><![CDATA[]]></ScopeVertex>
+  </ScopeVertices>
+  <postScript><![CDATA[#CS
+
+#ENDCS]]></postScript>
+</ScopeScript>

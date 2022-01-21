@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScopeVertices helperAssembly="__ScopeCodeGen__.dll" signatureVersion="1">
+  <ScopeVertex id="SV1_Extract_Split" cppReady="true" nativeOnly="true">
+    <EstimatedLimitMemory processMemory="6215618520" managedMemory="0" adapterMemory="0" engineMemory="5691330520" engineIOMemory="3642754168" engineOperatorMemory="2048576352" minEngineOperatorMemory="2048576352" />
+    <EstimatedOptimalMemory processMemory="1724566984" managedMemory="0" adapterMemory="0" engineMemory="1200278984" engineIOMemory="196084328" engineOperatorMemory="1004194656" minEngineOperatorMemory="1004194656" />
+    <operator id="Extract_0" uid="1" line="7" assemblyName="ScopeRuntime.exe" className="ScopeRuntime.DefaultTextExtractor" signature="15098414897593610305!0!Strict">
+      <input id="Extract_0" uid="1" schema="UserId:int,Start:DateTime,Region:string,Query:string,Duration:int,Urls:string,ClickedUrls:string" inputIndex="0" numberOfInputs="ALL" />
+      <output id="Extract_0_Data0" uid="2" schema="UserId:int,Start:DateTime,Region:string,Query:string,Duration:int,Urls:string,ClickedUrls:string" />
+    </operator>
+    <operator id="Split_1" uid="3" assemblyName="ScopeRuntime.exe" className="ScopeRuntime.ScopeFilterSelectSplitter">
+      <input id="Extract_0_Data0" uid="2" schema="UserId:int,Start:DateTime,Region:string,Query:string,Duration:int,Urls:string,ClickedUrls:string" />
+      <output id="SV1_Extract_Split_out0" uid="4" schema="UserId:int,Start:DateTime,Region:string,Query:string,Duration:int,Urls:string,ClickedUrls:string" outputIndex="0" numberOfOutputs="1" assemblyName="__ScopeCodeGen__.dll" className="ScopeSplitOutputter_1" encoding="SStream" args="-noPartition" />
+      <output id="SV1_Extract_Split_out1" uid="5" schema="UserId:int,Start:DateTime,Region:string,Query:string,Duration:int,Urls:string,ClickedUrls:string" outputIndex="1" numberOfOutputs="1" assemblyName="__ScopeCodeGen__.dll" className="ScopeSplitOutputter_1" encoding="SStream" args="" />
+      <output id="SV1_Extract_Split_out2" uid="6" schema="UserId:int,Start:DateTime,Region:string,Query:string,Duration:int,Urls:string,ClickedUrls:string" outputIndex="2" numberOfOutputs="1" finalOutput="true" assemblyName="__ScopeCodeGen__.dll" className="ScopeSplitOutputter_2" encoding="Text" args="" />
+    </operator>
+  </ScopeVertex>
+  <ScopeVertex id="SV2_Aggregate" cppReady="true" nativeOnly="true">
+    <EstimatedLimitMemory processMemory="1996488704" managedMemory="0" adapterMemory="0" engineMemory="1472200704" engineIOMemory="947912704" engineOperatorMemory="524288000" minEngineOperatorMemory="524288000" />
+    <EstimatedOptimalMemory processMemory="1006632960" managedMemory="0" adapterMemory="0" engineMemory="482344960" engineIOMemory="448790528" engineOperatorMemory="33554432" minEngineOperatorMemory="33554432" />
+    <operator id="MetadataAggregate_2" uid="7" line="21" assemblyName="ScopeRuntime.exe" className="ScopeRuntime.PartitionMetadataAggregator" args="-noPartition">
+      <input id="SV1_Extract_Split_out1" uid="5" schema="UserId:int,Start:DateTime,Region:string,Query:string,Duration:int,Urls:string,ClickedUrls:string" inputIndex="0" numberOfInputs="ALL" />
+      <output id="MetadataAggregate_2_Data0" uid="8" schema="UserId:int,Start:DateTime,Region:string,Query:string,Duration:int,Urls:string,ClickedUrls:string" />
+    </operator>
+    <operator id="SStreamMetadataOutput_3" uid="9" line="21" assemblyName="ScopeRuntime.exe" className="ScopeRuntime.SStreamMetadataOutputter" args="-noPartition">
+      <input id="MetadataAggregate_2_Data0" uid="8" schema="UserId:int,Start:DateTime,Region:string,Query:string,Duration:int,Urls:string,ClickedUrls:string" />
+      <output id="SV2_Aggregate_out0" uid="10" schema="UserId:int,Start:DateTime,Region:string,Query:string,Duration:int,Urls:string,ClickedUrls:string" outputIndex="0" numberOfOutputs="1" />
+    </operator>
+  </ScopeVertex>
+  <ScopeVertex id="SV1_Dataset" cppReady="true" nativeOnly="true">
+    <EstimatedLimitMemory processMemory="1065353392" managedMemory="0" adapterMemory="0" engineMemory="541065392" engineIOMemory="16777216" engineOperatorMemory="524288176" minEngineOperatorMemory="524288176" />
+    <EstimatedOptimalMemory processMemory="543162544" managedMemory="0" adapterMemory="0" engineMemory="18874544" engineIOMemory="16777216" engineOperatorMemory="2097328" minEngineOperatorMemory="2097328" />
+    <operator id="Concatenate_6" uid="11" line="21" signature="765226361641036378!3!Strict">
+      <input id="SV1_Extract_Split_out0" uid="4" schema="UserId:int,Start:DateTime,Region:string,Query:string,Duration:int,Urls:string,ClickedUrls:string" inputIndex="0" numberOfInputs="1" />
+      <input id="SV2_Aggregate_out0" uid="10" schema="UserId:int,Start:DateTime,Region:string,Query:string,Duration:int,Urls:string,ClickedUrls:string" inputIndex="1" numberOfInputs="1" />
+    </operator>
+  </ScopeVertex>
+</ScopeVertices>

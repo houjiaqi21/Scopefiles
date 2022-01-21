@@ -1,0 +1,1 @@
+-c++ -on ADL -on EnableScopeDml -on EnableSStreamContractV4 -JobId eceaa6e2-5e77-4248-b468-224a7abfef1e -CosmosCluster default -ApEnvironment defaultApEnvironment -ApCluster defaultApCluster -ClientVersion 10.2.2.0 -Inputs ScopeInput.script

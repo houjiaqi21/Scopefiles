@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <StartFile>Scope.script</StartFile>
+    <CurrentWorkingVC>vc://cosmos09/cosmosAdmin</CurrentWorkingVC>
+    <OutputStreamPath>%24(PROJECT_DIR)</OutputStreamPath>
+    <BuildClusterPlanProperty>False</BuildClusterPlanProperty>
+    <ActiveFile>Scope.script</ActiveFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <ScriptUserData Include="Scope.script">
+      <UseLocalComputeAccount>false</UseLocalComputeAccount>
+      <ClusterComputeAccount>CosmosVc:https://cosmos09.osdinfra.net/cosmos/cosmosAdmin/</ClusterComputeAccount>
+    </ScriptUserData>
+  </ItemGroup>
+</Project>

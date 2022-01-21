@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CSSRelatedInfo>
+  <OptimizerPlanInfo signatureVersion="1">
+    <TableScan present="True" occurrence="1" />
+    <PartitionSeek present="False" occurrence="0" />
+    <PartitionRange present="False" occurrence="0" />
+    <IndexSeek present="False" occurrence="0" />
+    <IndexRange present="False" occurrence="0" />
+    <Join present="False" occurrence="0" />
+    <GroupByAgg present="True" occurrence="1" />
+    <UDProcessor present="False" occurrence="0" />
+    <UDReducer present="False" occurrence="0" />
+    <UDCombiner present="False" occurrence="0" />
+    <UDMultiProcessor present="False" occurrence="0" />
+    <Top present="False" occurrence="0" />
+    <Costs>
+      <ExtractCardinality>4995000000</ExtractCardinality>
+      <InputSize>499500000000</InputSize>
+      <OutputCardinality>1248750000</OutputCardinality>
+      <NumTable>1</NumTable>
+      <DataTransferVolume>0</DataTransferVolume>
+      <Latency>3245542.70392498</Latency>
+      <TotalCost>3245542.70392498</TotalCost>
+      <EstimatedNumEdges>0</EstimatedNumEdges>
+    </Costs>
+    <OptimizerTrees>
+<InputTree>
+    <LogOp Id="LogOp_Output" Table="https://cosmos09.osdinfra.net/cosmos/cosmosAdmin/users/v-hozhao/All_In_One/Output/CodeBehind_Aggregatesoutput.txt" XMode="All" Out="Region,TotalDuration" Udf="DefaultTextOutputter">
+      <OpInfo><TableGroupProperties Grp="6.0" Remotable="False" Card="1.24875e+09" AvgRowLength="12"/></OpInfo>
+      <LogOp Id="LogOp_GbAgg" AggregateType="Normal" Out="TotalDuration,Region" By="Region">
+        <OpInfo><TableGroupProperties Grp="5.0" Remotable="False" Card="1.24875e+09" AvgRowLength="12"/></OpInfo>
+        <LogOp Id="LogOp_Extract" Table="/users/v-hozhao/All_In_One/Input/SearchLog.txt" XMode="Parallel" PartitionType="Nil" Partitioning="" Partitions="500(UB)" Udf="DefaultTextExtractor">
+          <OpInfo><TableGroupProperties Grp="0.0" Remotable="False" Card="4.995e+09" AvgRowLength="48"/></OpInfo>
+        </LogOp>
+        <AncOp Id="AncOp_PrjList"><OpInfo><ScalarGroupProperties Grp="4.0"/></OpInfo>
+          <AncOp Id="AncOp_PrjEl" Column="TotalDuration"><OpInfo><ScalarGroupProperties Grp="3.0"/></OpInfo>
+            <ScaOp Id="ScaOp_AggFunc" AggregateName="UDAgg(MySum(Duration))" Distinct="False"><OpInfo><ScalarGroupProperties Grp="2.0"/></OpInfo>
+              <ScaOp Id="ScaOp_Identifier" Column="Duration"><OpInfo><ScalarGroupProperties Grp="1.0"/></OpInfo>
+              </ScaOp>
+            </ScaOp>
+          </AncOp>
+        </AncOp>
+      </LogOp>
+    </LogOp>
+</InputTree>
+<OutputTree>
+    <PhyOp Id="PhyOp_Output" Table="https://cosmos09.osdinfra.net/cosmos/cosmosAdmin/users/v-hozhao/All_In_One/Output/CodeBehind_Aggregatesoutput.txt" XMode="Serial" Out="Region,TotalDuration" Udf="DefaultTextOutputter">
+      <OpInfo><TableGroupProperties Grp="6.1" Remotable="False" Card="1.24875e+09" AvgRowLength="12" PrtnSkewFactor="1" HT="7246217052960594801:228::5:17422386805891300989" HTS="81889955688732688" HTN="11549722269620201292:16646693030694227568:15645444765219541897" HTC="5862120127573369805"/><PinnedPlan RuleId="62"/><Costs TotalCosts="3.24554e+06"/></OpInfo>
+      <PhyOp Id="PhyOp_StreamGbAgg" AggregateType="Normal" GroupOnly="False" On="Region ASC" SortColumn="Region ASC">
+        <OpInfo><TableGroupProperties Grp="5.1" Remotable="False" Card="1.24875e+09" AvgRowLength="12" PrtnSkewFactor="1" HT="17422386805891300989:109:0:4:922670565635428901" HTS="16178737614652375363" HTN="3798343819637504235:16741275119089121282:15645444765219541897" HTC="4874838329215760781"/><PinnedPlan RuleId="20"/><Costs TotalCosts="2.40054e+06"/></OpInfo>
+        <PhyOp Id="PhyOp_Sort" SortColumn="Region ASC">
+          <OpInfo><TableGroupProperties Grp="0.2" Remotable="False" Card="4.995e+09" AvgRowLength="12" PrtnSkewFactor="1" HT="7271307189938310557:115::0:0" HTS="1210964769590134040" HTN="11547058485325889930:7358768758053956660:15645444765219541897" HTC="9787986502931227999"/><PinnedPlan RuleId="35"/><Costs TotalCosts="2.39692e+06"/></OpInfo>
+          <PhyOp Id="PhyOp_Extract" Table="/users/v-hozhao/All_In_One/Input/SearchLog.txt" XMode="Serial" Udf="DefaultTextExtractor">
+            <OpInfo><TableGroupProperties Grp="0.3" Remotable="False" Card="4.995e+09" AvgRowLength="12" PrtnSkewFactor="1" HT="7271307189938310557:115::0:0" HTS="1210964769590134040" HTN="11547058485325889930:7358768758053956660:15645444765219541897" HTC="9787986502931227999"/><PinnedPlan RuleId="60"/><Costs TotalCosts="375532"/></OpInfo>
+          </PhyOp>
+        </PhyOp>
+        <AncOp Id="AncOp_PrjList"><OpInfo><ScalarGroupProperties Grp="4.0"/></OpInfo>
+          <AncOp Id="AncOp_PrjEl" Column="TotalDuration"><OpInfo><ScalarGroupProperties Grp="3.0"/></OpInfo>
+            <ScaOp Id="ScaOp_AggFunc" AggregateName="UDAgg(MySum(Duration))" Distinct="False"><OpInfo><ScalarGroupProperties Grp="2.0"/></OpInfo>
+              <ScaOp Id="ScaOp_Identifier" Column="Duration"><OpInfo><ScalarGroupProperties Grp="1.0"/></OpInfo>
+              </ScaOp>
+            </ScaOp>
+          </AncOp>
+        </AncOp>
+      </PhyOp>
+    </PhyOp>
+</OutputTree>
+<Rules Used="00000000000000000000100000000000000100000000000000000000000010100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"/></OptimizerTrees>
+  </OptimizerPlanInfo>
+  <QueryTracer>
+    <Input count="1">
+      <StreamProvenance>/users/v-hozhao/All_In_One/Input/SearchLog.txt</StreamProvenance>
+      <dependency count="7">
+        <columnprovenance>UserId</columnprovenance>
+        <columnprovenance>Urls</columnprovenance>
+        <columnprovenance>Region</columnprovenance>
+        <columnprovenance>Start</columnprovenance>
+        <columnprovenance>Query</columnprovenance>
+        <columnprovenance>Duration</columnprovenance>
+        <columnprovenance>ClickedUrls</columnprovenance>
+      </dependency>
+    </Input>
+    <SelectedInput count="1">
+      <StreamProvenance>/users/v-hozhao/All_In_One/Input/SearchLog.txt</StreamProvenance>
+      <dependency count="1">
+        <columnprovenance>Region</columnprovenance>
+      </dependency>
+    </SelectedInput>
+    <Output count="1">
+      <StreamProvenance>/users/v-hozhao/All_In_One/Input/SearchLog.txt</StreamProvenance>
+      <dependency count="1">
+        <columnprovenance>Region</columnprovenance>
+      </dependency>
+    </Output>
+  </QueryTracer>
+</CSSRelatedInfo>

@@ -1,0 +1,7 @@
+_var_100001_EXTRACT = EXTRACT UserId:int,Start:DateTime,Region:string,Query:string,Duration:int,Urls:string,ClickedUrls:string FROM @"users/v-hozhao/SampleScope/SearchLog.txt" USING ScopeRuntime.DefaultTextExtractor();
+
+//Reflected script of operator <Split_1> is not available
+
+//Reflected script of operator <MetadataAggregate_2> is not available
+
+//Reflected script of operator <SStreamMetadataOutput_3> is not available

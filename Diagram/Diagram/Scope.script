@@ -1,0 +1,66 @@
+﻿//Script GUID:2c0dc1c5-82a8-4840-ab5b-ff8d779577b9
+//Used for tracking history
+
+//////////////////////Known Issue : cannot display Diagram////////////////////////////////////
+searchlogView =
+    VIEW @"/users/v-hozhao/All_In_One/Input/SearchLog.view"; 
+           
+OUTPUT searchlogView
+TO "/users/v-hozhao/All_In_One/Output/Sample_ViewOutput.txt"
+USING DefaultTextOutputter();
+
+
+adslog =
+    EXTRACT AdId : int,
+            IId : int,
+            Impression : int,
+            IsClicked : int
+    FROM @"/my/AdsLog.txt"
+    USING DefaultTextExtractor();
+
+searchlog =
+    EXTRACT IId : int,
+            UId : int,
+            Start : DateTime,
+            Market : string,
+            Query : string,
+            DwellTime : int,
+            Results : string,
+            ClickedUrls : string
+    FROM @"/my/SearchLog.txt"
+    USING DefaultTextExtractor();
+
+SELECT TOP 100 adslog.AdId AS AdId,
+               adslog.IId AS IId,
+               adslog.Impression AS Impression,
+               searchlog.Query AS Query,
+               searchlog.DwellTime AS DwellTime
+FROM adslog
+     INNER JOIN
+         searchlog
+     ON adslog.IId == searchlog.IId
+WHERE (searchlog.DwellTime >= 2 * 60 AND searchlog.DwellTime <= 5 * 60) OR (searchlog.Market == "en-gb")
+ORDER BY DwellTime DESC;
+
+PROCESS
+PRODUCE *
+USING ImpressionProcessor;
+
+OUTPUT
+TO @"/my/Impressions.txt";
+
+
+
+//debugstream =
+//    EXTRACT VertexName : string,
+//            Version : int?,
+//            VertexGuid : string,
+//            Truncated : bool?,
+//            GroupId : string,
+//            ThreadId : string?,
+//            OccurrenceTime : DateTime?,
+//            Content : string?
+//    FROM "/my/DebugStream.txt"
+//    USING DefaultDebugStreamExtractor;
+//OUTPUT
+//TO SSTREAM "my/mydebugstream.ss"; 

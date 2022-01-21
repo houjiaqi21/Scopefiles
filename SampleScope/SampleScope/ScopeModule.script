@@ -1,0 +1,11 @@
+﻿//Script GUID:f24a55b5-cce4-4cbe-8560-220214ae25fb
+//Used for tracking history
+              
+//D:\CosmosSamples\ScopeLanguage\Scope.UDOs\UDO_Training\02_Aggregator\1_SimpleAggregator.script
+MODULE @"/users/v-hozhao/All_In_One/Input/SearchLog.module";                      //input
+data = CosmosSampleData.SearchLogRaw();
+  
+  
+OUTPUT data
+TO @"/users/v-hozhao/All_In_One/Output/Sample_MoudleOutput.txt"                   //output
+USING DefaultTextOutputter();

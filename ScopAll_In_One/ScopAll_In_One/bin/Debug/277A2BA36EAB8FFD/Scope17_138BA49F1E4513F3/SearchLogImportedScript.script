@@ -1,0 +1,14 @@
+﻿//Script GUID:85dff0e0-bc2e-4e07-ad5c-08766a6f8e62
+//Used for tracking history
+
+EXPORT result =
+     EXTRACT Id : int,
+             //UId : int,
+             Start : DateTime,
+             Market : string,
+             Query : string,
+             DwellTime : int,
+             Results : string,
+             ClickedUrls : string
+     FROM @"/users/v-hozhao/All_In_One/Input/SearchLog.txt"
+     USING DefaultTextExtractor();

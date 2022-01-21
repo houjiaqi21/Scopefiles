@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1433
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{202899A3-C531-4771-9089-0213D66978AE}") = "MultiError", "MultiError\MultiError.scopeproj", "{4C495FD7-B419-42C1-88B5-73B8EE30E62F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4C495FD7-B419-42C1-88B5-73B8EE30E62F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C495FD7-B419-42C1-88B5-73B8EE30E62F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C495FD7-B419-42C1-88B5-73B8EE30E62F}.Debug|x64.ActiveCfg = Debug|x64
+		{4C495FD7-B419-42C1-88B5-73B8EE30E62F}.Debug|x64.Build.0 = Debug|x64
+		{4C495FD7-B419-42C1-88B5-73B8EE30E62F}.Debug|x86.ActiveCfg = Debug|x86
+		{4C495FD7-B419-42C1-88B5-73B8EE30E62F}.Debug|x86.Build.0 = Debug|x86
+		{4C495FD7-B419-42C1-88B5-73B8EE30E62F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C495FD7-B419-42C1-88B5-73B8EE30E62F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C495FD7-B419-42C1-88B5-73B8EE30E62F}.Release|x64.ActiveCfg = Release|x64
+		{4C495FD7-B419-42C1-88B5-73B8EE30E62F}.Release|x64.Build.0 = Release|x64
+		{4C495FD7-B419-42C1-88B5-73B8EE30E62F}.Release|x86.ActiveCfg = Release|x86
+		{4C495FD7-B419-42C1-88B5-73B8EE30E62F}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B6D21997-B5B2-4294-80A2-5331DDCC77D6}
+	EndGlobalSection
+EndGlobal

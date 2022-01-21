@@ -1,0 +1,38 @@
+﻿//Script GUID:f462c5ed-ce04-4de5-9545-4132b6ac4be8
+//Used for tracking history
+
+
+adslog =  
+    EXTRACT AdId:int,  
+            IId:int,  
+            Impression:int,  
+            IsClicked:int 
+    FROM @"/v-hozhao/DebugFailed/AdsLog.txt"   //  /users
+    USING DefaultTextExtractor(); 
+ 
+searchlog =  
+    EXTRACT IId:int,  
+            UId:int,  
+            Start:DateTime,  
+            Market:string,  
+            Query:string,  
+            DwellTime:int,  
+            Results:string,  
+            ClickedUrls:string 
+    FROM @"/v-hozhao/DebugFailed/SearchLog_old.txt"   //  /users
+    USING DefaultTextExtractor(); 
+ 
+SELECT adslog.AdId AS AdId, 
+       adslog.IId AS IId,   
+       adslog.Impression AS Impression, 
+       searchlog.Query AS Query 
+FROM adslog  
+INNER JOIN searchlog  
+ON adslog.IId == searchlog.IId; 
+ 
+PROCESS  
+PRODUCE * 
+USING ImpressionProcessor; 
+ 
+OUTPUT  
+TO @"/users/v-hozhao/DebugFailed/Impressions.txt"; 

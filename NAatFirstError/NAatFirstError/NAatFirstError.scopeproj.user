@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <StartFile>Scope.script</StartFile>
+    <CurrentWorkingVC>vc://cosmos09/cosmosAdmin</CurrentWorkingVC>
+    <OutputStreamPath>%24(PROJECT_DIR)</OutputStreamPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <ScriptUserData Include="Scope.script">
+      <UseLocalComputeAccount>false</UseLocalComputeAccount>
+      <ClusterComputeAccount>CosmosVc:https://cosmos09.osdinfra.net/cosmos/cosmosAdmin/</ClusterComputeAccount>
+      <PersistingSubmitJobAttributes>
+        <SubmitJobAttributes xmlns="">
+  <Vcws>vc://cosmos09/cosmosAdmin</Vcws>
+  <FriendlyName>NAatFirstError_Scope</FriendlyName>
+  <NotificationRecipients />
+  <Priority>10</Priority>
+  <VcPercentAllocation>0</VcPercentAllocation>
+  <AbsoluteTokenAllocation>0</AbsoluteTokenAllocation>
+  <MaxUnavability>100</MaxUnavability>
+</SubmitJobAttributes>
+      </PersistingSubmitJobAttributes>
+    </ScriptUserData>
+  </ItemGroup>
+</Project>

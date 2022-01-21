@@ -1,0 +1,57 @@
+﻿//Script GUID:b1628470-0b52-48d2-8173-460911d0566d
+//Used for tracking history
+
+RESOURCE "ClusterRun_Codebehind1.py";   //full python file name 
+#DECLARE pyScript string = @"import ClusterRun_Codebehind1";  // without extension
+
+/////////////////////////////////////////////////////////////////////////////////////
+#DECLARE pyClass string = @"ClusterRun_Codebehind1.DataFrameDemoReducer()";    //fileName.ClassName
+
+#DECLARE input_Reducer string = @"/users/v-hozhao/All_In_One/Input/Python_iris.csv";
+#DECLARE output_Reducer string = @"/users/v-hozhao/All_In_One/Output/Python_ClusterRun_DataFrame_Reducer_Demo_Output.txt";
+
+Input =
+    EXTRACT SepalLength: double,
+            SepalWidth: double,
+            PetalLength: double, 
+            PetalWidth: double, 
+            Name: string
+    FROM @input_Reducer
+    USING DefaultTextExtractor(delimiter:',');
+
+Out =
+    REDUCE Input ON Name
+    PRODUCE SepalLength_Mean: double, 
+            SepalWidth_Mean: double, 
+            PetalLength_Mean: double, 
+            PetalWidth_Mean: double, 
+            Name: string,
+            Count: int
+    //USING Reducers.Python(prologue: @import_codebehind_ClusterRun_DataFrame_Reducer_Demo1_py, expression: "DataFrameDemoReducer()");
+    USING Reducers.Python(prologue: @pyScript, expression: @pyClass);   //Code Behind
+
+OUTPUT Out
+TO @output_Reducer
+USING DefaultTextOutputter(delimiter:',');
+
+/////////////////////////////////////////////////////////////////////////////////
+#DECLARE pyClassExtractor string = @"ClusterRun_Codebehind1.SearchLogExtractor()"; 
+
+#DECLARE inputFile_Extractor string = @"/users/v-hozhao/All_In_One/Input/Python_SearchLog.tsv";   //Input
+#DECLARE outputFile_Extractor string = @"/users/v-hozhao/All_In_One/Output/Python_ClusterRun_Extractor_Demo_Output.txt";  //Output
+
+searchlog =
+    EXTRACT UserId: string,
+            Start: string,
+            Region: string,
+            Query: string,
+            Duration: string,
+            Urls: string,
+            ClickedUrls: string
+    FROM @inputFile_Extractor
+    //USING Extractors.Python(prologue: @import_codebehind_Scope171_py, expression: "SearchLogExtractor()");
+    USING Extractors.Python(prologue: @pyScript, expression: @pyClassExtractor);   //Code Behind
+   
+OUTPUT searchlog
+TO @outputFile_Extractor
+USING DefaultTextOutputter(delimiter:',');

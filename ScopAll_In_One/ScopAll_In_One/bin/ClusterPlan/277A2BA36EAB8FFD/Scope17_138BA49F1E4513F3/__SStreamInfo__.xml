@@ -1,0 +1,5 @@
+<SStreams>
+  <SStream id="GetSStream_0" path="adl://sandbox-c09.azuredatalakestore.net/users/v-hozhao/All_In_One/Input/Input.ss" Mode="BUSS" processingGroupInfo="{{{{0:5796}},{0}}}" />
+  <SStream id="GetSStream_5" path="adl://sandbox-c09.azuredatalakestore.net/users/v-hozhao/All_In_One/Input/HealthCheckUCMUserUsage_MonthAgg.ss" Mode="BUSS" processingGroupInfo="{{{{0:10149}},{0}}}" />
+  <SStream id="GetSStream_6" path="adl://sandbox-c09.azuredatalakestore.net/users/v-hozhao/All_In_One/Input/HealthCheckUCMUserUsage_WeekAgg.ss" Mode="BUSS" processingGroupInfo="{{{{0:9301}},{0}}}" />
+</SStreams>

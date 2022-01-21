@@ -1,0 +1,6 @@
+_var_100001_EXTRACT = EXTRACT IId:int FROM @"users/v-hozhao/inputs/SearchLog.txt" USING ScopeRuntime.DefaultTextExtractor();
+
+_var_100002_TRANSFORM = SELECT -1 AS b, IId AS IId FROM _var_100001_EXTRACT;
+_var_100003_TRANSFORM = SELECT IId AS IId, b AS b FROM _var_100002_TRANSFORM;
+
+OUTPUT _var_100003_TRANSFORM TO @"abfs://filesystem@ltianwestcentralusgen2.dfs.core.windows.net/users/v-hozhao/out.txt" USING ScopeRuntime.DefaultTextOutputter();

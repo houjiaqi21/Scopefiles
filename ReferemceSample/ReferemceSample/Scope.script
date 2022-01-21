@@ -1,0 +1,33 @@
+﻿//Script GUID:e3bea13a-c464-42fd-9b77-b6a1c622d835
+//Used for tracking history
+
+REFERENCE @"/users/v-hozhao/ClusterReference/MyHelper.dll";
+
+#DECLARE output string = @"/users/v-hozhao/ClusterReference/SearchlogDwellTimeInMinutes.txt";
+
+searchlog =  
+    EXTRACT IId:int,  
+            //UId:int,  
+            Start:DateTime,  
+            Market:string,  
+            Query:string,  
+            DwellTime:int,  
+            Results:string,  
+            ClickedUrls:string 
+    FROM @"/users/v-hozhao/ClusterReference/SearchLog.txt" 
+    USING DefaultTextExtractor(); 
+
+//OUTPUT TO SSTREAM @"/my/searchlog.ss";
+
+//searchlog_ss = SSTREAM @"/my/searchlog.ss";
+
+rs1 =                   // namespace >> class >> Method
+    SELECT Start, Market, MyHelper.ClassUDO.SecondsToMinutes(DwellTime) AS DwellTimeInMinutes
+    FROM searchlog;   
+	//From searchlog_ss;
+ 
+OUTPUT rs1
+TO @output;  
+//To @"/my/SearchlogDwellTimeInMinutes.txt";
+
+

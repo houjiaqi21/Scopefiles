@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScopeVertices helperAssembly="__ScopeCodeGen__.dll" signatureVersion="1">
+  <ScopeVertex id="SV1_Extract" cppReady="true">
+    <EstimatedLimitMemory processMemory="8069499656" managedMemory="1388314624" adapterMemory="0" engineMemory="6156897032" engineIOMemory="1698693264" engineOperatorMemory="4458203768" minEngineOperatorMemory="4458203768" />
+    <EstimatedOptimalMemory processMemory="6442450944" managedMemory="1388314624" adapterMemory="0" engineMemory="4529848320" engineIOMemory="150994944" engineOperatorMemory="4378853376" minEngineOperatorMemory="2075052664" />
+    <operator id="Extract_0" uid="1" line="6" assemblyName="ScopeRuntime.exe" className="ScopeRuntime.DefaultTextExtractor" signature="1210964769590134040!0!Strict">
+      <input id="Extract_0" uid="1" schema="UserId:int,Start:DateTime,Region:string,Query:string,Duration:int,Urls:string,ClickedUrls:string" inputIndex="0" numberOfInputs="ALL" />
+      <output id="Extract_0_Data0" uid="2" schema="Region:string,Duration:int" />
+      <ReflectedScopeScript><![CDATA[_var_100001_EXTRACT = EXTRACT Region:string,Duration:int FROM @"users/v-hozhao/All_In_One/Input/SearchLog.txt" USING ScopeRuntime.DefaultTextExtractor();
+]]></ReflectedScopeScript>
+    </operator>
+    <operator id="Process_1" uid="3" line="6" assemblyName="__ScopeCodeGen__.dll" className="ScopeSorter_1" args="-keys Region" signature="1210964769590134040!0!Strict">
+      <input id="Extract_0_Data0" uid="2" schema="Region:string,Duration:int" />
+      <output id="Process_1_Data0" uid="4" schema="Region:string,Duration:int" />
+      <ReflectedScopeScript><![CDATA[_var_100002_LSORT = SELECT Region, Duration FROM _var_100001_EXTRACT ORDER BY Region;
+]]></ReflectedScopeScript>
+    </operator>
+    <operator id="Process_2" uid="5" assemblyName="__ScopeCodeGen__.dll" className="ScopeFilterTransformer_2" signature="1210964769590134040!0!Strict">
+      <input id="Process_1_Data0" uid="4" schema="Region:string,Duration:int" />
+      <output id="Process_2_Data0" uid="6" schema="Region:string,TotalDuration:int" />
+      <ReflectedScopeScript><![CDATA[_var_100003_TRANSFORM = SELECT Region AS Region, Duration AS TotalDuration FROM _var_100002_LSORT;
+]]></ReflectedScopeScript>
+    </operator>
+    <operator id="Process_3" uid="7" assemblyName="__ScopeCodeGen__.dll" className="ScopeGrouper_1" signature="16178737614652375363!5!Strict">
+      <input id="Process_2_Data0" uid="6" schema="Region:string,TotalDuration:int" />
+      <output id="Process_3_Data0" uid="8" schema="Region:string,TotalDuration:int" />
+      <ReflectedScopeScript><![CDATA[_var_100004_GROUPBY = SELECT FIRST(Region) AS Region, TotalDuration() AS TotalDuration FROM _var_100003_TRANSFORM GROUP BY Region;
+]]></ReflectedScopeScript>
+    </operator>
+    <operator id="Output_4" uid="9" line="26" assemblyName="ScopeRuntime.exe" className="ScopeRuntime.DefaultTextOutputter" signature="81889955688732688!6!Strict">
+      <input id="Process_3_Data0" uid="8" schema="Region:string,TotalDuration:int" />
+      <output id="SV1_Extract_out0" uid="9" schema="Region:string,TotalDuration:int" outputIndex="0" numberOfOutputs="1" finalOutput="true" />
+      <ReflectedScopeScript><![CDATA[OUTPUT _var_100004_GROUPBY TO @"https://cosmos09.osdinfra.net/cosmos/cosmosAdmin/users/v-hozhao/All_In_One/Output/CodeBehind_Aggregatesoutput.txt" USING ScopeRuntime.DefaultTextOutputter();
+]]></ReflectedScopeScript>
+    </operator>
+  </ScopeVertex>
+</ScopeVertices>

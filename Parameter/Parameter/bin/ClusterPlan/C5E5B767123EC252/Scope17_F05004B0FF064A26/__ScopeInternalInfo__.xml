@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CSSRelatedInfo>
+  <OptimizerPlanInfo signatureVersion="1">
+    <TableScan present="True" occurrence="1" />
+    <PartitionSeek present="False" occurrence="0" />
+    <PartitionRange present="False" occurrence="0" />
+    <IndexSeek present="False" occurrence="0" />
+    <IndexRange present="False" occurrence="0" />
+    <Join present="False" occurrence="0" />
+    <GroupByAgg present="False" occurrence="0" />
+    <UDProcessor present="False" occurrence="0" />
+    <UDReducer present="False" occurrence="0" />
+    <UDCombiner present="False" occurrence="0" />
+    <UDMultiProcessor present="False" occurrence="0" />
+    <Top present="False" occurrence="0" />
+    <Costs>
+      <ExtractCardinality>33.98</ExtractCardinality>
+      <InputSize>3398</InputSize>
+      <OutputCardinality>33.98</OutputCardinality>
+      <NumTable>1</NumTable>
+      <DataTransferVolume>0</DataTransferVolume>
+      <Latency>0.0185608573063063</Latency>
+      <TotalCost>0.0371217146126126</TotalCost>
+      <EstimatedNumEdges>0</EstimatedNumEdges>
+    </Costs>
+    <OptimizerCounters>
+      <CQO_COUNTER_ENTER_OPTIMIZER>1</CQO_COUNTER_ENTER_OPTIMIZER>
+      <CQO_COUNTER_EXIT_OPTIMIZER>1</CQO_COUNTER_EXIT_OPTIMIZER>
+    </OptimizerCounters>
+    <OptimizerTrees>
+<InputTree>
+    <LogOp Id="LogOp_Output" Table="adl://sandbox-c08.azuredatalakestore.net/users/v-hozhao/out.txt" XMode="All" Out="IId,Start,b" Udf="DefaultTextOutputter">
+      <OpInfo><TableGroupProperties Grp="5.0" Remotable="False" Card="33.98" AvgRowLength="16"/></OpInfo>
+      <LogOp Id="LogOp_Project" Remove="Market,Query,DwellTime,Results,ClickedUrls">
+        <OpInfo><TableGroupProperties Grp="4.0" Remotable="False" Card="33.98" AvgRowLength="16"/></OpInfo>
+        <LogOp Id="LogOp_Extract" Table="adl://sandbox-c08.azuredatalakestore.net/users/v-hozhao/Inputs/SearchLog.txt" XMode="Parallel" PartitionType="Nil" Partitioning="" Partitions="2(EST)" Udf="DefaultTextExtractor">
+          <OpInfo><TableGroupProperties Grp="0.0" Remotable="False" Card="33.98" AvgRowLength="48"/></OpInfo>
+        </LogOp>
+        <AncOp Id="AncOp_PrjList"><OpInfo><ScalarGroupProperties Grp="3.0"/></OpInfo>
+          <AncOp Id="AncOp_PrjEl" Column="b"><OpInfo><ScalarGroupProperties Grp="2.0"/></OpInfo>
+            <ScaOp Id="ScaOp_Const" TI="Int" Value="-1" Parameter="0"><OpInfo><ScalarGroupProperties Grp="1.0"/></OpInfo>
+            </ScaOp>
+          </AncOp>
+        </AncOp>
+      </LogOp>
+    </LogOp>
+</InputTree>
+<OutputTree>
+    <PhyOp Id="PhyOp_Output" Table="adl://sandbox-c08.azuredatalakestore.net/users/v-hozhao/out.txt" XMode="Parallel" PartitionType="Nil" Partitioning="ALL" Partitions="0" Out="IId,Start,b" Udf="DefaultTextOutputter">
+      <OpInfo><TableGroupProperties Grp="5.1" Remotable="False" Card="33.98" AvgRowLength="16" PrtnSkewFactor="1" HT="7954878257227911886:228::4:11464647819656077759" HTS="10033765608280068560" HTN="7449011770924059879:17795546808626630902:7281983027646063483"/><Costs TotalCosts="0.0185609"/></OpInfo>
+      <PhyOp Id="PhyOp_ComputeScalar">
+        <OpInfo><TableGroupProperties Grp="4.4" Remotable="False" Card="33.98" AvgRowLength="16" PrtnSkewFactor="1" HT="11464647819656077759:212::3:6405664787449140665" HTS="1938024026120095986" HTN="2941867678427625125:17890128897021524616:7281983027646063483"/><Costs TotalCosts="0.00382089"/></OpInfo>
+        <PhyOp Id="PhyOp_Extract" Table="adl://sandbox-c08.azuredatalakestore.net/users/v-hozhao/Inputs/SearchLog.txt" XMode="Parallel" PartitionType="Nil" Partitioning="" Partitions="2(EST)" Udf="DefaultTextExtractor">
+          <OpInfo><TableGroupProperties Grp="0.4" Remotable="False" Card="33.98" AvgRowLength="12" PrtnSkewFactor="1" HT="2241923444122227113:115::0:0" HTS="10502298925820268311" HTN="6642379647616492450:7358768758053956660:7281983027646063483"/><Costs TotalCosts="0.0038192"/></OpInfo>
+        </PhyOp>
+        <AncOp Id="AncOp_PrjList"><OpInfo><ScalarGroupProperties Grp="3.0"/></OpInfo>
+          <AncOp Id="AncOp_PrjEl" Column="b"><OpInfo><ScalarGroupProperties Grp="2.0"/></OpInfo>
+            <ScaOp Id="ScaOp_Const" TI="Int" Value="-1" Parameter="0"><OpInfo><ScalarGroupProperties Grp="1.0"/></OpInfo>
+            </ScaOp>
+          </AncOp>
+        </AncOp>
+      </PhyOp>
+    </PhyOp>
+</OutputTree>
+</OptimizerTrees>
+  </OptimizerPlanInfo>
+</CSSRelatedInfo>

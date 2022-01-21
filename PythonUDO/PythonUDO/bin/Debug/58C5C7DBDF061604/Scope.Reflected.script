@@ -1,0 +1,11 @@
+_var_100001_EXTRACT = EXTRACT SepalLength:double,SepalWidth:double,PetalLength:double,PetalWidth:double,Name:string FROM @"users/v-hozhao/All_In_One/Input/Python_iris.csv" USING ScopeRuntime.DefaultTextExtractor();
+
+_var_100002_LSORT = SELECT SepalLength, SepalWidth, PetalLength, PetalWidth, Name FROM _var_100001_EXTRACT ORDER BY Name;
+
+_var_100003_REDUCE = REDUCE _var_100002_LSORT ON Name PRODUCE SepalLength_Mean, SepalWidth_Mean, PetalLength_Mean, PetalWidth_Mean, Name, Count USING Scope.SystemOperators.Reducers.Python();
+
+OUTPUT _var_100003_REDUCE TO @"https://cosmos09.osdinfra.net/cosmos/cosmosAdmin/users/v-hozhao/All_In_One/Output/Python_ClusterRun_DataFrame_Reducer_Demo_Output.txt" USING ScopeRuntime.DefaultTextOutputter();
+
+_var_100005_EXTRACT = EXTRACT UserId:string,Start:string,Region:string,Query:string,Duration:string,Urls:string,ClickedUrls:string FROM @"users/v-hozhao/All_In_One/Input/Python_SearchLog.tsv" USING Scope.SystemOperators.Extractors.Python();
+
+OUTPUT _var_100005_EXTRACT TO @"https://cosmos09.osdinfra.net/cosmos/cosmosAdmin/users/v-hozhao/All_In_One/Output/Python_ClusterRun_Extractor_Demo_Output.txt" USING ScopeRuntime.DefaultTextOutputter();

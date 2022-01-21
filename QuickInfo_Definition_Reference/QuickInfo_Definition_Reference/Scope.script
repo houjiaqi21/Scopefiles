@@ -1,0 +1,79 @@
+﻿//Script GUID:741776f4-82d4-40aa-88ce-68291a558ad2
+//Used for tracking history
+
+searchlog = 
+EXTRACT IId:int, 
+        UId:int, 
+        Start:DateTime, 
+        Market:string, 
+        Query:string, 
+        DwellTime:int, 
+        Results:string, 
+        ClickedUrls:string 
+FROM @"/my/Inputs/SearchLog.txt" 
+USING DefaultTextExtractor;
+
+
+
+searchlog2 =
+    SELECT IId,
+           UId,
+           Start,
+           Market,
+           Query,
+           DwellTime,
+           Results,
+           UrlList.Create(ClickedUrls) AS CLickedUrlsList
+    FROM searchlog;
+
+
+searchlog3 =  
+
+    SELECT IId, UId, Start, Market, Query,DwellTime, Results, CLickedUrlsList.Serialize() AS ClickedUrlsCount 
+
+    FROM searchlog2; 
+
+
+adslog = 
+    EXTRACT AdId:int, IId:int, Impression:int, IsClicked:int
+    FROM @"/my/Inputs/AdsLog.txt"
+    USING  MyTSVExtractor();
+
+Processorlog=
+    SELECT adslog.AdId AS AdId, 
+       adslog.IId AS IId,   
+       adslog.Impression AS Impression, 
+       searchlog.Query AS Query 
+    FROM adslog  
+INNER JOIN searchlog  
+ON adslog.IId == searchlog.IId; 
+ 
+PROCESS  
+PRODUCE * 
+USING ImpressionProcessor;
+
+
+rs1 = 
+    SELECT Market, 
+           Results,
+           ((double)DwellTime) AS DwellTimeDouble
+    FROM searchlog; 
+
+rs2 = 
+    SELECT Market, 
+           SplitResult AS Result 
+    FROM rs1 
+CROSS APPLY  MyHelper.Split( Results, ';') AS SplitResult;
+
+rs3 = 
+    SELECT Market,
+           MySum(DwellTimeDouble) AS TotalDwellTime
+FROM rs1 
+GROUP BY Market;
+
+OUTPUT searchlog TO @"/my/Outputs/SearchLog.txt";
+OUTPUT adslog TO @"/my/Outputs/AdsLog.txt";
+OUTPUT rs2 TO @"/my/Outputs/rs2.txt"; 
+OUTPUT searchlog3 TO @"/my/Outputs/searchlog3.txt";
+OUTPUT rs3 TO @"/my/Outputs/rs3.txt"; 
+OUTPUT Processorlog TO @"/my/Outputs/Processorlog.txt"; 

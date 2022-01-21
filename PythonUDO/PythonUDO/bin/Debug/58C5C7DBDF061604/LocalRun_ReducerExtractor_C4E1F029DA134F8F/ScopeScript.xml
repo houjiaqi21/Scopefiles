@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScopeScript>
+  <preScript><![CDATA[
+USING Microsoft.Analytics.Interfaces;
+USING System;
+USING System.Collections.Generic;
+USING System.Globalization;
+USING System.Text;
+USING System.Reflection;
+USING System.IO;
+USING System.Text.RegularExpressions;
+USING System.Threading;
+USING System.Runtime.Serialization;
+USING System.Linq;
+USING Microsoft.SCOPE.Types;
+USING ScopeRuntime;
+
+REFERENCE @"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Core.dll";
+]]></preScript>
+  <ScopeVertices>
+    <ScopeVertex id="SV1_Extract" ScopeScriptEndPoint="true">
+      <input id="Extract_0" />
+      <output id="SV1_Extract_out0" schema="SepalLength_Mean:double,SepalWidth_Mean:double,PetalLength_Mean:double,PetalWidth_Mean:double,Name:string,Count:int" scopeLabel="" /><![CDATA[_var_100001_EXTRACT = EXTRACT SepalLength:double,SepalWidth:double,PetalLength:double,PetalWidth:double,Name:string FROM @"users/v-hozhao/All_In_One/Input/Python_iris.csv" USING ScopeRuntime.DefaultTextExtractor();
+_var_100002_LSORT = SELECT SepalLength, SepalWidth, PetalLength, PetalWidth, Name FROM _var_100001_EXTRACT ORDER BY Name;
+_var_100003_REDUCE = REDUCE _var_100002_LSORT ON Name PRODUCE SepalLength_Mean, SepalWidth_Mean, PetalLength_Mean, PetalWidth_Mean, Name, Count USING Scope.SystemOperators.Reducers.Python();
+OUTPUT _var_100003_REDUCE TO @"https://cosmos09.osdinfra.net/cosmos/cosmosAdmin/users/v-hozhao/All_In_One/Output/Python_ClusterRun_DataFrame_Reducer_Demo_Output.txt" USING ScopeRuntime.DefaultTextOutputter();
+]]></ScopeVertex>
+    <ScopeVertex id="SV2_Extract" ScopeScriptEndPoint="true">
+      <input id="Extract_4" />
+      <output id="SV2_Extract_out0" schema="UserId:string,Start:string,Region:string,Query:string,Duration:string,Urls:string,ClickedUrls:string" scopeLabel="" /><![CDATA[_var_100005_EXTRACT = EXTRACT UserId:string,Start:string,Region:string,Query:string,Duration:string,Urls:string,ClickedUrls:string FROM @"users/v-hozhao/All_In_One/Input/Python_SearchLog.tsv" USING Scope.SystemOperators.Extractors.Python();
+OUTPUT _var_100005_EXTRACT TO @"https://cosmos09.osdinfra.net/cosmos/cosmosAdmin/users/v-hozhao/All_In_One/Output/Python_ClusterRun_Extractor_Demo_Output.txt" USING ScopeRuntime.DefaultTextOutputter();
+]]></ScopeVertex>
+  </ScopeVertices>
+  <postScript><![CDATA[#CS
+
+#ENDCS]]></postScript>
+</ScopeScript>

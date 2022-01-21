@@ -1,0 +1,5 @@
+<SV1_Extract vertexGuid="FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF" vertexNumber="0" vertexVersion="0">
+	<VertexExecutionJobObject avgPeakJobMemoryUsed="66408448" avgPeakProcessMemoryUsed="66408448" avgTotalKernelTimeMs="31" avgTotalPageFaultCount="4592" avgTotalUserTimeMs="31" maxActiveProcesses="1" maxPeakJobMemoryUsed="66408448" maxPeakProcessMemoryUsed="66408448" maxTotalKernelTimeMs="31" maxTotalPageFaultCount="4592" maxTotalProcesses="1" maxTotalUserTimeMs="31"/>
+	<Time elapsedTime="4705" executeElapsedTime="285" executeKernelCpuTime="47" executeTotalCpuTime="78" executeUserCpuTime="31" initElapsedTime="4420" initTotalCpuTime="421" totalCpuTime="499"/>
+	<ExceptionCounts accessViolationExceptionCount="0" cppExceptionCount="4" csharpExceptionCount="0" otherExceptionCount="0" stackOverflowExceptionCount="0"/>
+</SV1_Extract>

@@ -1,0 +1,1 @@
+-c++ -on ADL -on EnableScopeDml -on EnableSStreamContractV4 -JobId c4bdab8d-e8ea-4d53-a38f-d4b1bc3ffc04 -CosmosCluster adlus81be-prod-mw1p -ApEnvironment adlus81be-prod-mw1p -ApCluster mw1p -ClientVersion 10.2.2.0 -Inputs Scope17.script

@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CSSRelatedInfo>
+  <OptimizerPlanInfo signatureVersion="1">
+    <TableScan present="True" occurrence="2" />
+    <PartitionSeek present="False" occurrence="0" />
+    <PartitionRange present="False" occurrence="0" />
+    <IndexSeek present="False" occurrence="0" />
+    <IndexRange present="False" occurrence="0" />
+    <Join present="True" occurrence="1" />
+    <GroupByAgg present="True" occurrence="1" />
+    <UDProcessor present="True" occurrence="1" />
+    <UDReducer present="False" occurrence="0" />
+    <UDCombiner present="False" occurrence="0" />
+    <UDMultiProcessor present="False" occurrence="0" />
+    <Top present="False" occurrence="0" />
+    <Costs>
+      <ExtractCardinality>9990000000</ExtractCardinality>
+      <InputSize>999000000000</InputSize>
+      <OutputCardinality>25224750000</OutputCardinality>
+      <NumTable>2</NumTable>
+      <DataTransferVolume>0</DataTransferVolume>
+      <Latency>5111043.44392498</Latency>
+      <TotalCost>23774193.7114217</TotalCost>
+      <EstimatedNumEdges>0</EstimatedNumEdges>
+    </Costs>
+    <OptimizerCounters>
+      <CQO_COUNTER_ENTER_OPTIMIZER>1</CQO_COUNTER_ENTER_OPTIMIZER>
+      <CQO_COUNTER_EXIT_OPTIMIZER>1</CQO_COUNTER_EXIT_OPTIMIZER>
+    </OptimizerCounters>
+    <OptimizerTrees>
+<InputTree>
+    <LogOp Id="LogOp_Sequence">
+      <OpInfo><TableGroupProperties Grp="Unknown" Remotable="False"/></OpInfo>
+      <LogOp Id="LogOp_Output" Table="https://cosmos08.osdinfra.net/cosmos/sandbox/my/Outputs/SearchLog.txt" XMode="All" Out="IId,UId,Start,Market,Query,DwellTime,Results,ClickedUrls" Udf="DefaultTextOutputter">
+        <OpInfo><TableGroupProperties Grp="Unknown" Remotable="False"/></OpInfo>
+        <LogOp Id="LogOp_RestrRemap" Remove="IId,UId,Start,Market,Query,DwellTime,Results,ClickedUrls" Remap="ClickedUrls#ClickedUrls,DwellTime#DwellTime,IId#IId,Market#Market,Query#Query,Results#Results,Start#Start,UId#UId">
+          <OpInfo><TableGroupProperties Grp="Unknown" Remotable="False"/></OpInfo>
+          <LogOp Id="LogOp_Spool" Name="__SCOPE_PARAMETER_PREFIX__searchlog" Line="5" CSRoot="Common" TotalConsumers="4">
+            <OpInfo><TableGroupProperties Grp="Unknown" Remotable="False"/></OpInfo>
+            <LogOp Id="LogOp_Extract" Table="/my/Inputs/SearchLog.txt" XMode="Parallel" PartitionType="Nil" Partitioning="" Partitions="500(EST)" Udf="DefaultTextExtractor">
+              <OpInfo><TableGroupProperties Grp="5.0" Remotable="False" Card="4.995e+09" AvgRowLength="52"/></OpInfo>
+            </LogOp>
+          </LogOp>
+        </LogOp>
+      </LogOp>
+      <LogOp Id="LogOp_Output" Table="https://cosmos08.osdinfra.net/cosmos/sandbox/my/Outputs/AdsLog.txt" XMode="All" Out="AdId,IId,Impression,IsClicked" Udf="DefaultTextOutputter">
+        <OpInfo><TableGroupProperties Grp="Unknown" Remotable="False"/></OpInfo>
+        <LogOp Id="LogOp_RestrRemap" Remove="AdId,IId,Impression,IsClicked" Remap="AdId#AdId,IId#IId,Impression#Impression,IsClicked#IsClicked">
+          <OpInfo><TableGroupProperties Grp="Unknown" Remotable="False"/></OpInfo>
+          <LogOp Id="LogOp_Spool" Name="__SCOPE_PARAMETER_PREFIX__adslog" Line="38" CSRoot="Common" TotalConsumers="2">
+            <OpInfo><TableGroupProperties Grp="Unknown" Remotable="False"/></OpInfo>
+            <LogOp Id="LogOp_Extract" Table="/my/Inputs/AdsLog.txt" XMode="Parallel" PartitionType="Nil" Partitioning="" Partitions="500(EST)" Udf="MyTSVExtractor">
+              <OpInfo><TableGroupProperties Grp="0.0" Remotable="False" Card="4.995e+09" AvgRowLength="16"/></OpInfo>
+            </LogOp>
+          </LogOp>
+        </LogOp>
+      </LogOp>
+      <LogOp Id="LogOp_Output" Table="https://cosmos08.osdinfra.net/cosmos/sandbox/my/Outputs/rs2.txt" XMode="All" Out="Market,Result" Udf="DefaultTextOutputter">
+        <OpInfo><TableGroupProperties Grp="Unknown" Remotable="False"/></OpInfo>
+        <LogOp Id="LogOp_RestrRemap" Remove="Results,DwellTimeDouble,SplitResult" Remap="Result#SplitResult">
+          <OpInfo><TableGroupProperties Grp="Unknown" Remotable="False"/></OpInfo>
+          <LogOp Id="LogOp_Process" Udf="CrossApplyExpressionProcessor" In="Market,Results,DwellTimeDouble" Out="Market,Results,DwellTimeDouble,SplitResult" UDMap="Market:PT(Market),Results:PT(Results),DwellTimeDouble:PT(DwellTimeDouble),SplitResult:DEP(Results)">
+            <OpInfo><TableGroupProperties Grp="Unknown" Remotable="False"/></OpInfo>
+            <LogOp Id="LogOp_RestrRemap" Remove="Market,Results,DwellTimeDouble" Remap="DwellTimeDouble#DwellTimeDouble,Market#Market,Results#Results">
+              <OpInfo><TableGroupProperties Grp="Unknown" Remotable="False"/></OpInfo>
+              <LogOp Id="LogOp_Spool" Name="__SCOPE_PARAMETER_PREFIX__rs1" Line="57" CSRoot="Common" TotalConsumers="2">
+                <OpInfo><TableGroupProperties Grp="Unknown" Remotable="False"/></OpInfo>
+                <LogOp Id="LogOp_Project" Remove="IId,UId,Start,Query,DwellTime,ClickedUrls">
+                  <OpInfo><TableGroupProperties Grp="Unknown" Remotable="False"/></OpInfo>
+                  <LogOp Id="LogOp_RestrRemap" Remove="IId,UId,Start,Market,Query,DwellTime,Results,ClickedUrls" Remap="ClickedUrls#ClickedUrls,DwellTime#DwellTime,IId#IId,Market#Market,Query#Query,Results#Results,Start#Start,UId#UId">
+                    <OpInfo><TableGroupProperties Grp="Unknown" Remotable="False"/></OpInfo>
+                    <LogOp Id="LogOp_Spool" Name="__SCOPE_PARAMETER_PREFIX__searchlog" Line="5" CSRoot="Common" TotalConsumers="4">
+                      <OpInfo><TableGroupProperties Grp="Unknown" Remotable="False"/></OpInfo>
+                    </LogOp>
+                  </LogOp>
+                  <AncOp Id="AncOp_PrjList"><OpInfo><ScalarGroupProperties Grp="19.0"/></OpInfo>
+                    <AncOp Id="AncOp_PrjEl" Column="DwellTimeDouble"><OpInfo><ScalarGroupProperties Grp="18.0"/></OpInfo>
+                      <ScaOp Id="ScaOp_Convert"><OpInfo><ScalarGroupProperties Grp="17.0"/></OpInfo>
+                        <ScaOp Id="ScaOp_Identifier" Column="DwellTime"><OpInfo><ScalarGroupProperties Grp="16.0"/></OpInfo>
+                        </ScaOp>
+                      </ScaOp>
+                    </AncOp>
+                  </AncOp>
+                </LogOp>
+              </LogOp>
+            </LogOp>
+          </LogOp>
+        </LogOp>
+      </LogOp>
+      <LogOp Id="LogOp_Output" Table="https://cosmos08.osdinfra.net/cosmos/sandbox/my/Outputs/searchlog3.txt" XMode="All" Out="IId,UId,Start,Market,Query,DwellTime,Results,ClickedUrlsCount" Udf="DefaultTextOutputter">
+        <OpInfo><TableGroupProperties Grp="Unknown" Remotable="False"/></OpInfo>
+        <LogOp Id="LogOp_Project" Remove="CLickedUrlsList">
+          <OpInfo><TableGroupProperties Grp="Unknown" Remotable="False"/></OpInfo>
+          <LogOp Id="LogOp_Project" Remove="ClickedUrls">
+            <OpInfo><TableGroupProperties Grp="Unknown" Remotable="False"/></OpInfo>
+            <LogOp Id="LogOp_RestrRemap" Remove="IId,UId,Start,Market,Query,DwellTime,Results,ClickedUrls" Remap="ClickedUrls#ClickedUrls,DwellTime#DwellTime,IId#IId,Market#Market,Query#Query,Results#Results,Start#Start,UId#UId">
+              <OpInfo><TableGroupProperties Grp="Unknown" Remotable="False"/></OpInfo>
+              <LogOp Id="LogOp_Spool" Name="__SCOPE_PARAMETER_PREFIX__searchlog" Line="5" CSRoot="Common" TotalConsumers="4">
+                <OpInfo><TableGroupProperties Grp="Unknown" Remotable="False"/></OpInfo>
+              </LogOp>
+            </LogOp>
+            <AncOp Id="AncOp_PrjList"><OpInfo><ScalarGroupProperties Grp="36.0"/></OpInfo>
+              <AncOp Id="AncOp_PrjEl" Column="CLickedUrlsList"><OpInfo><ScalarGroupProperties Grp="35.0"/></OpInfo>
+                <ScaOp Id="ScaOp_Udf" Udf="UrlList.Create(ClickedUrls)" UsedColumn="ClickedUrls"><OpInfo><ScalarGroupProperties Grp="34.0"/></OpInfo>
+                </ScaOp>
+              </AncOp>
+            </AncOp>
+          </LogOp>
+          <AncOp Id="AncOp_PrjList"><OpInfo><ScalarGroupProperties Grp="40.0"/></OpInfo>
+            <AncOp Id="AncOp_PrjEl" Column="ClickedUrlsCount"><OpInfo><ScalarGroupProperties Grp="39.0"/></OpInfo>
+              <ScaOp Id="ScaOp_Udf" Udf="CLickedUrlsList.Serialize()" UsedColumn="CLickedUrlsList"><OpInfo><ScalarGroupProperties Grp="38.0"/></OpInfo>
+              </ScaOp>
+            </AncOp>
+          </AncOp>
+        </LogOp>
+      </LogOp>
+      <LogOp Id="LogOp_Output" Table="https://cosmos08.osdinfra.net/cosmos/sandbox/my/Outputs/rs3.txt" XMode="All" Out="Market,TotalDwellTime" Udf="DefaultTextOutputter">
+        <OpInfo><TableGroupProperties Grp="Unknown" Remotable="False"/></OpInfo>
+        <LogOp Id="LogOp_GbAgg" AggregateType="Normal" Out="TotalDwellTime,Market" By="Market">
+          <OpInfo><TableGroupProperties Grp="Unknown" Remotable="False"/></OpInfo>
+          <LogOp Id="LogOp_RestrRemap" Remove="Market,Results,DwellTimeDouble" Remap="DwellTimeDouble#DwellTimeDouble,Market#Market,Results#Results">
+            <OpInfo><TableGroupProperties Grp="Unknown" Remotable="False"/></OpInfo>
+            <LogOp Id="LogOp_Spool" Name="__SCOPE_PARAMETER_PREFIX__rs1" Line="57" CSRoot="Common" TotalConsumers="2">
+              <OpInfo><TableGroupProperties Grp="Unknown" Remotable="False"/></OpInfo>
+            </LogOp>
+          </LogOp>
+          <AncOp Id="AncOp_PrjList"><OpInfo><ScalarGroupProperties Grp="30.0"/></OpInfo>
+            <AncOp Id="AncOp_PrjEl" Column="TotalDwellTime"><OpInfo><ScalarGroupProperties Grp="29.0"/></OpInfo>
+              <ScaOp Id="ScaOp_AggFunc" AggregateName="UDAgg(MySum(DwellTimeDouble))" Distinct="False"><OpInfo><ScalarGroupProperties Grp="28.0"/></OpInfo>
+                <ScaOp Id="ScaOp_Identifier" Column="DwellTimeDouble"><OpInfo><ScalarGroupProperties Grp="27.0"/></OpInfo>
+                </ScaOp>
+              </ScaOp>
+            </AncOp>
+          </AncOp>
+        </LogOp>
+      </LogOp>
+      <LogOp Id="LogOp_Output" Table="https://cosmos08.osdinfra.net/cosmos/sandbox/my/Outputs/Processorlog.txt" XMode="All" Out="AdId,IId,Impression,Query" Udf="DefaultTextOutputter">
+        <OpInfo><TableGroupProperties Grp="Unknown" Remotable="False"/></OpInfo>
+        <LogOp Id="LogOp_Join">
+          <OpInfo><TableGroupProperties Grp="Unknown" Remotable="False"/></OpInfo>
+          <LogOp Id="LogOp_RestrRemap" Remove="AdId,IId,Impression,IsClicked" Remap="AdId#AdId,IId#IId,Impression#Impression,IsClicked#IsClicked">
+            <OpInfo><TableGroupProperties Grp="Unknown" Remotable="False"/></OpInfo>
+            <LogOp Id="LogOp_Spool" Name="__SCOPE_PARAMETER_PREFIX__adslog" Line="38" CSRoot="Common" TotalConsumers="2">
+              <OpInfo><TableGroupProperties Grp="Unknown" Remotable="False"/></OpInfo>
+            </LogOp>
+          </LogOp>
+          <LogOp Id="LogOp_RestrRemap" Remove="IId" Remap="IId1#IId">
+            <OpInfo><TableGroupProperties Grp="Unknown" Remotable="False"/></OpInfo>
+            <LogOp Id="LogOp_RestrRemap" Remove="IId,UId,Start,Market,Query,DwellTime,Results,ClickedUrls" Remap="ClickedUrls#ClickedUrls,DwellTime#DwellTime,IId#IId,Market#Market,Query#Query,Results#Results,Start#Start,UId#UId">
+              <OpInfo><TableGroupProperties Grp="Unknown" Remotable="False"/></OpInfo>
+              <LogOp Id="LogOp_Spool" Name="__SCOPE_PARAMETER_PREFIX__searchlog" Line="5" CSRoot="Common" TotalConsumers="4">
+                <OpInfo><TableGroupProperties Grp="Unknown" Remotable="False"/></OpInfo>
+              </LogOp>
+            </LogOp>
+          </LogOp>
+          <ScaOp Id="ScaOp_Comp" CompOp="x_cmpEq"><OpInfo><ScalarGroupProperties Grp="10.0"/></OpInfo>
+            <ScaOp Id="ScaOp_Identifier" Column="IId"><OpInfo><ScalarGroupProperties Grp="8.0"/></OpInfo>
+            </ScaOp>
+            <ScaOp Id="ScaOp_Identifier" Column="IId1"><OpInfo><ScalarGroupProperties Grp="9.0"/></OpInfo>
+            </ScaOp>
+          </ScaOp>
+        </LogOp>
+      </LogOp>
+    </LogOp>
+</InputTree>
+<OutputTree>
+    <PhyOp Id="PhyOp_Sequence">
+      <OpInfo><TableGroupProperties Grp="43.1" Remotable="False" Card="0" CardFromHint="True" AvgRowLength="1" PrtnSkewFactor="1" HT="4093137837619862765:237::5:7844485309181346402" HTS="1412509696975510667" HTN="8511839818957906026:11857258701094406907:10221439399988448452"/><Costs TotalCosts="2.60279e+07"/></OpInfo>
+      <PhyOp Id="PhyOp_Output" Table="https://cosmos08.osdinfra.net/cosmos/sandbox/my/Outputs/SearchLog.txt" XMode="Serial" Out="IId,UId,Start,Market,Query,DwellTime,Results,ClickedUrls" Udf="DefaultTextOutputter">
+        <OpInfo><TableGroupProperties Grp="14.1" Remotable="False" Card="4.995e+09" AvgRowLength="52" PrtnSkewFactor="1" HT="10339739053546788064:228::3:8861752305602640651" HTS="11002187175386868692" HTN="2164278641254376079:18214274289463786209:15046199769545727370"/><Costs TotalCosts="3.75553e+06"/></OpInfo>
+        <PhyOp Id="PhyOp_RestrRemap">
+          <OpInfo><TableGroupProperties Grp="13.1" Remotable="False" Card="4.995e+09" AvgRowLength="52" PrtnSkewFactor="1" HT="8861752305602640651:120::2:7348857884852658558" HTS="11656903417281768864" HTN="16868982754566194429:18308856377858679923:15046199769545727370"/><Costs TotalCosts="375532"/></OpInfo>
+          <PhyOp Id="PhyOp_Spool" Name="__SCOPE_PARAMETER_PREFIX__searchlog" Line="5" CSRoot="Common" TotalConsumers="4">
+            <OpInfo><TableGroupProperties Grp="6.2" Remotable="False" Card="4.995e+09" AvgRowLength="52" PrtnSkewFactor="1" HT="7348857884852658558:166::1:10301734400334208151" HTS="4937610279519491343" HTN="6205373671570402168:15006356796842784517:15046199769545727370"/><Costs TotalCosts="375532"/></OpInfo>
+            <PhyOp Id="PhyOp_Extract" Table="/my/Inputs/SearchLog.txt" XMode="Serial" Udf="DefaultTextExtractor">
+              <OpInfo><TableGroupProperties Grp="5.3" Remotable="False" Card="4.995e+09" AvgRowLength="52" PrtnSkewFactor="1" HT="10301734400334208151:115::0:0" HTS="6037618571663268348" HTN="1835218864604521794:7358768758053956660:15046199769545727370"/><Costs TotalCosts="375532"/></OpInfo>
+            </PhyOp>
+          </PhyOp>
+        </PhyOp>
+      </PhyOp>
+      <PhyOp Id="PhyOp_Output" Table="https://cosmos08.osdinfra.net/cosmos/sandbox/my/Outputs/AdsLog.txt" XMode="Serial" Out="AdId,IId,Impression,IsClicked" Udf="DefaultTextOutputter">
+        <OpInfo><TableGroupProperties Grp="3.1" Remotable="False" Card="4.995e+09" AvgRowLength="16" PrtnSkewFactor="1" HT="15634960195170880551:228::3:5224957376424726991" HTS="12400527074469187351" HTN="9757136013664181896:18214274289463786209:4388708423549009033"/><Costs TotalCosts="3.75553e+06"/></OpInfo>
+        <PhyOp Id="PhyOp_RestrRemap">
+          <OpInfo><TableGroupProperties Grp="2.1" Remotable="False" Card="4.995e+09" AvgRowLength="16" PrtnSkewFactor="1" HT="5224957376424726991:120::2:4957575029371920785" HTS="12528949437571716820" HTN="7862261378613235031:18308856377858679923:4388708423549009033"/><Costs TotalCosts="375532"/></OpInfo>
+          <PhyOp Id="PhyOp_Spool" Name="__SCOPE_PARAMETER_PREFIX__adslog" Line="38" CSRoot="Common" TotalConsumers="2">
+            <OpInfo><TableGroupProperties Grp="1.1" Remotable="False" Card="4.995e+09" AvgRowLength="16" PrtnSkewFactor="1" HT="4957575029371920785:166::1:1541374016870700404" HTS="16496448922789115873" HTN="9997359265162289058:15006356796842784517:4388708423549009033"/><Costs TotalCosts="375532"/></OpInfo>
+            <PhyOp Id="PhyOp_Extract" Table="/my/Inputs/AdsLog.txt" XMode="Serial" Udf="MyTSVExtractor">
+              <OpInfo><TableGroupProperties Grp="0.1" Remotable="False" Card="4.995e+09" AvgRowLength="16" PrtnSkewFactor="1" HT="1541374016870700404:115::0:0" HTS="10194386757308928351" HTN="7684115457000397785:7358768758053956660:4388708423549009033"/><Costs TotalCosts="375532"/></OpInfo>
+            </PhyOp>
+          </PhyOp>
+        </PhyOp>
+      </PhyOp>
+      <PhyOp Id="PhyOp_Output" Table="https://cosmos08.osdinfra.net/cosmos/sandbox/my/Outputs/rs2.txt" XMode="Serial" Out="Market,Result" Udf="DefaultTextOutputter">
+        <OpInfo><TableGroupProperties Grp="25.1" Remotable="False" Card="4.995e+09" AvgRowLength="16" PrtnSkewFactor="1" HT="9282310932829531637:228::9:15220177331731722740" HTS="6153997062945705873" HTN="14030535967012732107:125628408656399961:15046199769545727370"/><Costs TotalCosts="4.00628e+06"/></OpInfo>
+        <PhyOp Id="PhyOp_RestrRemap">
+          <OpInfo><TableGroupProperties Grp="24.1" Remotable="False" Card="4.995e+09" AvgRowLength="16" PrtnSkewFactor="1" HT="15220177331731722740:120::8:6476010049406421122" HTS="2269967991855086668" HTN="11569141674484430056:220210497051293675:15046199769545727370"/><Costs TotalCosts="626281"/></OpInfo>
+          <PhyOp Id="PhyOp_Process" Udf="CrossApplyExpressionProcessor" In="Market,Results" Out="Market,SplitResult" UDMap="Market:PT(Market),SplitResult:DEP(Results)">
+            <OpInfo><TableGroupProperties Grp="23.1" Remotable="False" Card="4.995e+09" AvgRowLength="16" PrtnSkewFactor="1" HT="6476010049406421122:10::7:15348920789603218255" HTS="15918842492057360006" HTN="7837901560956772091:15364454989744949885:15046199769545727370"/><Costs TotalCosts="626281"/></OpInfo>
+            <PhyOp Id="PhyOp_RestrRemap">
+              <OpInfo><TableGroupProperties Grp="22.1" Remotable="False" Card="4.995e+09" AvgRowLength="16" PrtnSkewFactor="1" HT="15348920789603218255:120::6:9799905802236079211" HTS="15816296072375328570" HTN="5645588145557425280:1527596206713069034:15046199769545727370"/><Costs TotalCosts="376031"/></OpInfo>
+              <PhyOp Id="PhyOp_Spool" Name="__SCOPE_PARAMETER_PREFIX__rs1" Line="57" CSRoot="Common" TotalConsumers="2">
+                <OpInfo><TableGroupProperties Grp="21.1" Remotable="False" Card="4.995e+09" AvgRowLength="24" PrtnSkewFactor="1" HT="9799905802236079211:166::5:11806911715097096347" HTS="17293854413907892992" HTN="16726257761545161847:16671840699406725244:15046199769545727370"/><Costs TotalCosts="376031"/></OpInfo>
+                <PhyOp Id="PhyOp_ComputeScalar">
+                  <OpInfo><TableGroupProperties Grp="20.1" Remotable="False" Card="4.995e+09" AvgRowLength="24" PrtnSkewFactor="1" HT="11806911715097096347:212::4:10364165702142338863" HTS="3048079850538027314" HTN="17361748784570899511:9024252660617897387:15046199769545727370"/><Costs TotalCosts="376031"/></OpInfo>
+                  <PhyOp Id="PhyOp_RestrRemap">
+                    <OpInfo><TableGroupProperties Grp="15.1" Remotable="False" Card="4.995e+09" AvgRowLength="20" PrtnSkewFactor="1" HT="8861752305602640651:120::2:7348857884852658558" HTS="11656903417281768864" HTN="16868982754566194429:18308856377858679923:15046199769545727370"/><Costs TotalCosts="375532"/></OpInfo>
+                    <PhyOp Id="PhyOp_Spool" Name="__SCOPE_PARAMETER_PREFIX__searchlog" Line="5" CSRoot="Common" TotalConsumers="4">
+                      <OpInfo><TableGroupProperties Grp="6.2" Remotable="False" Card="4.995e+09" AvgRowLength="52" PrtnSkewFactor="1" HT="7348857884852658558:166::1:10301734400334208151" HTS="4937610279519491343" HTN="6205373671570402168:15006356796842784517:15046199769545727370"/><Costs TotalCosts="375532"/></OpInfo>
+                    </PhyOp>
+                  </PhyOp>
+                  <AncOp Id="AncOp_PrjList"><OpInfo><ScalarGroupProperties Grp="19.0"/></OpInfo>
+                    <AncOp Id="AncOp_PrjEl" Column="DwellTimeDouble"><OpInfo><ScalarGroupProperties Grp="18.0"/></OpInfo>
+                      <ScaOp Id="ScaOp_Convert"><OpInfo><ScalarGroupProperties Grp="17.0"/></OpInfo>
+                        <ScaOp Id="ScaOp_Identifier" Column="DwellTime"><OpInfo><ScalarGroupProperties Grp="16.0"/></OpInfo>
+                        </ScaOp>
+                      </ScaOp>
+                    </AncOp>
+                  </AncOp>
+                </PhyOp>
+              </PhyOp>
+            </PhyOp>
+          </PhyOp>
+        </PhyOp>
+      </PhyOp>
+      <PhyOp Id="PhyOp_Output" Table="https://cosmos08.osdinfra.net/cosmos/sandbox/my/Outputs/searchlog3.txt" XMode="Serial" Out="IId,UId,Start,Market,Query,DwellTime,Results,ClickedUrlsCount" Udf="DefaultTextOutputter">
+        <OpInfo><TableGroupProperties Grp="42.1" Remotable="False" Card="4.995e+09" AvgRowLength="52" PrtnSkewFactor="1" HT="8968096683280601027:228::4:9437978620141649547" HTS="14666891641978150345" HTN="108895179057305939:11419840703712859129:15046199769545727370"/><Costs TotalCosts="3.75653e+06"/></OpInfo>
+        <PhyOp Id="PhyOp_ComputeScalar">
+          <OpInfo><TableGroupProperties Grp="41.1" Remotable="False" Card="4.995e+09" AvgRowLength="52" PrtnSkewFactor="1" HT="9437978620141649547:212::3:4311470927575035068" HTS="2823217535734561942" HTN="3583471380344408336:11514422792107752843:15046199769545727370"/><Costs TotalCosts="376531"/></OpInfo>
+          <PhyOp Id="PhyOp_ComputeScalar">
+            <OpInfo><TableGroupProperties Grp="37.1" Remotable="False" Card="4.995e+09" AvgRowLength="301" PrtnSkewFactor="1" HT="11962869208686033043:212::3:6129452567496543456" HTS="4438757065656830015" HTN="9428738044542695262:14911639584983216383:15046199769545727370"/><Costs TotalCosts="376031"/></OpInfo>
+            <PhyOp Id="PhyOp_RestrRemap">
+              <OpInfo><TableGroupProperties Grp="33.1" Remotable="False" Card="4.995e+09" AvgRowLength="52" PrtnSkewFactor="1" HT="8861752305602640651:120::2:7348857884852658558" HTS="11656903417281768864" HTN="16868982754566194429:18308856377858679923:15046199769545727370"/><Costs TotalCosts="375532"/></OpInfo>
+              <PhyOp Id="PhyOp_Spool" Name="__SCOPE_PARAMETER_PREFIX__searchlog" Line="5" CSRoot="Common" TotalConsumers="4">
+                <OpInfo><TableGroupProperties Grp="6.2" Remotable="False" Card="4.995e+09" AvgRowLength="52" PrtnSkewFactor="1" HT="7348857884852658558:166::1:10301734400334208151" HTS="4937610279519491343" HTN="6205373671570402168:15006356796842784517:15046199769545727370"/><Costs TotalCosts="375532"/></OpInfo>
+              </PhyOp>
+            </PhyOp>
+            <AncOp Id="AncOp_PrjList"><OpInfo><ScalarGroupProperties Grp="36.0"/></OpInfo>
+              <AncOp Id="AncOp_PrjEl" Column="CLickedUrlsList"><OpInfo><ScalarGroupProperties Grp="35.0"/></OpInfo>
+                <ScaOp Id="ScaOp_Udf" Udf="UrlList.Create(ClickedUrls)" UsedColumn="ClickedUrls"><OpInfo><ScalarGroupProperties Grp="34.0"/></OpInfo>
+                </ScaOp>
+              </AncOp>
+            </AncOp>
+          </PhyOp>
+          <AncOp Id="AncOp_PrjList"><OpInfo><ScalarGroupProperties Grp="40.0"/></OpInfo>
+            <AncOp Id="AncOp_PrjEl" Column="ClickedUrlsCount"><OpInfo><ScalarGroupProperties Grp="39.0"/></OpInfo>
+              <ScaOp Id="ScaOp_Udf" Udf="CLickedUrlsList.Serialize()" UsedColumn="CLickedUrlsList"><OpInfo><ScalarGroupProperties Grp="38.0"/></OpInfo>
+              </ScaOp>
+            </AncOp>
+          </AncOp>
+        </PhyOp>
+      </PhyOp>
+      <PhyOp Id="PhyOp_Output" Table="https://cosmos08.osdinfra.net/cosmos/sandbox/my/Outputs/rs3.txt" XMode="Serial" Out="Market,TotalDwellTime" Udf="DefaultTextOutputter">
+        <OpInfo><TableGroupProperties Grp="32.1" Remotable="False" Card="1.24875e+09" AvgRowLength="16" PrtnSkewFactor="1" HT="4268050970119391964:228::5:716446086307408074" HTS="3783544544375134846" HTN="7019415359309513076:10815520479353339942:15046199769545727370"/><Costs TotalCosts="3.24606e+06"/></OpInfo>
+        <PhyOp Id="PhyOp_StreamGbAgg" AggregateType="Normal" GroupOnly="False" On="Market ASC" SortColumn="Market ASC">
+          <OpInfo><TableGroupProperties Grp="31.1" Remotable="False" Card="1.24875e+09" AvgRowLength="16" PrtnSkewFactor="1" HT="716446086307408074:109:0:4:4241201055572033444" HTS="11549663378776413451" HTN="11023405907725839354:10910102567748233656:15046199769545727370"/><Costs TotalCosts="2.40106e+06"/></OpInfo>
+          <PhyOp Id="PhyOp_Sort" SortColumn="Market ASC">
+            <OpInfo><TableGroupProperties Grp="26.2" Remotable="False" Card="4.995e+09" AvgRowLength="16" PrtnSkewFactor="1" HT="15348920789603218255:120::6:9799905802236079211" HTS="15816296072375328570" HTN="5645588145557425280:1527596206713069034:15046199769545727370"/><Costs TotalCosts="2.39744e+06"/></OpInfo>
+            <PhyOp Id="PhyOp_RestrRemap">
+              <OpInfo><TableGroupProperties Grp="26.3" Remotable="False" Card="4.995e+09" AvgRowLength="16" PrtnSkewFactor="1" HT="15348920789603218255:120::6:9799905802236079211" HTS="15816296072375328570" HTN="5645588145557425280:1527596206713069034:15046199769545727370"/><Costs TotalCosts="376031"/></OpInfo>
+              <PhyOp Id="PhyOp_Spool" Name="__SCOPE_PARAMETER_PREFIX__rs1" Line="57" CSRoot="Common" TotalConsumers="2">
+                <OpInfo><TableGroupProperties Grp="21.1" Remotable="False" Card="4.995e+09" AvgRowLength="24" PrtnSkewFactor="1" HT="9799905802236079211:166::5:11806911715097096347" HTS="17293854413907892992" HTN="16726257761545161847:16671840699406725244:15046199769545727370"/><Costs TotalCosts="376031"/></OpInfo>
+              </PhyOp>
+            </PhyOp>
+          </PhyOp>
+          <AncOp Id="AncOp_PrjList"><OpInfo><ScalarGroupProperties Grp="30.0"/></OpInfo>
+            <AncOp Id="AncOp_PrjEl" Column="TotalDwellTime"><OpInfo><ScalarGroupProperties Grp="29.0"/></OpInfo>
+              <ScaOp Id="ScaOp_AggFunc" AggregateName="UDAgg(MySum(DwellTimeDouble))" Distinct="False"><OpInfo><ScalarGroupProperties Grp="28.0"/></OpInfo>
+                <ScaOp Id="ScaOp_Identifier" Column="DwellTimeDouble"><OpInfo><ScalarGroupProperties Grp="27.0"/></OpInfo>
+                </ScaOp>
+              </ScaOp>
+            </AncOp>
+          </AncOp>
+        </PhyOp>
+      </PhyOp>
+      <PhyOp Id="PhyOp_Output" Table="https://cosmos08.osdinfra.net/cosmos/sandbox/my/Outputs/Processorlog.txt" XMode="Serial" Out="AdId,IId,Impression,Query" Udf="DefaultTextOutputter">
+        <OpInfo><TableGroupProperties Grp="12.1" Remotable="False" Card="3.996e+09" AvgRowLength="20" PrtnSkewFactor="1" HT="14691559695362808007:228::3:12176857378627461111" HTS="2807280647120119460" HTN="7026793204597197668:14533113727277288475:988164119385184787"/><Costs TotalCosts="7.50797e+06"/></OpInfo>
+        <PhyOp Id="PhyOp_MergeJoin" JoinType="x_jtInner" ParallelJoinType="Serial" LeftKey="IId ASC" RightKey="IId1 ASC">
+          <OpInfo><TableGroupProperties Grp="11.1" Remotable="False" Card="3.996e+09" AvgRowLength="20" PrtnSkewFactor="1" HT="12176857378627461111:30::2:4556166550154425437" HTS="1268859942182306881" HTN="4528702336089686124:14627695815672182189:988164119385184787"/><Costs TotalCosts="4.80397e+06"/></OpInfo>
+          <PhyOp Id="PhyOp_Sort" SortColumn="IId ASC">
+            <OpInfo><TableGroupProperties Grp="4.2" Remotable="False" Card="4.995e+09" AvgRowLength="12" PrtnSkewFactor="1" HT="5224957376424726991:120::2:4957575029371920785" HTS="12528949437571716820" HTN="7862261378613235031:18308856377858679923:4388708423549009033"/><Costs TotalCosts="2.39692e+06"/></OpInfo>
+            <PhyOp Id="PhyOp_RestrRemap">
+              <OpInfo><TableGroupProperties Grp="4.3" Remotable="False" Card="4.995e+09" AvgRowLength="12" PrtnSkewFactor="1" HT="5224957376424726991:120::2:4957575029371920785" HTS="12528949437571716820" HTN="7862261378613235031:18308856377858679923:4388708423549009033"/><Costs TotalCosts="375532"/></OpInfo>
+              <PhyOp Id="PhyOp_Spool" Name="__SCOPE_PARAMETER_PREFIX__adslog" Line="38" CSRoot="Common" TotalConsumers="2">
+                <OpInfo><TableGroupProperties Grp="1.1" Remotable="False" Card="4.995e+09" AvgRowLength="16" PrtnSkewFactor="1" HT="4957575029371920785:166::1:1541374016870700404" HTS="16496448922789115873" HTN="9997359265162289058:15006356796842784517:4388708423549009033"/><Costs TotalCosts="375532"/></OpInfo>
+              </PhyOp>
+            </PhyOp>
+          </PhyOp>
+          <PhyOp Id="PhyOp_Sort" SortColumn="IId1 ASC">
+            <OpInfo><TableGroupProperties Grp="7.2" Remotable="False" Card="4.995e+09" AvgRowLength="12" PrtnSkewFactor="1" HT="8998917709923119442:120::2:7348857884852658558" HTS="11374146744398445175" HTN="16973084225427166261:18308856377858679923:15046199769545727370"/><Costs TotalCosts="2.39692e+06"/></OpInfo>
+            <PhyOp Id="PhyOp_RestrRemap">
+              <OpInfo><TableGroupProperties Grp="7.3" Remotable="False" Card="4.995e+09" AvgRowLength="12" PrtnSkewFactor="1" HT="8998917709923119442:120::2:7348857884852658558" HTS="11374146744398445175" HTN="16973084225427166261:18308856377858679923:15046199769545727370"/><Costs TotalCosts="375532"/></OpInfo>
+              <PhyOp Id="PhyOp_Spool" Name="__SCOPE_PARAMETER_PREFIX__searchlog" Line="5" CSRoot="Common" TotalConsumers="4">
+                <OpInfo><TableGroupProperties Grp="6.2" Remotable="False" Card="4.995e+09" AvgRowLength="52" PrtnSkewFactor="1" HT="7348857884852658558:166::1:10301734400334208151" HTS="4937610279519491343" HTN="6205373671570402168:15006356796842784517:15046199769545727370"/><Costs TotalCosts="375532"/></OpInfo>
+              </PhyOp>
+            </PhyOp>
+          </PhyOp>
+          <ScaOp Id="ScaOp_Comp" CompOp="x_cmpEq"><OpInfo><ScalarGroupProperties Grp="10.0"/></OpInfo>
+            <ScaOp Id="ScaOp_Identifier" Column="IId"><OpInfo><ScalarGroupProperties Grp="8.0"/></OpInfo>
+            </ScaOp>
+            <ScaOp Id="ScaOp_Identifier" Column="IId1"><OpInfo><ScalarGroupProperties Grp="9.0"/></OpInfo>
+            </ScaOp>
+          </ScaOp>
+        </PhyOp>
+      </PhyOp>
+    </PhyOp>
+</OutputTree>
+</OptimizerTrees>
+  </OptimizerPlanInfo>
+</CSSRelatedInfo>

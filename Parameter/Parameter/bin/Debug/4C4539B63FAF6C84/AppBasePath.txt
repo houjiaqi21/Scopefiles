@@ -1,0 +1,1 @@
+c:\program files\microsoft visual studio\2022\preview\common7\ide\extensions\microsoft\scopestudio\2.7.0000.6\CosmosRuntimeSDK

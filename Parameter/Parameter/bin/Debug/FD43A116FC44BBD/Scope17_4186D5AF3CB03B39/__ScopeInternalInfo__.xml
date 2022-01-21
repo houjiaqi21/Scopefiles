@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CSSRelatedInfo>
+  <OptimizerPlanInfo signatureVersion="1">
+    <TableScan present="True" occurrence="1" />
+    <PartitionSeek present="False" occurrence="0" />
+    <PartitionRange present="False" occurrence="0" />
+    <IndexSeek present="False" occurrence="0" />
+    <IndexRange present="False" occurrence="0" />
+    <Join present="False" occurrence="0" />
+    <GroupByAgg present="False" occurrence="0" />
+    <UDProcessor present="False" occurrence="0" />
+    <UDReducer present="False" occurrence="0" />
+    <UDCombiner present="False" occurrence="0" />
+    <UDMultiProcessor present="False" occurrence="0" />
+    <Top present="False" occurrence="0" />
+    <Costs>
+      <ExtractCardinality>4995000000</ExtractCardinality>
+      <InputSize>499500000000</InputSize>
+      <OutputCardinality>4995000000</OutputCardinality>
+      <NumTable>1</NumTable>
+      <DataTransferVolume>0</DataTransferVolume>
+      <Latency>3756026.00578474</Latency>
+      <TotalCost>3756026.00578474</TotalCost>
+      <EstimatedNumEdges>0</EstimatedNumEdges>
+    </Costs>
+    <OptimizerTrees>
+<InputTree>
+    <LogOp Id="LogOp_Output" Table="abfs://filesystem@ltianwestcentralusgen2.dfs.core.windows.net/users/v-hozhao/out.txt" XMode="All" Out="IId,b" Udf="DefaultTextOutputter">
+      <OpInfo><TableGroupProperties Grp="5.0" Remotable="False" Card="4.995e+09" AvgRowLength="8"/></OpInfo>
+      <LogOp Id="LogOp_Project" Remove="Start,Market,Query,DwellTime,Results,ClickedUrls">
+        <OpInfo><TableGroupProperties Grp="4.0" Remotable="False" Card="4.995e+09" AvgRowLength="8"/></OpInfo>
+        <LogOp Id="LogOp_Extract" Table="/users/v-hozhao/inputs/SearchLog.txt" XMode="Parallel" PartitionType="Nil" Partitioning="" Partitions="500(UB)" Udf="DefaultTextExtractor">
+          <OpInfo><TableGroupProperties Grp="0.0" Remotable="False" Card="4.995e+09" AvgRowLength="48"/></OpInfo>
+        </LogOp>
+        <AncOp Id="AncOp_PrjList"><OpInfo><ScalarGroupProperties Grp="3.0"/></OpInfo>
+          <AncOp Id="AncOp_PrjEl" Column="b"><OpInfo><ScalarGroupProperties Grp="2.0"/></OpInfo>
+            <ScaOp Id="ScaOp_Const" TI="Int" Value="-1" Parameter="0"><OpInfo><ScalarGroupProperties Grp="1.0"/></OpInfo>
+            </ScaOp>
+          </AncOp>
+        </AncOp>
+      </LogOp>
+    </LogOp>
+</InputTree>
+<OutputTree>
+    <PhyOp Id="PhyOp_Output" Table="abfs://filesystem@ltianwestcentralusgen2.dfs.core.windows.net/users/v-hozhao/out.txt" XMode="Serial" Out="IId,b" Udf="DefaultTextOutputter">
+      <OpInfo><TableGroupProperties Grp="5.1" Remotable="False" Card="4.995e+09" AvgRowLength="8" PrtnSkewFactor="1" HT="17568263847186901103:228::4:518176423081276388" HTS="7470376061009137274" HTN="12546411034075382674:17795546808626630902:16781803572409548963" HTC="4655884000994406582"/><PinnedPlan RuleId="62"/><Costs TotalCosts="3.75603e+06"/></OpInfo>
+      <PhyOp Id="PhyOp_ComputeScalar">
+        <OpInfo><TableGroupProperties Grp="4.1" Remotable="False" Card="4.995e+09" AvgRowLength="8" PrtnSkewFactor="1" HT="518176423081276388:212::3:3648374633018335614" HTS="14137937764483335684" HTN="9880411710971754765:17890128897021524616:16781803572409548963" HTC="2736751509110468187"/><PinnedPlan RuleId="74"/><Costs TotalCosts="376031"/></OpInfo>
+        <PhyOp Id="PhyOp_Extract" Table="/users/v-hozhao/inputs/SearchLog.txt" XMode="Serial" Udf="DefaultTextExtractor">
+          <OpInfo><TableGroupProperties Grp="0.1" Remotable="False" Card="4.995e+09" AvgRowLength="4" PrtnSkewFactor="1" HT="17931377363400973678:115::0:0" HTS="4282390774761967034" HTN="2689525829933761104:7358768758053956660:16781803572409548963" HTC="13783929248013673297"/><PinnedPlan RuleId="60"/><Costs TotalCosts="375532"/></OpInfo>
+        </PhyOp>
+        <AncOp Id="AncOp_PrjList"><OpInfo><ScalarGroupProperties Grp="3.0"/></OpInfo>
+          <AncOp Id="AncOp_PrjEl" Column="b"><OpInfo><ScalarGroupProperties Grp="2.0"/></OpInfo>
+            <ScaOp Id="ScaOp_Const" TI="Int" Value="-1" Parameter="0"><OpInfo><ScalarGroupProperties Grp="1.0"/></OpInfo>
+            </ScaOp>
+          </AncOp>
+        </AncOp>
+      </PhyOp>
+    </PhyOp>
+</OutputTree>
+<Rules Used="00000000000000000000000000000000000000000000000000000000000010100000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"/></OptimizerTrees>
+  </OptimizerPlanInfo>
+  <QueryTracer>
+    <Input count="1">
+      <StreamProvenance>/users/v-hozhao/inputs/SearchLog.txt</StreamProvenance>
+      <dependency count="7">
+        <columnprovenance>Market</columnprovenance>
+        <columnprovenance>IId</columnprovenance>
+        <columnprovenance>Start</columnprovenance>
+        <columnprovenance>Results</columnprovenance>
+        <columnprovenance>Query</columnprovenance>
+        <columnprovenance>DwellTime</columnprovenance>
+        <columnprovenance>ClickedUrls</columnprovenance>
+      </dependency>
+    </Input>
+    <SelectedInput count="0" />
+    <Output count="1">
+      <StreamProvenance>/users/v-hozhao/inputs/SearchLog.txt</StreamProvenance>
+      <dependency count="1">
+        <columnprovenance>IId</columnprovenance>
+      </dependency>
+    </Output>
+  </QueryTracer>
+</CSSRelatedInfo>

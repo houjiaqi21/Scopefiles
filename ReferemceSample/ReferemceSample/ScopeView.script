@@ -1,0 +1,16 @@
+﻿//Script GUID:9a57b59f-2f96-448b-b47e-620a4b1cf16b
+//Used for tracking history
+
+
+//   /users/v-hozhao/PublishView/
+//  https://cosmos09.osdinfra.net:443/cosmos/cosmosAdmin/users/v-hozhao/PublishView/
+
+#DECLARE inputFile_view string = @"/users/v-hozhao/PublishView/ReferenceView.view"; //input
+#DECLARE outputFile_view string = @"/users/v-hozhao/PublishView/Output/ViewOutput.txt"; //output
+
+searchlogView =
+    VIEW @inputFile_view;
+
+OUTPUT searchlogView
+TO @outputFile_view
+USING DefaultTextOutputter();

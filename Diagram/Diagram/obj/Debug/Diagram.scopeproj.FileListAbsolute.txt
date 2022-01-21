@@ -1,0 +1,2 @@
+D:\Scope2015\Diagram\Diagram\bin\Debug\Algebra.xml
+D:\Scope2015\Diagram\Diagram\obj\Debug\Algebra.xml

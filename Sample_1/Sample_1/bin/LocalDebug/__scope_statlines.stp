@@ -1,0 +1,10 @@
+<SV2_Aggregate vertexGuid="FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF" avgExecutionMemoryPeakSize="29491200" avgGlobalMemoryPeakSize="0" avgHashMemoryPeakSize="0" avgIOMemoryPeakSize="58720256" avgOverallMemoryPeakSize="88211456" avgOverallReservedPeakSize="10018619392" avgPrivateMemoryPeakSize="145588224" avgSortMemoryPeakSize="0" avgWorkingSetPeakSize="69443584" maxExecutionMemoryPeakSize="29491200" maxGlobalMemoryPeakSize="0" maxHashMemoryPeakSize="0" maxIOMemoryPeakSize="58720256" maxOverallMemoryPeakSize="88211456" maxOverallReservedPeakSize="10018619392" maxPrivateMemoryPeakSize="145588224" maxSortMemoryPeakSize="0" maxWorkingSetPeakSize="69443584" vertexNumber="0" vertexVersion="0">
+	<VertexExecutionJobObject avgPeakJobMemoryUsed="101699584" avgPeakProcessMemoryUsed="101699584" avgTotalKernelTimeMs="0" avgTotalPageFaultCount="649" avgTotalUserTimeMs="47" maxActiveProcesses="1" maxPeakJobMemoryUsed="101699584" maxPeakProcessMemoryUsed="101699584" maxTotalKernelTimeMs="0" maxTotalPageFaultCount="649" maxTotalProcesses="1" maxTotalUserTimeMs="47"/>
+	<Time elapsedTime="4889" executeElapsedTime="60" executeKernelCpuTime="0" executeTotalCpuTime="47" executeUserCpuTime="47" initElapsedTime="4829" initTotalCpuTime="1468" totalCpuTime="1515"/>
+	<ExceptionCounts accessViolationExceptionCount="0" cppExceptionCount="0" csharpExceptionCount="0" otherExceptionCount="0" stackOverflowExceptionCount="0"/>
+	<SStreamMetadataOutputter OperatorWaitOnIOTime="15" exclusiveTime="0" inclusiveTime="15" maxRowCount="0" opId="9" rowCount="0">
+		<Merge avgInputCount="1" exclusiveTime="0" inclusiveTime="15" maxInputCount="1" maxRowCount="0" opId="7" rowCount="0">
+			<SStreamMetadataExtractor OperatorWaitOnIOTime="15" avgIoTime="0" bytes="0" closeTime="0" exclusiveTime="0" inclusiveTime="15" maxIoTime="0" maxIoTimeSize="0" maxRowCount="0" minIoTime="0" minIoTimeSize="0" opId="5" openTime="0" operations="0" rowCount="0" totalIoTime="0" totalThrottlingTime="0" totalWaitTime="0"/>
+		</Merge>
+	</SStreamMetadataOutputter>
+</SV2_Aggregate>

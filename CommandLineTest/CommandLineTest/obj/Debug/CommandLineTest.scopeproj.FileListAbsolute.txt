@@ -1,0 +1,4 @@
+D:\Scope2015\CommandLineTest\CommandLineTest\bin\Debug\Algebra.xml
+D:\Scope2015\CommandLineTest\CommandLineTest\obj\Debug\CommandLineTest.scopeprojAssemblyReference.cache
+D:\Scope2015\CommandLineTest\CommandLineTest\obj\Debug\CommandLineTest.scopeproj.CoreCompileInputs.cache
+D:\Scope2015\CommandLineTest\CommandLineTest\obj\Debug\Algebra.xml

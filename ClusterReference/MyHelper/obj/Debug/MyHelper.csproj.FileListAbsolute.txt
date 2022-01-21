@@ -1,0 +1,11 @@
+D:\Scope2015\ClusterReference\MyHelper\bin\Debug\MyHelper.dll
+D:\Scope2015\ClusterReference\MyHelper\bin\Debug\MyHelper.pdb
+D:\Scope2015\ClusterReference\MyHelper\obj\Debug\MyHelper.csprojResolveAssemblyReference.cache
+D:\Scope2015\ClusterReference\MyHelper\obj\Debug\MyHelper.dll
+D:\Scope2015\ClusterReference\MyHelper\obj\Debug\MyHelper.pdb
+D:\Sharing\Scope2015\ClusterReference\MyHelper\bin\Debug\MyHelper.dll
+D:\Sharing\Scope2015\ClusterReference\MyHelper\bin\Debug\MyHelper.pdb
+D:\Sharing\Scope2015\ClusterReference\MyHelper\obj\Debug\MyHelper.csprojAssemblyReference.cache
+D:\Sharing\Scope2015\ClusterReference\MyHelper\obj\Debug\MyHelper.csproj.CoreCompileInputs.cache
+D:\Sharing\Scope2015\ClusterReference\MyHelper\obj\Debug\MyHelper.dll
+D:\Sharing\Scope2015\ClusterReference\MyHelper\obj\Debug\MyHelper.pdb

@@ -1,0 +1,71 @@
+﻿2019-11-11T11:07:13.9083606+08:00	UnknownJobId_1762645592	0.0178	Compiler	ScopeRoslynBinder	BuildScriptEnvironment	Starting
+2019-11-11T11:07:14.3923704+08:00	UnknownJobId_1762645592		Compiler	DeepCompilePipeline	InitializeCompiler	Start Compilation: CompileOnVC = False, DataRoot = https://cosmos08.osdinfra.net/cosmos/sandbox, Version = 10.2.2.0
+2019-11-11T11:07:14.3963643+08:00	UnknownJobId_1762645592		Compiler	DeepCompilePipeline	InitializeCompiler	CommandLine =>	""C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\Microsoft\ScopeStudio\2.5.1000.2\CompilerHost.exe" e048b70b-1fb1-440a-8795-6f5224db265d 4512 False C:\Users\v-hozhao\AppData\Local\Temp\DataLakeTemp"
+2019-11-11T11:07:14.4003641+08:00	UnknownJobId_1762645592		Compiler	DeepCompilePipeline	InitializeCompiler	Settings =>	{DataRoot:https://cosmos08.osdinfra.net/cosmos/sandbox,ResolverTypeForResource:ScopePath,ResolverTypeForInput:InputPath,ResolverTypeForOutput:Dummy,NebulaCommandLine:-c++ -pdb Full -On ReflectStageToScript -On EnableScopeDml -On EnableSStreamContractV4 -On UseAadAuthentication -ClientVersion 10.2.2.0}
+2019-11-11T11:07:14.5013659+08:00	UnknownJobId_1762645592		Compiler	DeepCompilePipeline	BeforeCompile	Client Version: 10.2.2.0
+2019-11-11T11:07:14.5013659+08:00	UnknownJobId_1762645592		Compiler	DeepCompilePipeline	BeforeCompile	Target: SingleBox
+2019-11-11T11:07:14.5023675+08:00	UnknownJobId_1762645592		Compiler	DeepCompilePipeline	BeforeCompile	Stat: SimulateLarge
+2019-11-11T11:07:14.5033694+08:00	UnknownJobId_1762645592		Compiler	DeepCompilePipeline	BeforeCompile	SkipPath: True
+2019-11-11T11:07:14.5603706+08:00	UnknownJobId_1762645592		Compiler	ScopeFrontEndRunner	Execute	Starting FrontEndRun...
+2019-11-11T11:07:14.7853852+08:00	UnknownJobId_1762645592	0.9078	Compiler	ScopeRoslynBinder	BuildScriptEnvironment	Finished
+2019-11-11T11:07:22.4925287+08:00	UnknownJobId_1762645592	0.5899	Compiler	FrontEndRunner	Run	SyntaxVerifier
+2019-11-11T11:07:22.9965381+08:00	UnknownJobId_1762645592	0.4989	Compiler	FrontEndRunner	Run	DdlResolver
+2019-11-11T11:07:23.0115441+08:00	UnknownJobId_1762645592	0.0115	Compiler	FrontEndRunner	Run	ViewResolverPass
+2019-11-11T11:07:23.0125354+08:00	UnknownJobId_1762645592	8.3844	Compiler	FrontEndRunner	Run	AstBuilder
+2019-11-11T11:07:23.0315502+08:00	UnknownJobId_1762645592	0.0186	Compiler	FrontEndRunner	Run	ViewResolverPass
+2019-11-11T11:07:23.0531754+08:00	UnknownJobId_1762645592	0.0198	Compiler	FrontEndRunner	Run	AssemblyResolverPass
+2019-11-11T11:07:23.0752385+08:00	UnknownJobId_1762645592	0.0202	Compiler	FrontEndRunner	Run	ResourceReferencePass
+2019-11-11T11:07:25.2415287+08:00	UnknownJobId_1762645592	2.0620	Compiler	ScopeCompileStrategy	Process	CsBlockAnalyzer finished.
+2019-11-11T11:07:25.2425341+08:00	UnknownJobId_1762645592	0.0002	Compiler	ScopeRoslynBinder	BuildScriptEnvironment	Starting
+2019-11-11T11:07:25.2615321+08:00	UnknownJobId_1762645592	0.0189	Compiler	ScopeRoslynBinder	BuildScriptEnvironment	Finished
+2019-11-11T11:07:25.4585255+08:00	UnknownJobId_1762645592	0.2111	Compiler	FrontEndRunner	Run	InputOutputPass
+2019-11-11T11:07:30.2388807+08:00	UnknownJobId_1762645592	4.7751	Compiler	FrontEndRunner	Run	BinderPass
+2019-11-11T11:07:30.2428788+08:00	UnknownJobId_1762645592	0.0036	Compiler	FrontEndRunner	Run	UserCode
+2019-11-11T11:07:30.4418845+08:00	UnknownJobId_1762645592	0.1975	Compiler	FrontEndRunner	Run	SemanticAnalyzerPass
+2019-11-11T11:07:30.7779043+08:00	UnknownJobId_1762645592	0.3341	Compiler	FrontEndRunner	Run	ErrorReporterPass
+2019-11-11T11:07:30.7799041+08:00	UnknownJobId_1762645592	16.2197	Compiler	ScopeFrontEndRunner	CleanUp	Finished FrontEndRun...
+2019-11-11T11:07:30.8388930+08:00	UnknownJobId_1762645592		Compiler	ScopeBackEndRunner	OptimizerRun	Starting OptimizerRun...
+2019-11-11T11:07:30.9638965+08:00	UnknownJobId_1762645592	0.1183	Compiler	ScopeResourceStorage	AddGeneratedFile	AddGeneratedFile("D:\Scope2015\QuickInfo_Definition_Reference\QuickInfo_Definition_Reference\bin\Debug\2F923D2DC69D64A4\Scope_A2C5B99E4077B14F\__CompilerTimers.xml",CompilerTimers) =>	null
+2019-11-11T11:07:31.2048999+08:00	UnknownJobId_1762645592	0.3620	Compiler	FrontEndRunner	Run	GenerateOptTreePass
+2019-11-11T11:07:31.2629092+08:00	UnknownJobId_1762645592		Compiler	PlaybackDbXmlWriter	SerializeSStreamMeta	SStreamMetadata converted to base64 string, size is4
+2019-11-11T11:07:31.3579041+08:00	UnknownJobId_1762645592	0.1457	Compiler	ScopeResourceStorage	AddGeneratedFile	AddGeneratedFile("D:\Scope2015\QuickInfo_Definition_Reference\QuickInfo_Definition_Reference\bin\Debug\2F923D2DC69D64A4\Scope_A2C5B99E4077B14F\ScopeInternalStatistics.xml",StatisticsResource, PlaybackDb) =>	null
+2019-11-11T11:07:31.7789118+08:00	UnknownJobId_1762645592		Compiler	PlaybackDbXmlWriter	SerializeSStreamMeta	SStreamMetadata converted to base64 string, size is4
+2019-11-11T11:07:31.7839303+08:00	UnknownJobId_1762645592	0.0069	Compiler	ScopeResourceStorage	AddGeneratedFile	AddGeneratedFile("D:\Scope2015\QuickInfo_Definition_Reference\QuickInfo_Definition_Reference\bin\Debug\2F923D2DC69D64A4\Scope_A2C5B99E4077B14F\ScopeInternalStatistics.xml",StatisticsResource, PlaybackDb) =>	null
+2019-11-11T11:07:31.7959128+08:00	UnknownJobId_1762645592	0.0193	Compiler	ScopeResourceStorage	AddGeneratedFile	AddGeneratedFile("D:\Scope2015\QuickInfo_Definition_Reference\QuickInfo_Definition_Reference\bin\Debug\2F923D2DC69D64A4\Scope_A2C5B99E4077B14F\__CompilerTimers.xml",CompilerTimers) =>	null
+2019-11-11T11:07:31.8439134+08:00	UnknownJobId_1762645592	0.0670	Compiler	ScopeResourceStorage	AddGeneratedFile	AddGeneratedFile("D:\Scope2015\QuickInfo_Definition_Reference\QuickInfo_Definition_Reference\bin\Debug\2F923D2DC69D64A4\Scope_A2C5B99E4077B14F\__CompilerPlan.json",CompilerPlan) =>	null
+2019-11-11T11:07:31.9679158+08:00	UnknownJobId_1762645592	0.1914	Compiler	ScopeResourceStorage	AddGeneratedFile	AddGeneratedFile("D:\Scope2015\QuickInfo_Definition_Reference\QuickInfo_Definition_Reference\bin\Debug\2F923D2DC69D64A4\Scope_A2C5B99E4077B14F\__Ast__.bin",StatisticsResource) =>	null
+2019-11-11T11:07:32.9179433+08:00	UnknownJobId_1762645592	1.6488	Compiler	TimedOptimizer	OptimizeImpl	CQO: Optimization succeeded.
+2019-11-11T11:07:32.9179433+08:00	UnknownJobId_1762645592		Compiler	ScopeBackEndRunner	Execute	Total input file count: 2
+2019-11-11T11:07:32.9189432+08:00	UnknownJobId_1762645592		Compiler	ScopeBackEndRunner	Execute	Total output file count: 6
+2019-11-11T11:07:32.9269350+08:00	UnknownJobId_1762645592		Compiler	ScopeBackEndRunner	BackEndRun	Starting BackEndRun...
+2019-11-11T11:07:33.8909549+08:00	UnknownJobId_1762645592	0.9626	Compiler	ScopeBackEndRunner	PostprocessStageModel	Algebra and managed code generation finished.
+2019-11-11T11:07:33.8919542+08:00	UnknownJobId_1762645592	20.3339	Compiler	ScopeBackEndRunner	BackEndRun	*** Exiting post-optimization
+2019-11-11T11:07:33.9129555+08:00	UnknownJobId_1762645592	0.0138	Compiler	ScopeResourceStorage	AddGeneratedFile	AddGeneratedFile("D:\Scope2015\QuickInfo_Definition_Reference\QuickInfo_Definition_Reference\bin\Debug\2F923D2DC69D64A4\Scope_A2C5B99E4077B14F\PartitionLastRows.bin",VertexPartitionSpec) =>	null
+2019-11-11T11:07:33.9309547+08:00	UnknownJobId_1762645592	0.0314	Compiler	ScopeResourceStorage	AddGeneratedFile	AddGeneratedFile("D:\Scope2015\QuickInfo_Definition_Reference\QuickInfo_Definition_Reference\bin\Debug\2F923D2DC69D64A4\Scope_A2C5B99E4077B14F\__ScopeDiagnosisInfo__.xml",StatisticsResource) =>	null
+2019-11-11T11:07:33.9569544+08:00	UnknownJobId_1762645592	0.0456	Compiler	ScopeBackEndRunner	BackEndRun	C# code emission finished.
+2019-11-11T11:07:33.9569544+08:00	UnknownJobId_1762645592	0.0582	Compiler	ScopeResourceStorage	AddGeneratedFile	AddGeneratedFile("D:\Scope2015\QuickInfo_Definition_Reference\QuickInfo_Definition_Reference\bin\Debug\2F923D2DC69D64A4\Scope_A2C5B99E4077B14F\ScopeScript.xml",StatisticsResource) =>	null
+2019-11-11T11:07:34.0179559+08:00	UnknownJobId_1762645592	0.1191	Compiler	ScopeResourceStorage	AddGeneratedFile	AddGeneratedFile("D:\Scope2015\QuickInfo_Definition_Reference\QuickInfo_Definition_Reference\bin\Debug\2F923D2DC69D64A4\Scope_A2C5B99E4077B14F\ScopeVertexDef.xml",VertexDef) =>	null
+2019-11-11T11:07:35.4606290+08:00	UnknownJobId_1762645592	1.4967	Compiler	ScopeBackEndRunner	GenerateCppCode	C++ CodeGen finished.
+2019-11-11T11:08:11.3363161+08:00	UnknownJobId_1762645592	35.8657	Compiler	ScopeBackEndRunner	BuildGeneratedCode	Generated Code Compilation finished.
+2019-11-11T11:08:11.3403048+08:00	UnknownJobId_1762645592	38.4124	Compiler	ScopeBackEndRunner	BackEndRun	Finished BackEndRun...
+2019-11-11T11:08:11.3743181+08:00	UnknownJobId_1762645592		Compiler	DeepCompilePipeline	FinalizeArtifacts	Starting Compiler Artifacts Finalization...
+2019-11-11T11:08:11.3783084+08:00	UnknownJobId_1762645592	0.0372	Compiler	ScopeResourceStorage	AddGeneratedFile	AddGeneratedFile("D:\Scope2015\QuickInfo_Definition_Reference\QuickInfo_Definition_Reference\bin\Debug\2F923D2DC69D64A4\Scope_A2C5B99E4077B14F\__Warnings__.xml",StatisticsResource) =>	null
+2019-11-11T11:08:11.3813045+08:00	UnknownJobId_1762645592	0.0405	Compiler	ScopeResourceStorage	AddGeneratedFile	AddGeneratedFile("D:\Scope2015\QuickInfo_Definition_Reference\QuickInfo_Definition_Reference\bin\Debug\2F923D2DC69D64A4\Scope_A2C5B99E4077B14F\__ScopeInternalInfo__.xml",OptPlanInfo) =>	null
+2019-11-11T11:08:11.6913063+08:00	UnknownJobId_1762645592	0.3511	Compiler	ScopeResourceStorage	AddGeneratedFile	AddGeneratedFile("D:\Scope2015\QuickInfo_Definition_Reference\QuickInfo_Definition_Reference\bin\Debug\2F923D2DC69D64A4\Scope_A2C5B99E4077B14F\__script__.abr",Algebra) =>	null
+2019-11-11T11:08:11.7083075+08:00	UnknownJobId_1762645592	0.0159	Compiler	ScopeResourceStorage	AddGeneratedFile	AddGeneratedFile("D:\Scope2015\QuickInfo_Definition_Reference\QuickInfo_Definition_Reference\bin\Debug\2F923D2DC69D64A4\Scope_A2C5B99E4077B14F\__CompilerTimers.xml",CompilerTimers) =>	null
+2019-11-11T11:08:11.7313070+08:00	UnknownJobId_1762645592		Compiler	DeepCompilePipeline	FinalizeArtifacts	Finished Compiler Artifacts Finalization...
+2019-11-11T11:08:11.7323078+08:00	UnknownJobId_1762645592		Compiler	DeepCompilePipeline	DoCompile	Finished compilation!
+2019-11-11T11:08:11.7363077+08:00	UnknownJobId_1762645592		Compiler	DeepCompilePipeline	FinalizeCompilation	Start compilation finalization...
+2019-11-11T11:08:11.7513079+08:00	UnknownJobId_1762645592		Compiler	DeepCompilePipeline	FinalizeDiagnostics	Starting to write diagnostics.json file...
+2019-11-11T11:08:11.7963092+08:00	UnknownJobId_1762645592	0.0438	Compiler	ScopeResourceStorage	AddGeneratedFile	AddGeneratedFile("D:\Scope2015\QuickInfo_Definition_Reference\QuickInfo_Definition_Reference\bin\Debug\2F923D2DC69D64A4\Scope_A2C5B99E4077B14F\diagnosticsjson",StatisticsResource) =>	null
+2019-11-11T11:08:11.7963092+08:00	UnknownJobId_1762645592		Compiler	DeepCompilePipeline	FinalizeDiagnostics	Finished writing diagnostics.json file...
+2019-11-11T11:08:11.8043079+08:00	UnknownJobId_1762645592		Compiler	DeepCompilePipeline	DisposeCompiler	Start disposing the compiler...
+2019-11-11T11:08:11.8103086+08:00	UnknownJobId_1762645592		Compiler	ScopeSStreamMetadataManager	Cleanup	Cancelling any ongoing requests
+2019-11-11T11:08:11.8253093+08:00	UnknownJobId_1762645592		Compiler	DeepCompilePipeline	DisposeCompiler	Finished compilation finalization
+2019-11-11T11:08:11.8253093+08:00	UnknownJobId_1762645592	58.2664	Compiler	DeepCompilePipeline	FinalizeCompilation	End Compilation
+2019-11-11T11:08:11.8353093+08:00	UnknownJobId_1762645592		Compiler	DeepCompilePipeline	WriteTimers	COMPILATIONTIME|JobId:|FriendlyName:|Mode:Default|Overall: 58.3s 33.0cpu|FrontEndRun: 16.2s 25.2cpu|RoslynTimers: 108x 8.0s 74.0ms/x 9.3cpu|OptimizerRun: 1.6s 1.8cpu|BackEndRun: 38.4s 3.2cpu|ExternalTimers: 86x 2.1s 24.0ms/x 3.1cpu
+2019-11-11T11:08:11.8373088+08:00	UnknownJobId_1762645592		Compiler	DeepCompilePipeline	WriteTimers	FrontEndTimers|FrontEndRun: 16.2s 25.2cpu|AssemblyResolverPass:|AstBuilder: 8.4s 16.1cpu|BinderPass: 4.8s 6.2cpu|CsBlock: 2.1s 1.1cpu|DdlResolver: 0.5s 0.5cpu|ErrorReporterPass: 0.3s 0.3cpu|InputOutputPass: 0.2s 1.0cpu|GenerateOptTreePass: 0.4s 0.5cpu|GeneratedFilesAsync: 11x 0.8s 70.0ms/x 2.2cpu wait 0.4s|Parser: 2x 0.5s 228.0ms/x 0.5cpu|Preprocessing: 6.3s 13.9cpu|ReferenceLoading: 0.1s|ResourceReferencePass:|ResourcesDownloading:|SemanticAnalyzerPass: 0.2s 0.2cpu|SyntaxVerifier: 0.6s 0.6cpu|TraceFile: 66x 0.1s 1.0ms/x 0.2cpu|ViewResolverPass: 2x 15.0ms/x
+2019-11-11T11:08:11.8383090+08:00	UnknownJobId_1762645592		Compiler	DeepCompilePipeline	WriteTimers	RoslynTimers|ExpressionBinding: 8x 1.3s 163.0ms/x 1.3cpu|RoslynBinding: 6x 1.3s 213.0ms/x 1.3cpu|RoslynEnvironmentAsync: 2x 0.9s 463.0ms/x 1.8cpu|RoslynFirstCall: 0.2s 0.2cpu|ConstantFolding: 24x 1.4s 59.0ms/x 1.0cpu|RoslynParsing: 14x 3.0ms/x 0.1cpu|RoslynPostSemantic: 12x 0.3s 28.0ms/x 0.3cpu|RoslynPreSemantic: 14x 0.5s 38.0ms/x 0.6cpu|RoslynSemantic: 12x 0.1s 6.0ms/x|RoslynScripting: 9x 1.9s 210.0ms/x 2.8cpu|OneColumnBinding: 5x 2.0ms/x|QualifiedColumnBinding:
+2019-11-11T11:08:11.8393091+08:00	UnknownJobId_1762645592		Compiler	DeepCompilePipeline	WriteTimers	OptimizerTimers|OptimizerRun: 1.6s 1.8cpu|OptimizerWait:|ComputeSignature:|CreateSplitsOrSpools: 0.2s 0.2cpu|PostProcessExecutionPlan:|CreateWhereSelectEnumerators: 0.1s 0.1cpu|ComputePayloadMetadata:|SStreamStageProcessing:|ValidateStages:|CompileToAlgebra: 0.3s 0.3cpu|EstimateMemorySize: 3x 0.1s 31.0ms/x 0.1cpu|CalculateBubbles:
+2019-11-11T11:08:11.8393091+08:00	UnknownJobId_1762645592		Compiler	DeepCompilePipeline	WriteTimers	BackendTimers|BackEndRun: 38.4s 3.2cpu|AdornAllWithMemoryModel: 3x 0.2s 58.0ms/x 0.2cpu|AlgebraAndManagedCodeGen: 1.0s 1.0cpu|AnnotateIntermediateResults:|CodeCompiling: 35.9s 0.5cpu|CodeGeneration: 1.5s 1.6cpu|CreateCppReadyStage:|ManagedCodeEmission: 0.1cpu|NativeCodeGeneration: 1.5s 1.6cpu
+2019-11-11T11:08:11.8403090+08:00	UnknownJobId_1762645592		Compiler	DeepCompilePipeline	WriteTimers	ExternalTimers|PlaybackAsync: 2x 0.2s 76.0ms/x 0.3cpu|UserCode: 84x 1.9s 23.0ms/x 2.8cpu

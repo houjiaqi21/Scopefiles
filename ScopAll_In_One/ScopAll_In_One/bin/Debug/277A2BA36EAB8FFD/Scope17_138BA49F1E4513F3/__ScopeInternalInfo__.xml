@@ -1,0 +1,555 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CSSRelatedInfo>
+  <OptimizerPlanInfo signatureVersion="1">
+    <TableScan present="True" occurrence="10" />
+    <PartitionSeek present="False" occurrence="0" />
+    <PartitionRange present="False" occurrence="0" />
+    <IndexSeek present="False" occurrence="0" />
+    <IndexRange present="True" occurrence="3" />
+    <Join present="True" occurrence="2" />
+    <GroupByAgg present="True" occurrence="1" />
+    <UDProcessor present="True" occurrence="1" />
+    <UDReducer present="True" occurrence="1" />
+    <UDCombiner present="False" occurrence="0" />
+    <UDMultiProcessor present="False" occurrence="0" />
+    <Top present="False" occurrence="0" />
+    <Costs>
+      <ExtractCardinality>49982212254.72</ExtractCardinality>
+      <InputSize>4998221225472</InputSize>
+      <OutputCardinality>47463237419.24</OutputCardinality>
+      <NumTable>13</NumTable>
+      <DataTransferVolume>0</DataTransferVolume>
+      <Latency>4015451.37327049</Latency>
+      <TotalCost>39683758.4177257</TotalCost>
+      <EstimatedNumEdges>0</EstimatedNumEdges>
+    </Costs>
+    <OptimizerTrees>
+<InputTree>
+    <LogOp Id="LogOp_Sequence">
+      <OpInfo><TableGroupProperties Grp="Unknown" Remotable="False"/></OpInfo>
+      <LogOp Id="LogOp_Output" Table="https://cosmos09.osdinfra.net/cosmos/cosmosAdmin/users/v-hozhao/All_In_One/Output/Python_ClusterRun_DataFrame_Reducer_Demo_Output.txt" XMode="All" Out="SepalLength_Mean,SepalWidth_Mean,PetalLength_Mean,PetalWidth_Mean,Name,Count" Udf="DefaultTextOutputter">
+        <OpInfo><TableGroupProperties Grp="56.0" Remotable="False" Card="1.24875e+09" AvgRowLength="44"/></OpInfo>
+        <LogOp Id="LogOp_Reduce" Udf="Python" ReduceType="Normal" Out="SepalLength_Mean,SepalWidth_Mean,PetalLength_Mean,PetalWidth_Mean,Name,Count" By="Name" UDMap="">
+          <OpInfo><TableGroupProperties Grp="55.0" Remotable="False" Card="1.24875e+09" AvgRowLength="44"/></OpInfo>
+          <LogOp Id="LogOp_Extract" Table="/users/v-hozhao/All_In_One/Input/Python_iris.csv" XMode="Parallel" PartitionType="Nil" Partitioning="" Partitions="500(UB)" Udf="DefaultTextExtractor">
+            <OpInfo><TableGroupProperties Grp="54.0" Remotable="False" Card="4.995e+09" AvgRowLength="40"/></OpInfo>
+          </LogOp>
+        </LogOp>
+      </LogOp>
+      <LogOp Id="LogOp_Output" Table="https://cosmos09.osdinfra.net/cosmos/cosmosAdmin/users/v-hozhao/All_In_One/Output/Python_ClusterRun_Extractor_Demo_Output.txt" XMode="All" Out="UserId,Start,Region,Query,Duration,Urls,ClickedUrls" Udf="DefaultTextOutputter">
+        <OpInfo><TableGroupProperties Grp="58.0" Remotable="False" Card="4.995e+09" AvgRowLength="56"/></OpInfo>
+        <LogOp Id="LogOp_Extract" Table="/users/v-hozhao/All_In_One/Input/Python_SearchLog.tsv" XMode="Parallel" PartitionType="Nil" Partitioning="" Partitions="500(UB)" Udf="Python">
+          <OpInfo><TableGroupProperties Grp="57.0" Remotable="False" Card="4.995e+09" AvgRowLength="56"/></OpInfo>
+        </LogOp>
+      </LogOp>
+      <LogOp Id="LogOp_Output" Table="https://cosmos09.osdinfra.net/cosmos/cosmosAdmin/users/v-hozhao/All_In_One/Output/DebugStream_Output.txt" XMode="All" Out="IId,Start,Market,Query,DwellTime,Results,ClickedUrls" Udf="DefaultTextOutputter">
+        <OpInfo><TableGroupProperties Grp="53.0" Remotable="False" Card="4.995e+09" AvgRowLength="48"/></OpInfo>
+        <LogOp Id="LogOp_Extract" Table="/users/v-hozhao/All_In_One/Input/SearchLog.txt" XMode="Parallel" PartitionType="Nil" Partitioning="" Partitions="500(UB)" Udf="MyTsvExtractor">
+          <OpInfo><TableGroupProperties Grp="52.0" Remotable="False" Card="4.995e+09" AvgRowLength="48"/></OpInfo>
+        </LogOp>
+      </LogOp>
+      <LogOp Id="LogOp_Output" Table="https://cosmos09.osdinfra.net/cosmos/cosmosAdmin/users/v-hozhao/ClusterReference/SearchlogDwellTimeInMinutes.txt" XMode="All" Out="Start,Market,DwellTimeInMinutes" Udf="DefaultTextOutputter">
+        <OpInfo><TableGroupProperties Grp="72.0" Remotable="False" Card="4.995e+09" AvgRowLength="24"/></OpInfo>
+        <LogOp Id="LogOp_Project" Remove="IId,Query,DwellTime,Results,ClickedUrls">
+          <OpInfo><TableGroupProperties Grp="71.0" Remotable="False" Card="4.995e+09" AvgRowLength="24"/></OpInfo>
+          <LogOp Id="LogOp_Extract" Table="/users/v-hozhao/SearchLog.txt" XMode="Parallel" PartitionType="Nil" Partitioning="" Partitions="500(UB)" Udf="DefaultTextExtractor">
+            <OpInfo><TableGroupProperties Grp="67.0" Remotable="False" Card="4.995e+09" AvgRowLength="48"/></OpInfo>
+          </LogOp>
+          <AncOp Id="AncOp_PrjList"><OpInfo><ScalarGroupProperties Grp="70.0"/></OpInfo>
+            <AncOp Id="AncOp_PrjEl" Column="DwellTimeInMinutes"><OpInfo><ScalarGroupProperties Grp="69.0"/></OpInfo>
+              <ScaOp Id="ScaOp_Udf" Udf="MyHelper.ClassUDO.SecondsToMinutes(DwellTime)" UsedColumn="DwellTime"><OpInfo><ScalarGroupProperties Grp="68.0"/></OpInfo>
+              </ScaOp>
+            </AncOp>
+          </AncOp>
+        </LogOp>
+      </LogOp>
+      <LogOp Id="LogOp_Write" Table="https://cosmos09.osdinfra.net/cosmos/cosmosAdmin/users/v-hozhao/All_In_One/Output/DataMap_Output.ss" XMode="All" StreamId="a52c8ab2-f851-44ca-8d42-33c113d62f01" Out="Column1,Column2,Column3">
+        <OpInfo><TableGroupProperties Grp="19.0" Remotable="False" Card="1.07374e+07" AvgRowLength="3"/></OpInfo>
+        <LogOp Id="LogOp_Get" Table="D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\users\v-hozhao\All_In_One\Input\Input.ss" XMode="Serial" PSOrig="1" StreamId="8569d94e-81b6-4fe1-8087-af85d7d18556">
+          <OpInfo><TableGroupProperties Grp="18.0" Remotable="False" Card="1.07374e+07" AvgRowLength="3"/></OpInfo>
+        </LogOp>
+      </LogOp>
+      <LogOp Id="LogOp_Output" Table="https://cosmos09.osdinfra.net/cosmos/cosmosAdmin/users/v-hozhao/All_In_One/Output/Sample_Output.txt" XMode="All" Out="UserId,Start,Region,Query,Duration,Urls,ClickedUrls" Udf="DefaultTextOutputter">
+        <OpInfo><TableGroupProperties Grp="Unknown" Remotable="False"/></OpInfo>
+        <LogOp Id="LogOp_RestrRemap" Remove="UserId,Start,Region,Query,Duration,Urls,ClickedUrls" Remap="ClickedUrls#ClickedUrls,Duration#Duration,Query#Query,Region#Region,Start#Start,Urls#Urls,UserId#UserId">
+          <OpInfo><TableGroupProperties Grp="Unknown" Remotable="False"/></OpInfo>
+          <LogOp Id="LogOp_Spool" Name="__SCOPE_PARAMETER_PREFIX__searchlog" CSRoot="Common" TotalConsumers="2">
+            <OpInfo><TableGroupProperties Grp="Unknown" Remotable="False"/></OpInfo>
+            <LogOp Id="LogOp_Extract" Table="/users/v-hozhao/All_In_One/Input/SearchLog.txt" XMode="Parallel" PartitionType="Nil" Partitioning="" Partitions="500(UB)" Udf="DefaultTextExtractor">
+              <OpInfo><TableGroupProperties Grp="41.0" Remotable="False" Card="4.995e+09" AvgRowLength="48"/></OpInfo>
+            </LogOp>
+          </LogOp>
+        </LogOp>
+      </LogOp>
+      <LogOp Id="LogOp_Write" Table="https://cosmos09.osdinfra.net/cosmos/cosmosAdmin/users/v-hozhao/All_In_One/Output/Sample_Output.ss" XMode="All" StreamId="03c1b203-5f73-42dd-a964-1d2cfda764b7" Out="UserId,Start,Region,Query,Duration,Urls,ClickedUrls">
+        <OpInfo><TableGroupProperties Grp="Unknown" Remotable="False"/></OpInfo>
+        <LogOp Id="LogOp_RestrRemap" Remove="UserId,Start,Region,Query,Duration,Urls,ClickedUrls" Remap="ClickedUrls#ClickedUrls,Duration#Duration,Query#Query,Region#Region,Start#Start,Urls#Urls,UserId#UserId">
+          <OpInfo><TableGroupProperties Grp="Unknown" Remotable="False"/></OpInfo>
+          <LogOp Id="LogOp_Spool" Name="__SCOPE_PARAMETER_PREFIX__searchlog" CSRoot="Common" TotalConsumers="2">
+            <OpInfo><TableGroupProperties Grp="Unknown" Remotable="False"/></OpInfo>
+          </LogOp>
+        </LogOp>
+      </LogOp>
+      <LogOp Id="LogOp_Output" Table="https://cosmos09.osdinfra.net/cosmos/cosmosAdmin/users/v-hozhao/All_In_One/Output/Sample_ViewOutput.txt" XMode="All" Out="UserId,Start,Region,Query,Duration,Urls,ClickedUrls" Udf="DefaultTextOutputter">
+        <OpInfo><TableGroupProperties Grp="66.0" Remotable="False" Card="4.995e+09" AvgRowLength="48"/></OpInfo>
+        <LogOp Id="LogOp_Extract" Table="/users/v-hozhao/All_In_One/Input/SearchLog.txt" XMode="Parallel" PartitionType="Nil" Partitioning="" Partitions="500(UB)" Udf="DefaultTextExtractor">
+          <OpInfo><TableGroupProperties Grp="65.0" Remotable="False" Card="4.995e+09" AvgRowLength="48"/></OpInfo>
+        </LogOp>
+      </LogOp>
+      <LogOp Id="LogOp_Output" Table="https://cosmos09.osdinfra.net/cosmos/cosmosAdmin/users/v-hozhao/All_In_One/Output/Sample_MoudleOutput.txt" XMode="All" Out="UserId,Start,Region,Query,Duration,Urls,ClickedUrls" Udf="DefaultTextOutputter">
+        <OpInfo><TableGroupProperties Grp="62.0" Remotable="False" Card="4.995e+09" AvgRowLength="48"/></OpInfo>
+        <LogOp Id="LogOp_Extract" Table="/users/v-hozhao/All_In_One/Input/SearchLog.txt" XMode="Parallel" PartitionType="Nil" Partitioning="" Partitions="500(UB)" Udf="DefaultTextExtractor">
+          <OpInfo><TableGroupProperties Grp="61.0" Remotable="False" Card="4.995e+09" AvgRowLength="48"/></OpInfo>
+        </LogOp>
+      </LogOp>
+      <LogOp Id="LogOp_Output" Table="https://cosmos09.osdinfra.net/cosmos/cosmosAdmin/users/v-hozhao/All_In_One/Output/Sample_ImportOutput.tsv" XMode="All" Out="Id,Start,Market,Query,DwellTime,Results,ClickedUrls" Udf="DefaultTextOutputter">
+        <OpInfo><TableGroupProperties Grp="60.0" Remotable="False" Card="4.995e+09" AvgRowLength="48"/></OpInfo>
+        <LogOp Id="LogOp_Extract" Table="/users/v-hozhao/All_In_One/Input/SearchLog.txt" XMode="Parallel" PartitionType="Nil" Partitioning="" Partitions="500(UB)" Udf="DefaultTextExtractor">
+          <OpInfo><TableGroupProperties Grp="59.0" Remotable="False" Card="4.995e+09" AvgRowLength="48"/></OpInfo>
+        </LogOp>
+      </LogOp>
+      <LogOp Id="LogOp_Output" Table="https://cosmos09.osdinfra.net/cosmos/cosmosAdmin/users/v-hozhao/All_In_One/Output/CodeBehind_Aggregatesoutput.txt" XMode="All" Out="Region,TotalDuration" Udf="DefaultTextOutputter">
+        <OpInfo><TableGroupProperties Grp="51.0" Remotable="False" Card="1.24875e+09" AvgRowLength="12"/></OpInfo>
+        <LogOp Id="LogOp_GbAgg" AggregateType="Normal" Out="TotalDuration,Region" By="Region">
+          <OpInfo><TableGroupProperties Grp="50.0" Remotable="False" Card="1.24875e+09" AvgRowLength="12"/></OpInfo>
+          <LogOp Id="LogOp_Extract" Table="/users/v-hozhao/All_In_One/Input/SearchLog.txt" XMode="Parallel" PartitionType="Nil" Partitioning="" Partitions="500(UB)" Udf="DefaultTextExtractor">
+            <OpInfo><TableGroupProperties Grp="45.0" Remotable="False" Card="4.995e+09" AvgRowLength="48"/></OpInfo>
+          </LogOp>
+          <AncOp Id="AncOp_PrjList"><OpInfo><ScalarGroupProperties Grp="49.0"/></OpInfo>
+            <AncOp Id="AncOp_PrjEl" Column="TotalDuration"><OpInfo><ScalarGroupProperties Grp="48.0"/></OpInfo>
+              <ScaOp Id="ScaOp_AggFunc" AggregateName="UDAgg(MySum(Duration))" Distinct="False"><OpInfo><ScalarGroupProperties Grp="47.0"/></OpInfo>
+                <ScaOp Id="ScaOp_Identifier" Column="Duration"><OpInfo><ScalarGroupProperties Grp="46.0"/></OpInfo>
+                </ScaOp>
+              </ScaOp>
+            </AncOp>
+          </AncOp>
+        </LogOp>
+      </LogOp>
+      <LogOp Id="LogOp_Write" Table="https://cosmos09.osdinfra.net/cosmos/cosmosAdmin/users/v-hozhao/All_In_One/Output/MultipleInputs_HealthCheckUCMUserUsage_Freq.ss" XMode="All" StreamId="617d2700-8138-419f-bff2-9c265e62c307" Out="BingAdsUserId,MsAlias,UcmUserId,FreqSegment,NumofMonth,LastMonth,NumofWeek,TotalUsage">
+        <OpInfo><TableGroupProperties Grp="40.0" Remotable="False" Card="4.995e+09" AvgRowLength="44"/></OpInfo>
+        <LogOp Id="LogOp_Process" Udf="FreqProcessor" In="BingAdsUserId,MsAlias,UcmUserId,NumofMonth,LastMonth,NumofWeek,TotalUsage" Out="BingAdsUserId,MsAlias,UcmUserId,FreqSegment,NumofMonth,LastMonth,NumofWeek,TotalUsage" UDMap="">
+          <OpInfo><TableGroupProperties Grp="39.0" Remotable="False" Card="4.995e+09" AvgRowLength="44"/></OpInfo>
+          <LogOp Id="LogOp_Project" Remove="BingAdsUserId1,MsAlias2,UcmUserId3,NumofMonth,LastMonth,NumofWeek,TotalUsage">
+            <OpInfo><TableGroupProperties Grp="38.0" Remotable="False" Card="4.995e+09" AvgRowLength="36"/></OpInfo>
+            <LogOp Id="LogOp_LeftOuterJoin">
+              <OpInfo><TableGroupProperties Grp="28.0" Remotable="False" Card="4.995e+09" AvgRowLength="45"/></OpInfo>
+              <LogOp Id="LogOp_Extract" Table="/users/v-hozhao/All_In_One/Input/UCMUser_20160711.txt" XMode="Parallel" PartitionType="Nil" Partitioning="" Partitions="500(UB)" Udf="DefaultTextExtractor">
+                <OpInfo><TableGroupProperties Grp="20.0" Remotable="False" Card="4.995e+09" AvgRowLength="16"/></OpInfo>
+              </LogOp>
+              <LogOp Id="LogOp_RestrRemap" Remove="BingAdsUserId,MsAlias,UcmUserId,BingAdsUserId1,MsAlias2,UcmUserId3,TotalUsage4" Remap="BingAdsUserId1#BingAdsUserId,MsAlias2#MsAlias,UcmUserId3#UcmUserId">
+                <OpInfo><TableGroupProperties Grp="26.0" Remotable="False" Card="5.49756e+06" AvgRowLength="29"/></OpInfo>
+                <LogOp Id="LogOp_Join">
+                  <OpInfo><TableGroupProperties Grp="25.0" Remotable="False" Card="5.49756e+06" AvgRowLength="47"/></OpInfo>
+                  <LogOp Id="LogOp_Get" Table="D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\users\v-hozhao\All_In_One\Input\HealthCheckUCMUserUsage_MonthAgg.ss" XMode="Serial" PSOrig="2" StreamId="8569d94e-81b6-4fe1-8087-af85d7d18556">
+                    <OpInfo><TableGroupProperties Grp="21.0" Remotable="False" Card="1.07374e+07" AvgRowLength="25"/></OpInfo>
+                  </LogOp>
+                  <LogOp Id="LogOp_RestrRemap" Remove="BingAdsUserId,MsAlias,UcmUserId,TotalUsage" Remap="BingAdsUserId1#BingAdsUserId,MsAlias2#MsAlias,TotalUsage4#TotalUsage,UcmUserId3#UcmUserId">
+                    <OpInfo><TableGroupProperties Grp="23.0" Remotable="False" Card="1.07374e+07" AvgRowLength="22"/></OpInfo>
+                    <LogOp Id="LogOp_Get" Table="D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\users\v-hozhao\All_In_One\Input\HealthCheckUCMUserUsage_WeekAgg.ss" XMode="Serial" PSOrig="3" StreamId="8569d94e-81b6-4fe1-8087-af85d7d18556">
+                      <OpInfo><TableGroupProperties Grp="22.0" Remotable="False" Card="1.07374e+07" AvgRowLength="22"/></OpInfo>
+                    </LogOp>
+                  </LogOp>
+                  <ScaOp Id="ScaOp_Logical" LogicalOp="x_lopAnd"><OpInfo><ScalarGroupProperties Grp="24.0"/></OpInfo>
+                    <ScaOp Id="ScaOp_Comp" CompOp="x_cmpEq"><OpInfo><ScalarGroupProperties Grp="2.0"/></OpInfo>
+                      <ScaOp Id="ScaOp_Identifier" Column="BingAdsUserId"><OpInfo><ScalarGroupProperties Grp="0.0"/></OpInfo>
+                      </ScaOp>
+                      <ScaOp Id="ScaOp_Identifier" Column="BingAdsUserId1"><OpInfo><ScalarGroupProperties Grp="1.0"/></OpInfo>
+                      </ScaOp>
+                    </ScaOp>
+                    <ScaOp Id="ScaOp_Comp" CompOp="x_cmpEq"><OpInfo><ScalarGroupProperties Grp="5.0"/></OpInfo>
+                      <ScaOp Id="ScaOp_Identifier" Column="MsAlias"><OpInfo><ScalarGroupProperties Grp="3.0"/></OpInfo>
+                      </ScaOp>
+                      <ScaOp Id="ScaOp_Identifier" Column="MsAlias2"><OpInfo><ScalarGroupProperties Grp="4.0"/></OpInfo>
+                      </ScaOp>
+                    </ScaOp>
+                    <ScaOp Id="ScaOp_Comp" CompOp="x_cmpEq"><OpInfo><ScalarGroupProperties Grp="8.0"/></OpInfo>
+                      <ScaOp Id="ScaOp_Identifier" Column="UcmUserId"><OpInfo><ScalarGroupProperties Grp="6.0"/></OpInfo>
+                      </ScaOp>
+                      <ScaOp Id="ScaOp_Identifier" Column="UcmUserId3"><OpInfo><ScalarGroupProperties Grp="7.0"/></OpInfo>
+                      </ScaOp>
+                    </ScaOp>
+                  </ScaOp>
+                </LogOp>
+              </LogOp>
+              <ScaOp Id="ScaOp_Logical" LogicalOp="x_lopAnd"><OpInfo><ScalarGroupProperties Grp="27.0"/></OpInfo>
+                <ScaOp Id="ScaOp_Comp" CompOp="x_cmpEq"><OpInfo><ScalarGroupProperties Grp="11.0"/></OpInfo>
+                  <ScaOp Id="ScaOp_Identifier" Column="BingAdsUserId"><OpInfo><ScalarGroupProperties Grp="9.0"/></OpInfo>
+                  </ScaOp>
+                  <ScaOp Id="ScaOp_Identifier" Column="BingAdsUserId1"><OpInfo><ScalarGroupProperties Grp="10.0"/></OpInfo>
+                  </ScaOp>
+                </ScaOp>
+                <ScaOp Id="ScaOp_Comp" CompOp="x_cmpEq"><OpInfo><ScalarGroupProperties Grp="14.0"/></OpInfo>
+                  <ScaOp Id="ScaOp_Identifier" Column="MsAlias"><OpInfo><ScalarGroupProperties Grp="12.0"/></OpInfo>
+                  </ScaOp>
+                  <ScaOp Id="ScaOp_Identifier" Column="MsAlias2"><OpInfo><ScalarGroupProperties Grp="13.0"/></OpInfo>
+                  </ScaOp>
+                </ScaOp>
+                <ScaOp Id="ScaOp_Comp" CompOp="x_cmpEq"><OpInfo><ScalarGroupProperties Grp="17.0"/></OpInfo>
+                  <ScaOp Id="ScaOp_Identifier" Column="UcmUserId"><OpInfo><ScalarGroupProperties Grp="15.0"/></OpInfo>
+                  </ScaOp>
+                  <ScaOp Id="ScaOp_Identifier" Column="UcmUserId3"><OpInfo><ScalarGroupProperties Grp="16.0"/></OpInfo>
+                  </ScaOp>
+                </ScaOp>
+              </ScaOp>
+            </LogOp>
+            <AncOp Id="AncOp_PrjList"><OpInfo><ScalarGroupProperties Grp="37.0"/></OpInfo>
+              <AncOp Id="AncOp_PrjEl" Column="NumofMonth"><OpInfo><ScalarGroupProperties Grp="30.0"/></OpInfo>
+                <ScaOp Id="ScaOp_Udf" Udf="NumofMonth ?? -1" UsedColumn="NumofMonth"><OpInfo><ScalarGroupProperties Grp="29.0"/></OpInfo>
+                </ScaOp>
+              </AncOp>
+              <AncOp Id="AncOp_PrjEl" Column="LastMonth"><OpInfo><ScalarGroupProperties Grp="32.0"/></OpInfo>
+                <ScaOp Id="ScaOp_Udf" Udf="LastMonth ?? &quot;Non&quot;" UsedColumn="LastMonth"><OpInfo><ScalarGroupProperties Grp="31.0"/></OpInfo>
+                </ScaOp>
+              </AncOp>
+              <AncOp Id="AncOp_PrjEl" Column="NumofWeek"><OpInfo><ScalarGroupProperties Grp="34.0"/></OpInfo>
+                <ScaOp Id="ScaOp_Udf" Udf="NumofWeek ?? -1" UsedColumn="NumofWeek"><OpInfo><ScalarGroupProperties Grp="33.0"/></OpInfo>
+                </ScaOp>
+              </AncOp>
+              <AncOp Id="AncOp_PrjEl" Column="TotalUsage"><OpInfo><ScalarGroupProperties Grp="36.0"/></OpInfo>
+                <ScaOp Id="ScaOp_Udf" Udf="TotalUsage ?? -1" UsedColumn="TotalUsage"><OpInfo><ScalarGroupProperties Grp="35.0"/></OpInfo>
+                </ScaOp>
+              </AncOp>
+            </AncOp>
+          </LogOp>
+        </LogOp>
+      </LogOp>
+    </LogOp>
+</InputTree>
+<OutputTree>
+    <PhyOp Id="PhyOp_Sequence">
+      <OpInfo><TableGroupProperties Grp="73.1" Remotable="False" Card="0" CardFromHint="True" AvgRowLength="1" PrtnSkewFactor="1" HT="13959005154609821345:237::5:13616877504645898092" HTS="6712476946517544924" HTN="5933435087006278595:8442140736578885949:14701872313006390090" HTC="5156572556175270904"/><PinnedPlan RuleId="70"/><Costs TotalCosts="4.08104e+07"/></OpInfo>
+      <PhyOp Id="PhyOp_Output" Table="https://cosmos09.osdinfra.net/cosmos/cosmosAdmin/users/v-hozhao/All_In_One/Output/Python_ClusterRun_DataFrame_Reducer_Demo_Output.txt" XMode="Serial" Out="SepalLength_Mean,SepalWidth_Mean,PetalLength_Mean,PetalWidth_Mean,Name,Count" Udf="DefaultTextOutputter">
+        <OpInfo><TableGroupProperties Grp="56.1" Remotable="False" Card="1.24875e+09" AvgRowLength="44" PrtnSkewFactor="1" HT="15354696622021190746:228::2:8240861768962028076" HTS="10938675105916666116" HTN="769687091179886988:290880136870087404:16026368670040208979" HTC="10128734614657774212"/><PinnedPlan RuleId="62"/><Costs TotalCosts="3.49493e+06"/></OpInfo>
+        <PhyOp Id="PhyOp_Reduce" Udf="Python" ReduceType="Normal" Bulk="False" On="Name ASC" SortColumn="Name ASC" UDMap="">
+          <OpInfo><TableGroupProperties Grp="55.1" Remotable="False" Card="1.24875e+09" AvgRowLength="44" PrtnSkewFactor="1" HT="8240861768962028076:26:0:1:11060766180486835672" HTS="1598244648836399937" HTN="5161374475770645997:385462225264981118:16026368670040208979" HTC="3766334492127592029"/><PinnedPlan RuleId="66"/><Costs TotalCosts="2.64993e+06"/></OpInfo>
+          <PhyOp Id="PhyOp_Sort" SortColumn="Name ASC">
+            <OpInfo><TableGroupProperties Grp="54.2" Remotable="False" Card="4.995e+09" AvgRowLength="40" PrtnSkewFactor="1" HT="11060766180486835672:115::0:0" HTS="12643686177737730984" HTN="1295810829618390858:7358768758053956660:16026368670040208979" HTC="212700429232200565"/><PinnedPlan RuleId="35"/><Costs TotalCosts="2.39706e+06"/></OpInfo>
+            <PhyOp Id="PhyOp_Extract" Table="/users/v-hozhao/All_In_One/Input/Python_iris.csv" XMode="Serial" Udf="DefaultTextExtractor">
+              <OpInfo><TableGroupProperties Grp="54.3" Remotable="False" Card="4.995e+09" AvgRowLength="40" PrtnSkewFactor="1" HT="11060766180486835672:115::0:0" HTS="12643686177737730984" HTN="1295810829618390858:7358768758053956660:16026368670040208979" HTC="212700429232200565"/><PinnedPlan RuleId="60"/><Costs TotalCosts="375532"/></OpInfo>
+            </PhyOp>
+          </PhyOp>
+        </PhyOp>
+      </PhyOp>
+      <PhyOp Id="PhyOp_Output" Table="https://cosmos09.osdinfra.net/cosmos/cosmosAdmin/users/v-hozhao/All_In_One/Output/Python_ClusterRun_Extractor_Demo_Output.txt" XMode="Serial" Out="UserId,Start,Region,Query,Duration,Urls,ClickedUrls" Udf="DefaultTextOutputter">
+        <OpInfo><TableGroupProperties Grp="58.1" Remotable="False" Card="4.995e+09" AvgRowLength="56" PrtnSkewFactor="1" HT="7758171813121453203:228::1:6752503919852746241" HTS="6329600338258509098" HTN="2194548030127566841:7264186669659062946:3232596059214994005" HTC="15536841377701489219"/><PinnedPlan RuleId="62"/><Costs TotalCosts="3.75553e+06"/></OpInfo>
+        <PhyOp Id="PhyOp_Extract" Table="/users/v-hozhao/All_In_One/Input/Python_SearchLog.tsv" XMode="Serial" Udf="Python">
+          <OpInfo><TableGroupProperties Grp="57.1" Remotable="False" Card="4.995e+09" AvgRowLength="56" PrtnSkewFactor="1" HT="6752503919852746241:115::0:0" HTS="967934006163347125" HTN="16582199471110805692:7358768758053956660:3232596059214994005" HTC="6238368396128678695"/><PinnedPlan RuleId="60"/><Costs TotalCosts="375532"/></OpInfo>
+        </PhyOp>
+      </PhyOp>
+      <PhyOp Id="PhyOp_Output" Table="https://cosmos09.osdinfra.net/cosmos/cosmosAdmin/users/v-hozhao/All_In_One/Output/DebugStream_Output.txt" XMode="Serial" Out="IId,Start,Market,Query,DwellTime,Results,ClickedUrls" Udf="DefaultTextOutputter">
+        <OpInfo><TableGroupProperties Grp="53.1" Remotable="False" Card="4.995e+09" AvgRowLength="48" PrtnSkewFactor="1" HT="9705670222669035108:228::1:11692455655248064121" HTS="8999851727872827986" HTN="10724947601883544385:7264186669659062946:9042350162776808199" HTC="14863630027946218114"/><PinnedPlan RuleId="62"/><Costs TotalCosts="3.75553e+06"/></OpInfo>
+        <PhyOp Id="PhyOp_Extract" Table="/users/v-hozhao/All_In_One/Input/SearchLog.txt" XMode="Serial" Udf="MyTsvExtractor">
+          <OpInfo><TableGroupProperties Grp="52.1" Remotable="False" Card="4.995e+09" AvgRowLength="48" PrtnSkewFactor="1" HT="11692455655248064121:115::0:0" HTS="15558978634674002936" HTN="2084372546425582758:7358768758053956660:9042350162776808199" HTC="10126009529409979680"/><PinnedPlan RuleId="60"/><Costs TotalCosts="375532"/></OpInfo>
+        </PhyOp>
+      </PhyOp>
+      <PhyOp Id="PhyOp_Output" Table="https://cosmos09.osdinfra.net/cosmos/cosmosAdmin/users/v-hozhao/ClusterReference/SearchlogDwellTimeInMinutes.txt" XMode="Serial" Out="Start,Market,DwellTimeInMinutes" Udf="DefaultTextOutputter">
+        <OpInfo><TableGroupProperties Grp="72.1" Remotable="False" Card="4.995e+09" AvgRowLength="24" PrtnSkewFactor="1" HT="13304953331618458203:228::4:17184160754696068141" HTS="17364576399492909670" HTN="1599708436234329954:3866969876783599406:13532278630656149151" HTC="5310360252664700207"/><PinnedPlan RuleId="62"/><Costs TotalCosts="3.75603e+06"/></OpInfo>
+        <PhyOp Id="PhyOp_ComputeScalar">
+          <OpInfo><TableGroupProperties Grp="71.1" Remotable="False" Card="4.995e+09" AvgRowLength="24" PrtnSkewFactor="1" HT="17184160754696068141:212::3:7180847902985841495" HTS="12445362206580696577" HTN="1142866087616895258:3961551965178493120:13532278630656149151" HTC="14347260360730979392"/><PinnedPlan RuleId="74"/><Costs TotalCosts="376031"/></OpInfo>
+          <PhyOp Id="PhyOp_Extract" Table="/users/v-hozhao/SearchLog.txt" XMode="Serial" Udf="DefaultTextExtractor">
+            <OpInfo><TableGroupProperties Grp="67.1" Remotable="False" Card="4.995e+09" AvgRowLength="20" PrtnSkewFactor="1" HT="14837436976701790598:115::0:0" HTS="537666552923858671" HTN="343950548968263502:7358768758053956660:13532278630656149151" HTC="3515631044667958283"/><PinnedPlan RuleId="60"/><Costs TotalCosts="375532"/></OpInfo>
+          </PhyOp>
+          <AncOp Id="AncOp_PrjList"><OpInfo><ScalarGroupProperties Grp="70.0"/></OpInfo>
+            <AncOp Id="AncOp_PrjEl" Column="DwellTimeInMinutes"><OpInfo><ScalarGroupProperties Grp="69.0"/></OpInfo>
+              <ScaOp Id="ScaOp_Udf" Udf="MyHelper.ClassUDO.SecondsToMinutes(DwellTime)" UsedColumn="DwellTime"><OpInfo><ScalarGroupProperties Grp="68.0"/></OpInfo>
+              </ScaOp>
+            </AncOp>
+          </AncOp>
+        </PhyOp>
+      </PhyOp>
+      <PhyOp Id="PhyOp_Write" Table="https://cosmos09.osdinfra.net/cosmos/cosmosAdmin/users/v-hozhao/All_In_One/Output/DataMap_Output.ss" XMode="Serial" StreamId="a52c8ab2-f851-44ca-8d42-33c113d62f01" Column="Column1,Column2,Column3">
+        <OpInfo><TableGroupProperties Grp="19.2" Remotable="False" Card="1.07374e+07" AvgRowLength="3" PrtnSkewFactor="1" HT="148559241371688858:218::1:7740583865850794445" HTS="3118260698745370349" HTN="12535487800908611589:18125222771741391234:10165814088206769740" HTC="3997224405922775593"/><PinnedPlan RuleId="71"/><Costs TotalCosts="8072.93"/></OpInfo>
+        <PhyOp Id="PhyOp_Range" Table="D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\users\v-hozhao\All_In_One\Input\Input.ss" XMode="Serial" PSOrig="1" StreamId="8569d94e-81b6-4fe1-8087-af85d7d18556" Direction="ASC">
+          <OpInfo><TableGroupProperties Grp="18.1" Remotable="False" Card="1.07374e+07" AvgRowLength="3" PrtnSkewFactor="1" HT="7740583865850794445:197::0:0" HTS="5544169866867450769" HTN="8018763379987489201:17640016847848421642:10165814088206769740" HTC="7846324117997755420"/><PinnedPlan RuleId="77"/><Costs TotalCosts="807.178"/></OpInfo>
+        </PhyOp>
+      </PhyOp>
+      <PhyOp Id="PhyOp_Output" Table="https://cosmos09.osdinfra.net/cosmos/cosmosAdmin/users/v-hozhao/All_In_One/Output/Sample_Output.txt" XMode="Serial" Out="UserId,Start,Region,Query,Duration,Urls,ClickedUrls" Udf="DefaultTextOutputter">
+        <OpInfo><TableGroupProperties Grp="64.1" Remotable="False" Card="4.995e+09" AvgRowLength="48" PrtnSkewFactor="1" HT="9021935081481353144:228::3:1340129318842686729" HTS="12764773800907399440" HTN="4590256482628425391:18214274289463786209:15645444765219541897" HTC="8900042061984657047"/><PinnedPlan RuleId="62"/><Costs TotalCosts="3.75553e+06"/></OpInfo>
+        <PhyOp Id="PhyOp_RestrRemap">
+          <OpInfo><TableGroupProperties Grp="63.1" Remotable="False" Card="4.995e+09" AvgRowLength="48" PrtnSkewFactor="1" HT="1340129318842686729:120::2:5161645134585778653" HTS="2827022532892258209" HTN="6026655019635497957:18308856377858679923:15645444765219541897" HTC="15377477035827903465"/><PinnedPlan RuleId="73"/><Costs TotalCosts="375532"/></OpInfo>
+          <PhyOp Id="PhyOp_Spool" Name="__SCOPE_PARAMETER_PREFIX__searchlog" CSRoot="Common" TotalConsumers="2">
+            <OpInfo><TableGroupProperties Grp="42.1" Remotable="False" Card="4.995e+09" AvgRowLength="48" PrtnSkewFactor="1" HT="5161645134585778653:166::1:7271307189938310557" HTS="15308482385805536085" HTN="11508061823266073660:15006356796842784517:15645444765219541897" HTC="12997407158481338790"/><PinnedPlan RuleId="69"/><Costs TotalCosts="375532"/></OpInfo>
+            <PhyOp Id="PhyOp_Extract" Table="/users/v-hozhao/All_In_One/Input/SearchLog.txt" XMode="Serial" Udf="DefaultTextExtractor">
+              <OpInfo><TableGroupProperties Grp="41.1" Remotable="False" Card="4.995e+09" AvgRowLength="48" PrtnSkewFactor="1" HT="7271307189938310557:115::0:0" HTS="1210964769590134040" HTN="11547058485325889930:7358768758053956660:15645444765219541897" HTC="9787986502931227999"/><PinnedPlan RuleId="60"/><Costs TotalCosts="375532"/></OpInfo>
+            </PhyOp>
+          </PhyOp>
+        </PhyOp>
+      </PhyOp>
+      <PhyOp Id="PhyOp_Write" Table="https://cosmos09.osdinfra.net/cosmos/cosmosAdmin/users/v-hozhao/All_In_One/Output/Sample_Output.ss" XMode="Serial" StreamId="03c1b203-5f73-42dd-a964-1d2cfda764b7" Column="UserId,Start,Region,Query,Duration,Urls,ClickedUrls">
+        <OpInfo><TableGroupProperties Grp="44.2" Remotable="False" Card="4.995e+09" AvgRowLength="48" PrtnSkewFactor="1" HT="7594782586682870730:218::3:1340129318842686729" HTS="9597310269148138332" HTN="594762445843187046:347318228042097899:15645444765219541897" HTC="13427976245365635228"/><PinnedPlan RuleId="71"/><Costs TotalCosts="3.75553e+06"/></OpInfo>
+        <PhyOp Id="PhyOp_RestrRemap">
+          <OpInfo><TableGroupProperties Grp="43.1" Remotable="False" Card="4.995e+09" AvgRowLength="48" PrtnSkewFactor="1" HT="1340129318842686729:120::2:5161645134585778653" HTS="2827022532892258209" HTN="6026655019635497957:18308856377858679923:15645444765219541897" HTC="15377477035827903465"/><PinnedPlan RuleId="73"/><Costs TotalCosts="375532"/></OpInfo>
+          <PhyOp Id="PhyOp_Spool" Name="__SCOPE_PARAMETER_PREFIX__searchlog" CSRoot="Common" TotalConsumers="2">
+            <OpInfo><TableGroupProperties Grp="42.1" Remotable="False" Card="4.995e+09" AvgRowLength="48" PrtnSkewFactor="1" HT="5161645134585778653:166::1:7271307189938310557" HTS="15308482385805536085" HTN="11508061823266073660:15006356796842784517:15645444765219541897" HTC="12997407158481338790"/><PinnedPlan RuleId="69"/><Costs TotalCosts="375532"/></OpInfo>
+          </PhyOp>
+        </PhyOp>
+      </PhyOp>
+      <PhyOp Id="PhyOp_Output" Table="https://cosmos09.osdinfra.net/cosmos/cosmosAdmin/users/v-hozhao/All_In_One/Output/Sample_ViewOutput.txt" XMode="Serial" Out="UserId,Start,Region,Query,Duration,Urls,ClickedUrls" Udf="DefaultTextOutputter">
+        <OpInfo><TableGroupProperties Grp="66.1" Remotable="False" Card="4.995e+09" AvgRowLength="48" PrtnSkewFactor="1" HT="12093985259824484192:228::1:7271307189938310557" HTS="17652322751920617616" HTN="4590256482628425391:7264186669659062946:15645444765219541897" HTC="6416441983971630335"/><PinnedPlan RuleId="62"/><Costs TotalCosts="3.75553e+06"/></OpInfo>
+        <PhyOp Id="PhyOp_Extract" Table="/users/v-hozhao/All_In_One/Input/SearchLog.txt" XMode="Serial" Udf="DefaultTextExtractor">
+          <OpInfo><TableGroupProperties Grp="65.1" Remotable="False" Card="4.995e+09" AvgRowLength="48" PrtnSkewFactor="1" HT="7271307189938310557:115::0:0" HTS="1210964769590134040" HTN="11547058485325889930:7358768758053956660:15645444765219541897" HTC="9787986502931227999"/><PinnedPlan RuleId="60"/><Costs TotalCosts="375532"/></OpInfo>
+        </PhyOp>
+      </PhyOp>
+      <PhyOp Id="PhyOp_Output" Table="https://cosmos09.osdinfra.net/cosmos/cosmosAdmin/users/v-hozhao/All_In_One/Output/Sample_MoudleOutput.txt" XMode="Serial" Out="UserId,Start,Region,Query,Duration,Urls,ClickedUrls" Udf="DefaultTextOutputter">
+        <OpInfo><TableGroupProperties Grp="62.1" Remotable="False" Card="4.995e+09" AvgRowLength="48" PrtnSkewFactor="1" HT="12093985259824484192:228::1:7271307189938310557" HTS="17652322751920617616" HTN="4590256482628425391:7264186669659062946:15645444765219541897" HTC="6416441983971630335"/><PinnedPlan RuleId="62"/><Costs TotalCosts="3.75553e+06"/></OpInfo>
+        <PhyOp Id="PhyOp_Extract" Table="/users/v-hozhao/All_In_One/Input/SearchLog.txt" XMode="Serial" Udf="DefaultTextExtractor">
+          <OpInfo><TableGroupProperties Grp="61.1" Remotable="False" Card="4.995e+09" AvgRowLength="48" PrtnSkewFactor="1" HT="7271307189938310557:115::0:0" HTS="1210964769590134040" HTN="11547058485325889930:7358768758053956660:15645444765219541897" HTC="9787986502931227999"/><PinnedPlan RuleId="60"/><Costs TotalCosts="375532"/></OpInfo>
+        </PhyOp>
+      </PhyOp>
+      <PhyOp Id="PhyOp_Output" Table="https://cosmos09.osdinfra.net/cosmos/cosmosAdmin/users/v-hozhao/All_In_One/Output/Sample_ImportOutput.tsv" XMode="Serial" Out="Id,Start,Market,Query,DwellTime,Results,ClickedUrls" Udf="DefaultTextOutputter">
+        <OpInfo><TableGroupProperties Grp="60.1" Remotable="False" Card="4.995e+09" AvgRowLength="48" PrtnSkewFactor="1" HT="5813073267063108178:228::1:10589120870918320642" HTS="15241702222372030189" HTN="14293651971479521151:7264186669659062946:15645444765219541897" HTC="9217610965146264595"/><PinnedPlan RuleId="62"/><Costs TotalCosts="3.75553e+06"/></OpInfo>
+        <PhyOp Id="PhyOp_Extract" Table="/users/v-hozhao/All_In_One/Input/SearchLog.txt" XMode="Serial" Udf="DefaultTextExtractor">
+          <OpInfo><TableGroupProperties Grp="59.1" Remotable="False" Card="4.995e+09" AvgRowLength="48" PrtnSkewFactor="1" HT="10589120870918320642:115::0:0" HTS="10360605442769267252" HTN="5498492764952307377:7358768758053956660:15645444765219541897" HTC="6187082625979484185"/><PinnedPlan RuleId="60"/><Costs TotalCosts="375532"/></OpInfo>
+        </PhyOp>
+      </PhyOp>
+      <PhyOp Id="PhyOp_Output" Table="https://cosmos09.osdinfra.net/cosmos/cosmosAdmin/users/v-hozhao/All_In_One/Output/CodeBehind_Aggregatesoutput.txt" XMode="Serial" Out="Region,TotalDuration" Udf="DefaultTextOutputter">
+        <OpInfo><TableGroupProperties Grp="51.1" Remotable="False" Card="1.24875e+09" AvgRowLength="12" PrtnSkewFactor="1" HT="7246217052960594801:228::5:17422386805891300989" HTS="81889955688732688" HTN="11549722269620201292:16646693030694227568:15645444765219541897" HTC="5862120127573369805"/><PinnedPlan RuleId="62"/><Costs TotalCosts="3.24554e+06"/></OpInfo>
+        <PhyOp Id="PhyOp_StreamGbAgg" AggregateType="Normal" GroupOnly="False" On="Region ASC" SortColumn="Region ASC">
+          <OpInfo><TableGroupProperties Grp="50.1" Remotable="False" Card="1.24875e+09" AvgRowLength="12" PrtnSkewFactor="1" HT="17422386805891300989:109:0:4:922670565635428901" HTS="16178737614652375363" HTN="3798343819637504235:16741275119089121282:15645444765219541897" HTC="4874838329215760781"/><PinnedPlan RuleId="20"/><Costs TotalCosts="2.40054e+06"/></OpInfo>
+          <PhyOp Id="PhyOp_Sort" SortColumn="Region ASC">
+            <OpInfo><TableGroupProperties Grp="45.2" Remotable="False" Card="4.995e+09" AvgRowLength="12" PrtnSkewFactor="1" HT="7271307189938310557:115::0:0" HTS="1210964769590134040" HTN="11547058485325889930:7358768758053956660:15645444765219541897" HTC="9787986502931227999"/><PinnedPlan RuleId="35"/><Costs TotalCosts="2.39692e+06"/></OpInfo>
+            <PhyOp Id="PhyOp_Extract" Table="/users/v-hozhao/All_In_One/Input/SearchLog.txt" XMode="Serial" Udf="DefaultTextExtractor">
+              <OpInfo><TableGroupProperties Grp="45.3" Remotable="False" Card="4.995e+09" AvgRowLength="12" PrtnSkewFactor="1" HT="7271307189938310557:115::0:0" HTS="1210964769590134040" HTN="11547058485325889930:7358768758053956660:15645444765219541897" HTC="9787986502931227999"/><PinnedPlan RuleId="60"/><Costs TotalCosts="375532"/></OpInfo>
+            </PhyOp>
+          </PhyOp>
+          <AncOp Id="AncOp_PrjList"><OpInfo><ScalarGroupProperties Grp="49.0"/></OpInfo>
+            <AncOp Id="AncOp_PrjEl" Column="TotalDuration"><OpInfo><ScalarGroupProperties Grp="48.0"/></OpInfo>
+              <ScaOp Id="ScaOp_AggFunc" AggregateName="UDAgg(MySum(Duration))" Distinct="False"><OpInfo><ScalarGroupProperties Grp="47.0"/></OpInfo>
+                <ScaOp Id="ScaOp_Identifier" Column="Duration"><OpInfo><ScalarGroupProperties Grp="46.0"/></OpInfo>
+                </ScaOp>
+              </ScaOp>
+            </AncOp>
+          </AncOp>
+        </PhyOp>
+      </PhyOp>
+      <PhyOp Id="PhyOp_Write" Table="https://cosmos09.osdinfra.net/cosmos/cosmosAdmin/users/v-hozhao/All_In_One/Output/MultipleInputs_HealthCheckUCMUserUsage_Freq.ss" XMode="Serial" StreamId="617d2700-8138-419f-bff2-9c265e62c307" Column="BingAdsUserId,MsAlias,UcmUserId,FreqSegment,NumofMonth,LastMonth,NumofWeek,TotalUsage">
+        <OpInfo><TableGroupProperties Grp="40.2" Remotable="False" Card="4.995e+09" AvgRowLength="44" PrtnSkewFactor="1" HT="5714568134554934817:218::5:11605248213954102576" HTS="9851609427710839356" HTN="9529297743532961424:12988730398940537749:16403748700470621562" HTC="15906337014260134337"/><PinnedPlan RuleId="71"/><Costs TotalCosts="4.01709e+06"/></OpInfo>
+        <PhyOp Id="PhyOp_Process" Udf="FreqProcessor" In="BingAdsUserId,MsAlias,UcmUserId,NumofMonth,LastMonth,NumofWeek,TotalUsage" Out="BingAdsUserId,MsAlias,UcmUserId,FreqSegment,NumofMonth,LastMonth,NumofWeek,TotalUsage" UDMap="">
+          <OpInfo><TableGroupProperties Grp="39.1" Remotable="False" Card="4.995e+09" AvgRowLength="44" PrtnSkewFactor="1" HT="11605248213954102576:10::4:8847810479505317285" HTS="17259370380979735949" HTN="899038174138093050:12503524475047568157:16403748700470621562" HTC="2293098907833042126"/><PinnedPlan RuleId="63"/><Costs TotalCosts="637098"/></OpInfo>
+          <PhyOp Id="PhyOp_ComputeScalar">
+            <OpInfo><TableGroupProperties Grp="38.1" Remotable="False" Card="4.995e+09" AvgRowLength="36" PrtnSkewFactor="1" HT="8847810479505317285:212::3:8049659466484153858" HTS="1098273321745615136" HTN="2957990499725954113:17113409765725238922:16403748700470621562" HTC="17602972433013063414"/><PinnedPlan RuleId="74"/><Costs TotalCosts="386848"/></OpInfo>
+            <PhyOp Id="PhyOp_HashJoin" Build="Right" JoinType="x_jtLeftOuter" ParallelJoinType="Serial" LeftKey="BingAdsUserId,MsAlias,UcmUserId" RightKey="BingAdsUserId1,MsAlias2,UcmUserId3">
+              <OpInfo><TableGroupProperties Grp="28.2" Remotable="False" Card="4.995e+09" AvgRowLength="31" PrtnSkewFactor="1" HT="15126176788745932564:251::3:15292703245790149585" HTS="5547679766660410383" HTN="10405223585275190803:9873319491888189847:16403748700470621562" HTC="9124967591259519055"/><PinnedPlan RuleId="9"/><Costs TotalCosts="386349"/></OpInfo>
+              <PhyOp Id="PhyOp_Extract" Table="/users/v-hozhao/All_In_One/Input/UCMUser_20160711.txt" XMode="Serial" Udf="DefaultTextExtractor">
+                <OpInfo><TableGroupProperties Grp="20.3" Remotable="False" Card="4.995e+09" AvgRowLength="16" PrtnSkewFactor="1" HT="1233424749492148907:115::0:0" HTS="12952853973189970871" HTN="10353051079380753730:7358768758053956660:6092307360934512558" HTC="10976492947891031831"/><PinnedPlan RuleId="60"/><Costs TotalCosts="375532"/></OpInfo>
+              </PhyOp>
+              <PhyOp Id="PhyOp_RestrRemap">
+                <OpInfo><TableGroupProperties Grp="26.3" Remotable="False" Card="5.49756e+06" AvgRowLength="29" PrtnSkewFactor="1" HT="9710537693317201044:120::4:3961549334967359719" HTS="901846102420927824" HTN="17737951570664851791:17184129170291921614:10311441339536109004" HTC="14735788731391200301"/><PinnedPlan RuleId="73"/><Costs TotalCosts="1641.31"/></OpInfo>
+                <PhyOp Id="PhyOp_HashJoin" Build="Right" JoinType="x_jtInner" ParallelJoinType="Serial" LeftKey="BingAdsUserId,MsAlias,UcmUserId" RightKey="BingAdsUserId1,MsAlias2,UcmUserId3">
+                  <OpInfo><TableGroupProperties Grp="25.4" Remotable="False" Card="5.49756e+06" AvgRowLength="29" PrtnSkewFactor="1" HT="3961549334967359719:30::3:1656794889209916289" HTS="5300112067763404564" HTN="11366455426053689071:13881629589276026208:10311441339536109004" HTC="16669296301137017892"/><PinnedPlan RuleId="8"/><Costs TotalCosts="1641.31"/></OpInfo>
+                  <PhyOp Id="PhyOp_Range" Table="D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\users\v-hozhao\All_In_One\Input\HealthCheckUCMUserUsage_MonthAgg.ss" XMode="Serial" PSOrig="2" StreamId="8569d94e-81b6-4fe1-8087-af85d7d18556" Direction="ASC">
+                    <OpInfo><TableGroupProperties Grp="21.2" Remotable="False" Card="1.07374e+07" AvgRowLength="25" PrtnSkewFactor="1" HT="901484242601513176:197::0:0" HTS="16692300579993332715" HTN="14745324504269693037:17640016847848421642:4269035447807271554" HTC="7914173113330128250"/><PinnedPlan RuleId="77"/><Costs TotalCosts="807.178"/></OpInfo>
+                  </PhyOp>
+                  <PhyOp Id="PhyOp_RestrRemap">
+                    <OpInfo><TableGroupProperties Grp="23.3" Remotable="False" Card="1.07374e+07" AvgRowLength="18" PrtnSkewFactor="1" HT="14853313917337155095:120::1:14084051834409412057" HTS="3026990831303090170" HTN="5436691076587581146:2495772355154765432:6042405891728837450" HTC="3328787716508652181"/><PinnedPlan RuleId="73"/><Costs TotalCosts="807.178"/></OpInfo>
+                    <PhyOp Id="PhyOp_Range" Table="D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\users\v-hozhao\All_In_One\Input\HealthCheckUCMUserUsage_WeekAgg.ss" XMode="Serial" PSOrig="3" StreamId="8569d94e-81b6-4fe1-8087-af85d7d18556" Direction="ASC">
+                      <OpInfo><TableGroupProperties Grp="22.2" Remotable="False" Card="1.07374e+07" AvgRowLength="18" PrtnSkewFactor="1" HT="14084051834409412057:197::0:0" HTS="248394470419753017" HTN="8065995632416396745:17640016847848421642:6042405891728837450" HTC="16661674550532498084"/><PinnedPlan RuleId="77"/><Costs TotalCosts="807.178"/></OpInfo>
+                    </PhyOp>
+                  </PhyOp>
+                  <ScaOp Id="ScaOp_Logical" LogicalOp="x_lopAnd"><OpInfo><ScalarGroupProperties Grp="24.0"/></OpInfo>
+                    <ScaOp Id="ScaOp_Comp" CompOp="x_cmpEq"><OpInfo><ScalarGroupProperties Grp="2.0"/></OpInfo>
+                      <ScaOp Id="ScaOp_Identifier" Column="BingAdsUserId"><OpInfo><ScalarGroupProperties Grp="0.0"/></OpInfo>
+                      </ScaOp>
+                      <ScaOp Id="ScaOp_Identifier" Column="BingAdsUserId1"><OpInfo><ScalarGroupProperties Grp="1.0"/></OpInfo>
+                      </ScaOp>
+                    </ScaOp>
+                    <ScaOp Id="ScaOp_Comp" CompOp="x_cmpEq"><OpInfo><ScalarGroupProperties Grp="5.0"/></OpInfo>
+                      <ScaOp Id="ScaOp_Identifier" Column="MsAlias"><OpInfo><ScalarGroupProperties Grp="3.0"/></OpInfo>
+                      </ScaOp>
+                      <ScaOp Id="ScaOp_Identifier" Column="MsAlias2"><OpInfo><ScalarGroupProperties Grp="4.0"/></OpInfo>
+                      </ScaOp>
+                    </ScaOp>
+                    <ScaOp Id="ScaOp_Comp" CompOp="x_cmpEq"><OpInfo><ScalarGroupProperties Grp="8.0"/></OpInfo>
+                      <ScaOp Id="ScaOp_Identifier" Column="UcmUserId"><OpInfo><ScalarGroupProperties Grp="6.0"/></OpInfo>
+                      </ScaOp>
+                      <ScaOp Id="ScaOp_Identifier" Column="UcmUserId3"><OpInfo><ScalarGroupProperties Grp="7.0"/></OpInfo>
+                      </ScaOp>
+                    </ScaOp>
+                  </ScaOp>
+                </PhyOp>
+              </PhyOp>
+              <ScaOp Id="ScaOp_Logical" LogicalOp="x_lopAnd"><OpInfo><ScalarGroupProperties Grp="27.0"/></OpInfo>
+                <ScaOp Id="ScaOp_Comp" CompOp="x_cmpEq"><OpInfo><ScalarGroupProperties Grp="11.0"/></OpInfo>
+                  <ScaOp Id="ScaOp_Identifier" Column="BingAdsUserId"><OpInfo><ScalarGroupProperties Grp="9.0"/></OpInfo>
+                  </ScaOp>
+                  <ScaOp Id="ScaOp_Identifier" Column="BingAdsUserId1"><OpInfo><ScalarGroupProperties Grp="10.0"/></OpInfo>
+                  </ScaOp>
+                </ScaOp>
+                <ScaOp Id="ScaOp_Comp" CompOp="x_cmpEq"><OpInfo><ScalarGroupProperties Grp="14.0"/></OpInfo>
+                  <ScaOp Id="ScaOp_Identifier" Column="MsAlias"><OpInfo><ScalarGroupProperties Grp="12.0"/></OpInfo>
+                  </ScaOp>
+                  <ScaOp Id="ScaOp_Identifier" Column="MsAlias2"><OpInfo><ScalarGroupProperties Grp="13.0"/></OpInfo>
+                  </ScaOp>
+                </ScaOp>
+                <ScaOp Id="ScaOp_Comp" CompOp="x_cmpEq"><OpInfo><ScalarGroupProperties Grp="17.0"/></OpInfo>
+                  <ScaOp Id="ScaOp_Identifier" Column="UcmUserId"><OpInfo><ScalarGroupProperties Grp="15.0"/></OpInfo>
+                  </ScaOp>
+                  <ScaOp Id="ScaOp_Identifier" Column="UcmUserId3"><OpInfo><ScalarGroupProperties Grp="16.0"/></OpInfo>
+                  </ScaOp>
+                </ScaOp>
+              </ScaOp>
+            </PhyOp>
+            <AncOp Id="AncOp_PrjList"><OpInfo><ScalarGroupProperties Grp="37.0"/></OpInfo>
+              <AncOp Id="AncOp_PrjEl" Column="NumofMonth"><OpInfo><ScalarGroupProperties Grp="30.0"/></OpInfo>
+                <ScaOp Id="ScaOp_Udf" Udf="NumofMonth ?? -1" UsedColumn="NumofMonth"><OpInfo><ScalarGroupProperties Grp="29.0"/></OpInfo>
+                </ScaOp>
+              </AncOp>
+              <AncOp Id="AncOp_PrjEl" Column="LastMonth"><OpInfo><ScalarGroupProperties Grp="32.0"/></OpInfo>
+                <ScaOp Id="ScaOp_Udf" Udf="LastMonth ?? &quot;Non&quot;" UsedColumn="LastMonth"><OpInfo><ScalarGroupProperties Grp="31.0"/></OpInfo>
+                </ScaOp>
+              </AncOp>
+              <AncOp Id="AncOp_PrjEl" Column="NumofWeek"><OpInfo><ScalarGroupProperties Grp="34.0"/></OpInfo>
+                <ScaOp Id="ScaOp_Udf" Udf="NumofWeek ?? -1" UsedColumn="NumofWeek"><OpInfo><ScalarGroupProperties Grp="33.0"/></OpInfo>
+                </ScaOp>
+              </AncOp>
+              <AncOp Id="AncOp_PrjEl" Column="TotalUsage"><OpInfo><ScalarGroupProperties Grp="36.0"/></OpInfo>
+                <ScaOp Id="ScaOp_Udf" Udf="TotalUsage ?? -1" UsedColumn="TotalUsage"><OpInfo><ScalarGroupProperties Grp="35.0"/></OpInfo>
+                </ScaOp>
+              </AncOp>
+            </AncOp>
+          </PhyOp>
+        </PhyOp>
+      </PhyOp>
+    </PhyOp>
+</OutputTree>
+<Rules Used="00000000110000000000100000000000000100000000000000000000000010110010011101100100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"/></OptimizerTrees>
+  </OptimizerPlanInfo>
+  <QueryTracer>
+    <Input count="8">
+      <StreamProvenance>/users/v-hozhao/SearchLog.txt</StreamProvenance>
+      <dependency count="7">
+        <columnprovenance>Market</columnprovenance>
+        <columnprovenance>IId</columnprovenance>
+        <columnprovenance>Start</columnprovenance>
+        <columnprovenance>Results</columnprovenance>
+        <columnprovenance>Query</columnprovenance>
+        <columnprovenance>DwellTime</columnprovenance>
+        <columnprovenance>ClickedUrls</columnprovenance>
+      </dependency>
+      <StreamProvenance>/users/v-hozhao/All_In_One/Input/Input.ss</StreamProvenance>
+      <dependency count="3">
+        <columnprovenance>Column1</columnprovenance>
+        <columnprovenance>Column2</columnprovenance>
+        <columnprovenance>Column3</columnprovenance>
+      </dependency>
+      <StreamProvenance>/users/v-hozhao/All_In_One/Input/SearchLog.txt</StreamProvenance>
+      <dependency count="12">
+        <columnprovenance>Market</columnprovenance>
+        <columnprovenance>UserId</columnprovenance>
+        <columnprovenance>Urls</columnprovenance>
+        <columnprovenance>Region</columnprovenance>
+        <columnprovenance>Start</columnprovenance>
+        <columnprovenance>Query</columnprovenance>
+        <columnprovenance>Duration</columnprovenance>
+        <columnprovenance>ClickedUrls</columnprovenance>
+        <columnprovenance>Id</columnprovenance>
+        <columnprovenance>DwellTime</columnprovenance>
+        <columnprovenance>Results</columnprovenance>
+        <columnprovenance>IId</columnprovenance>
+      </dependency>
+      <StreamProvenance>/users/v-hozhao/All_In_One/Input/Python_SearchLog.tsv</StreamProvenance>
+      <dependency count="7">
+        <columnprovenance>UserId</columnprovenance>
+        <columnprovenance>Urls</columnprovenance>
+        <columnprovenance>Region</columnprovenance>
+        <columnprovenance>Start</columnprovenance>
+        <columnprovenance>Query</columnprovenance>
+        <columnprovenance>Duration</columnprovenance>
+        <columnprovenance>ClickedUrls</columnprovenance>
+      </dependency>
+      <StreamProvenance>/users/v-hozhao/All_In_One/Input/Python_iris.csv</StreamProvenance>
+      <dependency count="5">
+        <columnprovenance>Name</columnprovenance>
+        <columnprovenance>SepalLength</columnprovenance>
+        <columnprovenance>SepalWidth</columnprovenance>
+        <columnprovenance>PetalLength</columnprovenance>
+        <columnprovenance>PetalWidth</columnprovenance>
+      </dependency>
+      <StreamProvenance>/users/v-hozhao/All_In_One/Input/HealthCheckUCMUserUsage_WeekAgg.ss</StreamProvenance>
+      <dependency count="5">
+        <columnprovenance>MsAlias</columnprovenance>
+        <columnprovenance>BingAdsUserId</columnprovenance>
+        <columnprovenance>TotalUsage</columnprovenance>
+        <columnprovenance>UcmUserId</columnprovenance>
+        <columnprovenance>NumofWeek</columnprovenance>
+      </dependency>
+      <StreamProvenance>/users/v-hozhao/All_In_One/Input/UCMUser_20160711.txt</StreamProvenance>
+      <dependency count="3">
+        <columnprovenance>MsAlias</columnprovenance>
+        <columnprovenance>BingAdsUserId</columnprovenance>
+        <columnprovenance>UcmUserId</columnprovenance>
+      </dependency>
+      <StreamProvenance>/users/v-hozhao/All_In_One/Input/HealthCheckUCMUserUsage_MonthAgg.ss</StreamProvenance>
+      <dependency count="6">
+        <columnprovenance>MsAlias</columnprovenance>
+        <columnprovenance>BingAdsUserId</columnprovenance>
+        <columnprovenance>TotalUsage</columnprovenance>
+        <columnprovenance>NumofMonth</columnprovenance>
+        <columnprovenance>UcmUserId</columnprovenance>
+        <columnprovenance>LastMonth</columnprovenance>
+      </dependency>
+    </Input>
+    <SelectedInput count="4">
+      <StreamProvenance>/users/v-hozhao/All_In_One/Input/SearchLog.txt</StreamProvenance>
+      <dependency count="1">
+        <columnprovenance>Region</columnprovenance>
+      </dependency>
+      <StreamProvenance>/users/v-hozhao/All_In_One/Input/UCMUser_20160711.txt</StreamProvenance>
+      <dependency count="3">
+        <columnprovenance>MsAlias</columnprovenance>
+        <columnprovenance>BingAdsUserId</columnprovenance>
+        <columnprovenance>UcmUserId</columnprovenance>
+      </dependency>
+      <StreamProvenance>/users/v-hozhao/All_In_One/Input/HealthCheckUCMUserUsage_WeekAgg.ss</StreamProvenance>
+      <dependency count="3">
+        <columnprovenance>MsAlias</columnprovenance>
+        <columnprovenance>BingAdsUserId</columnprovenance>
+        <columnprovenance>UcmUserId</columnprovenance>
+      </dependency>
+      <StreamProvenance>/users/v-hozhao/All_In_One/Input/HealthCheckUCMUserUsage_MonthAgg.ss</StreamProvenance>
+      <dependency count="3">
+        <columnprovenance>MsAlias</columnprovenance>
+        <columnprovenance>BingAdsUserId</columnprovenance>
+        <columnprovenance>UcmUserId</columnprovenance>
+      </dependency>
+    </SelectedInput>
+    <Output count="4">
+      <StreamProvenance>/users/v-hozhao/SearchLog.txt</StreamProvenance>
+      <dependency count="2">
+        <columnprovenance>Start</columnprovenance>
+        <columnprovenance>Market</columnprovenance>
+      </dependency>
+      <StreamProvenance>/users/v-hozhao/All_In_One/Input/Input.ss</StreamProvenance>
+      <dependency count="3">
+        <columnprovenance>Column1</columnprovenance>
+        <columnprovenance>Column2</columnprovenance>
+        <columnprovenance>Column3</columnprovenance>
+      </dependency>
+      <StreamProvenance>/users/v-hozhao/All_In_One/Input/SearchLog.txt</StreamProvenance>
+      <dependency count="12">
+        <columnprovenance>Market</columnprovenance>
+        <columnprovenance>UserId</columnprovenance>
+        <columnprovenance>Urls</columnprovenance>
+        <columnprovenance>Region</columnprovenance>
+        <columnprovenance>Start</columnprovenance>
+        <columnprovenance>Query</columnprovenance>
+        <columnprovenance>Duration</columnprovenance>
+        <columnprovenance>ClickedUrls</columnprovenance>
+        <columnprovenance>Id</columnprovenance>
+        <columnprovenance>DwellTime</columnprovenance>
+        <columnprovenance>Results</columnprovenance>
+        <columnprovenance>IId</columnprovenance>
+      </dependency>
+      <StreamProvenance>/users/v-hozhao/All_In_One/Input/Python_SearchLog.tsv</StreamProvenance>
+      <dependency count="7">
+        <columnprovenance>UserId</columnprovenance>
+        <columnprovenance>Urls</columnprovenance>
+        <columnprovenance>Region</columnprovenance>
+        <columnprovenance>Start</columnprovenance>
+        <columnprovenance>Query</columnprovenance>
+        <columnprovenance>Duration</columnprovenance>
+        <columnprovenance>ClickedUrls</columnprovenance>
+      </dependency>
+    </Output>
+  </QueryTracer>
+</CSSRelatedInfo>

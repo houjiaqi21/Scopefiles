@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CSSRelatedInfo>
+  <OptimizerPlanInfo signatureVersion="1">
+    <TableScan present="True" occurrence="2" />
+    <PartitionSeek present="False" occurrence="0" />
+    <PartitionRange present="False" occurrence="0" />
+    <IndexSeek present="False" occurrence="0" />
+    <IndexRange present="False" occurrence="0" />
+    <Join present="True" occurrence="1" />
+    <GroupByAgg present="False" occurrence="0" />
+    <UDProcessor present="True" occurrence="1" />
+    <UDReducer present="False" occurrence="0" />
+    <UDCombiner present="False" occurrence="0" />
+    <UDMultiProcessor present="False" occurrence="0" />
+    <Top present="True" occurrence="1" />
+    <Costs>
+      <ExtractCardinality>9990000000</ExtractCardinality>
+      <InputSize>999000000000</InputSize>
+      <OutputCardinality>100</OutputCardinality>
+      <NumTable>2</NumTable>
+      <DataTransferVolume>0</DataTransferVolume>
+      <Latency>4024768.56467248</Latency>
+      <TotalCost>6025091.03827392</TotalCost>
+      <EstimatedNumEdges>0</EstimatedNumEdges>
+    </Costs>
+    <OptimizerCounters>
+      <CQO_COUNTER_ENTER_OPTIMIZER>1</CQO_COUNTER_ENTER_OPTIMIZER>
+      <CQO_COUNTER_EXIT_OPTIMIZER>1</CQO_COUNTER_EXIT_OPTIMIZER>
+    </OptimizerCounters>
+    <OptimizerTrees>
+<InputTree>
+    <LogOp Id="LogOp_Output" Table="https://cosmos08.osdinfra.net/cosmos/sandbox/my/Impressions.txt" XMode="All" Out="AdId,IId,Impression,Query,DwellTime" Udf="DefaultTextOutputter">
+      <OpInfo><TableGroupProperties Grp="Unknown" Remotable="False"/></OpInfo>
+      <LogOp Id="LogOp_Process" Udf="ImpressionProcessor" In="AdId,IId,Impression,Query,DwellTime" Out="AdId,IId,Impression,Query,DwellTime" UDMap="">
+        <OpInfo><TableGroupProperties Grp="Unknown" Remotable="False"/></OpInfo>
+        <LogOp Id="LogOp_Top" TopType="Normal" SortColumn="DwellTime DESC" IsTopNPercent="False" WithTies="False">
+          <OpInfo><TableGroupProperties Grp="Unknown" Remotable="False"/></OpInfo>
+          <LogOp Id="LogOp_Select">
+            <OpInfo><TableGroupProperties Grp="Unknown" Remotable="False"/></OpInfo>
+            <LogOp Id="LogOp_Join">
+              <OpInfo><TableGroupProperties Grp="Unknown" Remotable="False"/></OpInfo>
+              <LogOp Id="LogOp_Extract" Table="/my/AdsLog.txt" XMode="Parallel" PartitionType="Nil" Partitioning="" Partitions="500(EST)" Udf="DefaultTextExtractor">
+                <OpInfo><TableGroupProperties Grp="9.0" Remotable="False" Card="4.995e+09" AvgRowLength="16"/></OpInfo>
+              </LogOp>
+              <LogOp Id="LogOp_RestrRemap" Remove="IId" Remap="IId1#IId">
+                <OpInfo><TableGroupProperties Grp="Unknown" Remotable="False"/></OpInfo>
+                <LogOp Id="LogOp_Extract" Table="/my/SearchLog.txt" XMode="Parallel" PartitionType="Nil" Partitioning="" Partitions="500(EST)" Udf="DefaultTextExtractor">
+                  <OpInfo><TableGroupProperties Grp="10.0" Remotable="False" Card="4.995e+09" AvgRowLength="52"/></OpInfo>
+                </LogOp>
+              </LogOp>
+              <ScaOp Id="ScaOp_Comp" CompOp="x_cmpEq"><OpInfo><ScalarGroupProperties Grp="Unknown"/></OpInfo>
+                <ScaOp Id="ScaOp_Identifier" Column="IId"><OpInfo><ScalarGroupProperties Grp="Unknown"/></OpInfo>
+                </ScaOp>
+                <ScaOp Id="ScaOp_Identifier" Column="IId1"><OpInfo><ScalarGroupProperties Grp="Unknown"/></OpInfo>
+                </ScaOp>
+              </ScaOp>
+            </LogOp>
+            <ScaOp Id="ScaOp_Logical" LogicalOp="x_lopOr"><OpInfo><ScalarGroupProperties Grp="11.0"/></OpInfo>
+              <ScaOp Id="ScaOp_Logical" LogicalOp="x_lopAnd"><OpInfo><ScalarGroupProperties Grp="5.0"/></OpInfo>
+                <ScaOp Id="ScaOp_Comp" CompOp="x_cmpGe"><OpInfo><ScalarGroupProperties Grp="2.0"/></OpInfo>
+                  <ScaOp Id="ScaOp_Identifier" Column="DwellTime"><OpInfo><ScalarGroupProperties Grp="0.0"/></OpInfo>
+                  </ScaOp>
+                  <ScaOp Id="ScaOp_Const" TI="Int" Value="120" Parameter="0"><OpInfo><ScalarGroupProperties Grp="1.0"/></OpInfo>
+                  </ScaOp>
+                </ScaOp>
+                <ScaOp Id="ScaOp_Comp" CompOp="x_cmpLe"><OpInfo><ScalarGroupProperties Grp="4.0"/></OpInfo>
+                  <ScaOp Id="ScaOp_Identifier" Column="DwellTime"><OpInfo><ScalarGroupProperties Grp="0.0"/></OpInfo>
+                  </ScaOp>
+                  <ScaOp Id="ScaOp_Const" TI="Int" Value="300" Parameter="0"><OpInfo><ScalarGroupProperties Grp="3.0"/></OpInfo>
+                  </ScaOp>
+                </ScaOp>
+              </ScaOp>
+              <ScaOp Id="ScaOp_Comp" CompOp="x_cmpEq"><OpInfo><ScalarGroupProperties Grp="8.0"/></OpInfo>
+                <ScaOp Id="ScaOp_Identifier" Column="Market"><OpInfo><ScalarGroupProperties Grp="6.0"/></OpInfo>
+                </ScaOp>
+                <ScaOp Id="ScaOp_Const" TI="String,Nullable,Var" Value="&quot;en-gb&quot;" Parameter="0"><OpInfo><ScalarGroupProperties Grp="7.0"/></OpInfo>
+                </ScaOp>
+              </ScaOp>
+            </ScaOp>
+          </LogOp>
+          <ScaOp Id="ScaOp_Const" TI="Long" Value="100" Parameter="0"><OpInfo><ScalarGroupProperties Grp="18.0"/></OpInfo>
+          </ScaOp>
+        </LogOp>
+      </LogOp>
+    </LogOp>
+</InputTree>
+<OutputTree>
+    <PhyOp Id="PhyOp_Output" Table="https://cosmos08.osdinfra.net/cosmos/sandbox/my/Impressions.txt" XMode="Serial" Out="AdId,IId,Impression,Query,DwellTime" Udf="DefaultTextOutputter">
+      <OpInfo><TableGroupProperties Grp="21.1" Remotable="False" Card="100" AvgRowLength="24" PrtnSkewFactor="1" HT="7071867429168578574:228::3:4670606684990695266" HTS="18226605150384067287" HTN="11632620689916390971:15001820648724771975:3156473568356398243"/><Costs TotalCosts="6.02509e+06"/></OpInfo>
+      <PhyOp Id="PhyOp_Process" Udf="ImpressionProcessor" In="AdId,IId,Impression,Query,DwellTime" Out="AdId,IId,Impression,Query,DwellTime" UDMap="">
+        <OpInfo><TableGroupProperties Grp="20.1" Remotable="False" Card="100" AvgRowLength="24" PrtnSkewFactor="1" HT="4670606684990695266:10::2:10705009680311440598" HTS="5794078065784965862" HTN="16250649209401752964:15096402737119665689:3156473568356398243"/><Costs TotalCosts="6.02509e+06"/></OpInfo>
+        <PhyOp Id="PhyOp_Top" TopType="Normal" SortColumn="DwellTime DESC" WithTies="False">
+          <OpInfo><TableGroupProperties Grp="19.3" Remotable="False" Card="100" AvgRowLength="24" PrtnSkewFactor="1" HT="10705009680311440598:16:0:1:12001989086400080863" HTS="2372147281445526665" HTN="3624115811523372878:1259543954087784838:3156473568356398243"/><Costs TotalCosts="6.02509e+06"/></OpInfo>
+          <PhyOp Id="PhyOp_Sort" SortColumn="DwellTime DESC">
+            <OpInfo><TableGroupProperties Grp="17.1" Remotable="False" Card="3.996e+09" AvgRowLength="24" PrtnSkewFactor="1" HT="6406021909610906686:30::2:14826986262732086868" HTS="16778924297859593768" HTN="4528702336089686124:2739266149658276585:3156473568356398243"/><Costs RowGoal="100" TotalCosts="6.02509e+06"/></OpInfo>
+            <PhyOp Id="PhyOp_MergeJoin" JoinType="x_jtInner" ParallelJoinType="Serial" LeftKey="IId ASC" RightKey="IId1 ASC">
+              <OpInfo><TableGroupProperties Grp="17.2" Remotable="False" Card="3.996e+09" AvgRowLength="24" PrtnSkewFactor="1" HT="6406021909610906686:30::2:14826986262732086868" HTS="16778924297859593768" HTN="4528702336089686124:2739266149658276585:3156473568356398243"/><Costs TotalCosts="4.40666e+06"/></OpInfo>
+              <PhyOp Id="PhyOp_Sort" SortColumn="IId ASC">
+                <OpInfo><TableGroupProperties Grp="9.2" Remotable="False" Card="4.995e+09" AvgRowLength="12" PrtnSkewFactor="1" HT="11228157487034234723:115::0:0" HTS="17289658834392162405" HTN="4494946696722159189:7358768758053956660:3742064283625858642"/><Costs TotalCosts="2.39692e+06"/></OpInfo>
+                <PhyOp Id="PhyOp_Extract" Table="/my/AdsLog.txt" XMode="Serial" Udf="DefaultTextExtractor">
+                  <OpInfo><TableGroupProperties Grp="9.3" Remotable="False" Card="4.995e+09" AvgRowLength="12" PrtnSkewFactor="1" HT="11228157487034234723:115::0:0" HTS="17289658834392162405" HTN="4494946696722159189:7358768758053956660:3742064283625858642"/><Costs TotalCosts="375532"/></OpInfo>
+                </PhyOp>
+              </PhyOp>
+              <PhyOp Id="PhyOp_Sort" SortColumn="IId1 ASC">
+                <OpInfo><TableGroupProperties Grp="13.2" Remotable="False" Card="3.996e+09" AvgRowLength="16" PrtnSkewFactor="1" HT="13266537311891273141:120::4:2180895653353444461" HTS="14959091358788082435" HTN="4948183503796631436:17370514331649497582:17861153358440091217"/><Costs TotalCosts="2.00032e+06"/></OpInfo>
+                <PhyOp Id="PhyOp_RestrRemap">
+                  <OpInfo><TableGroupProperties Grp="13.3" Remotable="False" Card="3.996e+09" AvgRowLength="16" PrtnSkewFactor="1" HT="13266537311891273141:120::4:2180895653353444461" HTS="14959091358788082435" HTN="4948183503796631436:17370514331649497582:17861153358440091217"/><Costs TotalCosts="381925"/></OpInfo>
+                  <PhyOp Id="PhyOp_Filter">
+                    <OpInfo><TableGroupProperties Grp="12.3" Remotable="False" Card="3.996e+09" AvgRowLength="16" PrtnSkewFactor="1" HT="2180895653353444461:35::3:3444155002628932158" HTS="3759678721590481558" HTN="1261512631021257273:14068014750633602176:17861153358440091217"/><Costs TotalCosts="381925"/></OpInfo>
+                    <PhyOp Id="PhyOp_Extract" Table="/my/SearchLog.txt" XMode="Serial" Udf="DefaultTextExtractor">
+                      <OpInfo><TableGroupProperties Grp="10.3" Remotable="False" Card="4.995e+09" AvgRowLength="24" PrtnSkewFactor="1" HT="14358070712694665324:115::0:0" HTS="14121194275501801231" HTN="5182091158440590199:7358768758053956660:17861153358440091217"/><Costs TotalCosts="375532"/></OpInfo>
+                    </PhyOp>
+                    <ScaOp Id="ScaOp_Logical" LogicalOp="x_lopOr"><OpInfo><ScalarGroupProperties Grp="11.0"/></OpInfo>
+                      <ScaOp Id="ScaOp_Logical" LogicalOp="x_lopAnd"><OpInfo><ScalarGroupProperties Grp="5.0"/></OpInfo>
+                        <ScaOp Id="ScaOp_Comp" CompOp="x_cmpGe"><OpInfo><ScalarGroupProperties Grp="2.0"/></OpInfo>
+                          <ScaOp Id="ScaOp_Identifier" Column="DwellTime"><OpInfo><ScalarGroupProperties Grp="0.0"/></OpInfo>
+                          </ScaOp>
+                          <ScaOp Id="ScaOp_Const" TI="Int" Value="120" Parameter="0"><OpInfo><ScalarGroupProperties Grp="1.0"/></OpInfo>
+                          </ScaOp>
+                        </ScaOp>
+                        <ScaOp Id="ScaOp_Comp" CompOp="x_cmpLe"><OpInfo><ScalarGroupProperties Grp="4.0"/></OpInfo>
+                          <ScaOp Id="ScaOp_Identifier" Column="DwellTime"><OpInfo><ScalarGroupProperties Grp="0.0"/></OpInfo>
+                          </ScaOp>
+                          <ScaOp Id="ScaOp_Const" TI="Int" Value="300" Parameter="0"><OpInfo><ScalarGroupProperties Grp="3.0"/></OpInfo>
+                          </ScaOp>
+                        </ScaOp>
+                      </ScaOp>
+                      <ScaOp Id="ScaOp_Comp" CompOp="x_cmpEq"><OpInfo><ScalarGroupProperties Grp="8.0"/></OpInfo>
+                        <ScaOp Id="ScaOp_Identifier" Column="Market"><OpInfo><ScalarGroupProperties Grp="6.0"/></OpInfo>
+                        </ScaOp>
+                        <ScaOp Id="ScaOp_Const" TI="String,Nullable,Var" Value="&quot;en-gb&quot;" Parameter="0"><OpInfo><ScalarGroupProperties Grp="7.0"/></OpInfo>
+                        </ScaOp>
+                      </ScaOp>
+                    </ScaOp>
+                  </PhyOp>
+                </PhyOp>
+              </PhyOp>
+              <ScaOp Id="ScaOp_Comp" CompOp="x_cmpEq"><OpInfo><ScalarGroupProperties Grp="16.0"/></OpInfo>
+                <ScaOp Id="ScaOp_Identifier" Column="IId1"><OpInfo><ScalarGroupProperties Grp="14.0"/></OpInfo>
+                </ScaOp>
+                <ScaOp Id="ScaOp_Identifier" Column="IId"><OpInfo><ScalarGroupProperties Grp="15.0"/></OpInfo>
+                </ScaOp>
+              </ScaOp>
+            </PhyOp>
+          </PhyOp>
+          <ScaOp Id="ScaOp_Const" TI="Long" Value="100" Parameter="0"><OpInfo><ScalarGroupProperties Grp="18.0"/></OpInfo>
+          </ScaOp>
+        </PhyOp>
+      </PhyOp>
+    </PhyOp>
+</OutputTree>
+</OptimizerTrees>
+  </OptimizerPlanInfo>
+</CSSRelatedInfo>

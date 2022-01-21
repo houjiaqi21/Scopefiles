@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScopeScript>
+  <preScript><![CDATA[
+USING Microsoft.Analytics.Interfaces;
+USING System;
+USING System.Collections.Generic;
+USING System.Globalization;
+USING System.Text;
+USING System.Reflection;
+USING System.IO;
+USING System.Text.RegularExpressions;
+USING System.Threading;
+USING System.Runtime.Serialization;
+USING System.Linq;
+USING Microsoft.SCOPE.Types;
+USING ScopeRuntime;
+
+REFERENCE @"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Core.dll";
+]]></preScript>
+  <ScopeVertices>
+    <ScopeVertex id="SV1_Extract" ScopeScriptEndPoint="true">
+      <input id="Extract_0" />
+      <output id="SV1_Extract_out0" schema="Region:string,TotalDuration:int" scopeLabel="" /><![CDATA[_var_100001_EXTRACT = EXTRACT Region:string,Duration:int FROM @"users/v-hozhao/All_In_One/Input/SearchLog.txt" USING ScopeRuntime.DefaultTextExtractor();
+_var_100002_LSORT = SELECT Region, Duration FROM _var_100001_EXTRACT ORDER BY Region;
+_var_100003_TRANSFORM = SELECT Region AS Region, Duration AS TotalDuration FROM _var_100002_LSORT;
+_var_100004_GROUPBY = SELECT FIRST(Region) AS Region, TotalDuration() AS TotalDuration FROM _var_100003_TRANSFORM GROUP BY Region;
+OUTPUT _var_100004_GROUPBY TO @"https://cosmos09.osdinfra.net/cosmos/cosmosAdmin/users/v-hozhao/All_In_One/Output/CodeBehind_Aggregatesoutput.txt" USING ScopeRuntime.DefaultTextOutputter();
+]]></ScopeVertex>
+  </ScopeVertices>
+  <postScript><![CDATA[#CS
+
+public class MySum_Integer : Aggregate1<int, int>
+{
+    int sum = 0;
+
+
+
+    public override void Initialize()
+    {
+        sum = 0;
+    }
+
+
+
+    public override void Add(int y)
+    {
+        sum += y;
+    }
+
+
+
+    public override int Finalize()
+    {
+        return sum;
+    }
+}
+#ENDCS]]></postScript>
+</ScopeScript>

@@ -1,0 +1,41 @@
+﻿// Sample: D:\CosmosSamples\ScopeLanguage\Scope.UDOs\UDO_Training\my\CosmosSampleData\CosmosSampleData.module
+
+DEFINE MODULE CosmosSampleData
+BEGIN
+
+VIEW SearchLogRaw
+     RETURN ROWSET (
+            UserId : int,
+            Start : DateTime,
+            Region : string,
+            Query : string,
+            Duration : int,
+            Urls : string,
+            ClickedUrls : string)
+    PARAMS () ;  
+
+END MODULE
+
+
+VIEW SearchLogRaw
+     RETURN ROWSET (
+            UserId : int,
+            Start : DateTime,
+            Region : string,
+            Query : string,
+            Duration : int,
+            Urls : string,
+            ClickedUrls : string)
+    PARAMS ()
+BEGIN
+searchlog =
+    EXTRACT UserId : int,
+            Start : DateTime,
+            Region : string,
+            Query : string,
+            Duration : int,
+            Urls : string,
+            ClickedUrls : string
+    FROM @"/users/v-hozhao/All_In_One/Input/SearchLog.txt"
+        USING DefaultTextExtractor();
+END VIEW

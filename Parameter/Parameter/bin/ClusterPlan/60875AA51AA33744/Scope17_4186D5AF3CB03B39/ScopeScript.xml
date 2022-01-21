@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScopeScript>
+  <preScript><![CDATA[
+USING Microsoft.Analytics.Interfaces;
+USING System;
+USING System.Collections.Generic;
+USING System.Text;
+USING System.Reflection;
+USING System.IO;
+USING System.Text.RegularExpressions;
+USING System.Threading;
+USING System.Runtime.Serialization;
+USING System.Linq;
+USING Microsoft.SCOPE.Types;
+USING ScopeRuntime;
+
+]]></preScript>
+  <ScopeVertices>
+    <ScopeVertex id="SV1_Extract" ScopeScriptEndPoint="true">
+      <input id="Extract_0" />
+      <output id="SV1_Extract_out0" schema="IId:int,Start:DateTime,b:int" scopeLabel="" /><![CDATA[_var_100001_EXTRACT = EXTRACT IId:int,Start:DateTime FROM @"adl://sandbox-c08.azuredatalakestore.net/users/v-hozhao/Inputs/SearchLog.txt" USING ScopeRuntime.DefaultTextExtractor();
+_var_100002_TRANSFORM = SELECT -1 AS b, IId AS IId, Start AS Start FROM _var_100001_EXTRACT;
+_var_100003_TRANSFORM = SELECT IId AS IId, Start AS Start, b AS b FROM _var_100002_TRANSFORM;
+OUTPUT _var_100003_TRANSFORM TO @"adl://sandbox-c08.azuredatalakestore.net/users/v-hozhao/out.txt" USING ScopeRuntime.DefaultTextOutputter();
+]]></ScopeVertex>
+  </ScopeVertices>
+  <postScript><![CDATA[#CS
+
+#ENDCS]]></postScript>
+</ScopeScript>

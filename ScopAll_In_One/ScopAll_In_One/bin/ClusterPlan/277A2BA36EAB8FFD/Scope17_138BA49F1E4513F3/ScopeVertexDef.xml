@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScopeVertices helperAssembly="__ScopeCodeGen__.dll" signatureVersion="1">
+  <ScopeVertex id="SV1_Extract_Split" cppReady="true" nativeOnly="true">
+    <EstimatedLimitMemory processMemory="3804234304" managedMemory="0" adapterMemory="0" engineMemory="3279946304" engineIOMemory="3017802256" engineOperatorMemory="262144048" minEngineOperatorMemory="262144048" />
+    <EstimatedOptimalMemory processMemory="723081050" managedMemory="0" adapterMemory="0" engineMemory="198793050" engineIOMemory="198006570" engineOperatorMemory="786480" minEngineOperatorMemory="786480" />
+    <operator id="GetSStream_0" uid="1" line="199" assemblyName="ScopeRuntime.exe" className="ScopeRuntime.SStreamExtractor" signature="1250682045597706006!18!Strict">
+      <input id="GetSStream_0" uid="1" schema="Column1:string,Column2:string,Column3:string" inputIndex="0" numberOfInputs="ALL" useInputDataName="true" />
+      <output id="GetSStream_0_Data0" uid="2" schema="Column1:string,Column2:string,Column3:string" />
+      <ReflectedScopeScript><![CDATA[_var_100001_GET_SSTREAM = SSTREAM @"adl://sandbox-c09.azuredatalakestore.net/users/v-hozhao/All_In_One/Input/Input.ss";
+]]></ReflectedScopeScript>
+    </operator>
+    <operator id="SStreamOutput_1" uid="3" line="203" assemblyName="__ScopeCodeGen__.dll" className="ScopeSStreamOutput_1" args="-noPartition">
+      <input id="GetSStream_0_Data0" uid="2" schema="Column1:string,Column2:string,Column3:string" />
+      <output id="SV1_Extract_Split_out0" uid="4" schema="Column1:string,Column2:string,Column3:string" outputIndex="0" numberOfOutputs="1" />
+      <output id="SV1_Extract_Split_out1" uid="5" schema="Column1:string,Column2:string,Column3:string" outputIndex="1" numberOfOutputs="1" />
+      <ReflectedScopeScript><![CDATA[OUTPUT _var_100001_GET_SSTREAM TO SSTREAM @"https://cosmos09.osdinfra.net/cosmos/cosmosAdmin/users/v-hozhao/All_In_One/Output/DataMap_Output.ss";
+]]></ReflectedScopeScript>
+    </operator>
+  </ScopeVertex>
+  <ScopeVertex id="SV2_Aggregate" cppReady="true" nativeOnly="true">
+    <EstimatedLimitMemory processMemory="5242880000" managedMemory="0" adapterMemory="0" engineMemory="4718592000" engineIOMemory="1048576000" engineOperatorMemory="3670016000" minEngineOperatorMemory="3670016000" />
+    <EstimatedOptimalMemory processMemory="1308622848" managedMemory="0" adapterMemory="0" engineMemory="784334848" engineIOMemory="549453824" engineOperatorMemory="234881024" minEngineOperatorMemory="234881024" />
+    <operator id="MetadataAggregate_2" uid="6" line="203" assemblyName="ScopeRuntime.exe" className="ScopeRuntime.PartitionMetadataAggregator" args="-noPartition">
+      <input id="SV1_Extract_Split_out1" uid="5" schema="Column1:string,Column2:string,Column3:string" inputIndex="0" numberOfInputs="ALL" />
+      <output id="MetadataAggregate_2_Data0" uid="7" schema="Column1:string,Column2:string,Column3:string" />
+    </operator>
+    <operator id="SStreamMetadataOutput_3" uid="8" line="203" assemblyName="ScopeRuntime.exe" className="ScopeRuntime.SStreamMetadataOutputter" args="-noPartition">
+      <input id="MetadataAggregate_2_Data0" uid="7" schema="Column1:string,Column2:string,Column3:string" />
+      <output id="SV2_Aggregate_out0" uid="9" schema="Column1:string,Column2:string,Column3:string" outputIndex="0" numberOfOutputs="1" />
+    </operator>
+  </ScopeVertex>
+  <ScopeVertex id="SV1_Dataset" cppReady="true" nativeOnly="true">
+    <EstimatedLimitMemory processMemory="1065353312" managedMemory="0" adapterMemory="0" engineMemory="541065312" engineIOMemory="16777216" engineOperatorMemory="524288096" minEngineOperatorMemory="524288096" />
+    <EstimatedOptimalMemory processMemory="542638176" managedMemory="0" adapterMemory="0" engineMemory="18350176" engineIOMemory="16777216" engineOperatorMemory="1572960" minEngineOperatorMemory="1572960" />
+    <operator id="Concatenate_5" uid="10" line="203" signature="11551446173285375133!19!Strict">
+      <input id="SV1_Extract_Split_out0" uid="4" schema="Column1:string,Column2:string,Column3:string" inputIndex="0" numberOfInputs="1" />
+      <input id="SV2_Aggregate_out0" uid="9" schema="Column1:string,Column2:string,Column3:string" inputIndex="1" numberOfInputs="1" />
+      <ReflectedScopeScript><![CDATA[OUTPUT _var_100001_GET_SSTREAM TO SSTREAM @"https://cosmos09.osdinfra.net/cosmos/cosmosAdmin/users/v-hozhao/All_In_One/Output/DataMap_Output.ss";
+]]></ReflectedScopeScript>
+    </operator>
+  </ScopeVertex>
+  <ScopeVertex id="SV3_Extract" cppReady="true" nativeOnly="true">
+    <EstimatedLimitMemory processMemory="2698693248" managedMemory="0" adapterMemory="0" engineMemory="2174405248" engineIOMemory="125829120" engineOperatorMemory="2048576128" minEngineOperatorMemory="2048576128" />
+    <EstimatedOptimalMemory processMemory="1651165824" managedMemory="0" adapterMemory="0" engineMemory="1126877824" engineIOMemory="125829120" engineOperatorMemory="1001048704" minEngineOperatorMemory="1001048704" />
+    <operator id="Extract_4" uid="11" line="321" assemblyName="ScopeRuntime.exe" className="ScopeRuntime.DefaultTextExtractor" signature="10513644096118798028!20!Strict">
+      <input id="Extract_4" uid="11" schema="BingAdsUserId:int,MsAlias:string,UcmUserId:int" inputIndex="0" numberOfInputs="ALL" />
+      <output id="SV3_Extract_out0" uid="12" schema="BingAdsUserId:int,MsAlias:string,UcmUserId:int" outputIndex="0" numberOfOutputs="1" />
+      <ReflectedScopeScript><![CDATA[_var_100004_EXTRACT = EXTRACT BingAdsUserId:int,MsAlias:string,UcmUserId:int FROM @"https://cosmos09.osdinfra.net/cosmos/cosmosAdmin/users/v-hozhao/All_In_One/Input/UCMUser_20160711.txt" USING ScopeRuntime.DefaultTextExtractor();
+]]></ReflectedScopeScript>
+    </operator>
+  </ScopeVertex>
+  <ScopeVertex id="SV4_Extract_Split" cppReady="true" nativeOnly="true">
+    <EstimatedLimitMemory processMemory="7331302328" managedMemory="0" adapterMemory="0" engineMemory="6807014328" engineIOMemory="4758437976" engineOperatorMemory="2048576352" minEngineOperatorMemory="2048576352" />
+    <EstimatedOptimalMemory processMemory="1774898632" managedMemory="0" adapterMemory="0" engineMemory="1250610632" engineIOMemory="246415976" engineOperatorMemory="1004194656" minEngineOperatorMemory="1004194656" />
+    <operator id="Extract_16" uid="37" line="221" assemblyName="ScopeRuntime.exe" className="ScopeRuntime.DefaultTextExtractor" signature="16225144471343592644!41!Strict">
+      <input id="Extract_16" uid="37" schema="UserId:int,Start:DateTime,Region:string,Query:string,Duration:int,Urls:string,ClickedUrls:string" inputIndex="0" numberOfInputs="ALL" />
+      <output id="Extract_16_Data0" uid="38" schema="UserId:int,Start:DateTime,Region:string,Query:string,Duration:int,Urls:string,ClickedUrls:string" />
+      <ReflectedScopeScript><![CDATA[_var_100005_EXTRACT = EXTRACT UserId:int,Start:DateTime,Region:string,Query:string,Duration:int,Urls:string,ClickedUrls:string FROM @"https://cosmos09.osdinfra.net/cosmos/cosmosAdmin/users/v-hozhao/All_In_One/Input/SearchLog.txt" USING ScopeRuntime.DefaultTextExtractor();
+]]></ReflectedScopeScript>
+    </operator>
+    <operator id="Split_17" uid="39" assemblyName="ScopeRuntime.exe" className="ScopeRuntime.ScopeFilterSelectSplitter">
+      <input id="Extract_16_Data0" uid="38" schema="UserId:int,Start:DateTime,Region:string,Query:string,Duration:int,Urls:string,ClickedUrls:string" />
+      <output id="SV4_Extract_Split_out0" uid="40" schema="UserId:int,Start:DateTime,Region:string,Query:string,Duration:int,Urls:string,ClickedUrls:string" outputIndex="0" numberOfOutputs="1" assemblyName="__ScopeCodeGen__.dll" className="ScopeSplitOutputter_1" encoding="SStream" args="-noPartition" />
+      <output id="SV4_Extract_Split_out1" uid="41" schema="UserId:int,Start:DateTime,Region:string,Query:string,Duration:int,Urls:string,ClickedUrls:string" outputIndex="1" numberOfOutputs="1" assemblyName="__ScopeCodeGen__.dll" className="ScopeSplitOutputter_1" encoding="SStream" args="" />
+      <output id="SV4_Extract_Split_out2" uid="42" schema="UserId:int,Start:DateTime,Region:string,Query:string,Duration:int,Urls:string,ClickedUrls:string" outputIndex="2" numberOfOutputs="1" finalOutput="true" assemblyName="__ScopeCodeGen__.dll" className="ScopeSplitOutputter_2" encoding="Text" args="" />
+      <output id="SV4_Extract_Split_out3" uid="43" schema="UserId:int,Start:DateTime,Region:string,Query:string,Duration:int,Urls:string,ClickedUrls:string" outputIndex="3" numberOfOutputs="1" finalOutput="true" assemblyName="__ScopeCodeGen__.dll" className="ScopeSplitOutputter_3" encoding="Text" args="" />
+      <output id="SV4_Extract_Split_out4" uid="44" schema="UserId:int,Start:DateTime,Region:string,Query:string,Duration:int,Urls:string,ClickedUrls:string" outputIndex="4" numberOfOutputs="1" finalOutput="true" assemblyName="__ScopeCodeGen__.dll" className="ScopeSplitOutputter_4" encoding="Text" args="" />
+    </operator>
+  </ScopeVertex>
+  <ScopeVertex id="SV5_Aggregate" cppReady="true" nativeOnly="true">
+    <EstimatedLimitMemory processMemory="5242880000" managedMemory="0" adapterMemory="0" engineMemory="4718592000" engineIOMemory="1048576000" engineOperatorMemory="3670016000" minEngineOperatorMemory="3670016000" />
+    <EstimatedOptimalMemory processMemory="1308622848" managedMemory="0" adapterMemory="0" engineMemory="784334848" engineIOMemory="549453824" engineOperatorMemory="234881024" minEngineOperatorMemory="234881024" />
+    <operator id="MetadataAggregate_18" uid="45" line="235" assemblyName="ScopeRuntime.exe" className="ScopeRuntime.PartitionMetadataAggregator" args="-noPartition">
+      <input id="SV4_Extract_Split_out1" uid="41" schema="UserId:int,Start:DateTime,Region:string,Query:string,Duration:int,Urls:string,ClickedUrls:string" inputIndex="0" numberOfInputs="ALL" />
+      <output id="MetadataAggregate_18_Data0" uid="46" schema="UserId:int,Start:DateTime,Region:string,Query:string,Duration:int,Urls:string,ClickedUrls:string" />
+    </operator>
+    <operator id="SStreamMetadataOutput_19" uid="47" line="235" assemblyName="ScopeRuntime.exe" className="ScopeRuntime.SStreamMetadataOutputter" args="-noPartition">
+      <input id="MetadataAggregate_18_Data0" uid="46" schema="UserId:int,Start:DateTime,Region:string,Query:string,Duration:int,Urls:string,ClickedUrls:string" />
+      <output id="SV5_Aggregate_out0" uid="48" schema="UserId:int,Start:DateTime,Region:string,Query:string,Duration:int,Urls:string,ClickedUrls:string" outputIndex="0" numberOfOutputs="1" />
+    </operator>
+  </ScopeVertex>
+  <ScopeVertex id="SV2_Dataset" cppReady="true" nativeOnly="true">
+    <EstimatedLimitMemory processMemory="1065353392" managedMemory="0" adapterMemory="0" engineMemory="541065392" engineIOMemory="16777216" engineOperatorMemory="524288176" minEngineOperatorMemory="524288176" />
+    <EstimatedOptimalMemory processMemory="543162544" managedMemory="0" adapterMemory="0" engineMemory="18874544" engineIOMemory="16777216" engineOperatorMemory="2097328" minEngineOperatorMemory="2097328" />
+    <operator id="Concatenate_28" uid="49" line="235" signature="1511410875557198804!44!Strict">
+      <input id="SV4_Extract_Split_out0" uid="40" schema="UserId:int,Start:DateTime,Region:string,Query:string,Duration:int,Urls:string,ClickedUrls:string" inputIndex="0" numberOfInputs="1" />
+      <input id="SV5_Aggregate_out0" uid="48" schema="UserId:int,Start:DateTime,Region:string,Query:string,Duration:int,Urls:string,ClickedUrls:string" inputIndex="1" numberOfInputs="1" />
+    </operator>
+  </ScopeVertex>
+  <ScopeVertex id="SV6_Extract" cppReady="true">
+    <EstimatedLimitMemory processMemory="8069499656" managedMemory="1388314624" adapterMemory="0" engineMemory="6156897032" engineIOMemory="1698693264" engineOperatorMemory="4458203768" minEngineOperatorMemory="4458203768" />
+    <EstimatedOptimalMemory processMemory="6442450944" managedMemory="1388314624" adapterMemory="0" engineMemory="4529848320" engineIOMemory="150994944" engineOperatorMemory="4378853376" minEngineOperatorMemory="2075052664" />
+    <operator id="Extract_20" uid="50" line="284" assemblyName="ScopeRuntime.exe" className="ScopeRuntime.DefaultTextExtractor" signature="16225144471343592644!45!Strict">
+      <input id="Extract_20" uid="50" schema="UserId:int,Start:DateTime,Region:string,Query:string,Duration:int,Urls:string,ClickedUrls:string" inputIndex="0" numberOfInputs="ALL" />
+      <output id="Extract_20_Data0" uid="51" schema="Region:string,Duration:int" />
+      <ReflectedScopeScript><![CDATA[_var_100006_EXTRACT = EXTRACT Region:string,Duration:int FROM @"https://cosmos09.osdinfra.net/cosmos/cosmosAdmin/users/v-hozhao/All_In_One/Input/SearchLog.txt" USING ScopeRuntime.DefaultTextExtractor();
+]]></ReflectedScopeScript>
+    </operator>
+    <operator id="Process_21" uid="52" line="284" assemblyName="__ScopeCodeGen__.dll" className="ScopeSorter_1" args="-keys Region" signature="16225144471343592644!45!Strict">
+      <input id="Extract_20_Data0" uid="51" schema="Region:string,Duration:int" />
+      <output id="Process_21_Data0" uid="53" schema="Region:string,Duration:int" />
+      <ReflectedScopeScript><![CDATA[_var_100007_LSORT = SELECT Region, Duration FROM _var_100006_EXTRACT ORDER BY Region;
+]]></ReflectedScopeScript>
+    </operator>
+    <operator id="Process_22" uid="54" assemblyName="__ScopeCodeGen__.dll" className="ScopeFilterTransformer_11" signature="16225144471343592644!45!Strict">
+      <input id="Process_21_Data0" uid="53" schema="Region:string,Duration:int" />
+      <output id="Process_22_Data0" uid="55" schema="Region:string,TotalDuration:int" />
+      <ReflectedScopeScript><![CDATA[_var_100008_TRANSFORM = SELECT Region AS Region, Duration AS TotalDuration FROM _var_100007_LSORT;
+]]></ReflectedScopeScript>
+    </operator>
+    <operator id="Process_23" uid="56" assemblyName="__ScopeCodeGen__.dll" className="ScopeGrouper_1" signature="3122285045147941633!50!Strict">
+      <input id="Process_22_Data0" uid="55" schema="Region:string,TotalDuration:int" />
+      <output id="Process_23_Data0" uid="57" schema="Region:string,TotalDuration:int" />
+      <ReflectedScopeScript><![CDATA[_var_100009_GROUPBY = SELECT FIRST(Region) AS Region, TotalDuration() AS TotalDuration FROM _var_100008_TRANSFORM GROUP BY Region;
+]]></ReflectedScopeScript>
+    </operator>
+    <operator id="Output_24" uid="58" line="300" assemblyName="ScopeRuntime.exe" className="ScopeRuntime.DefaultTextOutputter" signature="6233277278803826619!51!Strict">
+      <input id="Process_23_Data0" uid="57" schema="Region:string,TotalDuration:int" />
+      <output id="SV6_Extract_out0" uid="58" schema="Region:string,TotalDuration:int" outputIndex="0" numberOfOutputs="1" finalOutput="true" />
+      <ReflectedScopeScript><![CDATA[OUTPUT _var_100009_GROUPBY TO @"https://cosmos09.osdinfra.net/cosmos/cosmosAdmin/users/v-hozhao/All_In_One/Output/CodeBehind_Aggregatesoutput.txt" USING ScopeRuntime.DefaultTextOutputter();
+]]></ReflectedScopeScript>
+    </operator>
+  </ScopeVertex>
+  <ScopeVertex id="SV7_Extract" cppReady="true">
+    <EstimatedLimitMemory processMemory="5567597936" managedMemory="1388314624" adapterMemory="0" engineMemory="3654995312" engineIOMemory="1606418960" engineOperatorMemory="2048576352" minEngineOperatorMemory="2048576352" />
+    <EstimatedOptimalMemory processMemory="2975517536" managedMemory="1388314624" adapterMemory="0" engineMemory="1062914912" engineIOMemory="58720256" engineOperatorMemory="1004194656" minEngineOperatorMemory="1004194656" />
+    <operator id="Extract_25" uid="59" line="132" assemblyName="__ScopeCodeGen__.dll" className="MyTsvExtractor" signature="2880120039095169825!52!Strict">
+      <input id="Extract_25" uid="59" schema="IId:int,Start:DateTime,Market:string,Query:string,DwellTime:int,Results:string,ClickedUrls:string" inputIndex="0" numberOfInputs="ALL" />
+      <output id="Extract_25_Data0" uid="60" schema="IId:int,Start:DateTime,Market:string,Query:string,DwellTime:int,Results:string,ClickedUrls:string" />
+      <ReflectedScopeScript><![CDATA[_var_100011_EXTRACT = EXTRACT IId:int,Start:DateTime,Market:string,Query:string,DwellTime:int,Results:string,ClickedUrls:string FROM @"https://cosmos09.osdinfra.net/cosmos/cosmosAdmin/users/v-hozhao/All_In_One/Input/SearchLog.txt" USING MyTsvExtractor();
+]]></ReflectedScopeScript>
+    </operator>
+    <operator id="Output_26" uid="61" line="144" assemblyName="ScopeRuntime.exe" className="ScopeRuntime.DefaultTextOutputter" signature="2044944203950177234!53!Strict">
+      <input id="Extract_25_Data0" uid="60" schema="IId:int,Start:DateTime,Market:string,Query:string,DwellTime:int,Results:string,ClickedUrls:string" />
+      <output id="SV7_Extract_out0" uid="61" schema="IId:int,Start:DateTime,Market:string,Query:string,DwellTime:int,Results:string,ClickedUrls:string" outputIndex="0" numberOfOutputs="1" finalOutput="true" />
+      <ReflectedScopeScript><![CDATA[OUTPUT _var_100011_EXTRACT TO @"https://cosmos09.osdinfra.net/cosmos/cosmosAdmin/users/v-hozhao/All_In_One/Output/DebugStream_Output.txt" USING ScopeRuntime.DefaultTextOutputter();
+]]></ReflectedScopeScript>
+    </operator>
+  </ScopeVertex>
+  <ScopeVertex id="SV8_Extract" cppReady="true">
+    <EstimatedLimitMemory processMemory="8226786392" managedMemory="0" adapterMemory="1283457024" engineMemory="6419041368" engineIOMemory="1698693456" engineOperatorMemory="4720347912" minEngineOperatorMemory="4720347912" />
+    <EstimatedOptimalMemory processMemory="6442450944" managedMemory="0" adapterMemory="1283457024" engineMemory="4634705920" engineIOMemory="150994944" engineOperatorMemory="4483710976" minEngineOperatorMemory="2075314952" />
+    <operator id="Extract_27" uid="62" line="33" assemblyName="ScopeRuntime.exe" className="ScopeRuntime.DefaultTextExtractor" signature="6210560484211051758!54!Strict">
+      <input id="Extract_27" uid="62" schema="SepalLength:double,SepalWidth:double,PetalLength:double,PetalWidth:double,Name:string" inputIndex="0" numberOfInputs="ALL" />
+      <output id="Extract_27_Data0" uid="63" schema="SepalLength:double,SepalWidth:double,PetalLength:double,PetalWidth:double,Name:string" />
+      <ReflectedScopeScript><![CDATA[_var_100013_EXTRACT = EXTRACT SepalLength:double,SepalWidth:double,PetalLength:double,PetalWidth:double,Name:string FROM @"https://cosmos09.osdinfra.net/cosmos/cosmosAdmin/users/v-hozhao/All_In_One/Input/Python_iris.csv" USING ScopeRuntime.DefaultTextExtractor();
+]]></ReflectedScopeScript>
+    </operator>
+    <operator id="Process_28" uid="64" line="33" assemblyName="__ScopeCodeGen__.dll" className="ScopeSorter_2" args="-keys Name" signature="6210560484211051758!54!Strict">
+      <input id="Extract_27_Data0" uid="63" schema="SepalLength:double,SepalWidth:double,PetalLength:double,PetalWidth:double,Name:string" />
+      <output id="Process_28_Data0" uid="65" schema="SepalLength:double,SepalWidth:double,PetalLength:double,PetalWidth:double,Name:string" />
+      <ReflectedScopeScript><![CDATA[_var_100014_LSORT = SELECT SepalLength, SepalWidth, PetalLength, PetalWidth, Name FROM _var_100013_EXTRACT ORDER BY Name;
+]]></ReflectedScopeScript>
+    </operator>
+    <operator id="Process_29" uid="66" line="42" assemblyName="" className="Scope.SystemOperators.Reducers.Python" signature="5701402524879841307!55!Strict">
+      <input id="Process_28_Data0" uid="65" schema="SepalLength:double,SepalWidth:double,PetalLength:double,PetalWidth:double,Name:string" />
+      <output id="Process_29_Data0" uid="67" schema="SepalLength_Mean:double,SepalWidth_Mean:double,PetalLength_Mean:double,PetalWidth_Mean:double,Name:string,Count:int" />
+      <ReflectedScopeScript><![CDATA[_var_100015_REDUCE = REDUCE _var_100014_LSORT ON Name PRODUCE SepalLength_Mean, SepalWidth_Mean, PetalLength_Mean, PetalWidth_Mean, Name, Count USING Scope.SystemOperators.Reducers.Python();
+]]></ReflectedScopeScript>
+    </operator>
+    <operator id="Output_30" uid="68" line="52" assemblyName="ScopeRuntime.exe" className="ScopeRuntime.DefaultTextOutputter" signature="11626532110942338993!56!Strict">
+      <input id="Process_29_Data0" uid="67" schema="SepalLength_Mean:double,SepalWidth_Mean:double,PetalLength_Mean:double,PetalWidth_Mean:double,Name:string,Count:int" />
+      <output id="SV8_Extract_out0" uid="68" schema="SepalLength_Mean:double,SepalWidth_Mean:double,PetalLength_Mean:double,PetalWidth_Mean:double,Name:string,Count:int" outputIndex="0" numberOfOutputs="1" finalOutput="true" />
+      <ReflectedScopeScript><![CDATA[OUTPUT _var_100015_REDUCE TO @"https://cosmos09.osdinfra.net/cosmos/cosmosAdmin/users/v-hozhao/All_In_One/Output/Python_ClusterRun_DataFrame_Reducer_Demo_Output.txt" USING ScopeRuntime.DefaultTextOutputter();
+]]></ReflectedScopeScript>
+    </operator>
+  </ScopeVertex>
+  <ScopeVertex id="SV9_Extract" cppReady="true">
+    <EstimatedLimitMemory processMemory="3651142416" managedMemory="0" adapterMemory="1283457024" engineMemory="1843397392" engineIOMemory="1581253280" engineOperatorMemory="262144112" minEngineOperatorMemory="262144112" />
+    <EstimatedOptimalMemory processMemory="1843134576" managedMemory="0" adapterMemory="1283457024" engineMemory="35389552" engineIOMemory="33554432" engineOperatorMemory="1835120" minEngineOperatorMemory="1835120" />
+    <operator id="Extract_31" uid="69" line="64" assemblyName="" className="Scope.SystemOperators.Extractors.Python" signature="1457958598909717406!57!Strict">
+      <input id="Extract_31" uid="69" schema="UserId:string,Start:string,Region:string,Query:string,Duration:string,Urls:string,ClickedUrls:string" inputIndex="0" numberOfInputs="ALL" />
+      <output id="Extract_31_Data0" uid="70" schema="UserId:string,Start:string,Region:string,Query:string,Duration:string,Urls:string,ClickedUrls:string" />
+      <ReflectedScopeScript><![CDATA[_var_100017_EXTRACT = EXTRACT UserId:string,Start:string,Region:string,Query:string,Duration:string,Urls:string,ClickedUrls:string FROM @"https://cosmos09.osdinfra.net/cosmos/cosmosAdmin/users/v-hozhao/All_In_One/Input/Python_SearchLog.tsv" USING Scope.SystemOperators.Extractors.Python();
+]]></ReflectedScopeScript>
+    </operator>
+    <operator id="Output_32" uid="71" line="75" assemblyName="ScopeRuntime.exe" className="ScopeRuntime.DefaultTextOutputter" signature="2906141883338653558!58!Strict">
+      <input id="Extract_31_Data0" uid="70" schema="UserId:string,Start:string,Region:string,Query:string,Duration:string,Urls:string,ClickedUrls:string" />
+      <output id="SV9_Extract_out0" uid="71" schema="UserId:string,Start:string,Region:string,Query:string,Duration:string,Urls:string,ClickedUrls:string" outputIndex="0" numberOfOutputs="1" finalOutput="true" />
+      <ReflectedScopeScript><![CDATA[OUTPUT _var_100017_EXTRACT TO @"https://cosmos09.osdinfra.net/cosmos/cosmosAdmin/users/v-hozhao/All_In_One/Output/Python_ClusterRun_Extractor_Demo_Output.txt" USING ScopeRuntime.DefaultTextOutputter();
+]]></ReflectedScopeScript>
+    </operator>
+  </ScopeVertex>
+  <ScopeVertex id="SV10_Extract" cppReady="true" nativeOnly="true">
+    <EstimatedLimitMemory processMemory="4246392176" managedMemory="0" adapterMemory="0" engineMemory="3722104176" engineIOMemory="1673527824" engineOperatorMemory="2048576352" minEngineOperatorMemory="2048576352" />
+    <EstimatedOptimalMemory processMemory="1654311776" managedMemory="0" adapterMemory="0" engineMemory="1130023776" engineIOMemory="125829120" engineOperatorMemory="1004194656" minEngineOperatorMemory="1004194656" />
+    <operator id="Extract_33" uid="72" file="SearchLogImportedScript.script" line="5" assemblyName="ScopeRuntime.exe" className="ScopeRuntime.DefaultTextExtractor" signature="5431728734117507405!59!Strict">
+      <input id="Extract_33" uid="72" schema="Id:int,Start:DateTime,Market:string,Query:string,DwellTime:int,Results:string,ClickedUrls:string" inputIndex="0" numberOfInputs="ALL" />
+      <output id="Extract_33_Data0" uid="73" schema="Id:int,Start:DateTime,Market:string,Query:string,DwellTime:int,Results:string,ClickedUrls:string" />
+      <ReflectedScopeScript><![CDATA[_var_100019_EXTRACT = EXTRACT Id:int,Start:DateTime,Market:string,Query:string,DwellTime:int,Results:string,ClickedUrls:string FROM @"https://cosmos09.osdinfra.net/cosmos/cosmosAdmin/users/v-hozhao/All_In_One/Input/SearchLog.txt" USING ScopeRuntime.DefaultTextExtractor();
+]]></ReflectedScopeScript>
+    </operator>
+    <operator id="Output_34" uid="74" line="273" assemblyName="ScopeRuntime.exe" className="ScopeRuntime.DefaultTextOutputter" signature="16405989515144952030!60!Strict">
+      <input id="Extract_33_Data0" uid="73" schema="Id:int,Start:DateTime,Market:string,Query:string,DwellTime:int,Results:string,ClickedUrls:string" />
+      <output id="SV10_Extract_out0" uid="74" schema="Id:int,Start:DateTime,Market:string,Query:string,DwellTime:int,Results:string,ClickedUrls:string" outputIndex="0" numberOfOutputs="1" finalOutput="true" />
+      <ReflectedScopeScript><![CDATA[OUTPUT _var_100019_EXTRACT TO @"https://cosmos09.osdinfra.net/cosmos/cosmosAdmin/users/v-hozhao/All_In_One/Output/Sample_ImportOutput.tsv" USING ScopeRuntime.DefaultTextOutputter();
+]]></ReflectedScopeScript>
+    </operator>
+  </ScopeVertex>
+  <ScopeVertex id="SV11_Extract" cppReady="true">
+    <EstimatedLimitMemory processMemory="5347396448" managedMemory="838860800" adapterMemory="0" engineMemory="3984247648" engineIOMemory="1673527488" engineOperatorMemory="2310720160" minEngineOperatorMemory="2310720160" />
+    <EstimatedOptimalMemory processMemory="2016332448" managedMemory="364904448" adapterMemory="0" engineMemory="1127140000" engineIOMemory="125829120" engineOperatorMemory="1001310880" minEngineOperatorMemory="1001310880" />
+    <operator id="Extract_38" uid="78" line="154" assemblyName="ScopeRuntime.exe" className="ScopeRuntime.DefaultTextExtractor" signature="4688073969565539221!67!Strict">
+      <input id="Extract_38" uid="78" schema="IId:int,Start:DateTime,Market:string,Query:string,DwellTime:int,Results:string,ClickedUrls:string" inputIndex="0" numberOfInputs="ALL" />
+      <output id="Extract_38_Data0" uid="79" schema="Start:DateTime,Market:string,DwellTime:int" />
+      <ReflectedScopeScript><![CDATA[_var_100021_EXTRACT = EXTRACT Start:DateTime,Market:string,DwellTime:int FROM @"https://cosmos09.osdinfra.net/cosmos/cosmosAdmin/users/v-hozhao/SearchLog.txt" USING ScopeRuntime.DefaultTextExtractor();
+]]></ReflectedScopeScript>
+    </operator>
+    <operator id="Process_39" uid="80" line="173" assemblyName="__ScopeCodeGen__.dll" className="ScopeFilterTransformer_12" signature="4688073969565539221!67!Strict">
+      <input id="Extract_38_Data0" uid="79" schema="Start:DateTime,Market:string,DwellTime:int" />
+      <output id="Process_39_Data0" uid="81" schema="Start:DateTime,Market:string,DwellTimeInMinutes:double" />
+      <ReflectedScopeScript><![CDATA[_var_100022_TRANSFORM = SELECT MyHelper.ClassUDO.SecondsToMinutes(DwellTime) AS DwellTimeInMinutes, Start AS Start, Market AS Market FROM _var_100021_EXTRACT;
+_var_100023_TRANSFORM = SELECT Start AS Start, Market AS Market, DwellTimeInMinutes AS DwellTimeInMinutes FROM _var_100022_TRANSFORM;
+]]></ReflectedScopeScript>
+    </operator>
+    <operator id="Output_40" uid="82" line="173" assemblyName="ScopeRuntime.exe" className="ScopeRuntime.DefaultTextOutputter" signature="15197380494831745917!72!Strict">
+      <input id="Process_39_Data0" uid="81" schema="Start:DateTime,Market:string,DwellTimeInMinutes:double" />
+      <output id="SV11_Extract_out0" uid="82" schema="Start:DateTime,Market:string,DwellTimeInMinutes:double" outputIndex="0" numberOfOutputs="1" finalOutput="true" />
+      <ReflectedScopeScript><![CDATA[OUTPUT _var_100023_TRANSFORM TO @"https://cosmos09.osdinfra.net/cosmos/cosmosAdmin/users/v-hozhao/ClusterReference/SearchlogDwellTimeInMinutes.txt" USING ScopeRuntime.DefaultTextOutputter();
+]]></ReflectedScopeScript>
+    </operator>
+  </ScopeVertex>
+  <ScopeVertex id="SV12_Extract_Combine" cppReady="true" nativeOnly="true">
+    <EstimatedLimitMemory processMemory="6442450944" managedMemory="0" adapterMemory="0" engineMemory="5918162944" engineIOMemory="2139095424" engineOperatorMemory="3779067520" minEngineOperatorMemory="2646606064" />
+    <EstimatedOptimalMemory processMemory="6442450944" managedMemory="0" adapterMemory="0" engineMemory="5918162944" engineIOMemory="45089152" engineOperatorMemory="5873073792" minEngineOperatorMemory="1075839216" />
+    <operator id="GetSStream_5" uid="13" line="348" assemblyName="ScopeRuntime.exe" className="ScopeRuntime.SStreamExtractor" signature="13782585577596996626!21!Strict">
+      <input id="GetSStream_5" uid="13" schema="BingAdsUserId:int,MsAlias:string,UcmUserId:int,NumofMonth:int,LastMonth:string,TotalUsage:int" inputIndex="0" numberOfInputs="ALL" useInputDataName="true" />
+      <output id="GetSStream_5_Data0" uid="14" schema="BingAdsUserId:int,MsAlias:string,UcmUserId:int,NumofMonth:int,LastMonth:string,TotalUsage:int" />
+      <ReflectedScopeScript><![CDATA[_var_100025_GET_SSTREAM = SSTREAM @"adl://sandbox-c09.azuredatalakestore.net/users/v-hozhao/All_In_One/Input/HealthCheckUCMUserUsage_MonthAgg.ss";
+]]></ReflectedScopeScript>
+    </operator>
+    <operator id="GetSStream_6" uid="15" line="358" assemblyName="ScopeRuntime.exe" className="ScopeRuntime.SStreamExtractor" signature="5777913438125940525!22!Strict">
+      <input id="GetSStream_6" uid="15" schema="BingAdsUserId:int,MsAlias:string,UcmUserId:int,NumofWeek:int,TotalUsage:int" inputIndex="1" numberOfInputs="ALL" useInputDataName="true" />
+      <output id="GetSStream_6_Data0" uid="16" schema="BingAdsUserId:int,MsAlias:string,UcmUserId:int,NumofWeek:int" />
+      <ReflectedScopeScript><![CDATA[_var_100026_GET_SSTREAM = SSTREAM @"adl://sandbox-c09.azuredatalakestore.net/users/v-hozhao/All_In_One/Input/HealthCheckUCMUserUsage_WeekAgg.ss";
+]]></ReflectedScopeScript>
+    </operator>
+    <operator id="Process_7" uid="17" assemblyName="__ScopeCodeGen__.dll" className="ScopeFilterTransformer_8" signature="5777913438125940525!22!Strict">
+      <input id="GetSStream_6_Data0" uid="16" schema="BingAdsUserId:int,MsAlias:string,UcmUserId:int,NumofWeek:int" />
+      <output id="Process_7_Data0" uid="18" schema="NumofWeek:int,BingAdsUserId1:int,MsAlias2:string,UcmUserId3:int" />
+      <ReflectedScopeScript><![CDATA[_var_100027_TRANSFORM = SELECT NumofWeek AS NumofWeek, BingAdsUserId AS BingAdsUserId1, MsAlias AS MsAlias2, UcmUserId AS UcmUserId3 FROM _var_100026_GET_SSTREAM;
+]]></ReflectedScopeScript>
+    </operator>
+    <operator id="HashJoin_8" uid="19" assemblyName="__ScopeCodeGen__.dll" className="HashCombine" args="-key BingAdsUserId,MsAlias,UcmUserId|BingAdsUserId1,MsAlias2,UcmUserId3" signature="3677447903023344199!25!Strict">
+      <input id="GetSStream_5_Data0" uid="14" schema="BingAdsUserId:int,MsAlias:string,UcmUserId:int,NumofMonth:int,LastMonth:string,TotalUsage:int" />
+      <input id="Process_7_Data0" uid="18" schema="NumofWeek:int,BingAdsUserId1:int,MsAlias2:string,UcmUserId3:int" />
+      <output id="HashJoin_8_Data0" uid="20" schema="BingAdsUserId:int,MsAlias:string,UcmUserId:int,NumofMonth:int,LastMonth:string,TotalUsage:int,NumofWeek:int" />
+      <ReflectedScopeScript><![CDATA[_var_100028_INTERNAL_COMBINE = SELECT BingAdsUserId, MsAlias, UcmUserId, NumofMonth, LastMonth, TotalUsage, NumofWeek FROM _var_100025_GET_SSTREAM AS AliasLeft INNER JOIN _var_100027_TRANSFORM AS AliasRight ON AliasLeft.BingAdsUserId == AliasRight.BingAdsUserId1 AND AliasLeft.MsAlias == AliasRight.MsAlias2 AND AliasLeft.UcmUserId == AliasRight.UcmUserId3;
+]]></ReflectedScopeScript>
+    </operator>
+    <operator id="Process_9" uid="21" assemblyName="__ScopeCodeGen__.dll" className="ScopeFilterTransformer_9" signature="3677447903023344199!25!Strict">
+      <input id="HashJoin_8_Data0" uid="20" schema="BingAdsUserId:int,MsAlias:string,UcmUserId:int,NumofMonth:int,LastMonth:string,TotalUsage:int,NumofWeek:int" />
+      <output id="SV12_Extract_Combine_out0" uid="22" schema="NumofMonth:int,LastMonth:string,TotalUsage:int,NumofWeek:int,BingAdsUserId1:int,MsAlias2:string,UcmUserId3:int" outputIndex="0" numberOfOutputs="1" />
+      <ReflectedScopeScript><![CDATA[_var_100029_TRANSFORM = SELECT NumofMonth AS NumofMonth, LastMonth AS LastMonth, TotalUsage AS TotalUsage, NumofWeek AS NumofWeek, BingAdsUserId AS BingAdsUserId1, MsAlias AS MsAlias2, UcmUserId AS UcmUserId3 FROM _var_100028_INTERNAL_COMBINE;
+]]></ReflectedScopeScript>
+    </operator>
+  </ScopeVertex>
+  <ScopeVertex id="SV13_Combine_Split" cppReady="true">
+    <EstimatedLimitMemory processMemory="7086277560" managedMemory="1388314624" adapterMemory="0" engineMemory="5173674936" engineIOMemory="2002780720" engineOperatorMemory="3170894216" minEngineOperatorMemory="3170894216" />
+    <EstimatedOptimalMemory processMemory="6442450944" managedMemory="1388314624" adapterMemory="0" engineMemory="4529848320" engineIOMemory="101974576" engineOperatorMemory="4427873744" minEngineOperatorMemory="1077150088" />
+    <operator id="HashJoin_10" uid="23" assemblyName="__ScopeCodeGen__.dll" className="HashCombine" args="-key BingAdsUserId,MsAlias,UcmUserId|BingAdsUserId1,MsAlias2,UcmUserId3" signature="12077420751587884148!28!Strict">
+      <input id="SV3_Extract_out0" uid="12" schema="BingAdsUserId:int,MsAlias:string,UcmUserId:int" inputIndex="0" numberOfInputs="1" />
+      <input id="SV12_Extract_Combine_out0" uid="22" schema="NumofMonth:int,LastMonth:string,TotalUsage:int,NumofWeek:int,BingAdsUserId1:int,MsAlias2:string,UcmUserId3:int" inputIndex="1" numberOfInputs="1" />
+      <output id="HashJoin_10_Data0" uid="24" schema="BingAdsUserId:int,MsAlias:string,UcmUserId:int,NumofMonth:int?,LastMonth:string,TotalUsage:int?,NumofWeek:int?" />
+      <ReflectedScopeScript><![CDATA[_var_100030_INTERNAL_COMBINE = SELECT BingAdsUserId, MsAlias, UcmUserId, NumofMonth, LastMonth, TotalUsage, NumofWeek FROM _var_100004_EXTRACT AS AliasLeft LEFT OUTER JOIN _var_100029_TRANSFORM AS AliasRight ON AliasLeft.BingAdsUserId == AliasRight.BingAdsUserId1 AND AliasLeft.MsAlias == AliasRight.MsAlias2 AND AliasLeft.UcmUserId == AliasRight.UcmUserId3;
+]]></ReflectedScopeScript>
+    </operator>
+    <operator id="Process_11" uid="25" line="392" assemblyName="__ScopeCodeGen__.dll" className="ScopeFilterTransformer_10" signature="12077420751587884148!28!Strict">
+      <input id="HashJoin_10_Data0" uid="24" schema="BingAdsUserId:int,MsAlias:string,UcmUserId:int,NumofMonth:int?,LastMonth:string,TotalUsage:int?,NumofWeek:int?" />
+      <output id="Process_11_Data0" uid="26" schema="BingAdsUserId:int,MsAlias:string,UcmUserId:int,NumofMonth:int,LastMonth:string,NumofWeek:int,TotalUsage:int" />
+      <ReflectedScopeScript><![CDATA[_var_100031_TRANSFORM = SELECT NumofMonth ?? -1 AS NumofMonth, LastMonth ?? "Non" AS LastMonth, NumofWeek ?? -1 AS NumofWeek, TotalUsage ?? -1 AS TotalUsage, BingAdsUserId AS BingAdsUserId, MsAlias AS MsAlias, UcmUserId AS UcmUserId FROM _var_100030_INTERNAL_COMBINE;
+_var_100032_TRANSFORM = SELECT BingAdsUserId AS BingAdsUserId, MsAlias AS MsAlias, UcmUserId AS UcmUserId, NumofMonth AS NumofMonth, LastMonth AS LastMonth, NumofWeek AS NumofWeek, TotalUsage AS TotalUsage FROM _var_100031_TRANSFORM;
+]]></ReflectedScopeScript>
+    </operator>
+    <operator id="Process_12" uid="27" line="392" assemblyName="__ScopeCodeGen__.dll" className="FreqProcessor" args="Jul 5 2" signature="13220327250992300585!39!Strict">
+      <input id="Process_11_Data0" uid="26" schema="BingAdsUserId:int,MsAlias:string,UcmUserId:int,NumofMonth:int,LastMonth:string,NumofWeek:int,TotalUsage:int" />
+      <output id="Process_12_Data0" uid="28" schema="BingAdsUserId:int,MsAlias:string,UcmUserId:int,FreqSegment:string,NumofMonth:int,LastMonth:string,NumofWeek:int,TotalUsage:int" />
+      <ReflectedScopeScript><![CDATA[_var_100033_PROCESS = PROCESS _var_100032_TRANSFORM PRODUCE BingAdsUserId, MsAlias, UcmUserId, FreqSegment, NumofMonth, LastMonth, NumofWeek, TotalUsage USING FreqProcessor(@"Jul", @"5", @"2");
+]]></ReflectedScopeScript>
+    </operator>
+    <operator id="SStreamOutput_13" uid="29" line="402" assemblyName="__ScopeCodeGen__.dll" className="ScopeSStreamOutput_2" args="-noPartition">
+      <input id="Process_12_Data0" uid="28" schema="BingAdsUserId:int,MsAlias:string,UcmUserId:int,FreqSegment:string,NumofMonth:int,LastMonth:string,NumofWeek:int,TotalUsage:int" />
+      <output id="SV13_Combine_Split_out0" uid="30" schema="BingAdsUserId:int,MsAlias:string,UcmUserId:int,FreqSegment:string,NumofMonth:int,LastMonth:string,NumofWeek:int,TotalUsage:int" outputIndex="0" numberOfOutputs="1" />
+      <output id="SV13_Combine_Split_out1" uid="31" schema="BingAdsUserId:int,MsAlias:string,UcmUserId:int,FreqSegment:string,NumofMonth:int,LastMonth:string,NumofWeek:int,TotalUsage:int" outputIndex="1" numberOfOutputs="1" />
+      <ReflectedScopeScript><![CDATA[OUTPUT _var_100033_PROCESS TO SSTREAM @"https://cosmos09.osdinfra.net/cosmos/cosmosAdmin/users/v-hozhao/All_In_One/Output/MultipleInputs_HealthCheckUCMUserUsage_Freq.ss";
+]]></ReflectedScopeScript>
+    </operator>
+  </ScopeVertex>
+  <ScopeVertex id="SV14_Aggregate" cppReady="true" nativeOnly="true">
+    <EstimatedLimitMemory processMemory="5242880000" managedMemory="0" adapterMemory="0" engineMemory="4718592000" engineIOMemory="1048576000" engineOperatorMemory="3670016000" minEngineOperatorMemory="3670016000" />
+    <EstimatedOptimalMemory processMemory="1308622848" managedMemory="0" adapterMemory="0" engineMemory="784334848" engineIOMemory="549453824" engineOperatorMemory="234881024" minEngineOperatorMemory="234881024" />
+    <operator id="MetadataAggregate_14" uid="32" line="402" assemblyName="ScopeRuntime.exe" className="ScopeRuntime.PartitionMetadataAggregator" args="-noPartition">
+      <input id="SV13_Combine_Split_out1" uid="31" schema="BingAdsUserId:int,MsAlias:string,UcmUserId:int,FreqSegment:string,NumofMonth:int,LastMonth:string,NumofWeek:int,TotalUsage:int" inputIndex="0" numberOfInputs="ALL" />
+      <output id="MetadataAggregate_14_Data0" uid="33" schema="BingAdsUserId:int,MsAlias:string,UcmUserId:int,FreqSegment:string,NumofMonth:int,LastMonth:string,NumofWeek:int,TotalUsage:int" />
+    </operator>
+    <operator id="SStreamMetadataOutput_15" uid="34" line="402" assemblyName="ScopeRuntime.exe" className="ScopeRuntime.SStreamMetadataOutputter" args="-noPartition">
+      <input id="MetadataAggregate_14_Data0" uid="33" schema="BingAdsUserId:int,MsAlias:string,UcmUserId:int,FreqSegment:string,NumofMonth:int,LastMonth:string,NumofWeek:int,TotalUsage:int" />
+      <output id="SV14_Aggregate_out0" uid="35" schema="BingAdsUserId:int,MsAlias:string,UcmUserId:int,FreqSegment:string,NumofMonth:int,LastMonth:string,NumofWeek:int,TotalUsage:int" outputIndex="0" numberOfOutputs="1" />
+    </operator>
+  </ScopeVertex>
+  <ScopeVertex id="SV3_Dataset" cppReady="true" nativeOnly="true">
+    <EstimatedLimitMemory processMemory="1065353376" managedMemory="0" adapterMemory="0" engineMemory="541065376" engineIOMemory="16777216" engineOperatorMemory="524288160" minEngineOperatorMemory="524288160" />
+    <EstimatedOptimalMemory processMemory="542638240" managedMemory="0" adapterMemory="0" engineMemory="18350240" engineIOMemory="16777216" engineOperatorMemory="1573024" minEngineOperatorMemory="1573024" />
+    <operator id="Concatenate_19" uid="36" line="402" signature="2025763203236777512!40!Strict">
+      <input id="SV13_Combine_Split_out0" uid="30" schema="BingAdsUserId:int,MsAlias:string,UcmUserId:int,FreqSegment:string,NumofMonth:int,LastMonth:string,NumofWeek:int,TotalUsage:int" inputIndex="0" numberOfInputs="1" />
+      <input id="SV14_Aggregate_out0" uid="35" schema="BingAdsUserId:int,MsAlias:string,UcmUserId:int,FreqSegment:string,NumofMonth:int,LastMonth:string,NumofWeek:int,TotalUsage:int" inputIndex="1" numberOfInputs="1" />
+      <ReflectedScopeScript><![CDATA[OUTPUT _var_100033_PROCESS TO SSTREAM @"https://cosmos09.osdinfra.net/cosmos/cosmosAdmin/users/v-hozhao/All_In_One/Output/MultipleInputs_HealthCheckUCMUserUsage_Freq.ss";
+]]></ReflectedScopeScript>
+    </operator>
+  </ScopeVertex>
+</ScopeVertices>

@@ -1,0 +1,42 @@
+<ScopeCounters>
+  <Counter Name="Overall" Value="2.5528366" Unit="second" Intervals="1" />
+  <Counter Name="FrontEndRun" Value="2.3110479" Unit="second" Intervals="1" />
+  <Counter Name="AssemblyResolverPass" Value="0.0036839" Unit="second" Intervals="1" />
+  <Counter Name="AstBuilder" Value="2.2673186" Unit="second" Intervals="1" />
+  <Counter Name="ClassifierPass" Value="0.0005138" Unit="second" Intervals="1" />
+  <Counter Name="DdlResolver" Value="1.7932957" Unit="second" Intervals="1" />
+  <Counter Name="GeneratedFilesAsync" Value="0.003765" Unit="second" Intervals="1" />
+  <Counter Name="Parser" Value="0.1124671" Unit="second" Intervals="1" />
+  <Counter Name="ResourceReferencePass" Value="0.0042625" Unit="second" Intervals="1" />
+  <Counter Name="SyntaxVerifier" Value="0.1977287" Unit="second" Intervals="1" />
+  <Counter Name="TraceFile" Value="0.0159972" Unit="second" Intervals="23" />
+  <Counter Name="ViewResolver" Value="0.0064972" Unit="second" Intervals="2" />
+  <Counter Name="RoslynEnvironmentAsync" Value="0.1925509" Unit="second" Intervals="1" />
+  <Counter Name="SimpleLiteralBinding" Value="0" Unit="second" Intervals="4" />
+  <Counter Name="CreateSemanticModel" Value="0.1093007" Unit="second" Intervals="1" />
+  <Counter Name="ExpressionProcessors" Value="0.0014719" Unit="second" Intervals="1" />
+  <Counter Name="PreProcessorParser" Value="0.0180672" Unit="second" Intervals="1" />
+  <Counter Name="Preprocessing" Value="0.1243053" Unit="second" Intervals="1" />
+  <Counter Name="VcClient" Value="1.664408" Unit="second" Intervals="2" />
+  <Counter Name="Table Files Read" Value="0" Unit="count" />
+  <Counter Name="ScopeScriptNode" Value="1" Unit="count" />
+  <Counter Name="ReferenceStatementNode" Value="1" Unit="count" />
+  <Counter Name="FilePathNode" Value="3" Unit="count" />
+  <Counter Name="ConstantExpressionNode" Value="3" Unit="count" />
+  <Counter Name="ExpressionNode" Value="6" Unit="count" />
+  <Counter Name="QueryStatementNode" Value="2" Unit="count" />
+  <Counter Name="AssignmentNode" Value="2" Unit="count" />
+  <Counter Name="ExtractQueryNode" Value="1" Unit="count" />
+  <Counter Name="ExtractFromClauseNode" Value="1" Unit="count" />
+  <Counter Name="SimpleStreamSpecNode" Value="1" Unit="count" />
+  <Counter Name="UsingClauseNode" Value="1" Unit="count" />
+  <Counter Name="SelectQueryNode" Value="1" Unit="count" />
+  <Counter Name="AliasedExpressionNode" Value="3" Unit="count" />
+  <Counter Name="AliasNode" Value="1" Unit="count" />
+  <Counter Name="TableFromClauseNode" Value="1" Unit="count" />
+  <Counter Name="AliasedTableReferenceExpressionNode" Value="1" Unit="count" />
+  <Counter Name="TableReferenceNode" Value="2" Unit="count" />
+  <Counter Name="LocalObjectReferenceNode" Value="2" Unit="count" />
+  <Counter Name="OutputStatementNode" Value="1" Unit="count" />
+  <Counter Name="ToUnstructuredStreamClauseNode" Value="1" Unit="count" />
+</ScopeCounters>

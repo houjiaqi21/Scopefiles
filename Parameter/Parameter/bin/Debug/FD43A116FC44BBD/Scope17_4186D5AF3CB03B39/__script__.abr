@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScriptAndGraph GraphType="VertexCommands">
+  <Vertices count="1">
+    <Vertex index="1" command="-scopeVertex SV1_Extract  -i users/v-hozhao/inputs/SearchLog.txt  -o \\v-hozhao\Sharing\Scope2015\Parameter\Parameter\bin\Debug\FD43A116FC44BBD\_Temp\Scope17_4186D5AF3CB03B39\scopetmpfile._SV1_Extract_out0" />
+    <Vertex command="-concatenate -i \\v-hozhao\Sharing\Scope2015\Parameter\Parameter\bin\Debug\FD43A116FC44BBD\_Temp\Scope17_4186D5AF3CB03B39\scopetmpfile._SV1_Extract_out0 -o abfs://filesystem@ltianwestcentralusgen2.dfs.core.windows.net/users/v-hozhao/out.txt" />
+  </Vertices>
+  <Outputs>
+    <Output path="abfs://filesystem@ltianwestcentralusgen2.dfs.core.windows.net/users/v-hozhao/out.txt" isBinary="False" schema="IId:int,b:int" />
+  </Outputs>
+  <graph serveForThirdParty="True" JsonErrors="True" JobType="BatchScopeServerGC" vertexExecutable="scopehost.exe" BroadcastCopyThroughCommandLine="ScopeEngine.dll -scopeVertex SV_CopyThrough">
+    <process id="SV1_Extract" command="ScopeEngine.dll -scopeVertex SV1_Extract" nativeOnly="true" managedMemorySize="0" engineIOMemorySize="125829120" engineOperatorMemorySize="1000000016" DummyVertexOptimization="AllInputsEmptyImpliesOutputsEmpty|RunAtLeastOneVertex">
+      <input id="Extract_0[ALL]" streamSize="499500000000" cosmosStream="users/v-hozhao/inputs/SearchLog.txt">
+        <cosmosStream cosmosPath="users/v-hozhao/inputs/SearchLog.txt" />
+      </input>
+      <output id="SV1_Extract_out0" cosmosStream="abfs://filesystem@ltianwestcentralusgen2.dfs.core.windows.net/users/v-hozhao/out.txt" />
+    </process>
+  </graph>
+  <Scopescript>REFERENCE @"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\System.Core.dll";
+//Script GUID:ffbb629f-5321-49cd-a5e7-0c552d6a43f4
+//Used for tracking history
+
+EXTRACT IId:int, 
+        //UId:int, 
+        Start:DateTime, 
+        Market:string, 
+        Query:string, 
+        DwellTime:int, 
+        Results:string,
+        ClickedUrls:string
+        
+FROM @"/users/v-hozhao/inputs/SearchLog.txt"
+USING DefaultTextExtractor();
+
+  
+
+#IF (LOCAL)
+SELECT IId, 
+       //UId,
+       
+       -1 AS b;
+#ELSE
+SELECT IId, 
+       //UId,
+       Start,
+       -1 AS b;
+
+#ENDIF 
+
+OUTPUT 
+TO @"/users/v-hozhao/out.txt";</Scopescript>
+  <Optimization succeeded="true" time="00:00:00.6369967" latency="3756026.00578474" totalCost="3756026.00578474" />
+  <ScopeVertexAnnotations />
+</ScriptAndGraph>

@@ -1,0 +1,668 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScriptAndGraph GraphType="NebulaAlgebra" SignatureVersion="1">
+  <graph JsonErrors="True" JobType="BatchScopeServerGC" SStreamInfoFilePath="__SStreamInfo__.xml" vertexExecutable="scopehost.exe" BroadcastCopyThroughCommandLine="ScopeEngine.dll -scopeVertex SV_CopyThrough">
+    <process id="SV1_Extract_Split" command="ScopeEngine.dll -scopeVertex SV1_Extract_Split" nativeOnly="true" managedMemorySize="0" engineIOMemorySize="3017802256" engineOperatorMemorySize="262144048">
+      <input id="GetSStream_0[ALL,ALL,ALL,ALL]" structuredStream="adl://sandbox-c09.azuredatalakestore.net/users/v-hozhao/All_In_One/Input/Input.ss" />
+      <output id="SV1_Extract_Split_out0" />
+      <output id="SV1_Extract_Split_out1" />
+    </process>
+    <process id="SV2_Aggregate" command="ScopeEngine.dll -scopeVertex SV2_Aggregate" nativeOnly="true" managedMemorySize="0" engineIOMemorySize="1048576000" engineOperatorMemorySize="3670016000">
+      <input id="SV1_Extract_Split_out1" />
+      <output id="SV2_Aggregate_out0" />
+    </process>
+    <dataset id="Concatenate_5[]" cosmosStream="https://cosmos09.osdinfra.net/cosmos/cosmosAdmin/users/v-hozhao/All_In_One/Output/DataMap_Output.ss">
+      <element id="SV1_Extract_Split_out0" />
+      <element id="SV2_Aggregate_out0" />
+    </dataset>
+    <process id="SV3_Extract" command="ScopeEngine.dll -scopeVertex SV3_Extract" nativeOnly="true" managedMemorySize="0" engineIOMemorySize="125829120" engineOperatorMemorySize="2048576128" DummyVertexOptimization="AllInputsEmptyImpliesOutputsEmpty|RunAtLeastOneVertex">
+      <input id="Extract_4[ALL]" streamSize="17922" cosmosStream="adl://sandbox-c09.azuredatalakestore.net/users/v-hozhao/All_In_One/Input/UCMUser_20160711.txt">
+        <cosmosStream cosmosPath="adl://sandbox-c09.azuredatalakestore.net/users/v-hozhao/All_In_One/Input/UCMUser_20160711.txt" streamSize="17922" />
+      </input>
+      <output id="SV3_Extract_out0" />
+    </process>
+    <process id="SV4_Extract_Split" command="ScopeEngine.dll -scopeVertex SV4_Extract_Split" nativeOnly="true" managedMemorySize="0" engineIOMemorySize="4758437976" engineOperatorMemorySize="2048576352">
+      <input id="Extract_16[ALL]" streamSize="3398" cosmosStream="adl://sandbox-c09.azuredatalakestore.net/users/v-hozhao/All_In_One/Input/SearchLog.txt">
+        <cosmosStream cosmosPath="adl://sandbox-c09.azuredatalakestore.net/users/v-hozhao/All_In_One/Input/SearchLog.txt" streamSize="3398" />
+      </input>
+      <output id="SV4_Extract_Split_out0" />
+      <output id="SV4_Extract_Split_out1" />
+      <output id="SV4_Extract_Split_out2" cosmosStream="https://cosmos09.osdinfra.net/cosmos/cosmosAdmin/users/v-hozhao/All_In_One/Output/Sample_MoudleOutput.txt" />
+      <output id="SV4_Extract_Split_out3" cosmosStream="https://cosmos09.osdinfra.net/cosmos/cosmosAdmin/users/v-hozhao/All_In_One/Output/Sample_Output.txt" />
+      <output id="SV4_Extract_Split_out4" cosmosStream="https://cosmos09.osdinfra.net/cosmos/cosmosAdmin/users/v-hozhao/All_In_One/Output/Sample_ViewOutput.txt" />
+    </process>
+    <process id="SV5_Aggregate" command="ScopeEngine.dll -scopeVertex SV5_Aggregate" nativeOnly="true" managedMemorySize="0" engineIOMemorySize="1048576000" engineOperatorMemorySize="3670016000">
+      <input id="SV4_Extract_Split_out1" />
+      <output id="SV5_Aggregate_out0" />
+    </process>
+    <dataset id="Concatenate_28[]" cosmosStream="https://cosmos09.osdinfra.net/cosmos/cosmosAdmin/users/v-hozhao/All_In_One/Output/Sample_Output.ss">
+      <element id="SV4_Extract_Split_out0" />
+      <element id="SV5_Aggregate_out0" />
+    </dataset>
+    <process id="SV6_Extract" command="ScopeEngine.dll -scopeVertex SV6_Extract" managedMemorySize="1388314624" engineIOMemorySize="1698693264" engineOperatorMemorySize="4458203768" DummyVertexOptimization="AllInputsEmptyImpliesOutputsEmpty|RunAtLeastOneVertex">
+      <input id="Extract_20[ALL]" streamSize="3398" cosmosStream="adl://sandbox-c09.azuredatalakestore.net/users/v-hozhao/All_In_One/Input/SearchLog.txt">
+        <cosmosStream cosmosPath="adl://sandbox-c09.azuredatalakestore.net/users/v-hozhao/All_In_One/Input/SearchLog.txt" streamSize="3398" />
+      </input>
+      <output id="SV6_Extract_out0" cosmosStream="https://cosmos09.osdinfra.net/cosmos/cosmosAdmin/users/v-hozhao/All_In_One/Output/CodeBehind_Aggregatesoutput.txt" />
+    </process>
+    <process id="SV7_Extract" command="ScopeEngine.dll -scopeVertex SV7_Extract" managedMemorySize="1388314624" engineIOMemorySize="1606418960" engineOperatorMemorySize="2048576352" DummyVertexOptimization="AllInputsEmptyImpliesOutputsEmpty|RunAtLeastOneVertex">
+      <input id="Extract_25[ALL]" streamSize="3398" cosmosStream="adl://sandbox-c09.azuredatalakestore.net/users/v-hozhao/All_In_One/Input/SearchLog.txt">
+        <cosmosStream cosmosPath="adl://sandbox-c09.azuredatalakestore.net/users/v-hozhao/All_In_One/Input/SearchLog.txt" streamSize="3398" />
+      </input>
+      <output id="SV7_Extract_out0" cosmosStream="https://cosmos09.osdinfra.net/cosmos/cosmosAdmin/users/v-hozhao/All_In_One/Output/DebugStream_Output.txt" />
+    </process>
+    <process id="SV8_Extract" command="ScopeEngine.dll -scopeVertex SV8_Extract" managedMemorySize="0" adapterMemorySize="1283457024" engineIOMemorySize="1698693456" engineOperatorMemorySize="4720347912" DummyVertexOptimization="AllInputsEmptyImpliesOutputsEmpty|RunAtLeastOneVertex">
+      <input id="Extract_27[ALL]" streamSize="4698" cosmosStream="adl://sandbox-c09.azuredatalakestore.net/users/v-hozhao/All_In_One/Input/Python_iris.csv">
+        <cosmosStream cosmosPath="adl://sandbox-c09.azuredatalakestore.net/users/v-hozhao/All_In_One/Input/Python_iris.csv" streamSize="4698" />
+      </input>
+      <output id="SV8_Extract_out0" cosmosStream="https://cosmos09.osdinfra.net/cosmos/cosmosAdmin/users/v-hozhao/All_In_One/Output/Python_ClusterRun_DataFrame_Reducer_Demo_Output.txt" />
+    </process>
+    <process id="SV9_Extract" command="ScopeEngine.dll -scopeVertex SV9_Extract" managedMemorySize="0" adapterMemorySize="1283457024" engineIOMemorySize="1581253280" engineOperatorMemorySize="262144112" DummyVertexOptimization="AllInputsEmptyImpliesOutputsEmpty|RunAtLeastOneVertex">
+      <input id="Extract_31[ALL]" streamSize="3183" cosmosStream="adl://sandbox-c09.azuredatalakestore.net/users/v-hozhao/All_In_One/Input/Python_SearchLog.tsv">
+        <cosmosStream cosmosPath="adl://sandbox-c09.azuredatalakestore.net/users/v-hozhao/All_In_One/Input/Python_SearchLog.tsv" streamSize="3183" />
+      </input>
+      <output id="SV9_Extract_out0" cosmosStream="https://cosmos09.osdinfra.net/cosmos/cosmosAdmin/users/v-hozhao/All_In_One/Output/Python_ClusterRun_Extractor_Demo_Output.txt" />
+    </process>
+    <process id="SV10_Extract" command="ScopeEngine.dll -scopeVertex SV10_Extract" nativeOnly="true" managedMemorySize="0" engineIOMemorySize="1673527824" engineOperatorMemorySize="2048576352" DummyVertexOptimization="AllInputsEmptyImpliesOutputsEmpty|RunAtLeastOneVertex">
+      <input id="Extract_33[ALL]" streamSize="3398" cosmosStream="adl://sandbox-c09.azuredatalakestore.net/users/v-hozhao/All_In_One/Input/SearchLog.txt">
+        <cosmosStream cosmosPath="adl://sandbox-c09.azuredatalakestore.net/users/v-hozhao/All_In_One/Input/SearchLog.txt" streamSize="3398" />
+      </input>
+      <output id="SV10_Extract_out0" cosmosStream="https://cosmos09.osdinfra.net/cosmos/cosmosAdmin/users/v-hozhao/All_In_One/Output/Sample_ImportOutput.tsv" />
+    </process>
+    <process id="SV11_Extract" command="ScopeEngine.dll -scopeVertex SV11_Extract" managedMemorySize="838860800" engineIOMemorySize="1673527488" engineOperatorMemorySize="2310720160" DummyVertexOptimization="AllInputsEmptyImpliesOutputsEmpty|RunAtLeastOneVertex">
+      <input id="Extract_38[ALL]" streamSize="3398" cosmosStream="adl://sandbox-c09.azuredatalakestore.net/users/v-hozhao/SearchLog.txt">
+        <cosmosStream cosmosPath="adl://sandbox-c09.azuredatalakestore.net/users/v-hozhao/SearchLog.txt" streamSize="3398" />
+      </input>
+      <output id="SV11_Extract_out0" cosmosStream="https://cosmos09.osdinfra.net/cosmos/cosmosAdmin/users/v-hozhao/ClusterReference/SearchlogDwellTimeInMinutes.txt" />
+    </process>
+    <process id="SV12_Extract_Combine" command="ScopeEngine.dll -scopeVertex SV12_Extract_Combine" nativeOnly="true" managedMemorySize="0" engineIOMemorySize="2139095424" engineOperatorMemorySize="3779067520" DummyVertexOptimization="AllInputsEmptyImpliesOutputsEmpty|RunAtLeastOneVertex">
+      <input id="GetSStream_5[ALL,ALL,ALL,ALL]" structuredStream="adl://sandbox-c09.azuredatalakestore.net/users/v-hozhao/All_In_One/Input/HealthCheckUCMUserUsage_MonthAgg.ss" />
+      <input id="GetSStream_6[ALL,ALL,ALL,ALL]" structuredStream="adl://sandbox-c09.azuredatalakestore.net/users/v-hozhao/All_In_One/Input/HealthCheckUCMUserUsage_WeekAgg.ss" />
+      <output id="SV12_Extract_Combine_out0" />
+    </process>
+    <process id="SV13_Combine_Split" command="ScopeEngine.dll -scopeVertex SV13_Combine_Split" managedMemorySize="1388314624" engineIOMemorySize="2002780720" engineOperatorMemorySize="3170894216">
+      <input id="SV3_Extract_out0" />
+      <input id="SV12_Extract_Combine_out0" />
+      <output id="SV13_Combine_Split_out0" />
+      <output id="SV13_Combine_Split_out1" />
+    </process>
+    <process id="SV14_Aggregate" command="ScopeEngine.dll -scopeVertex SV14_Aggregate" nativeOnly="true" managedMemorySize="0" engineIOMemorySize="1048576000" engineOperatorMemorySize="3670016000">
+      <input id="SV13_Combine_Split_out1" />
+      <output id="SV14_Aggregate_out0" />
+    </process>
+    <dataset id="Concatenate_19[]" cosmosStream="https://cosmos09.osdinfra.net/cosmos/cosmosAdmin/users/v-hozhao/All_In_One/Output/MultipleInputs_HealthCheckUCMUserUsage_Freq.ss">
+      <element id="SV13_Combine_Split_out0" />
+      <element id="SV14_Aggregate_out0" />
+    </dataset>
+  </graph>
+  <Scopescript>REFERENCE @"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\System.Core.dll";
+REFERENCE @"/users/v-hozhao/ClusterReference/MyHelper.dll";
+//Script GUID:f51f3406-19d4-4f8a-a8fd-0a9cbb310140
+//Used for tracking history
+
+
+//  /users/v-hozhao/All_In_One/  Total Input 13   codebehind input = sample input   10 output
+
+/******************* Datamap       4 input ---  1 output *******************/
+
+/*******************Sample Scope   4 input ---  5 output*******************/
+
+/********************PythonUdo     2 input ---  2 output*******************/
+
+/*********************Code behind  1 input ---  1 output********************/
+
+/**********************MultipleInputs 3 input ---  1 output*****************/
+
+
+#REGION   PythonUdo
+
+////////////////////////////////////////////////////
+
+RESOURCE "Scope1.py";   //full python file name 
+#DECLARE pyScript string = @"import Scope1";  // without extension
+
+#DECLARE pyClass string = @"Scope1.DataFrameDemoReducer()";    //fileName.ClassName
+
+#DECLARE inputFile string = @"/users/v-hozhao/All_In_One/Input/Python_iris.csv";
+#DECLARE outputFile string = @"/users/v-hozhao/All_In_One/Output/Python_ClusterRun_DataFrame_Reducer_Demo_Output.txt";
+
+Input =
+    EXTRACT SepalLength: double,
+            SepalWidth: double,
+            PetalLength: double, 
+            PetalWidth: double, 
+            Name: string
+    FROM @inputFile
+    USING DefaultTextExtractor(delimiter:',');
+
+Out =
+    REDUCE Input ON Name
+    PRODUCE SepalLength_Mean: double, 
+            SepalWidth_Mean: double, 
+            PetalLength_Mean: double, 
+            PetalWidth_Mean: double, 
+            Name: string,
+            Count: int
+    //USING Reducers.Python(prologue: @import_codebehind_ClusterRun_DataFrame_Reducer_Demo1_py, expression: "DataFrameDemoReducer()");
+    USING Reducers.Python(prologue: @pyScript, expression: @pyClass);   //Code Behind
+
+OUTPUT Out
+TO @outputFile
+USING DefaultTextOutputter(delimiter:',');
+
+///////////////////////////////////////////////////////////////////////////////////
+
+#DECLARE pyClassExtractor string = @"Scope1.SearchLogExtractor()"; 
+
+#DECLARE inputFile_Extractor string = @"/users/v-hozhao/All_In_One/Input/Python_SearchLog.tsv";   //Input
+#DECLARE outputFile_Extractor string = @"/users/v-hozhao/All_In_One/Output/Python_ClusterRun_Extractor_Demo_Output.txt";  //Output
+
+searchlog =
+    EXTRACT UserId: string,
+            Start: string,
+            Region: string,
+            Query: string,
+            Duration: string,
+            Urls: string,
+            ClickedUrls: string
+    FROM @inputFile_Extractor
+    //USING Extractors.Python(prologue: @import_codebehind_Scope171_py, expression: "SearchLogExtractor()");
+    USING Extractors.Python(prologue: @pyScript, expression: @pyClassExtractor);   //Code Behind
+
+OUTPUT searchlog
+TO @outputFile_Extractor
+USING DefaultTextOutputter(delimiter:',');
+
+
+/////////////////////////////////// PythonUdo ///////////////////////////////
+
+//#DECLARE inputFile_Reducer string = @"/users/v-hozhao/All_In_One/Input/Python_iris.csv";     //Input
+//#DECLARE outputFile_Reducer string = @"/users/v-hozhao/All_In_One/Output/Python_ClusterRun_Reducer_Demo_Output.txt";  //Output
+//
+//Input =
+//    EXTRACT SepalLength: double,
+//            SepalWidth: double,
+//            PetalLength: double, 
+//            PetalWidth: double, 
+//            Name: string
+//    FROM @inputFile_Reducer
+//    USING DefaultTextExtractor(delimiter:',');
+//
+//Out =
+//    REDUCE Input ON Name
+//    PRODUCE SepalLength_Mean: double, 
+//            SepalWidth_Mean: double, 
+//            PetalLength_Mean: double, 
+//            PetalWidth_Mean: double, 
+//            Name: string,
+//            Count: int
+//    USING Reducers.Python(prologue: @import_codebehind_Scope1_py, expression: "DataFrameDemoReducer()");
+//
+//OUTPUT Out
+//TO @outputFile_Reducer
+//USING DefaultTextOutputter(delimiter:',');
+//
+//
+//#DECLARE inputFile_Extractor string = @"/users/v-hozhao/All_In_One/Input/Python_SearchLog.tsv";   //Input
+//#DECLARE outputFile_Extractor string = @"/users/v-hozhao/All_In_One/Output/Python_ClusterRun_Extractor_Demo_Output.txt";  //Output
+//
+//searchlog =
+//    EXTRACT UserId: string,
+//            Start: string,
+//            Region: string,
+//            Query: string,
+//            Duration: string,
+//            Urls: string,
+//            ClickedUrls: string
+//    FROM @inputFile_Extractor
+//    USING Extractors.Python(prologue: @import_codebehind_Scope1_py, expression: "SearchLogExtractor()");
+//
+//OUTPUT searchlog
+//TO @outputFile_Extractor
+//USING DefaultTextOutputter(delimiter:',');
+
+#ENDREGION
+
+#REGION  Debug Stream
+
+searchlog =
+    EXTRACT IId : int,
+            //UId : int,
+            Start : DateTime,
+            Market : string,
+            Query : string,
+            DwellTime : int,
+            Results : string,
+            ClickedUrls : string
+    FROM @"/users/v-hozhao/All_In_One/Input/SearchLog.txt"
+    USING MyTsvExtractor();
+
+
+OUTPUT searchlog
+TO @"/users/v-hozhao/All_In_One/Output/DebugStream_Output.txt";
+
+#ENDREGION
+
+#REGION   ClusterReference  
+	
+#DECLARE outputCluster string = @"/users/v-hozhao/ClusterReference/SearchlogDwellTimeInMinutes.txt";
+
+searchlog =  
+    EXTRACT IId:int,  
+            //UId:int,  
+            Start:DateTime,  
+            Market:string,  
+            Query:string,  
+            DwellTime:int,  
+            Results:string,  
+            ClickedUrls:string 
+    FROM @"/users/v-hozhao/SearchLog.txt" 
+    USING DefaultTextExtractor(); 
+
+//OUTPUT TO SSTREAM @"/my/searchlog.ss";
+//searchlog_ss = SSTREAM @"/my/searchlog.ss";
+
+rs1 =                   // namespace &gt;&gt; class &gt;&gt; Method
+    SELECT Start, Market, MyHelper.ClassUDO.SecondsToMinutes(DwellTime) AS DwellTimeInMinutes
+    FROM searchlog;   
+	//From searchlog_ss;
+ 
+OUTPUT rs1
+TO @outputCluster;  
+//To @"/my/SearchlogDwellTimeInMinutes.txt";	
+	
+#ENDREGION
+
+/////////////////////////////////// ScopeDataMap only Cosmos08 ///////////////////////////////
+#REGION  ScopeDataMap
+	
+MODULE "/users/v-hozhao/All_In_One/Input/PrivacyAnnotation.module";    //input
+//MODULE "/shares/PXSCosmos08.Prod/PXS.DeleteSignal.Prod/PrivacyAnnotation/PrivacyAnnotation.module";    
+/*************************
+DEFINE MODULE PrivacyAnnotation 
+BEGIN 
+ 
+REFERENCE @"Microsoft.DataMap.CodeAnnotation.Cosmos.dll";             //input       invisibillity
+REFERENCE @"Microsoft.PrivacyServices.PrivacyAnnotation.dll";         //input       invisibillity
+ 
+END MODULE 
+*****************************************/
+
+USING Privacy;
+val =
+    SELECT *
+    FROM
+    (
+        SSTREAM @"/users/v-hozhao/All_In_One/Input/Input.ss"          //input
+    );
+
+[Privacy.DataType.BrowsingHistory]
+OUTPUT val
+TO SSTREAM @"/users/v-hozhao/All_In_One/Output/DataMap_Output.ss";    //output              //@"/local/DataMapTest/Output.ss";
+
+#ENDREGION
+
+#REGION  Sample Scope
+
+///////////////////////////////////////////////////Sample Scope/////////////////////////////////////////////////////////////////////////
+
+#DECLARE inputFile_sample string = @"/users/v-hozhao/All_In_One/Input/SearchLog.txt";  //input
+#DECLARE inputFile_view string = @"/users/v-hozhao/All_In_One/Input/SearchLog.view";   //input
+
+#DECLARE outputFile_sample string = @"/users/v-hozhao/All_In_One/Output/Sample_Output.txt";    //output
+#DECLARE outputFile_sampleSS string = @"/users/v-hozhao/All_In_One/Output/Sample_Output.ss";   //output
+#DECLARE outputFile_view string ="/users/v-hozhao/All_In_One/Output/Sample_ViewOutput.txt";    //output
+
+
+searchlog =
+    EXTRACT UserId : int,
+            Start : DateTime,
+            Region : string,
+            Query : string,
+            Duration : int,
+            Urls : string,
+            ClickedUrls : string
+    FROM @inputFile_sample
+    USING DefaultTextExtractor();
+
+OUTPUT searchlog
+TO @outputFile_sample
+USING DefaultTextOutputter(); 
+
+OUTPUT searchlog
+TO SSTREAM @outputFile_sampleSS;   //Generate ss file
+
+////////////////////////////////Verify View///////////////////////////////////////
+
+searchlogView =
+    VIEW @inputFile_view;
+
+OUTPUT searchlogView
+TO @outputFile_view
+USING DefaultTextOutputter();
+
+//////////////////////////////////Verify Module//////////////////////////////////////
+
+MODULE @"/users/v-hozhao/All_In_One/Input/SearchLog.module";                      //input
+data = CosmosSampleData.SearchLogRaw();
+
+OUTPUT data
+TO @"/users/v-hozhao/All_In_One/Output/Sample_MoudleOutput.txt"                   //output
+USING DefaultTextOutputter();
+
+/////////////////////////////////Verify Import/////////////////////////////////////////
+
+IMPORT @"/users/v-hozhao/All_In_One/Input/SearchLogImportedScript.script" AS myScript;            //input
+/*
+EXPORT result =
+     EXTRACT Id : int,
+             //UId : int,
+             Start : DateTime,
+             Market : string,
+             Query : string,
+             DwellTime : int,
+             Results : string,
+             ClickedUrls : string
+     FROM @"/users/v-hozhao/All_In_One/Input/SearchLog.txt"
+     USING DefaultTextExtractor();
+*/
+
+OUTPUT myScript.result
+TO @"/users/v-hozhao/All_In_One/Output/Sample_ImportOutput.tsv"                    //output
+USING DefaultTextOutputter();
+
+#ENDREGION
+
+#REGION   Code behind
+
+////////////////////////////////////////Code behind///////////////////////////////////
+
+searchlog =
+    EXTRACT UserId : int,
+            Start : DateTime,
+            Region : string,
+            Query : string,
+            Duration : int,
+            Urls : string,
+            ClickedUrls : string
+    FROM @"/users/v-hozhao/All_In_One/Input/SearchLog.txt"      //input            //adl://sandbox-c08.azuredatalakestore.net/users/v-hozhao/Aggregates/
+    USING DefaultTextExtractor();
+
+rs1 =
+    SELECT Region,
+           MySum(Duration) AS TotalDuration
+    FROM searchlog
+    GROUP BY Region;
+
+OUTPUT rs1
+TO @"/users/v-hozhao/All_In_One/Output/CodeBehind_Aggregatesoutput.txt";    // Output              
+
+#ENDREGION
+
+#REGION   MultipleInput
+////////////////////////////////////////////// MultipleInputs///////////////////////////////////////////////////////////
+
+#DECLARE endtime string = @"2016-07-11";
+#DECLARE mm string = @"Jul";
+#DECLARE w string = "5";
+#DECLARE m string = "2";
+
+#DECLARE MonthInput string = string.Format(@"/users/v-hozhao/All_In_One/Input/HealthCheckUCMUserUsage_MonthAgg.ss");    //input
+#DECLARE WeekInput string = string.Format(@"/users/v-hozhao/All_In_One/Input/HealthCheckUCMUserUsage_WeekAgg.ss");      //input
+#DECLARE UCMUser string = string.Format(@"/users/v-hozhao/All_In_One/Input/UCMUser_{0}.txt",@endtime.Replace("-",""));   //input
+   
+#DECLARE output string = string.Format(@"/users/v-hozhao/All_In_One/Output/MultipleInputs_HealthCheckUCMUserUsage_Freq.ss");   // output
+//#DECLARE History string;
+
+UCMUser =
+    EXTRACT BingAdsUserId:int,
+            MsAlias:string,
+            UcmUserId:int
+    FROM @UCMUser
+    USING DefaultTextExtractor();
+/*
+UCMUser =
+    SELECT BingAdsUserId,
+           MsAlias,
+           UcmUserId,
+           - 1 AS NumofMonth,
+           "Non" AS LastMonth,
+           - 1 AS NumofWeek,
+           - 1 AS TotalUsage
+    FROM UCMUser;
+*/
+
+
+MonthInput =
+    SELECT BingAdsUserId,
+           MsAlias,
+           UcmUserId,
+           NumofMonth,
+           LastMonth,
+           TotalUsage
+    FROM
+    (
+        SSTREAM @MonthInput
+    );
+WeekInput =
+    SELECT BingAdsUserId,
+           MsAlias,
+           UcmUserId,
+           NumofWeek,
+           TotalUsage
+    FROM
+    (
+        SSTREAM @WeekInput
+    );
+
+Join =
+    SELECT M.BingAdsUserId,
+           M.MsAlias,
+           M.UcmUserId,
+           NumofMonth,
+           LastMonth,
+           NumofWeek,
+           M.TotalUsage
+    FROM MonthInput AS M
+         INNER JOIN
+             WeekInput AS W
+         ON M.BingAdsUserId == W.BingAdsUserId
+            AND M.MsAlias == W.MsAlias
+            AND M.UcmUserId == W.UcmUserId;
+
+Join =
+    SELECT UCMUser.BingAdsUserId,
+           UCMUser.MsAlias,
+           UCMUser.UcmUserId,
+           NumofMonth??-1 AS NumofMonth,
+           LastMonth??"Non" AS LastMonth,
+           NumofWeek??-1 AS NumofWeek,
+           TotalUsage??-1 AS TotalUsage
+    FROM UCMUser
+         LEFT JOIN
+             Join
+         ON UCMUser.BingAdsUserId == Join.BingAdsUserId AND
+            UCMUser.MsAlias == Join.MsAlias AND
+            UCMUser.UcmUserId == Join.UcmUserId;
+
+Freq =
+    PROCESS Join
+    PRODUCE BingAdsUserId,
+            MsAlias,
+            UcmUserId,
+            FreqSegment,
+            NumofMonth,
+            LastMonth,
+            NumofWeek,
+            TotalUsage
+    USING FreqProcessor(@mm, @w, @m);
+OUTPUT Freq TO SSTREAM @output;
+
+#ENDREGION
+
+#REGION  CS# Code
+
+#CS
+using Microsoft.SCOPE.Types;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Text;
+using ScopeRuntime;
+
+
+/// &lt;summary&gt;
+/// 
+/// &lt;/summary&gt;
+public class FreqProcessor : Processor
+{
+    /// &lt;summary&gt;
+    /// 
+    /// &lt;/summary&gt;
+    /// &lt;param name="columns"&gt;&lt;/param&gt;
+    /// &lt;param name="args"&gt;&lt;/param&gt;
+    /// &lt;param name="input"&gt;&lt;/param&gt;
+    /// &lt;returns&gt;&lt;/returns&gt;
+    public override Schema Produces(string[] columns, string[] args, Schema input)
+    {
+        return new Schema("BingAdsUserId:int, MsAlias:string,UcmUserId:int,FreqSegment:string,NumofMonth:int,LastMonth:string,NumofWeek:int,TotalUsage:int");
+    }
+    /// &lt;summary&gt;
+    ///
+    /// &lt;/summary&gt;
+    /// &lt;param name="input"&gt;&lt;/param&gt;
+    /// &lt;param name="output"&gt;&lt;/param&gt;
+    /// &lt;param name="args"&gt;&lt;/param&gt;
+    /// &lt;returns&gt;&lt;/returns&gt;    
+    public override IEnumerable&lt;Row&gt; Process(RowSet input, Row output, string[] args)
+    {
+        string mm = args[0];
+        int w = Convert.ToInt32(args[1]); 
+        int m = Convert.ToInt32(args[2]);
+
+        int BingAdsUserId = 0;
+        string MsAlias = string.Empty;
+        int UcmUserId = 0;
+        string FreqSegment = string.Empty;
+        int NumofMonth = 0;
+        string LastMonth = string.Empty;
+        int NumofWeek = 0;
+        int TotalUsage = 0;
+        foreach (Row row in input.Rows)
+        {
+            BingAdsUserId = row["BingAdsUserId"].Integer;
+            MsAlias = row["MsAlias"].String;
+            UcmUserId = row["UcmUserId"].Integer;
+            NumofMonth = row["NumofMonth"].Integer;
+            LastMonth = row["LastMonth"].String;
+            NumofWeek = row["NumofWeek"].Integer;
+            TotalUsage = row["TotalUsage"].Integer;
+            if (NumofWeek == w)
+            {
+                FreqSegment = @"Fans User";
+            }
+            else if (NumofMonth == m)
+            {
+                FreqSegment = @"Stable User";
+            }
+            else if (NumofMonth == 1 &amp;&amp; LastMonth == mm)
+            {
+                FreqSegment = @"New User";
+            }
+            else if (NumofWeek == -1 &amp;&amp; NumofMonth == -1 &amp;&amp; LastMonth == "Non")
+            {
+                FreqSegment = @"Non User";
+            }
+            else FreqSegment = @"Swing User";
+            output["BingAdsUserId"].Set(BingAdsUserId);
+            output["MsAlias"].Set(MsAlias);
+            output["UcmUserId"].Set(UcmUserId);
+            output["NumofMonth"].Set(NumofMonth);
+            output["LastMonth"].Set(LastMonth);
+            output["NumofWeek"].Set(NumofWeek);
+            output["TotalUsage"].Set(TotalUsage);
+            output["FreqSegment"].Set(FreqSegment);
+            yield return output;
+        }
+    }
+}
+
+#ENDCS
+	
+#ENDREGION
+#CS
+using Microsoft.SCOPE.Types;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Text;
+using ScopeRuntime;
+
+
+public class MySum_Integer : Aggregate1&lt;int, int&gt;
+{
+    int sum = 0;
+
+    public override void Initialize()
+    {
+        sum = 0;
+    }
+
+    public override void Add(int y)
+    {
+        sum += y;
+    }
+
+    public override int Finalize()
+    {
+        return sum;
+    }
+}
+
+public class MyTsvExtractor : Extractor
+{
+    public override Schema Produces(string[] requested_columns, string[] args)
+    {
+        return new Schema(requested_columns);
+    }
+
+    public override IEnumerable&lt;Row&gt; Extract(StreamReader reader, Row output_row, string[] args)
+    {
+        char delimiter = '\t';
+        string line;
+
+        int debug_count = 0;
+
+        while ((line = reader.ReadLine()) != null)
+        {
+            var tokens = line.Split(delimiter);
+            for (int i = 0; i &lt; tokens.Length; ++i)
+            {
+                output_row[i].UnsafeSet(tokens[i]);
+            }
+
+            string debug_msg = string.Format("Line {0}: {1}", debug_count, line.Trim());
+            ScopeRuntime.Diagnostics.DebugStream.WriteLine(debug_msg);
+
+            debug_count++;
+
+            yield return output_row;
+        }
+    }
+}
+#ENDCS
+
+// Generated by ScopeStudio, version 3.1.1000.3
+</Scopescript>
+  <Optimization succeeded="true" time="00:00:00.5350459" latency="0.15060060673221" totalCost="0.442867889958487" />
+  <ScopeVertexAnnotations>
+    <ScopeVertex name="SV7_Extract">
+      <Operation annotation="EXTRACT USING MyTsvExtractor" />
+    </ScopeVertex>
+    <ScopeVertex name="SV8_Extract">
+      <Operation annotation="REDUCE USING Python" />
+    </ScopeVertex>
+    <ScopeVertex name="SV9_Extract">
+      <Operation annotation="EXTRACT USING Python" />
+    </ScopeVertex>
+  </ScopeVertexAnnotations>
+</ScriptAndGraph>

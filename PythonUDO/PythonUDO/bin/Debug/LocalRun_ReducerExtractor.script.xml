@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CompileResult scriptPath="D:\Sharing\Scope2015\PythonUDO\PythonUDO\bin\Debug\LocalRun_ReducerExtractor.script">
+  <LocalRunInfo CommandLineFile="D:\Sharing\Scope2015\PythonUDO\PythonUDO\bin\Debug\58C5C7DBDF061604\LocalRun_ReducerExtractor_C4E1F029DA134F8F\__script__.abr">
+    <LocalRunScriptPaths cachePath="D:\Sharing\Scope2015\PythonUDO\PythonUDO\bin\Debug\58C5C7DBDF061604\LocalRun_ReducerExtractor_C4E1F029DA134F8F" tempPath="D:\Sharing\Scope2015\PythonUDO\PythonUDO\bin\Debug\58C5C7DBDF061604\_Temp\LocalRun_ReducerExtractor_C4E1F029DA134F8F" runtimePath="D:\Sharing\Scope2015\PythonUDO\PythonUDO\bin\Debug\58C5C7DBDF061604" />
+  </LocalRunInfo>
+  <Manifest>
+    <DebugInfo>D:\Sharing\Scope2015\PythonUDO\PythonUDO\bin\Debug\58C5C7DBDF061604\LocalRun_ReducerExtractor_C4E1F029DA134F8F\__CompilerTimers.xml</DebugInfo>
+    <DebugInfo>D:\Sharing\Scope2015\PythonUDO\PythonUDO\bin\Debug\58C5C7DBDF061604\LocalRun_ReducerExtractor_C4E1F029DA134F8F\ScopeVertexDef.xml</DebugInfo>
+    <DebugInfo>D:\Sharing\Scope2015\PythonUDO\PythonUDO\bin\Debug\58C5C7DBDF061604\LocalRun_ReducerExtractor_C4E1F029DA134F8F\__ScopeCodeGenEngine__.dll</DebugInfo>
+    <DebugInfo>D:\Sharing\Scope2015\PythonUDO\PythonUDO\bin\Debug\58C5C7DBDF061604\LocalRun_ReducerExtractor_C4E1F029DA134F8F\__ScopeDiagnosisInfo__.xml</DebugInfo>
+    <DebugInfo>D:\Sharing\Scope2015\PythonUDO\PythonUDO\bin\Debug\58C5C7DBDF061604\LocalRun_ReducerExtractor_C4E1F029DA134F8F\__ScopeCodeGen__.dll.cs</DebugInfo>
+    <DebugInfo>D:\Sharing\Scope2015\PythonUDO\PythonUDO\bin\Debug\58C5C7DBDF061604\LocalRun_ReducerExtractor_C4E1F029DA134F8F\ScopeInternalStatistics.xml</DebugInfo>
+    <DebugInfo>D:\Sharing\Scope2015\PythonUDO\PythonUDO\bin\Debug\58C5C7DBDF061604\LocalRun_ReducerExtractor_C4E1F029DA134F8F\__ScopeCodeGen__.dll</DebugInfo>
+    <DebugInfo>D:\Sharing\Scope2015\PythonUDO\PythonUDO\bin\Debug\58C5C7DBDF061604\LocalRun_ReducerExtractor_C4E1F029DA134F8F\ScopeScript.xml</DebugInfo>
+    <DebugInfo>D:\Sharing\Scope2015\PythonUDO\PythonUDO\bin\Debug\58C5C7DBDF061604\LocalRun_ReducerExtractor_C4E1F029DA134F8F\__Ast__.bin</DebugInfo>
+    <DebugInfo>D:\Sharing\Scope2015\PythonUDO\PythonUDO\bin\Debug\58C5C7DBDF061604\LocalRun_ReducerExtractor_C4E1F029DA134F8F\__ScopeCodeGenCompileOutput__.txt</DebugInfo>
+    <DebugInfo>D:\Sharing\Scope2015\PythonUDO\PythonUDO\bin\Debug\58C5C7DBDF061604\LocalRun_ReducerExtractor_C4E1F029DA134F8F\__CompilerTrace.log</DebugInfo>
+    <DebugInfo>D:\Sharing\Scope2015\PythonUDO\PythonUDO\bin\Debug\58C5C7DBDF061604\LocalRun_ReducerExtractor_C4E1F029DA134F8F\__script__.abr</DebugInfo>
+    <DebugInfo>D:\Sharing\Scope2015\PythonUDO\PythonUDO\bin\Debug\58C5C7DBDF061604\LocalRun_ReducerExtractor_C4E1F029DA134F8F\__ScopeInternalInfo__.xml</DebugInfo>
+    <DebugInfo>D:\Sharing\Scope2015\PythonUDO\PythonUDO\bin\Debug\58C5C7DBDF061604\LocalRun_ReducerExtractor_C4E1F029DA134F8F\__ScopeCodeGen__.pdb</DebugInfo>
+    <DebugInfo>D:\Sharing\Scope2015\PythonUDO\PythonUDO\bin\Debug\58C5C7DBDF061604\LocalRun_ReducerExtractor_C4E1F029DA134F8F\__ScopeCodeGenEngine__.dll.cpp</DebugInfo>
+    <DebugInfo>D:\Sharing\Scope2015\PythonUDO\PythonUDO\bin\Debug\58C5C7DBDF061604\LocalRun_ReducerExtractor_C4E1F029DA134F8F\__ScopeCodeGenEngine__.pdb</DebugInfo>
+    <DebugInfo>D:\Sharing\Scope2015\PythonUDO\PythonUDO\bin\Debug\58C5C7DBDF061604\LocalRun_ReducerExtractor_C4E1F029DA134F8F\__ScopeCodeGenCompileOptions__.txt</DebugInfo>
+    <DebugInfo>D:\Sharing\Scope2015\PythonUDO\PythonUDO\bin\Debug\58C5C7DBDF061604\LocalRun_ReducerExtractor_C4E1F029DA134F8F\PartitionLastRows.bin</DebugInfo>
+    <Resource>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Core.dll</Resource>
+    <Reference>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Core.dll</Reference>
+    <Input>users/v-hozhao/All_In_One/Input/Python_iris.csv</Input>
+    <Input>users/v-hozhao/All_In_One/Input/Python_SearchLog.tsv</Input>
+    <Output>D:\Sharing\Scope2015\PythonUDO\PythonUDO\users\v-hozhao\All_In_One\Output\Python_ClusterRun_DataFrame_Reducer_Demo_Output.txt</Output>
+    <Output>D:\Sharing\Scope2015\PythonUDO\PythonUDO\users\v-hozhao\All_In_One\Output\Python_ClusterRun_Extractor_Demo_Output.txt</Output>
+  </Manifest>
+</CompileResult>

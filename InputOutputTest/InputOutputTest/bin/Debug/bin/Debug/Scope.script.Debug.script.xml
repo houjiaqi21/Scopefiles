@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CompileResult scriptPath="D:\Scope2015\InputOutputTest\InputOutputTest\bin\Debug\bin\Debug\Scope.script.Debug.script">
+  <LocalRunInfo CommandLineFile="D:\Scope2015\InputOutputTest\InputOutputTest\bin\Debug\FCD1B94FF3209F7B\Scope.script.Debug_23BAFDCD8BDD7FA6\__script__.abr">
+    <LocalRunScriptPaths cachePath="D:\Scope2015\InputOutputTest\InputOutputTest\bin\Debug\FCD1B94FF3209F7B\Scope.script.Debug_23BAFDCD8BDD7FA6" tempPath="D:\Scope2015\InputOutputTest\InputOutputTest\bin\Debug\FCD1B94FF3209F7B\_Temp\Scope.script.Debug_23BAFDCD8BDD7FA6" runtimePath="D:\Scope2015\InputOutputTest\InputOutputTest\bin\Debug\FCD1B94FF3209F7B" />
+  </LocalRunInfo>
+  <Manifest>
+    <DebugInfo>D:\Scope2015\InputOutputTest\InputOutputTest\bin\Debug\FCD1B94FF3209F7B\Scope.script.Debug_23BAFDCD8BDD7FA6\__ScopeCodeGenCompileOutput__.txt</DebugInfo>
+    <DebugInfo>D:\Scope2015\InputOutputTest\InputOutputTest\bin\Debug\FCD1B94FF3209F7B\Scope.script.Debug_23BAFDCD8BDD7FA6\__ScopeCodeGenEngine__.dll.cpp</DebugInfo>
+    <DebugInfo>D:\Scope2015\InputOutputTest\InputOutputTest\bin\Debug\FCD1B94FF3209F7B\Scope.script.Debug_23BAFDCD8BDD7FA6\__Ast__.bin</DebugInfo>
+    <DebugInfo>D:\Scope2015\InputOutputTest\InputOutputTest\bin\Debug\FCD1B94FF3209F7B\Scope.script.Debug_23BAFDCD8BDD7FA6\__ScopeCodeGen__.pdb</DebugInfo>
+    <DebugInfo>D:\Scope2015\InputOutputTest\InputOutputTest\bin\Debug\FCD1B94FF3209F7B\Scope.script.Debug_23BAFDCD8BDD7FA6\__ScopeCodeGen__.dll</DebugInfo>
+    <DebugInfo>D:\Scope2015\InputOutputTest\InputOutputTest\bin\Debug\FCD1B94FF3209F7B\Scope.script.Debug_23BAFDCD8BDD7FA6\ScopeVertexDef.xml</DebugInfo>
+    <DebugInfo>D:\Scope2015\InputOutputTest\InputOutputTest\bin\Debug\FCD1B94FF3209F7B\Scope.script.Debug_23BAFDCD8BDD7FA6\__ScopeInternalInfo__.xml</DebugInfo>
+    <DebugInfo>D:\Scope2015\InputOutputTest\InputOutputTest\bin\Debug\FCD1B94FF3209F7B\Scope.script.Debug_23BAFDCD8BDD7FA6\__script__.abr</DebugInfo>
+    <DebugInfo>D:\Scope2015\InputOutputTest\InputOutputTest\bin\Debug\FCD1B94FF3209F7B\Scope.script.Debug_23BAFDCD8BDD7FA6\ScopeInternalStatistics.xml</DebugInfo>
+    <DebugInfo>D:\Scope2015\InputOutputTest\InputOutputTest\bin\Debug\FCD1B94FF3209F7B\Scope.script.Debug_23BAFDCD8BDD7FA6\__CompilerTrace.log</DebugInfo>
+    <DebugInfo>D:\Scope2015\InputOutputTest\InputOutputTest\bin\Debug\FCD1B94FF3209F7B\Scope.script.Debug_23BAFDCD8BDD7FA6\__ScopeCodeGenCompileOptions__.txt</DebugInfo>
+    <DebugInfo>D:\Scope2015\InputOutputTest\InputOutputTest\bin\Debug\FCD1B94FF3209F7B\Scope.script.Debug_23BAFDCD8BDD7FA6\9.userdata</DebugInfo>
+    <DebugInfo>D:\Scope2015\InputOutputTest\InputOutputTest\bin\Debug\FCD1B94FF3209F7B\Scope.script.Debug_23BAFDCD8BDD7FA6\__SStreamInfo__.xml</DebugInfo>
+    <DebugInfo>D:\Scope2015\InputOutputTest\InputOutputTest\bin\Debug\FCD1B94FF3209F7B\Scope.script.Debug_23BAFDCD8BDD7FA6\ScopeScript.xml</DebugInfo>
+    <DebugInfo>D:\Scope2015\InputOutputTest\InputOutputTest\bin\Debug\FCD1B94FF3209F7B\Scope.script.Debug_23BAFDCD8BDD7FA6\__ScopeCodeGen__.dll.cs</DebugInfo>
+    <DebugInfo>D:\Scope2015\InputOutputTest\InputOutputTest\bin\Debug\FCD1B94FF3209F7B\Scope.script.Debug_23BAFDCD8BDD7FA6\__ScopeCodeGenEngine__.pdb</DebugInfo>
+    <DebugInfo>D:\Scope2015\InputOutputTest\InputOutputTest\bin\Debug\FCD1B94FF3209F7B\Scope.script.Debug_23BAFDCD8BDD7FA6\PartitionLastRows.bin</DebugInfo>
+    <DebugInfo>D:\Scope2015\InputOutputTest\InputOutputTest\bin\Debug\FCD1B94FF3209F7B\Scope.script.Debug_23BAFDCD8BDD7FA6\__ScopeCodeGenEngine__.dll</DebugInfo>
+    <DebugInfo>D:\Scope2015\InputOutputTest\InputOutputTest\bin\Debug\FCD1B94FF3209F7B\Scope.script.Debug_23BAFDCD8BDD7FA6\__ScopeDiagnosisInfo__.xml</DebugInfo>
+    <DebugInfo>D:\Scope2015\InputOutputTest\InputOutputTest\bin\Debug\FCD1B94FF3209F7B\Scope.script.Debug_23BAFDCD8BDD7FA6\__CompilerTimers.xml</DebugInfo>
+    <Resource>c:\program files (x86)\microsoft visual studio\2017\enterprise\common7\ide\extensions\microsoft\scopestudio\2.9.0000.1\ScopeStudioDebugRuntime.dll</Resource>
+    <Reference>c:\program files (x86)\microsoft visual studio\2017\enterprise\common7\ide\extensions\microsoft\scopestudio\2.9.0000.1\ScopeStudioDebugRuntime.dll</Reference>
+    <Input>C:\test\users\v-hozhao\SampleScope\SearchLog.txt</Input>
+    <Output>C:\test\users\v-hozhao\SampleScope\zhao\SampleOutput.txt</Output>
+    <Output>C:\test\users\v-hozhao\SampleScope\SampleOutput.ss</Output>
+  </Manifest>
+</CompileResult>

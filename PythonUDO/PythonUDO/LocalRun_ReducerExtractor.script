@@ -1,0 +1,49 @@
+﻿//Script GUID:b5026507-d182-4878-930e-897fdb739d7a
+//Used for tracking history
+
+
+#DECLARE input_Reducer string = @"/users/v-hozhao/All_In_One/Input/Python_iris.csv";
+#DECLARE output_Reducer string = @"/users/v-hozhao/All_In_One/Output/Python_ClusterRun_DataFrame_Reducer_Demo_Output.txt";
+
+Input =
+    EXTRACT SepalLength: double,
+            SepalWidth: double,
+            PetalLength: double, 
+            PetalWidth: double, 
+            Name: string
+    FROM @input_Reducer
+    USING DefaultTextExtractor(delimiter:',');
+
+Out =
+    REDUCE Input ON Name
+    PRODUCE SepalLength_Mean: double, 
+            SepalWidth_Mean: double, 
+            PetalLength_Mean: double, 
+            PetalWidth_Mean: double, 
+            Name: string,
+            Count: int
+    USING Reducers.Python(prologue: @import_codebehind_LocalRun_ReducerExtractor1_py, expression: "DataFrameDemoReducer()");
+
+OUTPUT Out
+TO @output_Reducer
+USING DefaultTextOutputter(delimiter:',');
+
+////////////////////////////////////////////////////////////
+
+#DECLARE input_Extractor string = @"/users/v-hozhao/All_In_One/Input/Python_SearchLog.tsv";   //Input
+#DECLARE output_Extractor string = @"/users/v-hozhao/All_In_One/Output/Python_ClusterRun_Extractor_Demo_Output.txt";  //Output
+
+searchlog =
+    EXTRACT UserId: string,
+            Start: string,
+            Region: string,
+            Query: string,
+            Duration: string,
+            Urls: string,
+            ClickedUrls: string
+    FROM @input_Extractor
+    USING Extractors.Python(prologue: @import_codebehind_LocalRun_ReducerExtractor1_py, expression: "SearchLogExtractor()");
+
+OUTPUT searchlog
+TO @output_Extractor
+USING DefaultTextOutputter(delimiter:',');

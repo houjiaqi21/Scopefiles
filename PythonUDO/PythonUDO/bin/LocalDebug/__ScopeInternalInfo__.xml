@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CSSRelatedInfo>
+  <OptimizerPlanInfo signatureVersion="1">
+    <TableScan present="True" occurrence="2" />
+    <PartitionSeek present="False" occurrence="0" />
+    <PartitionRange present="False" occurrence="0" />
+    <IndexSeek present="False" occurrence="0" />
+    <IndexRange present="False" occurrence="0" />
+    <Join present="False" occurrence="0" />
+    <GroupByAgg present="False" occurrence="0" />
+    <UDProcessor present="False" occurrence="0" />
+    <UDReducer present="True" occurrence="1" />
+    <UDCombiner present="False" occurrence="0" />
+    <UDMultiProcessor present="False" occurrence="0" />
+    <Top present="False" occurrence="0" />
+    <Costs>
+      <ExtractCardinality>78.81</ExtractCardinality>
+      <InputSize>7881</InputSize>
+      <OutputCardinality>43.575</OutputCardinality>
+      <NumTable>2</NumTable>
+      <DataTransferVolume>0</DataTransferVolume>
+      <Latency>0.0297163542407407</Latency>
+      <TotalCost>0.0498679628289059</TotalCost>
+      <EstimatedNumEdges>0</EstimatedNumEdges>
+    </Costs>
+    <OptimizerTrees>
+<InputTree>
+    <LogOp Id="LogOp_Sequence">
+      <OpInfo><TableGroupProperties Grp="Unknown" Remotable="False"/></OpInfo>
+      <LogOp Id="LogOp_Output" Table="D:\Sharing\Scope2015\PythonUDO\PythonUDO\users\v-hozhao\All_In_One\Output\Python_ClusterRun_DataFrame_Reducer_Demo_Output.txt" XMode="All" Out="SepalLength_Mean,SepalWidth_Mean,PetalLength_Mean,PetalWidth_Mean,Name,Count" Udf="DefaultTextOutputter">
+        <OpInfo><TableGroupProperties Grp="2.0" Remotable="False" Card="11.745" AvgRowLength="44"/></OpInfo>
+        <LogOp Id="LogOp_Reduce" Udf="Python" ReduceType="Normal" Out="SepalLength_Mean,SepalWidth_Mean,PetalLength_Mean,PetalWidth_Mean,Name,Count" By="Name" UDMap="">
+          <OpInfo><TableGroupProperties Grp="1.0" Remotable="False" Card="11.745" AvgRowLength="44"/></OpInfo>
+          <LogOp Id="LogOp_Extract" Table="D:\Sharing\Scope2015\PythonUDO\PythonUDO\users\v-hozhao\All_In_One\Input\Python_iris.csv" XMode="Serial" Udf="DefaultTextExtractor">
+            <OpInfo><TableGroupProperties Grp="0.0" Remotable="False" Card="46.98" AvgRowLength="40"/></OpInfo>
+          </LogOp>
+        </LogOp>
+      </LogOp>
+      <LogOp Id="LogOp_Output" Table="D:\Sharing\Scope2015\PythonUDO\PythonUDO\users\v-hozhao\All_In_One\Output\Python_ClusterRun_Extractor_Demo_Output.txt" XMode="All" Out="UserId,Start,Region,Query,Duration,Urls,ClickedUrls" Udf="DefaultTextOutputter">
+        <OpInfo><TableGroupProperties Grp="4.0" Remotable="False" Card="31.83" AvgRowLength="56"/></OpInfo>
+        <LogOp Id="LogOp_Extract" Table="D:\Sharing\Scope2015\PythonUDO\PythonUDO\users\v-hozhao\All_In_One\Input\Python_SearchLog.tsv" XMode="Serial" Udf="Python">
+          <OpInfo><TableGroupProperties Grp="3.0" Remotable="False" Card="31.83" AvgRowLength="56"/></OpInfo>
+        </LogOp>
+      </LogOp>
+    </LogOp>
+</InputTree>
+<OutputTree>
+    <PhyOp Id="PhyOp_Sequence">
+      <OpInfo><TableGroupProperties Grp="5.1" Remotable="False" Card="0" CardFromHint="True" AvgRowLength="1" PrtnSkewFactor="1" HT="16886012409799293154:237::2:3932587268686951286" HTS="8293795392894444635" HTN="11860223652156153853:1429905830824752180:5163688446257248501" HTC="2713607311255077596"/><PinnedPlan RuleId="70"/><Costs TotalCosts="0.049868"/></OpInfo>
+      <PhyOp Id="PhyOp_Output" Table="D:\Sharing\Scope2015\PythonUDO\PythonUDO\users\v-hozhao\All_In_One\Output\Python_ClusterRun_DataFrame_Reducer_Demo_Output.txt" XMode="Serial" Out="SepalLength_Mean,SepalWidth_Mean,PetalLength_Mean,PetalWidth_Mean,Name,Count" Udf="DefaultTextOutputter">
+        <OpInfo><TableGroupProperties Grp="2.1" Remotable="False" Card="11.745" AvgRowLength="44" PrtnSkewFactor="1" HT="4074460319340519896:228::2:8598152226630069075" HTS="17192275745976640191" HTN="769687091179886988:290880136870087404:18082755741661396079" HTC="4355680133906899040"/><PinnedPlan RuleId="62"/><Costs TotalCosts="0.0201516"/></OpInfo>
+        <PhyOp Id="PhyOp_Reduce" Udf="Python" ReduceType="Normal" Bulk="False" On="Name ASC" SortColumn="Name ASC" UDMap="">
+          <OpInfo><TableGroupProperties Grp="1.1" Remotable="False" Card="11.745" AvgRowLength="44" PrtnSkewFactor="1" HT="8598152226630069075:26:0:1:16525352637852469576" HTS="18170222159646709355" HTN="5161374475770645997:385462225264981118:18082755741661396079" HTC="1281666657598137528"/><PinnedPlan RuleId="66"/><Costs TotalCosts="0.00896081"/></OpInfo>
+          <PhyOp Id="PhyOp_Sort" SortColumn="Name ASC">
+            <OpInfo><TableGroupProperties Grp="0.2" Remotable="False" Card="46.98" AvgRowLength="40" PrtnSkewFactor="1" HT="16525352637852469576:115::0:0" HTS="11292652777683438755" HTN="4337077172451322301:7358768758053956660:18082755741661396079" HTC="12284796710896535491"/><PinnedPlan RuleId="35"/><Costs TotalCosts="0.00658245"/></OpInfo>
+            <PhyOp Id="PhyOp_Extract" Table="D:\Sharing\Scope2015\PythonUDO\PythonUDO\users\v-hozhao\All_In_One\Input\Python_iris.csv" XMode="Serial" Udf="DefaultTextExtractor">
+              <OpInfo><TableGroupProperties Grp="0.3" Remotable="False" Card="46.98" AvgRowLength="40" PrtnSkewFactor="1" HT="16525352637852469576:115::0:0" HTS="11292652777683438755" HTN="4337077172451322301:7358768758053956660:18082755741661396079" HTC="12284796710896535491"/><PinnedPlan RuleId="60"/><Costs TotalCosts="0.00607352"/></OpInfo>
+            </PhyOp>
+          </PhyOp>
+        </PhyOp>
+      </PhyOp>
+      <PhyOp Id="PhyOp_Output" Table="D:\Sharing\Scope2015\PythonUDO\PythonUDO\users\v-hozhao\All_In_One\Output\Python_ClusterRun_Extractor_Demo_Output.txt" XMode="Serial" Out="UserId,Start,Region,Query,Duration,Urls,ClickedUrls" Udf="DefaultTextOutputter">
+        <OpInfo><TableGroupProperties Grp="4.1" Remotable="False" Card="31.83" AvgRowLength="56" PrtnSkewFactor="1" HT="18304871023055983006:228::1:16042989268053431083" HTS="18033650577862232537" HTN="2194548030127566841:7264186669659062946:5527676778305404038" HTC="14420332135457131673"/><PinnedPlan RuleId="62"/><Costs TotalCosts="0.0297164"/></OpInfo>
+        <PhyOp Id="PhyOp_Extract" Table="D:\Sharing\Scope2015\PythonUDO\PythonUDO\users\v-hozhao\All_In_One\Input\Python_SearchLog.tsv" XMode="Serial" Udf="Python">
+          <OpInfo><TableGroupProperties Grp="3.1" Remotable="False" Card="31.83" AvgRowLength="56" PrtnSkewFactor="1" HT="16042989268053431083:115::0:0" HTS="15996255375486156044" HTN="1728043773069071328:7358768758053956660:5527676778305404038" HTC="16193028399721359822"/><PinnedPlan RuleId="60"/><Costs TotalCosts="0.00493452"/></OpInfo>
+        </PhyOp>
+      </PhyOp>
+    </PhyOp>
+</OutputTree>
+<Rules Used="00000000000000000000000000000000000100000000000000000000000010100010001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"/></OptimizerTrees>
+  </OptimizerPlanInfo>
+  <QueryTracer>
+    <Input count="2">
+      <StreamProvenance>D:\Sharing\Scope2015\PythonUDO\PythonUDO\users\v-hozhao\All_In_One\Input\Python_SearchLog.tsv</StreamProvenance>
+      <dependency count="7">
+        <columnprovenance>UserId</columnprovenance>
+        <columnprovenance>Urls</columnprovenance>
+        <columnprovenance>Region</columnprovenance>
+        <columnprovenance>Start</columnprovenance>
+        <columnprovenance>Query</columnprovenance>
+        <columnprovenance>Duration</columnprovenance>
+        <columnprovenance>ClickedUrls</columnprovenance>
+      </dependency>
+      <StreamProvenance>D:\Sharing\Scope2015\PythonUDO\PythonUDO\users\v-hozhao\All_In_One\Input\Python_iris.csv</StreamProvenance>
+      <dependency count="5">
+        <columnprovenance>Name</columnprovenance>
+        <columnprovenance>SepalLength</columnprovenance>
+        <columnprovenance>SepalWidth</columnprovenance>
+        <columnprovenance>PetalLength</columnprovenance>
+        <columnprovenance>PetalWidth</columnprovenance>
+      </dependency>
+    </Input>
+    <SelectedInput count="0" />
+    <Output count="1">
+      <StreamProvenance>D:\Sharing\Scope2015\PythonUDO\PythonUDO\users\v-hozhao\All_In_One\Input\Python_SearchLog.tsv</StreamProvenance>
+      <dependency count="7">
+        <columnprovenance>UserId</columnprovenance>
+        <columnprovenance>Urls</columnprovenance>
+        <columnprovenance>Region</columnprovenance>
+        <columnprovenance>Start</columnprovenance>
+        <columnprovenance>Query</columnprovenance>
+        <columnprovenance>Duration</columnprovenance>
+        <columnprovenance>ClickedUrls</columnprovenance>
+      </dependency>
+    </Output>
+  </QueryTracer>
+</CSSRelatedInfo>

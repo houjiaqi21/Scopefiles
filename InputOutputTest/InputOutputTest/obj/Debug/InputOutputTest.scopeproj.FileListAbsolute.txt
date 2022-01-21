@@ -1,0 +1,4 @@
+D:\Scope2015\InputOutputTest\InputOutputTest\bin\Debug\Algebra.xml
+D:\Scope2015\InputOutputTest\InputOutputTest\obj\Debug\InputOutputTest.scopeprojAssemblyReference.cache
+D:\Scope2015\InputOutputTest\InputOutputTest\obj\Debug\InputOutputTest.scopeproj.CoreCompileInputs.cache
+D:\Scope2015\InputOutputTest\InputOutputTest\obj\Debug\Algebra.xml

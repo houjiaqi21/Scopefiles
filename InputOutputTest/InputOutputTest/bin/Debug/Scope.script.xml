@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CompileResult scriptPath="D:\Scope2015\InputOutputTest\InputOutputTest\bin\Debug\Scope.script">
+  <LocalRunInfo CommandLineFile="D:\Scope2015\InputOutputTest\InputOutputTest\bin\Debug\FCD1B94FF3209F7B\Scope_AC6B4123CBD6949D\__script__.abr">
+    <LocalRunScriptPaths cachePath="D:\Scope2015\InputOutputTest\InputOutputTest\bin\Debug\FCD1B94FF3209F7B\Scope_AC6B4123CBD6949D" tempPath="D:\Scope2015\InputOutputTest\InputOutputTest\bin\Debug\FCD1B94FF3209F7B\_Temp\Scope_AC6B4123CBD6949D" runtimePath="D:\Scope2015\InputOutputTest\InputOutputTest\bin\Debug\FCD1B94FF3209F7B" />
+  </LocalRunInfo>
+  <Manifest>
+    <DebugInfo>D:\Scope2015\InputOutputTest\InputOutputTest\bin\Debug\FCD1B94FF3209F7B\Scope_AC6B4123CBD6949D\__ScopeDiagnosisInfo__.xml</DebugInfo>
+    <DebugInfo>D:\Scope2015\InputOutputTest\InputOutputTest\bin\Debug\FCD1B94FF3209F7B\Scope_AC6B4123CBD6949D\ScopeVertexDef.xml</DebugInfo>
+    <DebugInfo>D:\Scope2015\InputOutputTest\InputOutputTest\bin\Debug\FCD1B94FF3209F7B\Scope_AC6B4123CBD6949D\ScopeScript.xml</DebugInfo>
+    <DebugInfo>D:\Scope2015\InputOutputTest\InputOutputTest\bin\Debug\FCD1B94FF3209F7B\Scope_AC6B4123CBD6949D\__ScopeCodeGenEngine__.dll</DebugInfo>
+    <DebugInfo>D:\Scope2015\InputOutputTest\InputOutputTest\bin\Debug\FCD1B94FF3209F7B\Scope_AC6B4123CBD6949D\__script__.abr</DebugInfo>
+    <DebugInfo>D:\Scope2015\InputOutputTest\InputOutputTest\bin\Debug\FCD1B94FF3209F7B\Scope_AC6B4123CBD6949D\__ScopeCodeGenCompileOutput__.txt</DebugInfo>
+    <DebugInfo>D:\Scope2015\InputOutputTest\InputOutputTest\bin\Debug\FCD1B94FF3209F7B\Scope_AC6B4123CBD6949D\9.userdata</DebugInfo>
+    <DebugInfo>D:\Scope2015\InputOutputTest\InputOutputTest\bin\Debug\FCD1B94FF3209F7B\Scope_AC6B4123CBD6949D\__Ast__.bin</DebugInfo>
+    <DebugInfo>D:\Scope2015\InputOutputTest\InputOutputTest\bin\Debug\FCD1B94FF3209F7B\Scope_AC6B4123CBD6949D\__CompilerTrace.log</DebugInfo>
+    <DebugInfo>D:\Scope2015\InputOutputTest\InputOutputTest\bin\Debug\FCD1B94FF3209F7B\Scope_AC6B4123CBD6949D\__ScopeCodeGen__.dll</DebugInfo>
+    <DebugInfo>D:\Scope2015\InputOutputTest\InputOutputTest\bin\Debug\FCD1B94FF3209F7B\Scope_AC6B4123CBD6949D\__ScopeCodeGen__.dll.cs</DebugInfo>
+    <DebugInfo>D:\Scope2015\InputOutputTest\InputOutputTest\bin\Debug\FCD1B94FF3209F7B\Scope_AC6B4123CBD6949D\__ScopeCodeGenCompileOptions__.txt</DebugInfo>
+    <DebugInfo>D:\Scope2015\InputOutputTest\InputOutputTest\bin\Debug\FCD1B94FF3209F7B\Scope_AC6B4123CBD6949D\__ScopeCodeGenEngine__.dll.cpp</DebugInfo>
+    <DebugInfo>D:\Scope2015\InputOutputTest\InputOutputTest\bin\Debug\FCD1B94FF3209F7B\Scope_AC6B4123CBD6949D\PartitionLastRows.bin</DebugInfo>
+    <DebugInfo>D:\Scope2015\InputOutputTest\InputOutputTest\bin\Debug\FCD1B94FF3209F7B\Scope_AC6B4123CBD6949D\__CompilerTimers.xml</DebugInfo>
+    <DebugInfo>D:\Scope2015\InputOutputTest\InputOutputTest\bin\Debug\FCD1B94FF3209F7B\Scope_AC6B4123CBD6949D\__ScopeInternalInfo__.xml</DebugInfo>
+    <DebugInfo>D:\Scope2015\InputOutputTest\InputOutputTest\bin\Debug\FCD1B94FF3209F7B\Scope_AC6B4123CBD6949D\__SStreamInfo__.xml</DebugInfo>
+    <DebugInfo>D:\Scope2015\InputOutputTest\InputOutputTest\bin\Debug\FCD1B94FF3209F7B\Scope_AC6B4123CBD6949D\ScopeInternalStatistics.xml</DebugInfo>
+    <DebugInfo>D:\Scope2015\InputOutputTest\InputOutputTest\bin\Debug\FCD1B94FF3209F7B\Scope_AC6B4123CBD6949D\__ScopeCodeGen__.pdb</DebugInfo>
+    <DebugInfo>D:\Scope2015\InputOutputTest\InputOutputTest\bin\Debug\FCD1B94FF3209F7B\Scope_AC6B4123CBD6949D\__ScopeCodeGenEngine__.pdb</DebugInfo>
+    <Input>C:\test\users\v-hozhao\SampleScope\SearchLog.txt</Input>
+    <Output>C:\test\users\v-hozhao\SampleScope\zhao\SampleOutput.txt</Output>
+    <Output>C:\test\users\v-hozhao\SampleScope\SampleOutput.ss</Output>
+  </Manifest>
+</CompileResult>

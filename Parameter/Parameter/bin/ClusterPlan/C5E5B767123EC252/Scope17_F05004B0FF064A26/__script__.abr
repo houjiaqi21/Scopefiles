@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScriptAndGraph GraphType="NebulaAlgebra" SignatureVersion="1">
+  <graph serveForThirdParty="True" JsonErrors="True" JobType="BatchScopeServerGC" vertexExecutable="scopehost.exe" BroadcastCopyThroughCommandLine="ScopeEngine.dll -scopeVertex SV_CopyThrough">
+    <process id="SV1_Extract" command="ScopeEngine.dll -scopeVertex SV1_Extract" nativeOnly="true" managedMemorySize="0" engineIOMemorySize="125829120" engineOperatorMemorySize="1000000064" DummyVertexOptimization="AllInputsEmptyImpliesOutputsEmpty|RunAtLeastOneVertex">
+      <groupedinput id="Extract_0[dim_0,ALL]" groupSize="2" streamSize="3398" cosmosStream="adl://sandbox-c08.azuredatalakestore.net/users/v-hozhao/Inputs/SearchLog.txt">
+        <cosmosStream cosmosPath="adl://sandbox-c08.azuredatalakestore.net/users/v-hozhao/Inputs/SearchLog.txt" streamSize="3398" />
+      </groupedinput>
+      <output id="SV1_Extract_out0[dim_0]" cosmosStream="adl://sandbox-c08.azuredatalakestore.net/users/v-hozhao/out.txt" />
+    </process>
+  </graph>
+  <Scopescript>//Script GUID:ffbb629f-5321-49cd-a5e7-0c552d6a43f4
+//Used for tracking history
+
+EXTRACT IId:int, 
+        //UId:int, 
+        Start:DateTime, 
+        Market:string, 
+        Query:string, 
+        DwellTime:int, 
+        Results:string,
+        ClickedUrls:string
+        
+FROM @"/users/v-hozhao/Inputs/SearchLog.txt"
+USING DefaultTextExtractor();
+
+  
+
+#IF (LOCAL)
+SELECT IId, 
+       //UId,
+       
+       -1 AS b;
+#ELSE
+SELECT IId, 
+       //UId,
+       Start,
+       -1 AS b;
+
+#ENDIF 
+
+OUTPUT 
+TO @"/users/v-hozhao/out.txt";</Scopescript>
+  <Optimization succeeded="true" time="00:00:00.0525653" latency="0.0185608573063063" totalCost="0.0371217146126126" />
+  <ScopeVertexAnnotations />
+</ScriptAndGraph>

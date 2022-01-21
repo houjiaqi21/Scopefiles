@@ -1,0 +1,11 @@
+﻿//Script GUID:0aebaf13-9abc-4c24-afab-a66344cb4155
+//Used for tracking history
+
+//Submit to cosmosadmin-c09
+searchlog =
+     VIEW @"adl://sandbox-c08.azuredatalakestore.net/users/v-hozhao/All_In_One/Input/SearchLog.view";
+           
+OUTPUT searchlog
+TO "adl://cosmosadmin-c09.azuredatalakestore.net/users/v-hozhao/Sample_ViewOutput.txt"
+USING DefaultTextOutputter();
+

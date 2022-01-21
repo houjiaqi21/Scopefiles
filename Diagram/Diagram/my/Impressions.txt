@@ -1,0 +1,3 @@
+9824532	0	1	best ski resorts	614
+6461815	333333	5	microsoft	241
+3540314	112233	14	food recipes	183

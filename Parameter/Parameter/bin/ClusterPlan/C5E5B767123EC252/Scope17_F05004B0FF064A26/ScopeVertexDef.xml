@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScopeVertices helperAssembly="__ScopeCodeGen__.dll" signatureVersion="1">
+  <ScopeVertex id="SV1_Extract" cppReady="true" nativeOnly="true">
+    <EstimatedLimitMemory processMemory="1650117184" managedMemory="0" adapterMemory="0" engineMemory="1125829184" engineIOMemory="125829120" engineOperatorMemory="1000000064" minEngineOperatorMemory="1000000064" />
+    <EstimatedOptimalMemory processMemory="1650117184" managedMemory="0" adapterMemory="0" engineMemory="1125829184" engineIOMemory="125829120" engineOperatorMemory="1000000064" minEngineOperatorMemory="1000000064" />
+    <operator id="Extract_0" uid="1" assemblyName="ScopeRuntime.exe" className="ScopeRuntime.DefaultTextExtractor" signature="10502298925820268311!0!Strict">
+      <input id="Extract_0" uid="1" schema="IId:int,Start:DateTime,Market:string,Query:string,DwellTime:int,Results:string,ClickedUrls:string" inputIndex="0" numberOfInputs="ALL" />
+      <output id="Extract_0_Data0" uid="2" schema="IId:int,Start:DateTime" />
+      <ReflectedScopeScript><![CDATA[_var_100001_EXTRACT = EXTRACT IId:int,Start:DateTime FROM @"adl://sandbox-c08.azuredatalakestore.net/users/v-hozhao/Inputs/SearchLog.txt" USING ScopeRuntime.DefaultTextExtractor();
+]]></ReflectedScopeScript>
+    </operator>
+    <operator id="Process_1" uid="3" assemblyName="__ScopeCodeGen__.dll" className="ScopeFilterTransformer_3" signature="10502298925820268311!0!Strict">
+      <input id="Extract_0_Data0" uid="2" schema="IId:int,Start:DateTime" />
+      <output id="Process_1_Data0" uid="4" schema="IId:int,Start:DateTime,b:int" />
+      <ReflectedScopeScript><![CDATA[_var_100002_TRANSFORM = SELECT -1 AS b, IId AS IId, Start AS Start FROM _var_100001_EXTRACT;
+_var_100003_TRANSFORM = SELECT IId AS IId, Start AS Start, b AS b FROM _var_100002_TRANSFORM;
+]]></ReflectedScopeScript>
+    </operator>
+    <operator id="Output_2" uid="5" assemblyName="ScopeRuntime.exe" className="ScopeRuntime.DefaultTextOutputter" signature="10033765608280068560!5!Strict">
+      <input id="Process_1_Data0" uid="4" schema="IId:int,Start:DateTime,b:int" />
+      <output id="SV1_Extract_out0" uid="5" schema="IId:int,Start:DateTime,b:int" outputIndex="0" numberOfOutputs="1" finalOutput="true" />
+      <ReflectedScopeScript><![CDATA[OUTPUT _var_100003_TRANSFORM TO @"adl://sandbox-c08.azuredatalakestore.net/users/v-hozhao/out.txt" USING ScopeRuntime.DefaultTextOutputter();
+]]></ReflectedScopeScript>
+    </operator>
+  </ScopeVertex>
+</ScopeVertices>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScopeScript>
+  <preScript><![CDATA[
+USING Microsoft.Analytics.Interfaces;
+USING System;
+USING System.Collections.Generic;
+USING System.Text;
+USING System.Reflection;
+USING System.IO;
+USING System.Text.RegularExpressions;
+USING System.Threading;
+USING System.Runtime.Serialization;
+USING System.Linq;
+USING Microsoft.SCOPE.Types;
+USING ScopeRuntime;
+USING ScopeRuntime.Diagnostics;
+
+REFERENCE @"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\System.Core.dll";
+]]></preScript>
+  <ScopeVertices>
+    <ScopeVertex id="SV1_Extract" ScopeScriptEndPoint="true">
+      <input id="Extract_0" />
+      <output id="SV1_Extract_out0" schema="AdId:int,IId:int,Impression:int" scopeLabel="_var_100002_LSORT" /><![CDATA[_var_100001_EXTRACT = EXTRACT AdId:int,IId:int,Impression:int FROM @"my/AdsLog.txt" USING ScopeRuntime.DefaultTextExtractor();
+_var_100002_LSORT = SELECT AdId, IId, Impression FROM _var_100001_EXTRACT ORDER BY IId;
+]]></ScopeVertex>
+    <ScopeVertex id="SV2_Extract" ScopeScriptEndPoint="true">
+      <input id="Extract_2" />
+      <output id="SV2_Extract_out0" schema="Query:string,DwellTime:int,IId1:int" scopeLabel="_var_100007_LSORT" /><![CDATA[_var_100003_EXTRACT = EXTRACT IId:int,Market:string,Query:string,DwellTime:int FROM @"my/SearchLog.txt" USING ScopeRuntime.DefaultTextExtractor();
+_var_100004_FILTER = SELECT IId, Market, Query, DwellTime FROM _var_100003_EXTRACT WHERE DwellTime >= 120 && DwellTime <= 300 || Market == "en-gb";
+_var_100005_TRANSFORM = SELECT IId AS IId, Query AS Query, DwellTime AS DwellTime FROM _var_100004_FILTER;
+_var_100006_TRANSFORM = SELECT Query AS Query, DwellTime AS DwellTime, IId AS IId1 FROM _var_100005_TRANSFORM;
+_var_100007_LSORT = SELECT Query, DwellTime, IId1 FROM _var_100006_TRANSFORM ORDER BY IId1;
+]]></ScopeVertex>
+    <ScopeVertex id="SV3_Combine" ScopeScriptEndPoint="true">
+      <input id="SV1_Extract_out0" />
+      <input id="SV2_Extract_out0" />
+      <output id="SV3_Combine_out0" schema="AdId:int,IId:int,Impression:int,Query:string,DwellTime:int" scopeLabel="" /><![CDATA[_var_100008_INTERNAL_COMBINE = SELECT AdId, IId, Impression, Query, DwellTime FROM _var_100002_LSORT AS AliasLeft INNER JOIN _var_100007_LSORT AS AliasRight ON AliasLeft.IId == AliasRight.IId1;
+_var_100009_LSORT = SELECT AdId, IId, Impression, Query, DwellTime FROM _var_100008_INTERNAL_COMBINE ORDER BY DwellTime DESC;
+_var_100010_TOP = SELECT TOP 100 AdId, IId, Impression, Query, DwellTime FROM _var_100009_LSORT;
+_var_100011_PROCESS = PROCESS _var_100010_TOP PRODUCE AdId, IId, Impression, Query, DwellTime USING ImpressionProcessor();
+OUTPUT _var_100011_PROCESS TO @"https://cosmos08.osdinfra.net/cosmos/sandbox/my/Impressions.txt" USING ScopeRuntime.DefaultTextOutputter();
+]]></ScopeVertex>
+  </ScopeVertices>
+  <postScript><![CDATA[#CS
+
+public class ImpressionProcessor : Processor
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="columns"></param>
+    /// <param name="args"></param>
+    /// <param name="input"></param>
+    /// <returns></returns>
+    public override Schema Produces(string[] columns, string[] args, Schema input)
+    {
+        return input.Clone();
+    }
+    /// <summary>
+    ///
+    /// </summary>
+    /// <param name="input"></param>
+    /// <param name="output"></param>
+    /// <param name="args"></param>
+    /// <returns></returns>    
+    public override IEnumerable<Row> Process(RowSet input, Row output, string[] args)
+    {
+
+        foreach (Row row in input.Rows)
+        {
+            row.CopyTo(output);
+            output[2].Set(10000000 / (row[2].Integer));
+            if (row[2].Integer < 10000000)
+            {
+                DebugStream.WriteLine(String.Format("Impression = {0}", row[2].Integer));
+            }
+            //output[2].Set(10000000 / (row[2].Integer / 10000000));
+            yield return output;
+        }
+    }
+}
+#ENDCS]]></postScript>
+</ScopeScript>

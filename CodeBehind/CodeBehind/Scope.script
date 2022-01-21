@@ -1,0 +1,28 @@
+﻿//Script GUID:1f2da6a8-b000-40e2-88ce-e984ba1fdc97
+//Used for tracking history
+
+searchlog =
+EXTRACT UserId : int,
+Start : DateTime,
+Region : string,
+Query : string,
+Duration : int,
+Urls : string,
+ClickedUrls : string
+FROM @"/users/v-hozhao/All_In_One/Input/SearchLog.txt" //input //adl://sandbox-c08.azuredatalakestore.net/users/v-hozhao/Aggregates/
+USING DefaultTextExtractor();
+
+
+
+rs1 =
+SELECT Region,
+MySum(Duration) AS TotalDuration
+FROM searchlog
+GROUP BY Region;
+
+
+
+OUTPUT rs1
+TO @"/users/v-hozhao/All_In_One/Output/CodeBehind_Aggregatesoutput.txt"; // Output
+
+

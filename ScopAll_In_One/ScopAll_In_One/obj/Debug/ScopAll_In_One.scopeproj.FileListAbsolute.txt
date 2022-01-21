@@ -1,0 +1,8 @@
+D:\Sharing\Scope2015\ScopAll_In_One\ScopAll_In_One\bin\Debug\Algebra.xml
+D:\Sharing\Scope2015\ScopAll_In_One\ScopAll_In_One\obj\Debug\ScopAll_In_One.scopeprojAssemblyReference.cache
+D:\Sharing\Scope2015\ScopAll_In_One\ScopAll_In_One\obj\Debug\ScopAll_In_One.scopeproj.CoreCompileInputs.cache
+D:\Sharing\Scope2015\ScopAll_In_One\ScopAll_In_One\obj\Debug\Algebra.xml
+D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\bin\Debug\Algebra.xml
+D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\obj\Debug\ScopAll_In_One.scopeprojAssemblyReference.cache
+D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\obj\Debug\ScopAll_In_One.scopeproj.CoreCompileInputs.cache
+D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\obj\Debug\Algebra.xml

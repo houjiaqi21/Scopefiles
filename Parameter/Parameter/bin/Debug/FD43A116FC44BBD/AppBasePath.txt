@@ -1,0 +1,1 @@
+d:\vs2017\microsoft visual studio\2017\enterprise\common7\ide\extensions\microsoft\scopestudio\3.1.0000.1\CosmosRuntimeSDK

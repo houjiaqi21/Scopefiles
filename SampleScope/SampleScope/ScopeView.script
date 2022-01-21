@@ -1,0 +1,10 @@
+﻿//Script GUID:9d0e01e9-f98a-4ab7-b885-2a24e43ebf1a
+//Used for tracking history
+
+                   
+searchlog =
+    VIEW @"/users/v-hozhao/All_In_One/Input/SearchLog.view"; 
+           
+OUTPUT searchlog
+TO "/users/v-hozhao/All_In_One/Output/Sample_ViewOutput.txt"
+USING DefaultTextOutputter();

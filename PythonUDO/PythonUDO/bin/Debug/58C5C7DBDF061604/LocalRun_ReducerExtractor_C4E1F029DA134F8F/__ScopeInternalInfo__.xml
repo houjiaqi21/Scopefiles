@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CSSRelatedInfo>
+  <OptimizerPlanInfo signatureVersion="1">
+    <TableScan present="True" occurrence="2" />
+    <PartitionSeek present="False" occurrence="0" />
+    <PartitionRange present="False" occurrence="0" />
+    <IndexSeek present="False" occurrence="0" />
+    <IndexRange present="False" occurrence="0" />
+    <Join present="False" occurrence="0" />
+    <GroupByAgg present="False" occurrence="0" />
+    <UDProcessor present="False" occurrence="0" />
+    <UDReducer present="True" occurrence="1" />
+    <UDCombiner present="False" occurrence="0" />
+    <UDMultiProcessor present="False" occurrence="0" />
+    <Top present="False" occurrence="0" />
+    <Costs>
+      <ExtractCardinality>9990000000</ExtractCardinality>
+      <InputSize>999000000000</InputSize>
+      <OutputCardinality>6243750000</OutputCardinality>
+      <NumTable>2</NumTable>
+      <DataTransferVolume>0</DataTransferVolume>
+      <Latency>3755526.50578474</Latency>
+      <TotalCost>7250459.56970972</TotalCost>
+      <EstimatedNumEdges>0</EstimatedNumEdges>
+    </Costs>
+    <OptimizerTrees>
+<InputTree>
+    <LogOp Id="LogOp_Sequence">
+      <OpInfo><TableGroupProperties Grp="Unknown" Remotable="False"/></OpInfo>
+      <LogOp Id="LogOp_Output" Table="https://cosmos09.osdinfra.net/cosmos/cosmosAdmin/users/v-hozhao/All_In_One/Output/Python_ClusterRun_DataFrame_Reducer_Demo_Output.txt" XMode="All" Out="SepalLength_Mean,SepalWidth_Mean,PetalLength_Mean,PetalWidth_Mean,Name,Count" Udf="DefaultTextOutputter">
+        <OpInfo><TableGroupProperties Grp="2.0" Remotable="False" Card="1.24875e+09" AvgRowLength="44"/></OpInfo>
+        <LogOp Id="LogOp_Reduce" Udf="Python" ReduceType="Normal" Out="SepalLength_Mean,SepalWidth_Mean,PetalLength_Mean,PetalWidth_Mean,Name,Count" By="Name" UDMap="">
+          <OpInfo><TableGroupProperties Grp="1.0" Remotable="False" Card="1.24875e+09" AvgRowLength="44"/></OpInfo>
+          <LogOp Id="LogOp_Extract" Table="/users/v-hozhao/All_In_One/Input/Python_iris.csv" XMode="Parallel" PartitionType="Nil" Partitioning="" Partitions="500(UB)" Udf="DefaultTextExtractor">
+            <OpInfo><TableGroupProperties Grp="0.0" Remotable="False" Card="4.995e+09" AvgRowLength="40"/></OpInfo>
+          </LogOp>
+        </LogOp>
+      </LogOp>
+      <LogOp Id="LogOp_Output" Table="https://cosmos09.osdinfra.net/cosmos/cosmosAdmin/users/v-hozhao/All_In_One/Output/Python_ClusterRun_Extractor_Demo_Output.txt" XMode="All" Out="UserId,Start,Region,Query,Duration,Urls,ClickedUrls" Udf="DefaultTextOutputter">
+        <OpInfo><TableGroupProperties Grp="4.0" Remotable="False" Card="4.995e+09" AvgRowLength="56"/></OpInfo>
+        <LogOp Id="LogOp_Extract" Table="/users/v-hozhao/All_In_One/Input/Python_SearchLog.tsv" XMode="Parallel" PartitionType="Nil" Partitioning="" Partitions="500(UB)" Udf="Python">
+          <OpInfo><TableGroupProperties Grp="3.0" Remotable="False" Card="4.995e+09" AvgRowLength="56"/></OpInfo>
+        </LogOp>
+      </LogOp>
+    </LogOp>
+</InputTree>
+<OutputTree>
+    <PhyOp Id="PhyOp_Sequence">
+      <OpInfo><TableGroupProperties Grp="5.1" Remotable="False" Card="0" CardFromHint="True" AvgRowLength="1" PrtnSkewFactor="1" HT="10971924663115336556:237::2:4666124361433092333" HTS="1696143733961650424" HTN="11860223652156153853:1429905830824752180:812220655545651368" HTC="17060921107225653503"/><PinnedPlan RuleId="70"/><Costs TotalCosts="7.25046e+06"/></OpInfo>
+      <PhyOp Id="PhyOp_Output" Table="https://cosmos09.osdinfra.net/cosmos/cosmosAdmin/users/v-hozhao/All_In_One/Output/Python_ClusterRun_DataFrame_Reducer_Demo_Output.txt" XMode="Serial" Out="SepalLength_Mean,SepalWidth_Mean,PetalLength_Mean,PetalWidth_Mean,Name,Count" Udf="DefaultTextOutputter">
+        <OpInfo><TableGroupProperties Grp="2.1" Remotable="False" Card="1.24875e+09" AvgRowLength="44" PrtnSkewFactor="1" HT="15354696622021190746:228::2:8240861768962028076" HTS="10938675105916666116" HTN="769687091179886988:290880136870087404:16026368670040208979" HTC="10128734614657774212"/><PinnedPlan RuleId="62"/><Costs TotalCosts="3.49493e+06"/></OpInfo>
+        <PhyOp Id="PhyOp_Reduce" Udf="Python" ReduceType="Normal" Bulk="False" On="Name ASC" SortColumn="Name ASC" UDMap="">
+          <OpInfo><TableGroupProperties Grp="1.1" Remotable="False" Card="1.24875e+09" AvgRowLength="44" PrtnSkewFactor="1" HT="8240861768962028076:26:0:1:11060766180486835672" HTS="1598244648836399937" HTN="5161374475770645997:385462225264981118:16026368670040208979" HTC="3766334492127592029"/><PinnedPlan RuleId="66"/><Costs TotalCosts="2.64993e+06"/></OpInfo>
+          <PhyOp Id="PhyOp_Sort" SortColumn="Name ASC">
+            <OpInfo><TableGroupProperties Grp="0.2" Remotable="False" Card="4.995e+09" AvgRowLength="40" PrtnSkewFactor="1" HT="11060766180486835672:115::0:0" HTS="12643686177737730984" HTN="1295810829618390858:7358768758053956660:16026368670040208979" HTC="212700429232200565"/><PinnedPlan RuleId="35"/><Costs TotalCosts="2.39706e+06"/></OpInfo>
+            <PhyOp Id="PhyOp_Extract" Table="/users/v-hozhao/All_In_One/Input/Python_iris.csv" XMode="Serial" Udf="DefaultTextExtractor">
+              <OpInfo><TableGroupProperties Grp="0.3" Remotable="False" Card="4.995e+09" AvgRowLength="40" PrtnSkewFactor="1" HT="11060766180486835672:115::0:0" HTS="12643686177737730984" HTN="1295810829618390858:7358768758053956660:16026368670040208979" HTC="212700429232200565"/><PinnedPlan RuleId="60"/><Costs TotalCosts="375532"/></OpInfo>
+            </PhyOp>
+          </PhyOp>
+        </PhyOp>
+      </PhyOp>
+      <PhyOp Id="PhyOp_Output" Table="https://cosmos09.osdinfra.net/cosmos/cosmosAdmin/users/v-hozhao/All_In_One/Output/Python_ClusterRun_Extractor_Demo_Output.txt" XMode="Serial" Out="UserId,Start,Region,Query,Duration,Urls,ClickedUrls" Udf="DefaultTextOutputter">
+        <OpInfo><TableGroupProperties Grp="4.1" Remotable="False" Card="4.995e+09" AvgRowLength="56" PrtnSkewFactor="1" HT="7758171813121453203:228::1:6752503919852746241" HTS="6329600338258509098" HTN="2194548030127566841:7264186669659062946:3232596059214994005" HTC="15536841377701489219"/><PinnedPlan RuleId="62"/><Costs TotalCosts="3.75553e+06"/></OpInfo>
+        <PhyOp Id="PhyOp_Extract" Table="/users/v-hozhao/All_In_One/Input/Python_SearchLog.tsv" XMode="Serial" Udf="Python">
+          <OpInfo><TableGroupProperties Grp="3.1" Remotable="False" Card="4.995e+09" AvgRowLength="56" PrtnSkewFactor="1" HT="6752503919852746241:115::0:0" HTS="967934006163347125" HTN="16582199471110805692:7358768758053956660:3232596059214994005" HTC="6238368396128678695"/><PinnedPlan RuleId="60"/><Costs TotalCosts="375532"/></OpInfo>
+        </PhyOp>
+      </PhyOp>
+    </PhyOp>
+</OutputTree>
+<Rules Used="00000000000000000000000000000000000100000000000000000000000010100010001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"/></OptimizerTrees>
+  </OptimizerPlanInfo>
+  <QueryTracer>
+    <Input count="2">
+      <StreamProvenance>/users/v-hozhao/All_In_One/Input/Python_SearchLog.tsv</StreamProvenance>
+      <dependency count="7">
+        <columnprovenance>UserId</columnprovenance>
+        <columnprovenance>Urls</columnprovenance>
+        <columnprovenance>Region</columnprovenance>
+        <columnprovenance>Start</columnprovenance>
+        <columnprovenance>Query</columnprovenance>
+        <columnprovenance>Duration</columnprovenance>
+        <columnprovenance>ClickedUrls</columnprovenance>
+      </dependency>
+      <StreamProvenance>/users/v-hozhao/All_In_One/Input/Python_iris.csv</StreamProvenance>
+      <dependency count="5">
+        <columnprovenance>Name</columnprovenance>
+        <columnprovenance>SepalLength</columnprovenance>
+        <columnprovenance>SepalWidth</columnprovenance>
+        <columnprovenance>PetalLength</columnprovenance>
+        <columnprovenance>PetalWidth</columnprovenance>
+      </dependency>
+    </Input>
+    <SelectedInput count="0" />
+    <Output count="1">
+      <StreamProvenance>/users/v-hozhao/All_In_One/Input/Python_SearchLog.tsv</StreamProvenance>
+      <dependency count="7">
+        <columnprovenance>UserId</columnprovenance>
+        <columnprovenance>Urls</columnprovenance>
+        <columnprovenance>Region</columnprovenance>
+        <columnprovenance>Start</columnprovenance>
+        <columnprovenance>Query</columnprovenance>
+        <columnprovenance>Duration</columnprovenance>
+        <columnprovenance>ClickedUrls</columnprovenance>
+      </dependency>
+    </Output>
+  </QueryTracer>
+</CSSRelatedInfo>

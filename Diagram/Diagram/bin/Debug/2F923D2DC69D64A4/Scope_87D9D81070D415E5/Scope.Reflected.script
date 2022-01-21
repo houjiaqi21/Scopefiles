@@ -1,0 +1,21 @@
+_var_100001_EXTRACT = EXTRACT AdId:int,IId:int,Impression:int FROM @"my/AdsLog.txt" USING ScopeRuntime.DefaultTextExtractor();
+
+_var_100002_LSORT = SELECT AdId, IId, Impression FROM _var_100001_EXTRACT ORDER BY IId;
+
+_var_100003_EXTRACT = EXTRACT IId:int,Market:string,Query:string,DwellTime:int FROM @"my/SearchLog.txt" USING ScopeRuntime.DefaultTextExtractor();
+
+_var_100004_FILTER = SELECT IId, Market, Query, DwellTime FROM _var_100003_EXTRACT WHERE DwellTime >= 120 && DwellTime <= 300 || Market == "en-gb";
+_var_100005_TRANSFORM = SELECT IId AS IId, Query AS Query, DwellTime AS DwellTime FROM _var_100004_FILTER;
+_var_100006_TRANSFORM = SELECT Query AS Query, DwellTime AS DwellTime, IId AS IId1 FROM _var_100005_TRANSFORM;
+
+_var_100007_LSORT = SELECT Query, DwellTime, IId1 FROM _var_100006_TRANSFORM ORDER BY IId1;
+
+_var_100008_INTERNAL_COMBINE = SELECT AdId, IId, Impression, Query, DwellTime FROM _var_100002_LSORT AS AliasLeft INNER JOIN _var_100007_LSORT AS AliasRight ON AliasLeft.IId == AliasRight.IId1;
+
+_var_100009_LSORT = SELECT AdId, IId, Impression, Query, DwellTime FROM _var_100008_INTERNAL_COMBINE ORDER BY DwellTime DESC;
+
+_var_100010_TOP = SELECT TOP 100 AdId, IId, Impression, Query, DwellTime FROM _var_100009_LSORT;
+
+_var_100011_PROCESS = PROCESS _var_100010_TOP PRODUCE AdId, IId, Impression, Query, DwellTime USING ImpressionProcessor();
+
+OUTPUT _var_100011_PROCESS TO @"https://cosmos08.osdinfra.net/cosmos/sandbox/my/Impressions.txt" USING ScopeRuntime.DefaultTextOutputter();

@@ -1,0 +1,106 @@
+﻿{
+"CompilerPlanStart":"11\/11\/2019 11:07:31 AM"
+,
+"Settings":"-c++ -pdb Full -On ReflectStageToScript -Off Sirius -Off PolarisScaleUp -On EnableScopeDml -On EnableSStreamContractV4 -On UseAadAuthentication -buckets 1 -ClientVersion 10.2.2.0"
+,
+"planNodes":
+[
+{
+"statementText":"REFERENCE @\"C:\\Program Files (x86)\\Reference Assemblies\\Microsoft\\Framework\\.NETFramework\\v4.5.2\\Sys"
+,
+"NodeName":"ReferenceStatement"
+}
+,
+{
+"statementText":" EXTRACT IId:int,         UId:int,         Start:DateTime,         Market:string,         "
+,
+"NodeName":"QueryStatement"
+}
+,
+{
+"statementText":"    SELECT IId,           UId,           Start,           Market,           Query,      "
+,
+"NodeName":"QueryStatement"
+}
+,
+{
+"statementText":"      SELECT IId, UId, Start, Market, Query,DwellTime, Results, CLickedUrlsList.Serialize() AS C"
+,
+"NodeName":"QueryStatement"
+}
+,
+{
+"statementText":"     EXTRACT AdId:int, IId:int, Impression:int, IsClicked:int    FROM @\"\/my\/Inputs\/AdsLog.txt\""
+,
+"NodeName":"QueryStatement"
+}
+,
+{
+"statementText":"    SELECT adslog.AdId AS AdId,        adslog.IId AS IId,          adslog.Impression AS Impres"
+,
+"NodeName":"QueryStatement"
+}
+,
+{
+"statementText":"  PROCESS  PRODUCE * USING ImpressionProcessor"
+,
+"NodeName":"QueryStatement"
+}
+,
+{
+"statementText":"     SELECT Market,            Results,           ((double)DwellTime) AS DwellTimeDouble    "
+,
+"NodeName":"QueryStatement"
+}
+,
+{
+"statementText":"     SELECT Market,            SplitResult AS Result     FROM rs1 CROSS APPLY  MyHelper.Spli"
+,
+"NodeName":"QueryStatement"
+}
+,
+{
+"statementText":"     SELECT Market,           MySum(DwellTimeDouble) AS TotalDwellTimeFROM rs1 GROUP BY Mark"
+,
+"NodeName":"QueryStatement"
+}
+,
+{
+"statementText":"OUTPUT searchlog TO @\"\/my\/Outputs\/SearchLog.txt\""
+,
+"NodeName":"OutputStatement"
+}
+,
+{
+"statementText":"OUTPUT adslog TO @\"\/my\/Outputs\/AdsLog.txt\""
+,
+"NodeName":"OutputStatement"
+}
+,
+{
+"statementText":"OUTPUT rs2 TO @\"\/my\/Outputs\/rs2.txt\""
+,
+"NodeName":"OutputStatement"
+}
+,
+{
+"statementText":" OUTPUT searchlog3 TO @\"\/my\/Outputs\/searchlog3.txt\""
+,
+"NodeName":"OutputStatement"
+}
+,
+{
+"statementText":"OUTPUT rs3 TO @\"\/my\/Outputs\/rs3.txt\""
+,
+"NodeName":"OutputStatement"
+}
+,
+{
+"statementText":" OUTPUT Processorlog TO @\"\/my\/Outputs\/Processorlog.txt\""
+,
+"NodeName":"OutputStatement"
+}
+]
+,
+"CompilerPlanEnd":"11\/11\/2019 11:07:31 AM"
+}

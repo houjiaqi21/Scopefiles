@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScriptAndGraph GraphType="VertexCommands">
+  <Vertices count="7">
+    <Vertex index="1" command="-scopeVertex SV1_Extract_Split  -i my/Inputs/AdsLog.txt  -o D:\Scope2015\QuickInfo_Definition_Reference\QuickInfo_Definition_Reference\bin\Debug\2F923D2DC69D64A4\_Temp\Scope_A2C5B99E4077B14F\scopetmpfile._SV1_Extract_Split_out0 -o D:\Scope2015\QuickInfo_Definition_Reference\QuickInfo_Definition_Reference\bin\Debug\2F923D2DC69D64A4\_Temp\Scope_A2C5B99E4077B14F\scopetmpfile._SV1_Extract_Split_out1" />
+    <Vertex index="2" command="-scopeVertex SV2_Process  -i D:\Scope2015\QuickInfo_Definition_Reference\QuickInfo_Definition_Reference\bin\Debug\2F923D2DC69D64A4\_Temp\Scope_A2C5B99E4077B14F\scopetmpfile._SV1_Extract_Split_out1 -ichannel SV1_Extract_Split_out1  -o D:\Scope2015\QuickInfo_Definition_Reference\QuickInfo_Definition_Reference\bin\Debug\2F923D2DC69D64A4\_Temp\Scope_A2C5B99E4077B14F\scopetmpfile._SV2_Process_out0" />
+    <Vertex index="3" command="-scopeVertex SV3_Extract_Split  -i my/Inputs/SearchLog.txt  -o D:\Scope2015\QuickInfo_Definition_Reference\QuickInfo_Definition_Reference\bin\Debug\2F923D2DC69D64A4\_Temp\Scope_A2C5B99E4077B14F\scopetmpfile._SV3_Extract_Split_out0 -o D:\Scope2015\QuickInfo_Definition_Reference\QuickInfo_Definition_Reference\bin\Debug\2F923D2DC69D64A4\_Temp\Scope_A2C5B99E4077B14F\scopetmpfile._SV3_Extract_Split_out1 -o D:\Scope2015\QuickInfo_Definition_Reference\QuickInfo_Definition_Reference\bin\Debug\2F923D2DC69D64A4\_Temp\Scope_A2C5B99E4077B14F\scopetmpfile._SV3_Extract_Split_out2 -o D:\Scope2015\QuickInfo_Definition_Reference\QuickInfo_Definition_Reference\bin\Debug\2F923D2DC69D64A4\_Temp\Scope_A2C5B99E4077B14F\scopetmpfile._SV3_Extract_Split_out3 -o D:\Scope2015\QuickInfo_Definition_Reference\QuickInfo_Definition_Reference\bin\Debug\2F923D2DC69D64A4\_Temp\Scope_A2C5B99E4077B14F\scopetmpfile._SV3_Extract_Split_out4" />
+    <Vertex index="4" command="-scopeVertex SV4_Process  -i D:\Scope2015\QuickInfo_Definition_Reference\QuickInfo_Definition_Reference\bin\Debug\2F923D2DC69D64A4\_Temp\Scope_A2C5B99E4077B14F\scopetmpfile._SV3_Extract_Split_out0 -ichannel SV3_Extract_Split_out0  -o D:\Scope2015\QuickInfo_Definition_Reference\QuickInfo_Definition_Reference\bin\Debug\2F923D2DC69D64A4\_Temp\Scope_A2C5B99E4077B14F\scopetmpfile._SV4_Process_out0" />
+    <Vertex index="5" command="-scopeVertex SV5_Combine  -i D:\Scope2015\QuickInfo_Definition_Reference\QuickInfo_Definition_Reference\bin\Debug\2F923D2DC69D64A4\_Temp\Scope_A2C5B99E4077B14F\scopetmpfile._SV2_Process_out0 -ichannel SV2_Process_out0 -i D:\Scope2015\QuickInfo_Definition_Reference\QuickInfo_Definition_Reference\bin\Debug\2F923D2DC69D64A4\_Temp\Scope_A2C5B99E4077B14F\scopetmpfile._SV4_Process_out0 -ichannel SV4_Process_out0  -o D:\Scope2015\QuickInfo_Definition_Reference\QuickInfo_Definition_Reference\bin\Debug\2F923D2DC69D64A4\_Temp\Scope_A2C5B99E4077B14F\scopetmpfile._SV5_Combine_out0" />
+    <Vertex index="6" command="-scopeVertex SV6_Process  -i D:\Scope2015\QuickInfo_Definition_Reference\QuickInfo_Definition_Reference\bin\Debug\2F923D2DC69D64A4\_Temp\Scope_A2C5B99E4077B14F\scopetmpfile._SV3_Extract_Split_out2 -ichannel SV3_Extract_Split_out2  -o D:\Scope2015\QuickInfo_Definition_Reference\QuickInfo_Definition_Reference\bin\Debug\2F923D2DC69D64A4\_Temp\Scope_A2C5B99E4077B14F\scopetmpfile._SV6_Process_out0" />
+    <Vertex index="7" command="-scopeVertex SV7_Process  -i D:\Scope2015\QuickInfo_Definition_Reference\QuickInfo_Definition_Reference\bin\Debug\2F923D2DC69D64A4\_Temp\Scope_A2C5B99E4077B14F\scopetmpfile._SV3_Extract_Split_out3 -ichannel SV3_Extract_Split_out3  -o D:\Scope2015\QuickInfo_Definition_Reference\QuickInfo_Definition_Reference\bin\Debug\2F923D2DC69D64A4\_Temp\Scope_A2C5B99E4077B14F\scopetmpfile._SV7_Process_out0" />
+    <Vertex command="-concatenate -i D:\Scope2015\QuickInfo_Definition_Reference\QuickInfo_Definition_Reference\bin\Debug\2F923D2DC69D64A4\_Temp\Scope_A2C5B99E4077B14F\scopetmpfile._SV1_Extract_Split_out0 -o https://cosmos08.osdinfra.net/cosmos/sandbox/my/Outputs/AdsLog.txt" />
+    <Vertex command="-concatenate -i D:\Scope2015\QuickInfo_Definition_Reference\QuickInfo_Definition_Reference\bin\Debug\2F923D2DC69D64A4\_Temp\Scope_A2C5B99E4077B14F\scopetmpfile._SV3_Extract_Split_out1 -o https://cosmos08.osdinfra.net/cosmos/sandbox/my/Outputs/SearchLog.txt" />
+    <Vertex command="-concatenate -i D:\Scope2015\QuickInfo_Definition_Reference\QuickInfo_Definition_Reference\bin\Debug\2F923D2DC69D64A4\_Temp\Scope_A2C5B99E4077B14F\scopetmpfile._SV3_Extract_Split_out4 -o https://cosmos08.osdinfra.net/cosmos/sandbox/my/Outputs/searchlog3.txt" />
+    <Vertex command="-concatenate -i D:\Scope2015\QuickInfo_Definition_Reference\QuickInfo_Definition_Reference\bin\Debug\2F923D2DC69D64A4\_Temp\Scope_A2C5B99E4077B14F\scopetmpfile._SV5_Combine_out0 -o https://cosmos08.osdinfra.net/cosmos/sandbox/my/Outputs/Processorlog.txt" />
+    <Vertex command="-concatenate -i D:\Scope2015\QuickInfo_Definition_Reference\QuickInfo_Definition_Reference\bin\Debug\2F923D2DC69D64A4\_Temp\Scope_A2C5B99E4077B14F\scopetmpfile._SV6_Process_out0 -o https://cosmos08.osdinfra.net/cosmos/sandbox/my/Outputs/rs2.txt" />
+    <Vertex command="-concatenate -i D:\Scope2015\QuickInfo_Definition_Reference\QuickInfo_Definition_Reference\bin\Debug\2F923D2DC69D64A4\_Temp\Scope_A2C5B99E4077B14F\scopetmpfile._SV7_Process_out0 -o https://cosmos08.osdinfra.net/cosmos/sandbox/my/Outputs/rs3.txt" />
+  </Vertices>
+  <Outputs>
+    <Output path="https://cosmos08.osdinfra.net/cosmos/sandbox/my/Outputs/AdsLog.txt" isBinary="False" schema="AdId:int,IId:int,Impression:int,IsClicked:int" />
+    <Output path="https://cosmos08.osdinfra.net/cosmos/sandbox/my/Outputs/Processorlog.txt" isBinary="False" schema="AdId:int,IId:int,Impression:int,Query:string" />
+    <Output path="https://cosmos08.osdinfra.net/cosmos/sandbox/my/Outputs/SearchLog.txt" isBinary="False" schema="IId:int,UId:int,Start:DateTime,Market:string,Query:string,DwellTime:int,Results:string,ClickedUrls:string" />
+    <Output path="https://cosmos08.osdinfra.net/cosmos/sandbox/my/Outputs/rs2.txt" isBinary="False" schema="Market:string,Result:string" />
+    <Output path="https://cosmos08.osdinfra.net/cosmos/sandbox/my/Outputs/rs3.txt" isBinary="False" schema="Market:string,TotalDwellTime:double" />
+    <Output path="https://cosmos08.osdinfra.net/cosmos/sandbox/my/Outputs/searchlog3.txt" isBinary="False" schema="IId:int,UId:int,Start:DateTime,Market:string,Query:string,DwellTime:int,Results:string,ClickedUrlsCount:string" />
+  </Outputs>
+  <graph JsonErrors="True" JobType="BatchScopeServerGC" vertexExecutable="scopehost.exe" BroadcastCopyThroughCommandLine="ScopeEngine.dll -scopeVertex SV_CopyThrough" UdtSignature="cdc5d06fbfd90731824bc33f84980930bced57a1855baf3836cb217dfb057b7a">
+    <process id="SV1_Extract_Split" command="ScopeEngine.dll -scopeVertex SV1_Extract_Split" managedMemorySize="1388314624" engineIOMemorySize="83886080" engineOperatorMemorySize="1000000064" DummyVertexOptimization="AllInputsEmptyImpliesOutputsEmpty|RunAtLeastOneVertex">
+      <input id="Extract_0[ALL]" streamSize="499500000000" cosmosStream="my/Inputs/AdsLog.txt">
+        <cosmosStream cosmosPath="my/Inputs/AdsLog.txt" />
+      </input>
+      <output id="SV1_Extract_Split_out0" cosmosStream="https://cosmos08.osdinfra.net/cosmos/sandbox/my/Outputs/AdsLog.txt" />
+      <output id="SV1_Extract_Split_out1" />
+    </process>
+    <process id="SV2_Process" command="ScopeEngine.dll -scopeVertex SV2_Process" nativeOnly="true" managedMemorySize="0" engineIOMemorySize="58720256" engineOperatorMemorySize="5859442688" DummyVertexOptimization="AllInputsEmptyImpliesOutputsEmpty|RunAtLeastOneVertex">
+      <input id="SV1_Extract_Split_out1" />
+      <output id="SV2_Process_out0" />
+    </process>
+    <process id="SV3_Extract_Split" command="ScopeEngine.dll -scopeVertex SV3_Extract_Split" managedMemorySize="1363148800" engineIOMemorySize="4362076160" engineOperatorMemorySize="2572864528" DummyVertexOptimization="AllInputsEmptyImpliesOutputsEmpty|RunAtLeastOneVertex">
+      <input id="Extract_4[ALL]" streamSize="499500000000" cosmosStream="my/Inputs/SearchLog.txt">
+        <cosmosStream cosmosPath="my/Inputs/SearchLog.txt" />
+      </input>
+      <output id="SV3_Extract_Split_out0" />
+      <output id="SV3_Extract_Split_out1" cosmosStream="https://cosmos08.osdinfra.net/cosmos/sandbox/my/Outputs/SearchLog.txt" />
+      <output id="SV3_Extract_Split_out2" />
+      <output id="SV3_Extract_Split_out3" />
+      <output id="SV3_Extract_Split_out4" cosmosStream="https://cosmos08.osdinfra.net/cosmos/sandbox/my/Outputs/searchlog3.txt" />
+    </process>
+    <process id="SV4_Process" command="ScopeEngine.dll -scopeVertex SV4_Process" nativeOnly="true" managedMemorySize="0" engineIOMemorySize="58720256" engineOperatorMemorySize="5859442688" DummyVertexOptimization="AllInputsEmptyImpliesOutputsEmpty|RunAtLeastOneVertex">
+      <input id="SV3_Extract_Split_out0" />
+      <output id="SV4_Process_out0" />
+    </process>
+    <process id="SV5_Combine" command="ScopeEngine.dll -scopeVertex SV5_Combine" nativeOnly="true" managedMemorySize="0" engineIOMemorySize="1656750272" engineOperatorMemorySize="4261412672" DummyVertexOptimization="AllInputsEmptyImpliesOutputsEmpty|RunAtLeastOneVertex">
+      <input id="SV2_Process_out0" />
+      <input id="SV4_Process_out0" />
+      <output id="SV5_Combine_out0" cosmosStream="https://cosmos08.osdinfra.net/cosmos/sandbox/my/Outputs/Processorlog.txt" />
+    </process>
+    <process id="SV6_Process" command="ScopeEngine.dll -scopeVertex SV6_Process" managedMemorySize="1388314624" engineIOMemorySize="1581252800" engineOperatorMemorySize="524288064" DummyVertexOptimization="AllInputsEmptyImpliesOutputsEmpty|RunAtLeastOneVertex">
+      <input id="SV3_Extract_Split_out2" />
+      <output id="SV6_Process_out0" cosmosStream="https://cosmos08.osdinfra.net/cosmos/sandbox/my/Outputs/rs2.txt" />
+    </process>
+    <process id="SV7_Process" command="ScopeEngine.dll -scopeVertex SV7_Process" managedMemorySize="1388314624" engineIOMemorySize="1606418576" engineOperatorMemorySize="2923429744" DummyVertexOptimization="AllInputsEmptyImpliesOutputsEmpty|RunAtLeastOneVertex">
+      <input id="SV3_Extract_Split_out3" />
+      <output id="SV7_Process_out0" cosmosStream="https://cosmos08.osdinfra.net/cosmos/sandbox/my/Outputs/rs3.txt" />
+    </process>
+    <UserDefinedColumnData>
+      <___Scope_Generated_Classes____x002B_UrlList Signature="cdc5d06fbfd90731824bc33f84980930bced57a1855baf3836cb217dfb057b7a" />
+    </UserDefinedColumnData>
+  </graph>
+  <Scopescript>REFERENCE @"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\System.Core.dll";
+//Script GUID:741776f4-82d4-40aa-88ce-68291a558ad2
+//Used for tracking history
+
+searchlog = 
+EXTRACT IId:int, 
+        UId:int, 
+        Start:DateTime, 
+        Market:string, 
+        Query:string, 
+        DwellTime:int, 
+        Results:string, 
+        ClickedUrls:string 
+FROM @"/my/Inputs/SearchLog.txt" 
+USING DefaultTextExtractor;
+
+
+
+searchlog2 =
+    SELECT IId,
+           UId,
+           Start,
+           Market,
+           Query,
+           DwellTime,
+           Results,
+           UrlList.Create(ClickedUrls) AS CLickedUrlsList
+    FROM searchlog;
+
+
+searchlog3 =  
+
+    SELECT IId, UId, Start, Market, Query,DwellTime, Results, CLickedUrlsList.Serialize() AS ClickedUrlsCount 
+
+    FROM searchlog2; 
+
+
+adslog = 
+    EXTRACT AdId:int, IId:int, Impression:int, IsClicked:int
+    FROM @"/my/Inputs/AdsLog.txt"
+    USING  MyTSVExtractor();
+
+Processorlog=
+    SELECT adslog.AdId AS AdId, 
+       adslog.IId AS IId,   
+       adslog.Impression AS Impression, 
+       searchlog.Query AS Query 
+    FROM adslog  
+INNER JOIN searchlog  
+ON adslog.IId == searchlog.IId; 
+ 
+PROCESS  
+PRODUCE * 
+USING ImpressionProcessor;
+
+
+rs1 = 
+    SELECT Market, 
+           Results,
+           ((double)DwellTime) AS DwellTimeDouble
+    FROM searchlog; 
+
+rs2 = 
+    SELECT Market, 
+           SplitResult AS Result 
+    FROM rs1 
+CROSS APPLY  MyHelper.Split( Results, ';') AS SplitResult;
+
+rs3 = 
+    SELECT Market,
+           MySum(DwellTimeDouble) AS TotalDwellTime
+FROM rs1 
+GROUP BY Market;
+
+OUTPUT searchlog TO @"/my/Outputs/SearchLog.txt";
+OUTPUT adslog TO @"/my/Outputs/AdsLog.txt";
+OUTPUT rs2 TO @"/my/Outputs/rs2.txt"; 
+OUTPUT searchlog3 TO @"/my/Outputs/searchlog3.txt";
+OUTPUT rs3 TO @"/my/Outputs/rs3.txt"; 
+OUTPUT Processorlog TO @"/my/Outputs/Processorlog.txt"; 
+#CS
+using Microsoft.SCOPE.Types;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Text;
+using ScopeRuntime;
+using ScopeRuntime.Diagnostics;
+
+public static class MyHelper
+{
+    public static int ParseDuration(string s)
+    {
+        string[] tokens = s.Split(new char[] { ':' });
+        int hours_in_sec = int.Parse(tokens[0]) * 60 * 60;
+        int minutes_in_sec = int.Parse(tokens[1]) * 60;
+        int seconds = int.Parse(tokens[2]);
+        int total = hours_in_sec + minutes_in_sec + seconds;
+        return total;
+    }
+
+    public static double SecondsToHours(int seconds)
+    {
+        double hours = seconds / (60.0 * 60.0);
+        return hours;
+    }
+
+    public static string FOO(string s)
+    {
+        return s.ToUpper();
+    }
+
+    public static string[] Split(string s, char c)
+    {
+        return s.Split(new char[] { c });
+    }
+
+    public static string Join(char c, IEnumerable&lt;string&gt; tokens)
+    {
+        var sb = new System.Text.StringBuilder();
+        int n = 0;
+        foreach (var token in tokens)
+        {
+            if (n &gt; 0)
+            {
+                sb.Append(c);
+            }
+            sb.Append(token);
+            n++;
+        }
+        return sb.ToString();
+    }
+
+}
+
+public class UrlList
+{
+    public List&lt;string&gt; Items;
+    private static char[] sepchars = new char[] { ',' };
+
+    public UrlList(string s)
+    {
+        this.Items = new List&lt;string&gt;(s.Split(sepchars));
+    }
+
+    public static UrlList Create(string s)
+    {
+        return new UrlList(s);
+    }
+
+    public string Serialize()
+    {
+        return String.Join(";", this.Items);
+    }
+}
+
+
+class MySum_Double : Aggregate1&lt;double, double&gt;
+{
+    double sum = 0;
+
+    public override void Initialize()
+    {
+        sum = 0;
+    }
+
+    public override void Add(double y)
+    {
+        sum += y;
+    }
+
+    public override double Finalize()
+    {
+        return sum;
+    }
+}
+
+
+class MyAgg2_IntegerDouble : Aggregate2&lt;int, double, string&gt;
+{
+
+    System.Text.StringBuilder sb;
+    public override void Initialize()
+    {
+        sb = new System.Text.StringBuilder();
+    }
+
+    public override void Add(int count, double value)
+    {
+        for (int i = 0; i &lt; count; i++)
+        {
+            sb.Append(value.ToString());
+        }
+    }
+
+    public override string Finalize()
+    {
+        return sb.ToString();
+    }
+}
+
+
+public class MyTSVExtractor : Extractor
+{
+    public override Schema Produces(string[] requested_columns, string[] args)
+    {
+        return new Schema(requested_columns);
+    }
+
+    public override IEnumerable&lt;Row&gt; Extract(StreamReader reader, Row output_row, string[] args)
+    {
+        char delimiter = '\t';
+        string line;
+        while ((line = reader.ReadLine()) != null)
+        {
+            var tokens = line.Split(delimiter);
+            for (int i = 0; i &lt; tokens.Length; ++i)
+            {
+                output_row[i].UnsafeSet(tokens[i]);
+            }
+            yield return output_row;
+        }
+    }
+}
+
+public class MyCSVOutputter : Outputter
+{
+    public override void Output(RowSet input, StreamWriter writer, string[] args)
+    {
+        foreach (Row row in input.Rows)
+        {
+            int c = 0;
+            for (int i = 0; i &lt; row.Count; i++)
+            {
+                if (c &gt; 0)
+                {
+                    writer.Write(",");
+                }
+                row[i].Serialize(writer);
+                c++;
+            }
+            writer.WriteLine();
+            writer.Flush();
+        }
+    }
+}
+
+public class MyCombiner : Combiner
+{
+    private RowList _rowList = new RowList();
+
+    public override Schema Produces(string[] requestedColumns, string[] args, Schema leftSchema, string leftTable, Schema rightSchema, string rightTable)
+    {
+        var tokens = new List&lt;string&gt;();
+
+        foreach (var col in leftSchema.Columns)
+        {
+            string prefix = rightSchema.Contains(col.Name) ? leftTable : "";
+            tokens.Add(string.Format("{0}{1}:{2}", prefix, col.Name, col.CLRType));
+        }
+        foreach (var col in rightSchema.Columns)
+        {
+            string prefix = leftSchema.Contains(col.Name) ? rightTable : "";
+            tokens.Add(string.Format("{0}{1}:{2}", prefix, col.Name, col.CLRType));
+        }
+        var schemastring = String.Join(";", tokens);
+        return new Schema(schemastring);
+    }
+
+    public override IEnumerable&lt;Row&gt; Combine(RowSet left, RowSet right, Row outputRow, string[] args)
+    {
+        _rowList.Load(right); //  Load the right RowSet into memory
+        foreach (Row leftRow in left.Rows)
+        {
+            leftRow.CopyTo(outputRow); // Copy the data from the leftRow to the output
+
+            //  Copy the data from the leftRow to the output
+            foreach (Row rightRow in _rowList.Rows)
+            {
+                for (int i = 0; i &lt; rightRow.Count; ++i)
+                {
+                    rightRow[i].CopyTo(outputRow[i + leftRow.Count]);
+                }
+                yield return outputRow;
+            }
+        }
+    }
+
+
+}
+public class ImpressionProcessor : Processor
+{
+    /// &lt;summary&gt;
+    /// 
+    /// &lt;/summary&gt;
+    /// &lt;param name="columns"&gt;&lt;/param&gt;
+    /// &lt;param name="args"&gt;&lt;/param&gt;
+    /// &lt;param name="input"&gt;&lt;/param&gt;
+    /// &lt;returns&gt;&lt;/returns&gt;
+    public override Schema Produces(string[] columns, string[] args, Schema input)
+    {
+        return input.Clone();
+    }
+    /// &lt;summary&gt;
+    ///
+    /// &lt;/summary&gt;
+    /// &lt;param name="input"&gt;&lt;/param&gt;
+    /// &lt;param name="output"&gt;&lt;/param&gt;
+    /// &lt;param name="args"&gt;&lt;/param&gt;
+    /// &lt;returns&gt;&lt;/returns&gt;    
+    public override IEnumerable&lt;Row&gt; Process(RowSet input, Row output, string[] args)
+    {
+
+        foreach (Row row in input.Rows)
+        {
+            row.CopyTo(output);
+            output[2].Set(10000000 / (row[2].Integer));
+            if (row[2].Integer &lt; 10000000)
+            {
+                DebugStream.WriteLine(String.Format("Impression = {0}", row[2].Integer));
+            }
+            //output[2].Set(10000000 / (row[2].Integer / 10000000));
+            yield return output;
+        }
+    }
+}
+
+
+#ENDCS
+
+// Generated by ScopeStudio, version 2.5.1000.2
+</Scopescript>
+  <Optimization succeeded="true" time="00:00:01.6488999" latency="5111043.44392498" totalCost="23774193.7114217" />
+  <ScopeVertexAnnotations>
+    <ScopeVertex name="SV1_Extract_Split">
+      <Operation annotation="EXTRACT USING MyTSVExtractor" />
+    </ScopeVertex>
+  </ScopeVertexAnnotations>
+</ScriptAndGraph>

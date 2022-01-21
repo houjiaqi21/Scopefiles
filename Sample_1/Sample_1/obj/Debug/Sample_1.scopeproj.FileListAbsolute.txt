@@ -1,0 +1,3 @@
+D:\Sharing\Scope2015\Sample_1\Sample_1\bin\Debug\Algebra.xml
+D:\Sharing\Scope2015\Sample_1\Sample_1\obj\Debug\Sample_1.scopeproj.CoreCompileInputs.cache
+D:\Sharing\Scope2015\Sample_1\Sample_1\obj\Debug\Algebra.xml

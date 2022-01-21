@@ -1,0 +1,77 @@
+*** Entering compilation, time elapsed until this point: 00:00:04.6229654
+*** Done with C# compilation, time elapsed until this point: 00:00:08.1272413
+*** Starting C++ compilation, time elapsed until this point: 00:00:08.1281669
+#CPP cl.exe compile (iteration 1/1) -- Native
+#CPP stdout:
+__ScopeCodeGenEngine__.dll.cpp
+ENC_CWD=D:\Sharing\Scope2015\Sample_1\Sample_1\bin\Debug\FEB18BC62E9A8FD3\Scope_C74FEC5E34835C21
+ENC_CL=c:\program files (x86)\microsoft visual studio\2017\enterprise\SDK\ScopeCppSDK\vc15\VC\bin\cl.exe
+ENC_SRC=__ScopeCodeGenEngine__.dll.cpp
+ENC_PDB=D:\Sharing\Scope2015\Sample_1\Sample_1\bin\Debug\FEB18BC62E9A8FD3\Scope_C74FEC5E34835C21\vc140.pdb
+ENC_CMD=-nologo -c -bigobj -Bt+ -DWIN32_LEAN_AND_MEAN -EHa -MD -Z7 -Zo -homeparams -Od -Bd -cgsummary -DCOMPILE_NATIVE -DUSE_SSE4_2 -W4 -WX -wd4125 -wd4627 -wd4800 -wd4702 -I"c:\program files (x86)\microsoft visual studio\2017\enterprise\SDK\ScopeCppSDK\vc15\VC\include" -I"c:\program files (x86)\microsoft visual studio\2017\enterprise\SDK\ScopeCppSDK\vc15\SDK\include" -I"c:\program files (x86)\microsoft visual studio\2017\enterprise\SDK\ScopeCppSDK\vc15\SDK\include\um" -I"c:\program files (x86)\microsoft visual studio\2017\enterprise\SDK\ScopeCppSDK\vc15\SDK\include\shared" -I"c:\program files (x86)\microsoft visual studio\2017\enterprise\SDK\ScopeCppSDK\vc15\SDK\include\ucrt" -I"c:\program files (x86)\microsoft visual studio\2017\enterprise\common7\ide\extensions\microsoft\scopestudio\2.7.0000.7\CosmosRuntimeSDK" -ID:\Sharing\Scope2015\Sample_1\Sample_1\bin\Debug\FEB18BC62E9A8FD3\Scope_C74FEC5E34835C21 -DCOMPILE_ALL_VERTICES -DCOMPILE_INIT_SHUTDOWN -TP -X
+`c:\program files (x86)\microsoft visual studio\2017\enterprise\SDK\ScopeCppSDK\vc15\VC\bin\c1xx.dll -zm0x00007FF72D16CA20 -il C:\Users\v-hozhao\AppData\Local\Temp\_CL_5682cbe4 -typedil -f __ScopeCodeGenEngine__.dll.cpp -Ze -D_MSC_EXTENSIONS -Zp16 -ZB64 -D_INTEGRAL_MAX_BITS=64 -pc \:/ -Fdvc140.pdb -D_MSC_VER=1912 -D_MSC_FULL_VER=191225835 -D_MSC_BUILD=0 -D_M_AMD64=100 -ZILP448 -D_M_X64=100 -D_WIN64 -D_WIN32 -GS -GR -D_CPPRTTI -Zc:forScope -Zc:wchar_t -nologo -DWIN32_LEAN_AND_MEAN -EHa -D_CPPUNWIND -D_MT -D_DLL -Z7 -Ot -Bd -DCOMPILE_NATIVE -DUSE_SSE4_2 -W 4 -WX -wd 4125 -wd 4627 -wd 4800 -wd 4702 -I c:\program files (x86)\microsoft visual studio\2017\enterprise\SDK\ScopeCppSDK\vc15\VC\include -I c:\program files (x86)\microsoft visual studio\2017\enterprise\SDK\ScopeCppSDK\vc15\SDK\include -I c:\program files (x86)\microsoft visual studio\2017\enterprise\SDK\ScopeCppSDK\vc15\SDK\include\um -I c:\program files (x86)\microsoft visual studio\2017\enterprise\SDK\ScopeCppSDK\vc15\SDK\include\shared -I c:\program files (x86)\microsoft visual studio\2017\enterprise\SDK\ScopeCppSDK\vc15\SDK\include\ucrt -I c:\program files (x86)\microsoft visual studio\2017\enterprise\common7\ide\extensions\microsoft\scopestudio\2.7.0000.7\CosmosRuntimeSDK -I D:\Sharing\Scope2015\Sample_1\Sample_1\bin\Debug\FEB18BC62E9A8FD3\Scope_C74FEC5E34835C21 -DCOMPILE_ALL_VERTICES -DCOMPILE_INIT_SHUTDOWN -Fo__ScopeCodeGenEngine__.dllNative.obj'
+time(c:\program files (x86)\microsoft visual studio\2017\enterprise\SDK\ScopeCppSDK\vc15\VC\bin\c1xx.dll)=2.39585s < 12947416733258 - 12947440691758 > BB [D:\Sharing\Scope2015\Sample_1\Sample_1\bin\Debug\FEB18BC62E9A8FD3\Scope_C74FEC5E34835C21\__ScopeCodeGenEngine__.dll.cpp]
+`c:\program files (x86)\microsoft visual studio\2017\enterprise\SDK\ScopeCppSDK\vc15\VC\bin\c2.dll -il C:\Users\v-hozhao\AppData\Local\Temp\_CL_5682cbe4 -typedil -f __ScopeCodeGenEngine__.dll.cpp -dos -Fdvc140.pdb -GS -bigobj -EHa -MD -Zi -Zi+ -home -Ob0 -Bd -cgsummary -W 4 -WX -Fo__ScopeCodeGenEngine__.dllNative.obj'
+Code Generation Summary
+	Total Function Count: 2586
+	Elapsed Time: 0.146 sec
+	Total Compilation Time: 0.567 sec
+	Average time per function: 0.000 sec
+	Anomalistic Compile Times: 29
+		??0SpecialCharScanner@?$TextInputStreamTraitsConst@$08$0A@$0A@$0A@$0A@$01$0A@$0A@$0A@$0A@$0A@$0A@$0A@@ScopeEngine@@QEAA@XZ: 0.025 sec, 0 instrs
+		?_Get_second@?$_Compressed_pair@U?$default_delete@VMemoryOutputStream@ScopeEngine@@@std@@PEAVMemoryOutputStream@ScopeEngine@@$00@std@@QEBAAEBQEAVMemoryOutputStream@ScopeEngine@@XZ: 0.008 sec, 0 instrs
+		??$_Insert_string@DU?$char_traits@D@std@@_K@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@QEBD_K@Z: 0.007 sec, 0 instrs
+		?DataSchemaString@?$SStreamV3OutputPolicy@VExtract_0_Data0@@$03@ScopeEngine@@SAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ: 0.007 sec, 0 instrs
+		?GetErrorNumber@ExceptionWithStack@ScopeEngine@@QEBA?BW4ErrorNumber@2@XZ: 0.006 sec, 0 instrs
+		??$Init@AEBQEBD@IncrementalAllocator@ScopeEngine@@QEAAX_KAEBQEBD@Z: 0.005 sec, 0 instrs
+		??A?$vector@UPartitionInfoTableRow@SSLibV3@ScopeEngine@@V?$allocator@UPartitionInfoTableRow@SSLibV3@ScopeEngine@@@std@@@std@@QEBAAEBUPartitionInfoTableRow@SSLibV3@ScopeEngine@@_K@Z: 0.005 sec, 0 instrs
+		?Deserialize@?$TextExtractPolicy@VExtract_0_Data0@@$00@ScopeEngine@@SA_NPEAV?$TextInputStream@U?$TextInputStreamTraitsConst@$08$0A@$0A@$0A@$0A@$01$0A@$0A@$0A@$0A@$0A@$0A@$0A@@ScopeEngine@@VCosmosInput@2@@2@AEAVExtract_0_Data0@@@Z: 0.005 sec, 0 instrs
+		??1?$shared_ptr@VBlockDevice@ScopeEngine@@@std@@QEAA@XZ: 0.004 sec, 0 instrs
+		??$Init@AEAY0BD@$$CBD@IncrementalAllocator@ScopeEngine@@QEAAX_KAEAY0BD@$$CBD@Z: 0.004 sec, 0 instrs
+		?WriteRuntimeStats@Statistics@IncrementalAllocator@ScopeEngine@@QEBAXAEAVTreeNode@3@J@Z: 0.003 sec, 0 instrs
+		?do_out@?$codecvt_utf8@_W$0BAPPPP@$0A@@std@@MEBAHAEAU_Mbstatet@@PEB_W1AEAPEB_WPEAD3AEAPEAD@Z: 0.003 sec, 0 instrs
+		SV2_Aggregate_execute: 0.003 sec, 0 instrs
+		??$_Call@AEAV<lambda_0fdb57d80426e09a111fcf987dcd0784>@@$$V@_Invoker_functor@std@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@1@AEAV<lambda_0fdb57d80426e09a111fcf987dcd0784>@@@Z: 0.003 sec, 0 instrs
+		?FormatCustomized@ScopeDateTime@ScopeEngine@@AEBAHPEADHPEBDHAEBVScopeDateTimeFormatInfo@2@@Z: 0.003 sec, 0 instrs
+		?_Get_first@?$_Compressed_pair@V?$allocator@UPartitionInfoTableRow@SSLibV3@ScopeEngine@@@std@@V?$_Vector_val@U?$_Simple_types@UPartitionInfoTableRow@SSLibV3@ScopeEngine@@@std@@@2@$00@std@@QEBAAEBV?$allocator@UPartitionInfoTableRow@SSLibV3@ScopeEngine@@@2@XZ: 0.002 sec, 0 instrs
+		?UnifyPartitionSpec@?$SStreamMetadataOutputter@UMetadataAggregateType_MetadataAggregate_2@@VExtract_0_Data0@@VPart_SStreamMetadataOutput_3@@$08@ScopeEngine@@CAXAEBV?$vector@UPartitionInfoTableRow@SSLibV3@ScopeEngine@@V?$allocator@UPartitionInfoTableRow@SSLibV3@ScopeEngine@@@std@@@std@@_N@Z: 0.002 sec, 0 instrs
+		??$_Emplace_back_with_unused_capacity@PEBUBufferDescriptor@ScopeEngine@@@?$vector@PEBUBufferDescriptor@ScopeEngine@@V?$allocator@PEBUBufferDescriptor@ScopeEngine@@@std@@@std@@AEAAX$$QEAPEBUBufferDescriptor@ScopeEngine@@@Z: 0.002 sec, 0 instrs
+		SV1_Extract_Split_execute: 0.002 sec, 0 instrs
+		??$MakeupOneCompleteCharacter@V?$TextEncodingConverter@$0P@@ScopeEngine@@@?$TextEncodingReader@VCosmosInput@ScopeEngine@@$0A@$0A@@ScopeEngine@@AEAA_KPEAV?$TextEncodingConverter@$0P@@1@PEAD_K12@Z: 0.002 sec, 0 instrs
+		?Append@AutoExpandBuffer@ScopeEngine@@QEAAX_K@Z: 0.002 sec, 0 instrs
+		??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@XZ: 0.002 sec, 0 instrs
+		?CheckPartitionInfo@?$SStreamMetadataOutputter@UMetadataAggregateType_MetadataAggregate_2@@VExtract_0_Data0@@VPart_SStreamMetadataOutput_3@@$08@ScopeEngine@@CA_NAEBV?$vector@UPartitionInfoTableRow@SSLibV3@ScopeEngine@@V?$allocator@UPartitionInfoTableRow@SSLibV3@ScopeEngine@@@std@@@std@@@Z: 0.002 sec, 0 instrs
+		??$make_shared@V?$vector@UDataunitTableRow@SSLibV3@ScopeEngine@@V?$allocator@UDataunitTableRow@SSLibV3@ScopeEngine@@@std@@@std@@H@std@@YA?AV?$shared_ptr@V?$vector@UDataunitTableRow@SSLibV3@ScopeEngine@@V?$allocator@UDataunitTableRow@SSLibV3@ScopeEngine@@@std@@@std@@@0@$$QEAH@Z: 0.002 sec, 0 instrs
+		?pop_front@?$deque@V?$unique_ptr@V?$AutoRowArray@VExtract_0_Data0@@@ScopeEngine@@U?$default_delete@V?$AutoRowArray@VExtract_0_Data0@@@ScopeEngine@@@std@@@std@@V?$allocator@V?$unique_ptr@V?$AutoRowArray@VExtract_0_Data0@@@ScopeEngine@@U?$default_delete@V?$AutoRowArray@VExtract_0_Data0@@@ScopeEngine@@@std@@@std@@@2@@std@@QEAAXXZ: 0.002 sec, 0 instrs
+		??$ReadString@$0A@@?$TextInputStream@U?$TextInputStreamTraitsConst@$08$0A@$0A@$0A@$0A@$01$0A@$0A@$0A@$0A@$0A@$0A@$0A@@ScopeEngine@@VCosmosInput@2@@ScopeEngine@@AEAA?AW4TokenizerState@01@PEAVAutoExpandBuffer@1@@Z: 0.002 sec, 0 instrs
+		?get_deleter@?$_Unique_ptr_base@V?$unique_ptr@UExtractorType1_SV1_Extr_Split@@U?$default_delete@UExtractorType1_SV1_Extr_Split@@@std@@@std@@U?$default_delete@$$BY0A@V?$unique_ptr@UExtractorType1_SV1_Extr_Split@@U?$default_delete@UExtractorType1_SV1_Extr_Split@@@std@@@std@@@2@@std@@QEAAAEAU?$default_delete@$$BY0A@V?$unique_ptr@UExtractorType1_SV1_Extr_Split@@U?$default_delete@UExtractorType1_SV1_Extr_Split@@@std@@@std@@@2@XZ: 0.002 sec, 0 instrs
+		??$_Distance1@PEBVScopeErrorArg@ScopeCommon@@@std@@YA_JPEBVScopeErrorArg@ScopeCommon@@0Urandom_access_iterator_tag@0@@Z: 0.002 sec, 0 instrs
+		?AppendRuntimeStats@?$Extractor@VExtract_0_Data0@@V?$TextExtractPolicy@VExtract_0_Data0@@$00@ScopeEngine@@V?$TextInputStream@U?$TextInputStreamTraitsConst@$08$0A@$0A@$0A@$0A@$01$0A@$0A@$0A@$0A@$0A@$0A@$0A@@ScopeEngine@@VCosmosInput@2@@3@VExecutionStats@3@@ScopeEngine@@QEBAXAEAVTreeNode@2@@Z: 0.002 sec, 0 instrs
+RdrReadProc Caching Stats
+	Functions Cached: 0
+	Retrieved Count: 0
+	Abandoned Retrieval Count: 0
+	Abandoned Caching Count: 0
+	Wasted Caching Attempts: 0
+	Functions Retrieved at Least Once: 0
+	Functions Cached and Never Retrieved: 0
+	Most Hits:
+	Least Hits:
+time(c:\program files (x86)\microsoft visual studio\2017\enterprise\SDK\ScopeCppSDK\vc15\VC\bin\c2.dll)=0.35180s < 12947440705192 - 12947444223231 > BB [D:\Sharing\Scope2015\Sample_1\Sample_1\bin\Debug\FEB18BC62E9A8FD3\Scope_C74FEC5E34835C21\__ScopeCodeGenEngine__.dll.cpp]
+
+#CPP stderr:
+
+*** Done with C++ compilation, time elapsed until this point: 00:00:11.0254813
+#LINK stdout:
+   Creating library __ScopeCodeGenEngine__.lib and object __ScopeCodeGenEngine__.exp
+Linker: LibDef Total time = 0.00239s PB: 19353600 [D:\Sharing\Scope2015\Sample_1\Sample_1\bin\Debug\FEB18BC62E9A8FD3\Scope_C74FEC5E34835C21\__ScopeCodeGenEngine__.dll] 
+Linker: Pass 1: Interval #1, time = 0.05702s [D:\Sharing\Scope2015\Sample_1\Sample_1\bin\Debug\FEB18BC62E9A8FD3\Scope_C74FEC5E34835C21\__ScopeCodeGenEngine__.dll] 
+Linker:   Wait PDB close Total time = 0.04636s PB: 11022336 [D:\Sharing\Scope2015\Sample_1\Sample_1\bin\Debug\FEB18BC62E9A8FD3\Scope_C74FEC5E34835C21\__ScopeCodeGenEngine__.dll] 
+Linker:   Wait type merge Total time = 0.04848s PB: 10981376 [D:\Sharing\Scope2015\Sample_1\Sample_1\bin\Debug\FEB18BC62E9A8FD3\Scope_C74FEC5E34835C21\__ScopeCodeGenEngine__.dll] 
+Linker: Pass 2: Interval #2, time = 0.23217s [D:\Sharing\Scope2015\Sample_1\Sample_1\bin\Debug\FEB18BC62E9A8FD3\Scope_C74FEC5E34835C21\__ScopeCodeGenEngine__.dll] 
+Linker: Final Total time = 0.28922s < 12947444959571 - 12947447851746 > PB: 11382784 [D:\Sharing\Scope2015\Sample_1\Sample_1\bin\Debug\FEB18BC62E9A8FD3\Scope_C74FEC5E34835C21\__ScopeCodeGenEngine__.dll] 
+
+#LINK stderr:
+
+*** Done with C++ linking, time elapsed until this point: 00:00:11.3844578
+*** Exiting compilation, time elapsed until this point: 00:00:11.3864604

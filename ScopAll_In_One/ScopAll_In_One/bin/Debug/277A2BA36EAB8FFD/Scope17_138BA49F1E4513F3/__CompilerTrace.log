@@ -1,0 +1,413 @@
+﻿2022-01-06T14:28:57.4389043+08:00	UnknownJobId_0350400388	0.0414	CFE	VC	SetupAadCredentials	(vcName:"https://cosmos09.osdinfra.net/cosmos/cosmosAdmin",proxy:"<noproxy>",restClientCredentials:Microsoft.Rest.TokenCredentials) =>	null
+2022-01-06T14:28:57.5119057+08:00	UnknownJobId_0350400388	0.0051	Compiler	ScopeRoslynBinder	BuildScriptEnvironment	Starting
+2022-01-06T14:28:57.6539053+08:00	UnknownJobId_0350400388		Compiler	DeepCompilePipeline	InitializeCompiler	Start Compilation: JobId=, HostEnvironment=CCS, HostMachineName=V-MZH2, ApplicationId=, CompilerStartTime=2022-01-06T06:28:57.3709020Z, CompileOnVC = False, DataRoot = https://cosmos09.osdinfra.net/cosmos/cosmosAdmin, Version = 10.2.2.0
+2022-01-06T14:28:57.6549054+08:00	UnknownJobId_0350400388		Compiler	DeepCompilePipeline	InitializeCompiler	CommandLine =>	""d:\program files (x86)\microsoft visual studio\2019\enterprise\common7\ide\extensions\microsoft\scopestudio\3.1.1000.3\CompilerHost.exe" d85e6f49-ab1b-4cd9-b8bc-7548c19fb11d 25488 False C:\Users\v-meizhang\AppData\Local\Temp\DataLakeTemp"
+2022-01-06T14:28:57.6549054+08:00	UnknownJobId_0350400388		Compiler	DeepCompilePipeline	InitializeCompiler	Settings =>	{DataRoot:https://cosmos09.osdinfra.net/cosmos/cosmosAdmin,ResolverTypeForResource:Local,ResolverTypeForInput:InputPath,ResolverTypeForOutput:Dummy,SecureInfoFile:null,SecurityKeyInfo:byte[9839],NebulaCommandLine:-c++ -Inputs "D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\bin\Debug\Scope17.script" -Debug -pdb Full -off EnableScopeDdl -on ReflectStageToScript -on EnableScopeDml -on EnableSStreamContractV4 -on UseAadAuthentication -ClientVersion 10.2.2.0}
+2022-01-06T14:28:57.6679047+08:00	UnknownJobId_0350400388		Compiler	DeepCompilePipeline	InitializeCompiler	Stack =>	"   at ScopeCompiler.Dependencies.Cosmos.ParseSandboxer.CompileInSeparateAppDomain(String[] scripts, Settings settings)\r\n   at ScopeCompiler.Parser.FullParse(String[] scripts, String filePath, CompilerEnvironment environment, Settings settings, Func`4 funcParse, String nebulaCommandLine)\r\n   at ScopeCompiler.Dependencies.Cosmos.ParseSandboxer.FullParseInSeparateAppDomain(String[] scripts, String filePath, Settings settings)\r\n   at ScopeClient.Scope.TryToParse(String[] scripts, String scriptFileName, Settings compSet, CompilerEnvironment enviroment, ParseInformation& info)\r\n   at ScopeClient.Scope.PrivateCompileSuppressException(Settings compSet, CompilerSwitches compilerSwitches, CompilerEnvironment environment, String outputXmlFileName, Dictionary`2 parameters, Boolean isParseOnly, Boolean verbose)\r\n   at ScopeClient.ScopeStudio.ScopeStudioInterface.Compile(Dictionary`2 parameters, Int32 version)\r\n   at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)\r\n   at System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)\r\n   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)\r\n   at System.RuntimeType.InvokeMember(String name, BindingFlags bindingFlags, Binder binder, Object target, Object[] providedArgs, ParameterModifier[] modifiers, CultureInfo culture, String[] namedParams)\r\n   at Microsoft.Cosmos.ScopeStudio.BusinessObjects.Common.CompilerProxy.DoInvork(String method, Object[] parameters, String outputXmlFileName)\r\n"
+2022-01-06T14:28:57.6739050+08:00	UnknownJobId_0350400388		Compiler	DeepCompilePipeline	BeforeCompile	Client Version: 10.2.2.0
+2022-01-06T14:28:57.6739050+08:00	UnknownJobId_0350400388		Compiler	DeepCompilePipeline	BeforeCompile	Target: SingleBox
+2022-01-06T14:28:57.6739050+08:00	UnknownJobId_0350400388		Compiler	DeepCompilePipeline	BeforeCompile	Stat: SimulateLarge
+2022-01-06T14:28:57.6739050+08:00	UnknownJobId_0350400388		Compiler	DeepCompilePipeline	BeforeCompile	SkipPath: True
+2022-01-06T14:28:57.6839044+08:00	UnknownJobId_0350400388		Compiler	ScopeFrontEndRunner	Execute	Starting FrontEndRun...
+2022-01-06T14:28:57.7469054+08:00	UnknownJobId_0350400388	0.2433	Compiler	ScopeRoslynBinder	BuildScriptEnvironment	Finished
+2022-01-06T14:28:59.4579251+08:00	UnknownJobId_0350400388	0.1401	Compiler	ScopeLocalCompileStrategy	ExecuteCompilePass	SyntaxVerifier	Scope17.script
+2022-01-06T14:29:00.7829382+08:00	UnknownJobId_0350400388	1.2831	CFE	VC	GetStreamInfo	(stream:"https://cosmos09.osdinfra.net/cosmos/cosmosAdmin/users/v-hozhao/ClusterReference/MyHelper.dll",compression:False,allowIncompleteStream:True) =>	VcClient.StreamInfo
+2022-01-06T14:29:00.8049369+08:00	UnknownJobId_0350400388		Compiler	ScopeLocalResourceStorage	RequiresDownload	RequiresDownload: false, Reason: cached resource up-to-date =>	{fileMetadata: {VirtualPath:'D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\users\v-hozhao\All_In_One\Input\PrivacyAnnotation.module',PhysicalPath:'D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\users\v-hozhao\All_In_One\Input\PrivacyAnnotation.module',VirtualColumnValues:'[]'}, cachePath: D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\bin\Debug\277A2BA36EAB8FFD\Scope17_138BA49F1E4513F3\PrivacyAnnotation.module}
+2022-01-06T14:29:00.8159401+08:00	UnknownJobId_0350400388	0.0028	Compiler	ScopeLocalCompileStrategy	ExecuteCompilePass	ViewResolver	PrivacyAnnotation.module
+2022-01-06T14:29:00.8269714+08:00	UnknownJobId_0350400388	0.0096	Compiler	ScopeLocalCompileStrategy	ExecuteCompilePass	SyntaxVerifier	PrivacyAnnotation.module
+2022-01-06T14:29:00.8319396+08:00	UnknownJobId_0350400388	0.0045	Compiler	ScopeLocalCompileStrategy	ExecuteCompilePass	DdlResolver	PrivacyAnnotation.module
+2022-01-06T14:29:00.8359699+08:00	UnknownJobId_0350400388		Compiler	ScopeLocalResourceStorage	RequiresDownload	RequiresDownload: false, Reason: cached resource up-to-date =>	{fileMetadata: {VirtualPath:'D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\users\v-hozhao\All_In_One\Input\SearchLog.module',PhysicalPath:'D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\users\v-hozhao\All_In_One\Input\SearchLog.module',VirtualColumnValues:'[]'}, cachePath: D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\bin\Debug\277A2BA36EAB8FFD\Scope17_138BA49F1E4513F3\SearchLog.module}
+2022-01-06T14:29:00.8469386+08:00	UnknownJobId_0350400388	0.0078	Compiler	ScopeLocalCompileStrategy	ExecuteCompilePass	ViewResolver	SearchLog.module
+2022-01-06T14:29:00.8689394+08:00	UnknownJobId_0350400388	0.0216	Compiler	ScopeLocalCompileStrategy	ExecuteCompilePass	SyntaxVerifier	SearchLog.module
+2022-01-06T14:29:00.8699400+08:00	UnknownJobId_0350400388	0.0009	Compiler	ScopeLocalCompileStrategy	ExecuteCompilePass	DdlResolver	SearchLog.module
+2022-01-06T14:29:00.8759692+08:00	UnknownJobId_0350400388	0.0009	Compiler	ScopeLocalCompileStrategy	ExecuteCompilePass	DdlResolver	Scope17.script
+2022-01-06T14:29:00.8789698+08:00	UnknownJobId_0350400388		Compiler	ScopeLocalResourceStorage	RequiresDownload	RequiresDownload: false, Reason: cached resource up-to-date =>	{fileMetadata: {VirtualPath:'D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\users\v-hozhao\All_In_One\Input\SearchLog.view',PhysicalPath:'D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\users\v-hozhao\All_In_One\Input\SearchLog.view',VirtualColumnValues:'[]'}, cachePath: D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\bin\Debug\277A2BA36EAB8FFD\Scope17_138BA49F1E4513F3\SearchLog.view}
+2022-01-06T14:29:00.8829396+08:00	UnknownJobId_0350400388	0.0023	Compiler	ScopeLocalCompileStrategy	ExecuteCompilePass	SyntaxVerifier	
+2022-01-06T14:29:00.8889387+08:00	UnknownJobId_0350400388	0.0003	Compiler	ScopeLocalCompileStrategy	ExecuteCompilePass	SyntaxVerifier	[1] SearchLog.view
+2022-01-06T14:29:00.8889387+08:00	UnknownJobId_0350400388	0.0001	Compiler	ScopeLocalCompileStrategy	ExecuteCompilePass	DdlResolver	[1] SearchLog.view
+2022-01-06T14:29:00.8889387+08:00	UnknownJobId_0350400388	0.0000	Compiler	ScopeLocalCompileStrategy	ExecuteCompilePass	ViewResolver	[1] SearchLog.view
+2022-01-06T14:29:00.9009413+08:00	UnknownJobId_0350400388	0.0004	Compiler	ScopeLocalCompileStrategy	ExecuteCompilePass	SyntaxVerifier	[1] SearchLog.module
+2022-01-06T14:29:00.9019397+08:00	UnknownJobId_0350400388	0.0002	Compiler	ScopeLocalCompileStrategy	ExecuteCompilePass	DdlResolver	[1] SearchLog.module
+2022-01-06T14:29:00.9019397+08:00	UnknownJobId_0350400388	0.0000	Compiler	ScopeLocalCompileStrategy	ExecuteCompilePass	ViewResolver	[1] SearchLog.module
+2022-01-06T14:29:00.9039663+08:00	UnknownJobId_0350400388		Compiler	ScopeLocalResourceStorage	RequiresDownload	RequiresDownload: false, Reason: cached resource up-to-date =>	{fileMetadata: {VirtualPath:'D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\users\v-hozhao\All_In_One\Input\SearchLogImportedScript.script',PhysicalPath:'D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\users\v-hozhao\All_In_One\Input\SearchLogImportedScript.script',VirtualColumnValues:'[]'}, cachePath: D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\bin\Debug\277A2BA36EAB8FFD\Scope17_138BA49F1E4513F3\SearchLogImportedScript.script}
+2022-01-06T14:29:00.9099799+08:00	UnknownJobId_0350400388	0.0002	Compiler	ScopeLocalCompileStrategy	ExecuteCompilePass	SyntaxVerifier	[1] SearchLogImportedScript.script
+2022-01-06T14:29:00.9099799+08:00	UnknownJobId_0350400388	0.0001	Compiler	ScopeLocalCompileStrategy	ExecuteCompilePass	DdlResolver	[1] SearchLogImportedScript.script
+2022-01-06T14:29:00.9099799+08:00	UnknownJobId_0350400388	0.0000	Compiler	ScopeLocalCompileStrategy	ExecuteCompilePass	ViewResolver	[1] SearchLogImportedScript.script
+2022-01-06T14:29:00.9109648+08:00	UnknownJobId_0350400388	0.0000	Compiler	ScopeLocalCompileStrategy	ExecuteCompilePass	ViewResolver	Scope17.script
+2022-01-06T14:29:00.9109648+08:00	UnknownJobId_0350400388	3.2129	Compiler	ScopeLocalCompileStrategy	ExecuteCompilePass	AstBuilder	Scope17.script
+2022-01-06T14:29:00.9189427+08:00	UnknownJobId_0350400388	0.0071	Compiler	ScopeLocalCompileStrategy	ExecuteCompilePass	ViewResolver	Scope17.script
+2022-01-06T14:29:00.9209569+08:00	UnknownJobId_0350400388	0.0010	Compiler	ScopeLocalCompileStrategy	ExecuteCompilePass	ClassifierPass	Scope17.script
+2022-01-06T14:29:00.9289420+08:00	UnknownJobId_0350400388	0.0070	Compiler	ScopeLocalCompileStrategy	ExecuteCompilePass	AssemblyResolverPass	Scope17.script
+2022-01-06T14:29:00.9369420+08:00	UnknownJobId_0350400388	0.0077	Compiler	ScopeLocalCompileStrategy	ExecuteCompilePass	ResourceReferencePass	Scope17.script
+2022-01-06T14:29:00.9409408+08:00	UnknownJobId_0350400388		Compiler	ScopeLocalResourceStorage	DownloadResources	Resources to download =>	[/*count:9*/{fileMetadata: {VirtualPath:'D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\users\v-hozhao\All_In_One\Input\PrivacyAnnotation.module',PhysicalPath:'D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\users\v-hozhao\All_In_One\Input\PrivacyAnnotation.module',VirtualColumnValues:'[]'}, cachePath: D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\bin\Debug\277A2BA36EAB8FFD\Scope17_138BA49F1E4513F3\PrivacyAnnotation.module},{fileMetadata: {VirtualPath:'D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\users\v-hozhao\All_In_One\Input\SearchLog.module',PhysicalPath:'D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\users\v-hozhao\All_In_One\Input\SearchLog.module',VirtualColumnValues:'[]'}, cachePath: D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\bin\Debug\277A2BA36EAB8FFD\Scope17_138BA49F1E4513F3\SearchLog.module},{fileMetadata: {VirtualPath:'D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\users\v-hozhao\All_In_One\Input\SearchLog.view',PhysicalPath:'D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\users\v-hozhao\All_In_One\Input\SearchLog.view',VirtualColumnValues:'[]'}, cachePath: D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\bin\Debug\277A2BA36EAB8FFD\Scope17_138BA49F1E4513F3\SearchLog.view},{fileMetadata: {VirtualPath:'D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\users\v-hozhao\All_In_One\Input\SearchLogImportedScript.script',PhysicalPath:'D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\users\v-hozhao\All_In_One\Input\SearchLogImportedScript.script',VirtualColumnValues:'[]'}, cachePath: D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\bin\Debug\277A2BA36EAB8FFD\Scope17_138BA49F1E4513F3\SearchLogImportedScript.script},{fileMetadata: {VirtualPath:'C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\System.Core.dll',PhysicalPath:'C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\System.Core.dll',VirtualColumnValues:'[]'}, cachePath: D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\bin\Debug\277A2BA36EAB8FFD\Scope17_138BA49F1E4513F3\System.Core.dll},{fileMetadata: {VirtualPath:'https://cosmos09.osdinfra.net/cosmos/cosmosAdmin/users/v-hozhao/ClusterReference/MyHelper.dll',PhysicalPath:'adl://sandbox-c09.azuredatalakestore.net/users/v-hozhao/ClusterReference/MyHelper.dll',VirtualColumnValues:'[]'}, cachePath: D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\bin\Debug\277A2BA36EAB8FFD\Scope17_138BA49F1E4513F3\MyHelper.dll},{fileMetadata: {VirtualPath:'D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\Scope1.py',PhysicalPath:'D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\Scope1.py',VirtualColumnValues:'[]'}, cachePath: D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\bin\Debug\277A2BA36EAB8FFD\Scope17_138BA49F1E4513F3\Scope1.py},{fileMetadata: {VirtualPath:'D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\users\v-hozhao\All_In_One\Input\Microsoft.DataMap.CodeAnnotation.Cosmos.dll',PhysicalPath:'D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\users\v-hozhao\All_In_One\Input\Microsoft.DataMap.CodeAnnotation.Cosmos.dll',VirtualColumnValues:'[]'}, cachePath: D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\bin\Debug\277A2BA36EAB8FFD\Scope17_138BA49F1E4513F3\Microsoft.DataMap.CodeAnnotation.Cosmos.dll},{fileMetadata: {VirtualPath:'D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\users\v-hozhao\All_In_One\Input\Microsoft.PrivacyServices.PrivacyAnnotation.dll',PhysicalPath:'D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\users\v-hozhao\All_In_One\Input\Microsoft.PrivacyServices.PrivacyAnnotation.dll',VirtualColumnValues:'[]'}, cachePath: D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\bin\Debug\277A2BA36EAB8FFD\Scope17_138BA49F1E4513F3\Microsoft.PrivacyServices.PrivacyAnnotation.dll}]
+2022-01-06T14:29:00.9419404+08:00	UnknownJobId_0350400388		Compiler	ScopeLocalResourceStorage	RequiresDownload	RequiresDownload: false, Reason: cached resource up-to-date =>	{fileMetadata: {VirtualPath:'C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\System.Core.dll',PhysicalPath:'C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\System.Core.dll',VirtualColumnValues:'[]'}, cachePath: D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\bin\Debug\277A2BA36EAB8FFD\Scope17_138BA49F1E4513F3\System.Core.dll}
+2022-01-06T14:29:00.9419404+08:00	UnknownJobId_0350400388		Compiler	ScopeLocalResourceStorage	RequiresDownload	RequiresDownload: false, Reason: cached resource up-to-date =>	{fileMetadata: {VirtualPath:'https://cosmos09.osdinfra.net/cosmos/cosmosAdmin/users/v-hozhao/ClusterReference/MyHelper.dll',PhysicalPath:'adl://sandbox-c09.azuredatalakestore.net/users/v-hozhao/ClusterReference/MyHelper.dll',VirtualColumnValues:'[]'}, cachePath: D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\bin\Debug\277A2BA36EAB8FFD\Scope17_138BA49F1E4513F3\MyHelper.dll}
+2022-01-06T14:29:00.9419404+08:00	UnknownJobId_0350400388		Compiler	ScopeLocalResourceStorage	RequiresDownload	RequiresDownload: false, Reason: cached resource up-to-date =>	{fileMetadata: {VirtualPath:'D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\Scope1.py',PhysicalPath:'D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\Scope1.py',VirtualColumnValues:'[]'}, cachePath: D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\bin\Debug\277A2BA36EAB8FFD\Scope17_138BA49F1E4513F3\Scope1.py}
+2022-01-06T14:29:00.9419404+08:00	UnknownJobId_0350400388		Compiler	ScopeLocalResourceStorage	RequiresDownload	RequiresDownload: false, Reason: cached resource up-to-date =>	{fileMetadata: {VirtualPath:'D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\users\v-hozhao\All_In_One\Input\Microsoft.DataMap.CodeAnnotation.Cosmos.dll',PhysicalPath:'D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\users\v-hozhao\All_In_One\Input\Microsoft.DataMap.CodeAnnotation.Cosmos.dll',VirtualColumnValues:'[]'}, cachePath: D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\bin\Debug\277A2BA36EAB8FFD\Scope17_138BA49F1E4513F3\Microsoft.DataMap.CodeAnnotation.Cosmos.dll}
+2022-01-06T14:29:00.9429404+08:00	UnknownJobId_0350400388		Compiler	ScopeLocalResourceStorage	RequiresDownload	RequiresDownload: false, Reason: cached resource up-to-date =>	{fileMetadata: {VirtualPath:'D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\users\v-hozhao\All_In_One\Input\Microsoft.PrivacyServices.PrivacyAnnotation.dll',PhysicalPath:'D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\users\v-hozhao\All_In_One\Input\Microsoft.PrivacyServices.PrivacyAnnotation.dll',VirtualColumnValues:'[]'}, cachePath: D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\bin\Debug\277A2BA36EAB8FFD\Scope17_138BA49F1E4513F3\Microsoft.PrivacyServices.PrivacyAnnotation.dll}
+2022-01-06T14:29:03.8989805+08:00	UnknownJobId_0350400388	2.9173	Compiler	ScopeCompileStrategy	Process	CsBlockAnalyzer finished.
+2022-01-06T14:29:03.8989805+08:00	UnknownJobId_0350400388	0.0000	Compiler	ScopeRoslynBinder	BuildScriptEnvironment	Starting
+2022-01-06T14:29:03.9049735+08:00	UnknownJobId_0350400388	0.0051	Compiler	ScopeRoslynBinder	BuildScriptEnvironment	Finished
+2022-01-06T14:29:04.0229755+08:00	UnknownJobId_0350400388	0.1217	Compiler	ScopeLocalCompileStrategy	ExecuteCompilePass	ProcessUsingsPass	Scope17.script
+2022-01-06T14:29:04.0939749+08:00	UnknownJobId_0350400388	0.0696	Compiler	ScopeLocalCompileStrategy	ExecuteCompilePass	InputOutputPass	Scope17.script
+2022-01-06T14:29:04.1859759+08:00	UnknownJobId_0350400388	0.0007	UserCode	<>c__DisplayClass106_0`1	Constructor	() =>	ScopeRuntime.DefaultTextExtractor
+2022-01-06T14:29:04.1909755+08:00	UnknownJobId_0350400388	0.0004	UserCode	DefaultTextExtractor	AtomicFileProcessing	() =>	False
+2022-01-06T14:29:04.2099758+08:00	UnknownJobId_0350400388	0.0136	UserCode	DefaultTextExtractor	Produces	() =>	SepalLength:string,SepalWidth:string,PetalLength:string,PetalWidth:string,Name:string
+2022-01-06T14:29:04.2759754+08:00	UnknownJobId_0350400388	0.0003	UserCode	<>c__DisplayClass106_0`1	Constructor	() =>	ScopeRuntime.DefaultTextOutputter
+2022-01-06T14:29:04.2879766+08:00	UnknownJobId_0350400388	0.0000	UserCode	<>c__DisplayClass106_0`1	Constructor	() =>	ScopeRuntime.DefaultTextOutputter
+2022-01-06T14:29:04.2929755+08:00	UnknownJobId_0350400388	0.0001	UserCode	<>c__DisplayClass106_0`1	Constructor	() =>	___Scope_Generated_Classes___+MyTsvExtractor
+2022-01-06T14:29:04.2959759+08:00	UnknownJobId_0350400388	0.0024	UserCode	MyTsvExtractor	AtomicFileProcessing	() =>	False
+2022-01-06T14:29:04.2979766+08:00	UnknownJobId_0350400388	0.0017	UserCode	MyTsvExtractor	Produces	() =>	IId:string,Start:string,Market:string,Query:string,DwellTime:string,Results:string,ClickedUrls:string
+2022-01-06T14:29:04.3019768+08:00	UnknownJobId_0350400388	0.0001	UserCode	<>c__DisplayClass106_0`1	Constructor	() =>	ScopeRuntime.DefaultTextOutputter
+2022-01-06T14:29:04.3049768+08:00	UnknownJobId_0350400388	0.0000	UserCode	<>c__DisplayClass106_0`1	Constructor	() =>	ScopeRuntime.DefaultTextExtractor
+2022-01-06T14:29:04.3049768+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AtomicFileProcessing	() =>	False
+2022-01-06T14:29:04.3049768+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	Produces	() =>	IId:string,Start:string,Market:string,Query:string,DwellTime:string,Results:string,ClickedUrls:string
+2022-01-06T14:29:04.3739769+08:00	UnknownJobId_0350400388	0.0000	UserCode	<>c__DisplayClass106_0`1	Constructor	() =>	ScopeRuntime.DefaultTextOutputter
+2022-01-06T14:29:04.4189790+08:00	UnknownJobId_0350400388	0.3252	StructuredStream	ScopeSStreamMetadataManager	GetMetadata	(fileMetadata:{VcName:D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\users\v-hozhao\All_In_One\Input\HealthCheckUCMUserUsage_WeekAgg.ss,CosmosName:D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\users\v-hozhao\All_In_One\Input\HealthCheckUCMUserUsage_WeekAgg.ss,Length:27516}) =>	BingAdsUserId:int,MsAlias:string,UcmUserId:int,NumofWeek:int,TotalUsage:int,ACTIONB9F2D2BCEE264BCAA7B0EC6A24DF55BB:byte,ROWIDB9F2D2BCEE264BCAA7B0EC6A24DF55BB:long,DISTRIBUTIONIDB9F2D2BCEE264BCAA7B0EC6A24DF55BB:int
+2022-01-06T14:29:04.4199785+08:00	UnknownJobId_0350400388	0.3371	StructuredStream	ScopeSStreamMetadataManager	GetMetadata	(fileMetadata:{VcName:D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\users\v-hozhao\All_In_One\Input\Input.ss,CosmosName:D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\users\v-hozhao\All_In_One\Input\Input.ss,Length:23353}) =>	Column1:string,Column2:string,Column3:string,ACTIONB9F2D2BCEE264BCAA7B0EC6A24DF55BB:byte,ROWIDB9F2D2BCEE264BCAA7B0EC6A24DF55BB:long,DISTRIBUTIONIDB9F2D2BCEE264BCAA7B0EC6A24DF55BB:int
+2022-01-06T14:29:04.4199785+08:00	UnknownJobId_0350400388	0.3255	StructuredStream	ScopeSStreamMetadataManager	GetMetadata	(fileMetadata:{VcName:D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\users\v-hozhao\All_In_One\Input\HealthCheckUCMUserUsage_MonthAgg.ss,CosmosName:D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\users\v-hozhao\All_In_One\Input\HealthCheckUCMUserUsage_MonthAgg.ss,Length:28761}) =>	BingAdsUserId:int,MsAlias:string,UcmUserId:int,NumofMonth:int,LastMonth:string,TotalUsage:int,ACTIONB9F2D2BCEE264BCAA7B0EC6A24DF55BB:byte,ROWIDB9F2D2BCEE264BCAA7B0EC6A24DF55BB:long,DISTRIBUTIONIDB9F2D2BCEE264BCAA7B0EC6A24DF55BB:int
+2022-01-06T14:29:05.5369893+08:00	UnknownJobId_0350400388	1.0861	UserCode	RoslynSession	[Privacy.DataType.BrowsingHistory()]
+                            class __scope__internal
+                            {
+                            }
+
+                            System.Attribute.GetCustomAttributes(typeof(__scope__internal))	() =>	[/*count:1*/Privacy.DataType+BrowsingHistoryAttribute]
+2022-01-06T14:29:05.5409906+08:00	UnknownJobId_0350400388	0.0000	UserCode	<>c__DisplayClass106_0`1	Constructor	() =>	ScopeRuntime.DefaultTextExtractor
+2022-01-06T14:29:05.5419891+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AtomicFileProcessing	() =>	False
+2022-01-06T14:29:05.5419891+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	Produces	() =>	UserId:string,Start:string,Region:string,Query:string,Duration:string,Urls:string,ClickedUrls:string
+2022-01-06T14:29:05.5449892+08:00	UnknownJobId_0350400388	0.0000	UserCode	<>c__DisplayClass106_0`1	Constructor	() =>	ScopeRuntime.DefaultTextOutputter
+2022-01-06T14:29:05.5599897+08:00	UnknownJobId_0350400388	0.0000	UserCode	<>c__DisplayClass106_0`1	Constructor	() =>	ScopeRuntime.DefaultTextExtractor
+2022-01-06T14:29:05.5599897+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AtomicFileProcessing	() =>	False
+2022-01-06T14:29:05.5599897+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	Produces	() =>	UserId:string,Start:string,Region:string,Query:string,Duration:string,Urls:string,ClickedUrls:string
+2022-01-06T14:29:05.5709900+08:00	UnknownJobId_0350400388	0.0000	UserCode	<>c__DisplayClass106_0`1	Constructor	() =>	ScopeRuntime.DefaultTextOutputter
+2022-01-06T14:29:05.5789905+08:00	UnknownJobId_0350400388	0.0000	UserCode	<>c__DisplayClass106_0`1	Constructor	() =>	ScopeRuntime.DefaultTextExtractor
+2022-01-06T14:29:05.5789905+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AtomicFileProcessing	() =>	False
+2022-01-06T14:29:05.5789905+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	Produces	() =>	UserId:string,Start:string,Region:string,Query:string,Duration:string,Urls:string,ClickedUrls:string
+2022-01-06T14:29:05.5859910+08:00	UnknownJobId_0350400388	0.0000	UserCode	<>c__DisplayClass106_0`1	Constructor	() =>	ScopeRuntime.DefaultTextOutputter
+2022-01-06T14:29:05.5899905+08:00	UnknownJobId_0350400388	0.0000	UserCode	<>c__DisplayClass106_0`1	Constructor	() =>	ScopeRuntime.DefaultTextExtractor
+2022-01-06T14:29:05.5899905+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AtomicFileProcessing	() =>	False
+2022-01-06T14:29:05.5899905+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	Produces	() =>	Id:string,Start:string,Market:string,Query:string,DwellTime:string,Results:string,ClickedUrls:string
+2022-01-06T14:29:05.5939908+08:00	UnknownJobId_0350400388	0.0000	UserCode	<>c__DisplayClass106_0`1	Constructor	() =>	ScopeRuntime.DefaultTextOutputter
+2022-01-06T14:29:05.5970019+08:00	UnknownJobId_0350400388	0.0000	UserCode	<>c__DisplayClass106_0`1	Constructor	() =>	ScopeRuntime.DefaultTextExtractor
+2022-01-06T14:29:05.5970019+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AtomicFileProcessing	() =>	False
+2022-01-06T14:29:05.5970019+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	Produces	() =>	UserId:string,Start:string,Region:string,Query:string,Duration:string,Urls:string,ClickedUrls:string
+2022-01-06T14:29:05.6309914+08:00	UnknownJobId_0350400388	0.0000	UserCode	<>c__DisplayClass106_0`1	Constructor	() =>	ScopeRuntime.DefaultTextOutputter
+2022-01-06T14:29:05.6339908+08:00	UnknownJobId_0350400388	0.0000	UserCode	<>c__DisplayClass106_0`1	Constructor	() =>	ScopeRuntime.DefaultTextExtractor
+2022-01-06T14:29:05.6339908+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AtomicFileProcessing	() =>	False
+2022-01-06T14:29:05.6339908+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	Produces	() =>	BingAdsUserId:string,MsAlias:string,UcmUserId:string
+2022-01-06T14:29:05.9119929+08:00	UnknownJobId_0350400388	0.0000	UserCode	<>c__DisplayClass106_0`1	Constructor	() =>	___Scope_Generated_Classes___+FreqProcessor
+2022-01-06T14:29:05.9130254+08:00	UnknownJobId_0350400388	0.0001	UserCode	FreqProcessor	ConstantResultSchema	() =>	False
+2022-01-06T14:29:05.9180250+08:00	UnknownJobId_0350400388	0.0001	UserCode	FreqProcessor	Produces	() =>	BingAdsUserId:int,MsAlias:string,UcmUserId:int,FreqSegment:string,NumofMonth:int,LastMonth:string,NumofWeek:int,TotalUsage:int
+2022-01-06T14:29:05.9190249+08:00	UnknownJobId_0350400388	0.0000	UserCode	FreqProcessor	AllowColumnPruning	() =>	False
+2022-01-06T14:29:05.9220286+08:00	UnknownJobId_0350400388	0.0001	UserCode	FreqProcessor	RequiredOrdinals	() =>	null
+2022-01-06T14:29:05.9230252+08:00	UnknownJobId_0350400388	1.8265	Compiler	ScopeLocalCompileStrategy	ExecuteCompilePass	BinderPass	Scope17.script
+2022-01-06T14:29:05.9639937+08:00	UnknownJobId_0350400388	0.0398	Compiler	ScopeLocalCompileStrategy	ExecuteCompilePass	SemanticAnalyzerPass	Scope17.script
+2022-01-06T14:29:05.9830258+08:00	UnknownJobId_0350400388	0.0000	UserCode	MyTsvExtractor	AllowColumnPruning	() =>	False
+2022-01-06T14:29:06.0089950+08:00	UnknownJobId_0350400388	0.0000	UserCode	FreqProcessor	AllowColumnPruning	() =>	False
+2022-01-06T14:29:06.0099952+08:00	UnknownJobId_0350400388	0.0447	Compiler	ScopeLocalCompileStrategy	ExecuteCompilePass	ErrorReporterPass	Scope17.script
+2022-01-06T14:29:06.0109946+08:00	UnknownJobId_0350400388	8.3266	Compiler	ScopeFrontEndRunner	CleanUp	Finished FrontEndRun...
+2022-01-06T14:29:06.0290354+08:00	UnknownJobId_0350400388		Compiler	ScopeBackEndRunner	OptimizerRun	Starting OptimizerRun...
+2022-01-06T14:29:06.0599950+08:00	UnknownJobId_0350400388	0.0288	Compiler	ScopeLocalResourceStorage	AddGeneratedFile	(path:"D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\bin\Debug\277A2BA36EAB8FFD\Scope17_138BA49F1E4513F3\__CompilerTimers.xml",type:CompilerTimers) =>	null
+2022-01-06T14:29:06.0778249+08:00	UnknownJobId_0350400388	0.0001	UserCode	DefaultTextOutputter	AtomicFileProcessing	() =>	False
+2022-01-06T14:29:06.0798250+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextOutputter	AtomicFileProcessing	() =>	False
+2022-01-06T14:29:06.0798250+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextOutputter	AtomicFileProcessing	() =>	False
+2022-01-06T14:29:06.1038262+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextOutputter	AtomicFileProcessing	() =>	False
+2022-01-06T14:29:06.2798262+08:00	UnknownJobId_0350400388		StructuredStream	TableMetadata	GetAttributeListFromSerializedByteArray	Successfully deserialized attributes from byte array, attribute namespaces are: 
+2022-01-06T14:29:06.2838276+08:00	UnknownJobId_0350400388		StructuredStream	OptTreeGenerator	ProcessSingleStructuredStreamWithoutVirtualColumns	Processing structured stream at D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\users\v-hozhao\All_In_One\Input\Input.ss with attributes
+2022-01-06T14:29:06.2928276+08:00	UnknownJobId_0350400388		StructuredStream	TableMetadata	GetAttributeListFromSerializedByteArray	Successfully deserialized attributes from byte array, attribute namespaces are: 
+2022-01-06T14:29:06.3178293+08:00	UnknownJobId_0350400388	0.0001	UserCode	DefaultTextOutputter	AtomicFileProcessing	() =>	False
+2022-01-06T14:29:06.3198294+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextOutputter	AtomicFileProcessing	() =>	False
+2022-01-06T14:29:06.3208285+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextOutputter	AtomicFileProcessing	() =>	False
+2022-01-06T14:29:06.3208285+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextOutputter	AtomicFileProcessing	() =>	False
+2022-01-06T14:29:06.3258286+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextOutputter	AtomicFileProcessing	() =>	False
+2022-01-06T14:29:06.3258286+08:00	UnknownJobId_0350400388		StructuredStream	TableMetadata	GetAttributeListFromSerializedByteArray	Existing attributes are null
+2022-01-06T14:29:06.3258286+08:00	UnknownJobId_0350400388		StructuredStream	OptTreeGenerator	ProcessSingleStructuredStreamWithoutVirtualColumns	Processing structured stream at D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\users\v-hozhao\All_In_One\Input\HealthCheckUCMUserUsage_MonthAgg.ss with attributes
+2022-01-06T14:29:06.3258286+08:00	UnknownJobId_0350400388		StructuredStream	TableMetadata	GetAttributeListFromSerializedByteArray	Existing attributes are null
+2022-01-06T14:29:06.3258286+08:00	UnknownJobId_0350400388		StructuredStream	TableMetadata	GetAttributeListFromSerializedByteArray	Existing attributes are null
+2022-01-06T14:29:06.3258286+08:00	UnknownJobId_0350400388		StructuredStream	OptTreeGenerator	ProcessSingleStructuredStreamWithoutVirtualColumns	Processing structured stream at D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\users\v-hozhao\All_In_One\Input\HealthCheckUCMUserUsage_WeekAgg.ss with attributes
+2022-01-06T14:29:06.3268279+08:00	UnknownJobId_0350400388		StructuredStream	TableMetadata	GetAttributeListFromSerializedByteArray	Existing attributes are null
+2022-01-06T14:29:06.3378294+08:00	UnknownJobId_0350400388	0.0001	UserCode	FreqProcessor	RowLevelProcessor	() =>	False
+2022-01-06T14:29:06.3388281+08:00	UnknownJobId_0350400388	0.0000	UserCode	FreqProcessor	AllowColumnPruning	() =>	False
+2022-01-06T14:29:06.3398276+08:00	UnknownJobId_0350400388	0.3019	Compiler	ScopeLocalCompileStrategy	ExecuteCompilePass	GenerateOptTreePass	Scope17.script
+2022-01-06T14:29:06.4468321+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AtomicFileProcessing	() =>	False
+2022-01-06T14:29:06.4608286+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AtomicFileProcessing	() =>	False
+2022-01-06T14:29:06.4678306+08:00	UnknownJobId_0350400388	0.0000	UserCode	MyTsvExtractor	AtomicFileProcessing	() =>	False
+2022-01-06T14:29:06.4678306+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AtomicFileProcessing	() =>	False
+2022-01-06T14:29:06.4688312+08:00	UnknownJobId_0350400388		Compiler	PlaybackDbWriter	SerializeSStreamMeta	SStreamMetadata converted to base64 string, size is59461
+2022-01-06T14:29:06.4928294+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AtomicFileProcessing	() =>	False
+2022-01-06T14:29:06.4938291+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AtomicFileProcessing	() =>	False
+2022-01-06T14:29:06.4938291+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AtomicFileProcessing	() =>	False
+2022-01-06T14:29:06.4938291+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AtomicFileProcessing	() =>	False
+2022-01-06T14:29:06.4968297+08:00	UnknownJobId_0350400388	0.1553	Compiler	ScopeLocalResourceStorage	AddGeneratedFile	(path:"D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\bin\Debug\277A2BA36EAB8FFD\Scope17_138BA49F1E4513F3\ScopeInternalStatistics.xml",type:StatisticsResource, PlaybackDb) =>	null
+2022-01-06T14:29:06.4988295+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AtomicFileProcessing	() =>	False
+2022-01-06T14:29:06.5048313+08:00	UnknownJobId_0350400388	0.0002	UserCode	FreqProcessor	RunSingleThreaded	() =>	True
+2022-01-06T14:29:06.5388298+08:00	UnknownJobId_0350400388	0.0015	UserCode	FreqProcessor	UdoProperties	() =>	null
+2022-01-06T14:29:06.5418296+08:00	UnknownJobId_0350400388	0.0000	UserCode	FreqProcessor	UdoProperties	() =>	null
+2022-01-06T14:29:06.5548296+08:00	UnknownJobId_0350400388	0.0001	UserCode	FreqProcessor	AllowArgsInSignature	() =>	True
+2022-01-06T14:29:06.5628316+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AllowArgsInSignature	() =>	True
+2022-01-06T14:29:06.5638323+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AllowArgsInSignature	() =>	True
+2022-01-06T14:29:06.5638323+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AllowArgsInSignature	() =>	True
+2022-01-06T14:29:06.5638323+08:00	UnknownJobId_0350400388	0.0000	UserCode	MyTsvExtractor	AllowArgsInSignature	() =>	True
+2022-01-06T14:29:06.5648312+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AllowArgsInSignature	() =>	True
+2022-01-06T14:29:06.5648312+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AllowArgsInSignature	() =>	True
+2022-01-06T14:29:06.5648312+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AllowArgsInSignature	() =>	True
+2022-01-06T14:29:06.5658311+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AllowArgsInSignature	() =>	True
+2022-01-06T14:29:06.5658311+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AllowArgsInSignature	() =>	True
+2022-01-06T14:29:06.5688323+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AllowArgsInSignature	() =>	True
+2022-01-06T14:29:06.5698311+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AllowArgsInSignature	() =>	True
+2022-01-06T14:29:06.5698311+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AllowArgsInSignature	() =>	True
+2022-01-06T14:29:06.5698311+08:00	UnknownJobId_0350400388	0.0000	UserCode	MyTsvExtractor	AllowArgsInSignature	() =>	True
+2022-01-06T14:29:06.5698311+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AllowArgsInSignature	() =>	True
+2022-01-06T14:29:06.5698311+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AllowArgsInSignature	() =>	True
+2022-01-06T14:29:06.5698311+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AllowArgsInSignature	() =>	True
+2022-01-06T14:29:06.5708309+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AllowArgsInSignature	() =>	True
+2022-01-06T14:29:06.5708309+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AllowArgsInSignature	() =>	True
+2022-01-06T14:29:06.6158312+08:00	UnknownJobId_0350400388	0.0837	Compiler	ScopeLocalResourceStorage	AddGeneratedFile	(path:"D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\bin\Debug\277A2BA36EAB8FFD\Scope17_138BA49F1E4513F3\__Ast__.bin",type:StatisticsResource) =>	null
+2022-01-06T14:29:06.6988672+08:00	UnknownJobId_0350400388	0.0001	UserCode	DefaultTextExtractor	AllowColumnPruning	() =>	True
+2022-01-06T14:29:06.6988672+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AllowColumnPruning	() =>	True
+2022-01-06T14:29:06.6998319+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AllowColumnPruning	() =>	True
+2022-01-06T14:29:06.6998319+08:00	UnknownJobId_0350400388	0.0001	UserCode	DefaultTextExtractor	AllowFilterHinting	() =>	False
+2022-01-06T14:29:06.7018673+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	RunSingleThreaded	() =>	False
+2022-01-06T14:29:06.7638647+08:00	UnknownJobId_0350400388	0.0000	UserCode	FreqProcessor	AllowFilterHinting	() =>	False
+2022-01-06T14:29:06.7638647+08:00	UnknownJobId_0350400388	0.0000	UserCode	FreqProcessor	RunSingleThreaded	() =>	True
+2022-01-06T14:29:06.7668650+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AllowColumnPruning	() =>	True
+2022-01-06T14:29:06.7668650+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AllowColumnPruning	() =>	True
+2022-01-06T14:29:06.7678674+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AllowColumnPruning	() =>	True
+2022-01-06T14:29:06.7678674+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AllowColumnPruning	() =>	True
+2022-01-06T14:29:06.7678674+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AllowColumnPruning	() =>	True
+2022-01-06T14:29:06.7678674+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AllowColumnPruning	() =>	True
+2022-01-06T14:29:06.7678674+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AllowColumnPruning	() =>	True
+2022-01-06T14:29:06.7678674+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AllowFilterHinting	() =>	False
+2022-01-06T14:29:06.7688337+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	RunSingleThreaded	() =>	False
+2022-01-06T14:29:06.7688337+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AllowColumnPruning	() =>	True
+2022-01-06T14:29:06.7698321+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AllowColumnPruning	() =>	True
+2022-01-06T14:29:06.7698321+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AllowColumnPruning	() =>	True
+2022-01-06T14:29:06.7698321+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AllowColumnPruning	() =>	True
+2022-01-06T14:29:06.7698321+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AllowColumnPruning	() =>	True
+2022-01-06T14:29:06.7698321+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AllowColumnPruning	() =>	True
+2022-01-06T14:29:06.7698321+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AllowColumnPruning	() =>	True
+2022-01-06T14:29:06.7708603+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AllowFilterHinting	() =>	False
+2022-01-06T14:29:06.7708603+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	RunSingleThreaded	() =>	False
+2022-01-06T14:29:06.8428331+08:00	UnknownJobId_0350400388	0.0000	UserCode	MyTsvExtractor	AllowColumnPruning	() =>	False
+2022-01-06T14:29:06.8428331+08:00	UnknownJobId_0350400388	0.0000	UserCode	MyTsvExtractor	AllowColumnPruning	() =>	False
+2022-01-06T14:29:06.8428331+08:00	UnknownJobId_0350400388	0.0000	UserCode	MyTsvExtractor	AllowColumnPruning	() =>	False
+2022-01-06T14:29:06.8428331+08:00	UnknownJobId_0350400388	0.0000	UserCode	MyTsvExtractor	AllowColumnPruning	() =>	False
+2022-01-06T14:29:06.8428331+08:00	UnknownJobId_0350400388	0.0000	UserCode	MyTsvExtractor	AllowColumnPruning	() =>	False
+2022-01-06T14:29:06.8428331+08:00	UnknownJobId_0350400388	0.0000	UserCode	MyTsvExtractor	AllowColumnPruning	() =>	False
+2022-01-06T14:29:06.8428331+08:00	UnknownJobId_0350400388	0.0000	UserCode	MyTsvExtractor	AllowColumnPruning	() =>	False
+2022-01-06T14:29:06.8428331+08:00	UnknownJobId_0350400388	0.0000	UserCode	MyTsvExtractor	AllowFilterHinting	() =>	False
+2022-01-06T14:29:06.8428331+08:00	UnknownJobId_0350400388	0.0000	UserCode	MyTsvExtractor	RunSingleThreaded	() =>	False
+2022-01-06T14:29:06.8438334+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AllowColumnPruning	() =>	True
+2022-01-06T14:29:06.8438334+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AllowColumnPruning	() =>	True
+2022-01-06T14:29:06.8438334+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AllowColumnPruning	() =>	True
+2022-01-06T14:29:06.8438334+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AllowColumnPruning	() =>	True
+2022-01-06T14:29:06.8438334+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AllowColumnPruning	() =>	True
+2022-01-06T14:29:06.8438334+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AllowFilterHinting	() =>	False
+2022-01-06T14:29:06.8438334+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	RunSingleThreaded	() =>	False
+2022-01-06T14:29:06.8518357+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AllowColumnPruning	() =>	True
+2022-01-06T14:29:06.8518357+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AllowColumnPruning	() =>	True
+2022-01-06T14:29:06.8518357+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AllowColumnPruning	() =>	True
+2022-01-06T14:29:06.8518357+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AllowColumnPruning	() =>	True
+2022-01-06T14:29:06.8518357+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AllowColumnPruning	() =>	True
+2022-01-06T14:29:06.8518357+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AllowColumnPruning	() =>	True
+2022-01-06T14:29:06.8518357+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AllowColumnPruning	() =>	True
+2022-01-06T14:29:06.8518357+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AllowFilterHinting	() =>	False
+2022-01-06T14:29:06.8518357+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	RunSingleThreaded	() =>	False
+2022-01-06T14:29:06.8518357+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AllowColumnPruning	() =>	True
+2022-01-06T14:29:06.8528494+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AllowColumnPruning	() =>	True
+2022-01-06T14:29:06.8528494+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AllowColumnPruning	() =>	True
+2022-01-06T14:29:06.8528494+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AllowColumnPruning	() =>	True
+2022-01-06T14:29:06.8528494+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AllowColumnPruning	() =>	True
+2022-01-06T14:29:06.8528494+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AllowColumnPruning	() =>	True
+2022-01-06T14:29:06.8528494+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AllowColumnPruning	() =>	True
+2022-01-06T14:29:06.8528494+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AllowFilterHinting	() =>	False
+2022-01-06T14:29:06.8528494+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	RunSingleThreaded	() =>	False
+2022-01-06T14:29:06.8528494+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AllowColumnPruning	() =>	True
+2022-01-06T14:29:06.8528494+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AllowColumnPruning	() =>	True
+2022-01-06T14:29:06.8528494+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AllowColumnPruning	() =>	True
+2022-01-06T14:29:06.8528494+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AllowColumnPruning	() =>	True
+2022-01-06T14:29:06.8528494+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AllowColumnPruning	() =>	True
+2022-01-06T14:29:06.8528494+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AllowColumnPruning	() =>	True
+2022-01-06T14:29:06.8528494+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AllowColumnPruning	() =>	True
+2022-01-06T14:29:06.8528494+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AllowFilterHinting	() =>	False
+2022-01-06T14:29:06.8528494+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	RunSingleThreaded	() =>	False
+2022-01-06T14:29:06.8538340+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AllowColumnPruning	() =>	True
+2022-01-06T14:29:06.8538340+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AllowColumnPruning	() =>	True
+2022-01-06T14:29:06.8538340+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AllowColumnPruning	() =>	True
+2022-01-06T14:29:06.8538340+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AllowColumnPruning	() =>	True
+2022-01-06T14:29:06.8538340+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AllowColumnPruning	() =>	True
+2022-01-06T14:29:06.8538340+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AllowColumnPruning	() =>	True
+2022-01-06T14:29:06.8538340+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AllowColumnPruning	() =>	True
+2022-01-06T14:29:06.8538340+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AllowFilterHinting	() =>	False
+2022-01-06T14:29:06.8538340+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	RunSingleThreaded	() =>	False
+2022-01-06T14:29:06.9168337+08:00	UnknownJobId_0350400388	0.5608	Compiler	TimedOptimizer	OptimizeImpl	CQO: Optimization succeeded.
+2022-01-06T14:29:06.9168337+08:00	UnknownJobId_0350400388		Compiler	ScopeBackEndRunner	Execute	Total input file count: 13
+2022-01-06T14:29:06.9168337+08:00	UnknownJobId_0350400388		Compiler	ScopeBackEndRunner	Execute	Total output file count: 12
+2022-01-06T14:29:06.9188339+08:00	UnknownJobId_0350400388		Compiler	ScopeBackEndRunner	BackEndRun	Starting BackEndRun...
+2022-01-06T14:29:07.0298366+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AtomicFileProcessing	() =>	False
+2022-01-06T14:29:07.0318366+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AtomicFileProcessing	() =>	False
+2022-01-06T14:29:07.0328368+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AtomicFileProcessing	() =>	False
+2022-01-06T14:29:07.0338363+08:00	UnknownJobId_0350400388	0.0000	UserCode	MyTsvExtractor	AtomicFileProcessing	() =>	False
+2022-01-06T14:29:07.0338363+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AtomicFileProcessing	() =>	False
+2022-01-06T14:29:07.0338363+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AtomicFileProcessing	() =>	False
+2022-01-06T14:29:07.0338363+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AtomicFileProcessing	() =>	False
+2022-01-06T14:29:07.1238350+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	UdoProperties	() =>	null
+2022-01-06T14:29:07.1248368+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	UdoProperties	() =>	null
+2022-01-06T14:29:07.1298355+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	UdoProperties	() =>	null
+2022-01-06T14:29:07.1318536+08:00	UnknownJobId_0350400388	0.0000	UserCode	MyTsvExtractor	UdoProperties	() =>	null
+2022-01-06T14:29:07.1318536+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	UdoProperties	() =>	null
+2022-01-06T14:29:07.1338356+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	UdoProperties	() =>	null
+2022-01-06T14:29:07.1338356+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	UdoProperties	() =>	null
+2022-01-06T14:29:07.1378358+08:00	UnknownJobId_0350400388	0.0000	UserCode	FreqProcessor	UdoProperties	() =>	null
+2022-01-06T14:29:07.1428439+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AtomicFileProcessing	() =>	False
+2022-01-06T14:29:07.1438372+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AtomicFileProcessing	() =>	False
+2022-01-06T14:29:07.1448372+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AtomicFileProcessing	() =>	False
+2022-01-06T14:29:07.1458367+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AtomicFileProcessing	() =>	False
+2022-01-06T14:29:07.1458367+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AtomicFileProcessing	() =>	False
+2022-01-06T14:29:07.1458367+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AtomicFileProcessing	() =>	False
+2022-01-06T14:29:07.1478368+08:00	UnknownJobId_0350400388	0.0000	UserCode	MyTsvExtractor	AtomicFileProcessing	() =>	False
+2022-01-06T14:29:07.1478368+08:00	UnknownJobId_0350400388	0.0000	UserCode	MyTsvExtractor	UdoProperties	() =>	null
+2022-01-06T14:29:07.1478368+08:00	UnknownJobId_0350400388	0.0000	UserCode	MyTsvExtractor	AtomicFileProcessing	() =>	False
+2022-01-06T14:29:07.1478368+08:00	UnknownJobId_0350400388	0.0000	UserCode	MyTsvExtractor	UdoProperties	() =>	null
+2022-01-06T14:29:07.1478368+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AtomicFileProcessing	() =>	False
+2022-01-06T14:29:07.1478368+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AtomicFileProcessing	() =>	False
+2022-01-06T14:29:07.1488364+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AtomicFileProcessing	() =>	False
+2022-01-06T14:29:07.1498364+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AtomicFileProcessing	() =>	False
+2022-01-06T14:29:07.1498364+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AtomicFileProcessing	() =>	False
+2022-01-06T14:29:07.1498364+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AtomicFileProcessing	() =>	False
+2022-01-06T14:29:07.1498364+08:00	UnknownJobId_0350400388	0.0000	UserCode	FreqProcessor	UdoProperties	() =>	null
+2022-01-06T14:29:07.1848377+08:00	UnknownJobId_0350400388	0.0000	UserCode	MyTsvExtractor	UdoProperties	() =>	null
+2022-01-06T14:29:07.1868381+08:00	UnknownJobId_0350400388	0.0000	UserCode	FreqProcessor	UdoProperties	() =>	null
+2022-01-06T14:29:07.1878375+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	UdoProperties	() =>	null
+2022-01-06T14:29:07.1878375+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	UdoProperties	() =>	null
+2022-01-06T14:29:07.1878375+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	UdoProperties	() =>	null
+2022-01-06T14:29:07.1878375+08:00	UnknownJobId_0350400388	0.0000	UserCode	MyTsvExtractor	UdoProperties	() =>	null
+2022-01-06T14:29:07.1888374+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	UdoProperties	() =>	null
+2022-01-06T14:29:07.1888374+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	UdoProperties	() =>	null
+2022-01-06T14:29:07.1898373+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	UdoProperties	() =>	null
+2022-01-06T14:29:07.1898373+08:00	UnknownJobId_0350400388	0.0000	UserCode	FreqProcessor	UdoProperties	() =>	null
+2022-01-06T14:29:07.1898373+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AtomicFileProcessing	() =>	False
+2022-01-06T14:29:07.1898373+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AtomicFileProcessing	() =>	False
+2022-01-06T14:29:07.1898373+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AtomicFileProcessing	() =>	False
+2022-01-06T14:29:07.1908366+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AtomicFileProcessing	() =>	False
+2022-01-06T14:29:07.1908366+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AtomicFileProcessing	() =>	False
+2022-01-06T14:29:07.1908366+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AtomicFileProcessing	() =>	False
+2022-01-06T14:29:07.1908366+08:00	UnknownJobId_0350400388	0.0000	UserCode	MyTsvExtractor	AtomicFileProcessing	() =>	False
+2022-01-06T14:29:07.1908366+08:00	UnknownJobId_0350400388	0.0000	UserCode	MyTsvExtractor	UdoProperties	() =>	null
+2022-01-06T14:29:07.1908366+08:00	UnknownJobId_0350400388	0.0000	UserCode	MyTsvExtractor	AtomicFileProcessing	() =>	False
+2022-01-06T14:29:07.1908366+08:00	UnknownJobId_0350400388	0.0000	UserCode	MyTsvExtractor	UdoProperties	() =>	null
+2022-01-06T14:29:07.1908366+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AtomicFileProcessing	() =>	False
+2022-01-06T14:29:07.1908366+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AtomicFileProcessing	() =>	False
+2022-01-06T14:29:07.1918372+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AtomicFileProcessing	() =>	False
+2022-01-06T14:29:07.1918372+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AtomicFileProcessing	() =>	False
+2022-01-06T14:29:07.1918372+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AtomicFileProcessing	() =>	False
+2022-01-06T14:29:07.1918372+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AtomicFileProcessing	() =>	False
+2022-01-06T14:29:07.1918372+08:00	UnknownJobId_0350400388	0.0000	UserCode	FreqProcessor	UdoProperties	() =>	null
+2022-01-06T14:29:07.1978387+08:00	UnknownJobId_0350400388	0.0000	UserCode	MyTsvExtractor	UdoProperties	() =>	null
+2022-01-06T14:29:07.1988384+08:00	UnknownJobId_0350400388	0.0000	UserCode	FreqProcessor	UdoProperties	() =>	null
+2022-01-06T14:29:07.1988384+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	UdoProperties	() =>	null
+2022-01-06T14:29:07.1988384+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	UdoProperties	() =>	null
+2022-01-06T14:29:07.1988384+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	UdoProperties	() =>	null
+2022-01-06T14:29:07.1988384+08:00	UnknownJobId_0350400388	0.0000	UserCode	MyTsvExtractor	UdoProperties	() =>	null
+2022-01-06T14:29:07.1988384+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	UdoProperties	() =>	null
+2022-01-06T14:29:07.1988384+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	UdoProperties	() =>	null
+2022-01-06T14:29:07.1988384+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	UdoProperties	() =>	null
+2022-01-06T14:29:07.1998379+08:00	UnknownJobId_0350400388	0.0000	UserCode	FreqProcessor	UdoProperties	() =>	null
+2022-01-06T14:29:07.1998379+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AtomicFileProcessing	() =>	False
+2022-01-06T14:29:07.1998379+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AtomicFileProcessing	() =>	False
+2022-01-06T14:29:07.1998379+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AtomicFileProcessing	() =>	False
+2022-01-06T14:29:07.1998379+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AtomicFileProcessing	() =>	False
+2022-01-06T14:29:07.1998379+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AtomicFileProcessing	() =>	False
+2022-01-06T14:29:07.1998379+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AtomicFileProcessing	() =>	False
+2022-01-06T14:29:07.1998379+08:00	UnknownJobId_0350400388	0.0000	UserCode	MyTsvExtractor	AtomicFileProcessing	() =>	False
+2022-01-06T14:29:07.1998379+08:00	UnknownJobId_0350400388	0.0000	UserCode	MyTsvExtractor	UdoProperties	() =>	null
+2022-01-06T14:29:07.1998379+08:00	UnknownJobId_0350400388	0.0000	UserCode	MyTsvExtractor	AtomicFileProcessing	() =>	False
+2022-01-06T14:29:07.1998379+08:00	UnknownJobId_0350400388	0.0000	UserCode	MyTsvExtractor	UdoProperties	() =>	null
+2022-01-06T14:29:07.1998379+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AtomicFileProcessing	() =>	False
+2022-01-06T14:29:07.1998379+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AtomicFileProcessing	() =>	False
+2022-01-06T14:29:07.2008378+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AtomicFileProcessing	() =>	False
+2022-01-06T14:29:07.2008378+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AtomicFileProcessing	() =>	False
+2022-01-06T14:29:07.2008378+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AtomicFileProcessing	() =>	False
+2022-01-06T14:29:07.2008378+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AtomicFileProcessing	() =>	False
+2022-01-06T14:29:07.2008378+08:00	UnknownJobId_0350400388	0.0000	UserCode	FreqProcessor	UdoProperties	() =>	null
+2022-01-06T14:29:07.2018375+08:00	UnknownJobId_0350400388	0.0000	UserCode	MyTsvExtractor	UdoProperties	() =>	null
+2022-01-06T14:29:07.2028373+08:00	UnknownJobId_0350400388	0.0000	UserCode	FreqProcessor	UdoProperties	() =>	null
+2022-01-06T14:29:07.2288366+08:00	UnknownJobId_0350400388	0.3094	Compiler	ScopeBackEndRunner	PostprocessStageModel	Algebra and managed code generation finished.
+2022-01-06T14:29:07.2288366+08:00	UnknownJobId_0350400388	9.8580	Compiler	ScopeBackEndRunner	BackEndRun	*** Exiting post-optimization
+2022-01-06T14:29:07.2348394+08:00	UnknownJobId_0350400388	0.0011	Compiler	ScopeLocalResourceStorage	AddGeneratedFile	(path:"D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\bin\Debug\277A2BA36EAB8FFD\Scope17_138BA49F1E4513F3\8.userdata",type:VertexPartitionSpec) =>	null
+2022-01-06T14:29:07.2358398+08:00	UnknownJobId_0350400388	0.0046	Compiler	ScopeLocalResourceStorage	AddGeneratedFile	(path:"D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\bin\Debug\277A2BA36EAB8FFD\Scope17_138BA49F1E4513F3\__ScopeDiagnosisInfo__.xml",type:StatisticsResource) =>	null
+2022-01-06T14:29:07.2408391+08:00	UnknownJobId_0350400388	0.0023	Compiler	ScopeLocalResourceStorage	AddGeneratedFile	(path:"D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\bin\Debug\277A2BA36EAB8FFD\Scope17_138BA49F1E4513F3\34.userdata",type:VertexPartitionSpec) =>	null
+2022-01-06T14:29:07.2418404+08:00	UnknownJobId_0350400388	0.0108	Compiler	ScopeLocalResourceStorage	AddGeneratedFile	(path:"D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\bin\Debug\277A2BA36EAB8FFD\Scope17_138BA49F1E4513F3\PartitionLastRows.bin",type:VertexPartitionSpec) =>	null
+2022-01-06T14:29:07.2418404+08:00	UnknownJobId_0350400388	0.0034	Compiler	ScopeLocalResourceStorage	AddGeneratedFile	(path:"D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\bin\Debug\277A2BA36EAB8FFD\Scope17_138BA49F1E4513F3\47.userdata",type:VertexPartitionSpec) =>	null
+2022-01-06T14:29:07.2468415+08:00	UnknownJobId_0350400388	0.0155	Compiler	ScopeLocalResourceStorage	AddGeneratedFile	(path:"D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\bin\Debug\277A2BA36EAB8FFD\Scope17_138BA49F1E4513F3\ScopeScript.xml",type:StatisticsResource) =>	null
+2022-01-06T14:29:07.2578419+08:00	UnknownJobId_0350400388	0.0184	Compiler	ScopeBackEndRunner	BackEndRun	C# code emission finished.
+2022-01-06T14:29:07.2588379+08:00	UnknownJobId_0350400388	0.0273	Compiler	ScopeLocalResourceStorage	AddGeneratedFile	(path:"D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\bin\Debug\277A2BA36EAB8FFD\Scope17_138BA49F1E4513F3\__SStreamInfo__.xml",type:SStreamInfo) =>	null
+2022-01-06T14:29:07.2638370+08:00	UnknownJobId_0350400388	0.0334	Compiler	ScopeLocalResourceStorage	AddGeneratedFile	(path:"D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\bin\Debug\277A2BA36EAB8FFD\Scope17_138BA49F1E4513F3\ScopeVertexDef.xml",type:VertexDef) =>	null
+2022-01-06T14:29:07.5288419+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AtomicFileProcessing	() =>	False
+2022-01-06T14:29:07.6228721+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AtomicFileProcessing	() =>	False
+2022-01-06T14:29:07.6608415+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AtomicFileProcessing	() =>	False
+2022-01-06T14:29:07.6798709+08:00	UnknownJobId_0350400388	0.0002	UserCode	MyTsvExtractor	RecordBoundarySpec	() =>	null
+2022-01-06T14:29:07.6808425+08:00	UnknownJobId_0350400388	0.0000	UserCode	MyTsvExtractor	RecordBoundarySpec	() =>	null
+2022-01-06T14:29:07.6828553+08:00	UnknownJobId_0350400388	0.0000	UserCode	MyTsvExtractor	RecordBoundarySpec	() =>	null
+2022-01-06T14:29:07.6828553+08:00	UnknownJobId_0350400388	0.0000	UserCode	MyTsvExtractor	RecordBoundarySpec	() =>	null
+2022-01-06T14:29:07.6838434+08:00	UnknownJobId_0350400388	0.0000	UserCode	MyTsvExtractor	AtomicFileProcessing	() =>	False
+2022-01-06T14:29:07.7078417+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AtomicFileProcessing	() =>	False
+2022-01-06T14:29:07.7228432+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AtomicFileProcessing	() =>	False
+2022-01-06T14:29:07.7328743+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AtomicFileProcessing	() =>	False
+2022-01-06T14:29:07.8378767+08:00	UnknownJobId_0350400388	0.5770	Compiler	ScopeBackEndRunner	GenerateCppCode	C++ CodeGen finished.
+2022-01-06T14:29:10.0745764+08:00	UnknownJobId_0350400388	3.5427	Compiler	ScopeLocalResourceStorage	AddGeneratedFile	(path:"D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\bin\Debug\277A2BA36EAB8FFD\Scope17_138BA49F1E4513F3\__CompilerTimers.xml",type:CompilerTimers) =>	null
+2022-01-06T14:29:10.1595772+08:00	UnknownJobId_0350400388		Compiler	PlaybackDbWriter	SerializeSStreamMeta	SStreamMetadata converted to base64 string, size is59461
+2022-01-06T14:29:10.1605778+08:00	UnknownJobId_0350400388	3.6283	Compiler	ScopeLocalResourceStorage	AddGeneratedFile	(path:"D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\bin\Debug\277A2BA36EAB8FFD\Scope17_138BA49F1E4513F3\ScopeInternalStatistics.xml",type:StatisticsResource, PlaybackDb) =>	null
+2022-01-06T14:29:23.4992831+08:00	UnknownJobId_0350400388	15.6596	Compiler	ScopeBackEndRunner	BuildGeneratedCode	Generated Code Compilation finished.
+2022-01-06T14:29:23.5002789+08:00	UnknownJobId_0350400388	16.5810	Compiler	ScopeBackEndRunner	BackEndRun	Finished BackEndRun...
+2022-01-06T14:29:23.5072801+08:00	UnknownJobId_0350400388	0.0068	Compiler	ScopeLocalResourceStorage	AddGeneratedFile	(path:"D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\bin\Debug\277A2BA36EAB8FFD\Scope17_138BA49F1E4513F3\__ScopeInternalInfo__.xml",type:OptPlanInfo) =>	null
+2022-01-06T14:29:23.5092795+08:00	UnknownJobId_0350400388		Compiler	DeepCompilePipeline	FinalizeArtifacts	Starting Compiler Artifacts Finalization...
+2022-01-06T14:29:23.5782792+08:00	UnknownJobId_0350400388	0.0001	UserCode	DefaultTextExtractor	UdoProperties	() =>	null
+2022-01-06T14:29:23.5782792+08:00	UnknownJobId_0350400388	0.0001	UserCode	DefaultTextExtractor	UdoProperties	() =>	null
+2022-01-06T14:29:23.5792795+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AtomicFileProcessing	() =>	False
+2022-01-06T14:29:23.5792795+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AtomicFileProcessing	() =>	False
+2022-01-06T14:29:23.5802795+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	UdoProperties	() =>	null
+2022-01-06T14:29:23.5802795+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	UdoProperties	() =>	null
+2022-01-06T14:29:23.5812990+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AtomicFileProcessing	() =>	False
+2022-01-06T14:29:23.5812990+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AtomicFileProcessing	() =>	False
+2022-01-06T14:29:23.5812990+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	UdoProperties	() =>	null
+2022-01-06T14:29:23.5822800+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	UdoProperties	() =>	null
+2022-01-06T14:29:23.5822800+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AtomicFileProcessing	() =>	False
+2022-01-06T14:29:23.5822800+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AtomicFileProcessing	() =>	False
+2022-01-06T14:29:23.5822800+08:00	UnknownJobId_0350400388	0.0000	UserCode	MyTsvExtractor	UdoProperties	() =>	null
+2022-01-06T14:29:23.5822800+08:00	UnknownJobId_0350400388	0.0000	UserCode	MyTsvExtractor	UdoProperties	() =>	null
+2022-01-06T14:29:23.5832797+08:00	UnknownJobId_0350400388	0.0000	UserCode	MyTsvExtractor	AtomicFileProcessing	() =>	False
+2022-01-06T14:29:23.5832797+08:00	UnknownJobId_0350400388	0.0000	UserCode	MyTsvExtractor	AtomicFileProcessing	() =>	False
+2022-01-06T14:29:23.5832797+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	UdoProperties	() =>	null
+2022-01-06T14:29:23.5832797+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	UdoProperties	() =>	null
+2022-01-06T14:29:23.5832797+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AtomicFileProcessing	() =>	False
+2022-01-06T14:29:23.5832797+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AtomicFileProcessing	() =>	False
+2022-01-06T14:29:23.5842812+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	UdoProperties	() =>	null
+2022-01-06T14:29:23.5842812+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	UdoProperties	() =>	null
+2022-01-06T14:29:23.5842812+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AtomicFileProcessing	() =>	False
+2022-01-06T14:29:23.5842812+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AtomicFileProcessing	() =>	False
+2022-01-06T14:29:23.5852799+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	UdoProperties	() =>	null
+2022-01-06T14:29:23.5852799+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	UdoProperties	() =>	null
+2022-01-06T14:29:23.5852799+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AtomicFileProcessing	() =>	False
+2022-01-06T14:29:23.5852799+08:00	UnknownJobId_0350400388	0.0000	UserCode	DefaultTextExtractor	AtomicFileProcessing	() =>	False
+2022-01-06T14:29:23.5852799+08:00	UnknownJobId_0350400388	0.0000	UserCode	FreqProcessor	UdoProperties	() =>	null
+2022-01-06T14:29:23.5872796+08:00	UnknownJobId_0350400388	0.0014	UserCode	FreqProcessor	UdoProperties	() =>	null
+2022-01-06T14:29:23.5902799+08:00	UnknownJobId_0350400388	0.0902	Compiler	ScopeLocalResourceStorage	AddGeneratedFile	(path:"D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\bin\Debug\277A2BA36EAB8FFD\Scope17_138BA49F1E4513F3\__script__.abr",type:Algebra) =>	null
+2022-01-06T14:29:23.5912800+08:00	UnknownJobId_0350400388	0.0006	Compiler	ScopeLocalResourceStorage	AddGeneratedFile	(path:"D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\bin\Debug\277A2BA36EAB8FFD\Scope17_138BA49F1E4513F3\__CompilerTimers.xml",type:CompilerTimers) =>	null
+2022-01-06T14:29:23.6052801+08:00	UnknownJobId_0350400388		Compiler	DeepCompilePipeline	FinalizeArtifacts	Finished Compiler Artifacts Finalization...
+2022-01-06T14:29:23.6052801+08:00	UnknownJobId_0350400388		Compiler	DeepCompilePipeline	DoCompile	Finished compilation!
+2022-01-06T14:29:23.6072802+08:00	UnknownJobId_0350400388		Compiler	DeepCompilePipeline	FinalizeCompilation	Start compilation finalization...
+2022-01-06T14:29:23.6162934+08:00	UnknownJobId_0350400388		Compiler	DeepCompilePipeline	FinalizeDiagnostics	Starting to write diagnostics.json file...
+2022-01-06T14:29:23.6213293+08:00	UnknownJobId_0350400388	0.0038	Compiler	ScopeLocalResourceStorage	AddGeneratedFile	(path:"D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\bin\Debug\277A2BA36EAB8FFD\Scope17_138BA49F1E4513F3\diagnosticsjson",type:StatisticsResource) =>	null
+2022-01-06T14:29:23.6213293+08:00	UnknownJobId_0350400388		Compiler	DeepCompilePipeline	FinalizeDiagnostics	Finished writing diagnostics.json file...
+2022-01-06T14:29:23.6243120+08:00	UnknownJobId_0350400388		Compiler	DeepCompilePipeline	DisposeCompiler	Start disposing the compiler...
+2022-01-06T14:29:23.6262809+08:00	UnknownJobId_0350400388		Compiler	ScopeSStreamMetadataManager	Cleanup	Cancelling any ongoing requests
+2022-01-06T14:29:23.6282810+08:00	UnknownJobId_0350400388		Compiler	DeepCompilePipeline	DisposeCompiler	Finished compilation finalization
+2022-01-06T14:29:23.6282810+08:00	UnknownJobId_0350400388	26.2567	Compiler	DeepCompilePipeline	FinalizeCompilation	End Compilation
+2022-01-06T14:29:23.6312801+08:00	UnknownJobId_0350400388		Compiler	DeepCompilePipeline	WriteTimers	COMPILATIONTIME|JobId:|FriendlyName:|Mode:Default|Overall: 26.3s 11.1cpu|FrontEndRun: 8.3s 8.2cpu|RoslynTimers: 441x 6.6s 14.0ms/x 12.6cpu|Preprocessing: 6x 1.5s 246.0ms/x 3.3cpu|OptimizerRun: 0.6s 0.8cpu|BackEndRun: 16.6s 1.2cpu|ExternalTimers: 298x 6.6s 22.0ms/x 7.7cpu
+2022-01-06T14:29:23.6323056+08:00	UnknownJobId_0350400388		Compiler	DeepCompilePipeline	WriteTimers	FrontEndTimers|FrontEndRun: 8.3s 8.2cpu|AssemblyResolverPass:|AstBuilder: 3.2s 4.3cpu|BinderPass: 1.8s 3.0cpu|ClassifierPass:|DdlResolver: 5x 1.4s 273.0ms/x|ErrorReporterPass:|ProcessUsingsPass: 2x 0.1s 60.0ms/x 0.3cpu|InputOutputPass: 0.1s 0.1cpu|GenerateOptTreePass: 0.3s 0.3cpu|GeneratedFilesAsync: 13x 3.7s 281.0ms/x 2.5cpu wait 0.1s|Parser: 7x 0.1s 16.0ms/x 0.1cpu|ReferenceLoading:|ResourceReferencePass:|ResourcesDownloading:|SemanticAnalyzerPass:|SyntaxVerifier: 7x 0.2s 24.0ms/x 0.2cpu|TraceFile: 402x 0.1s 0.1cpu|ViewResolver: 6x 5.0ms/x
+2022-01-06T14:29:23.6333106+08:00	UnknownJobId_0350400388		Compiler	DeepCompilePipeline	WriteTimers	RoslynTimers|RoslynBinding: 28x 1.7s 59.0ms/x 3.4cpu|RoslynEnvironmentAsync: 2x 0.2s 124.0ms/x 0.5cpu wait 0.7s|RoslynFirstCall: 1.1s 2.7cpu|ConstantFolding: 36x 0.1s 3.0ms/x 0.2cpu|RoslynParsing: 28x 0.2s 8.0ms/x 0.4cpu|RoslynPostBind: 28x 0.3s 11.0ms/x 0.4cpu|RoslynPreBind: 28x 0.3s 11.0ms/x 0.5cpu|RoslynSemantic: 26x 0.9s 33.0ms/x 2.4cpu|RoslynScripting: 1.1s 1.3cpu|OneColumnBinding: 17x|QualifiedColumnBinding: 7x|SimpleLiteralBinding: 49x|NonRoslynBinding: 28x 0.2s 8.0ms/x 0.2cpu|ExpressionAnnotation: 50x 0.1s 1.0ms/x 0.1cpu|ExpressionAnnotationSemantic: 79x 0.1s 0.1cpu|LazyExpressionAnnotation:|LazyExpressionAnnotationSemantic: 3x 2.0ms/x|CreateSemanticModel: 29x 0.2s 7.0ms/x 0.4cpu
+2022-01-06T14:29:23.6333106+08:00	UnknownJobId_0350400388		Compiler	DeepCompilePipeline	WriteTimers	PreProcessorTimers|BindingEvaluator: 2x 1.2s 611.0ms/x 2.8cpu|CsBlock: 2.9s 0.3cpu|ExpressionProcessors: 21x|PreProcessorParser: 6x 3.0ms/x 0.1cpu|Preprocessing: 6x 1.5s 246.0ms/x 3.3cpu
+2022-01-06T14:29:23.6333106+08:00	UnknownJobId_0350400388		Compiler	DeepCompilePipeline	WriteTimers	OptimizerTimers|OptimizerRun: 0.6s 0.8cpu|OptimizerWait:|ComputeSignature:|CreateSplitsOrSpools: 0.1s 0.1cpu|PostProcessExecutionPlan:|CreateWhereSelectEnumerators:|ComputePayloadMetadata:|SStreamStageProcessing:|ValidateStages:|CompileToAlgebra: 0.1s 0.1cpu|EstimateMemorySize: 3x 9.0ms/x|CalculateBubbles:
+2022-01-06T14:29:23.6333106+08:00	UnknownJobId_0350400388		Compiler	DeepCompilePipeline	WriteTimers	BackendTimers|BackEndRun: 16.6s 1.2cpu|AdornAllWithMemoryModel: 3x 0.1s 21.0ms/x 0.1cpu|AlgebraAndManagedCodeGen: 0.3s 0.3cpu|AnnotateIntermediateResults:|CodeCompiling: 15.7s 0.2cpu|CodeGeneration: 0.6s 0.6cpu|CppCompilationManaged: 2.8s|CppCompilationNative: 6.5s|CppLinking: 0.8s|CreateCppReadyStage:|CSharpCompilation: 2x 8.2s 98.0ms/x 0.1cpu|ManagedCodeEmission:|NativeCodeGeneration: 0.6s 0.6cpu
+2022-01-06T14:29:23.6333106+08:00	UnknownJobId_0350400388		Compiler	DeepCompilePipeline	WriteTimers	ExternalTimers|VcClient: 2x 1.3s 662.0ms/x 0.6cpu|SStreamMetadataAsync: 3x 0.3s 112.0ms/x 3.9cpu|PlaybackAsync: 2x 3.8s 891.0ms/x 1.8cpu|UserCode: 291x 1.2s 4.0ms/x 1.4cpu

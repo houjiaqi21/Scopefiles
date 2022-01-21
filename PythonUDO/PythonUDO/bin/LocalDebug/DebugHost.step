@@ -1,0 +1,7 @@
+DEBUG|2
+STEP|1|325c8d28-2ebf-443f-b68a-635271485d2a|27|0|29|42|2|0|D:\Sharing\Scope2015\PythonUDO\PythonUDO\LocalRun_ReducerExtractor.script
+VERTEX|1|-scopeVertex SV1_Extract -i D:\Sharing\Scope2015\PythonUDO\PythonUDO\users\v-hozhao\All_In_One\Input\Python_iris.csv -o D:\Sharing\Scope2015\PythonUDO\PythonUDO\bin\Debug\58C5C7DBDF061604\_Temp\LocalRun_ReducerExtractor.script.Debug_A7AFC0D3DF06C2CA\scopetmpfile._SV1_Extract_out0
+VERTEX|2|-concatenate -i D:\Sharing\Scope2015\PythonUDO\PythonUDO\bin\Debug\58C5C7DBDF061604\_Temp\LocalRun_ReducerExtractor.script.Debug_A7AFC0D3DF06C2CA\scopetmpfile._SV1_Extract_out0 -o D:\Sharing\Scope2015\PythonUDO\PythonUDO\users\v-hozhao\All_In_One\Output\Python_ClusterRun_DataFrame_Reducer_Demo_Output.txt
+STEP|2|33fa45c0-1b72-42bc-aacb-52eb36f9e768|47|0|49|42|2|0|D:\Sharing\Scope2015\PythonUDO\PythonUDO\LocalRun_ReducerExtractor.script
+VERTEX|1|-scopeVertex SV2_Extract -i D:\Sharing\Scope2015\PythonUDO\PythonUDO\users\v-hozhao\All_In_One\Input\Python_SearchLog.tsv -o D:\Sharing\Scope2015\PythonUDO\PythonUDO\bin\Debug\58C5C7DBDF061604\_Temp\LocalRun_ReducerExtractor.script.Debug_A7AFC0D3DF06C2CA\scopetmpfile._SV2_Extract_out0
+VERTEX|2|-concatenate -i D:\Sharing\Scope2015\PythonUDO\PythonUDO\bin\Debug\58C5C7DBDF061604\_Temp\LocalRun_ReducerExtractor.script.Debug_A7AFC0D3DF06C2CA\scopetmpfile._SV2_Extract_out0 -o D:\Sharing\Scope2015\PythonUDO\PythonUDO\users\v-hozhao\All_In_One\Output\Python_ClusterRun_Extractor_Demo_Output.txt

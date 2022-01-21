@@ -1,0 +1,50 @@
+﻿CREATE VIEW SearchLog 
+    SCHEMA ( 
+            //UserId:int, 
+            Start:DateTime, 
+            Region:string, 
+            //Query:string, 
+            DwellTimeInMinutes:double
+            //Urls:string, 
+            //ClickedUrls:string
+    )
+AS BEGIN
+    REFERENCE @"/users/v-hozhao/ClusterReference/MyHelper.dll";
+
+    searchlog = 
+        EXTRACT UserId:int, 
+                Start:DateTime, 
+                Region:string, 
+                Query:string, 
+                Duration:int, 
+                Urls:string, 
+                ClickedUrls:string
+        FROM @"/users/v-hozhao/All_In_One/Input/SearchLog.txt"
+        USING DefaultTextExtractor();
+
+    rs1 =                   // namespace >> class >> Method
+    SELECT Start, Region, MyHelper.ClassUDO.SecondsToMinutes(Duration) AS DwellTimeInMinutes
+    FROM searchlog;
+
+END;
+
+/*
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace MyHelper
+{
+    public class ClassUDO
+    {
+        //   .Net  4.5.2
+        public static double SecondsToMinutes(int seconds)
+        {
+            double minutes = seconds / 60.0;
+            return minutes;
+        }
+    }
+}
+*/

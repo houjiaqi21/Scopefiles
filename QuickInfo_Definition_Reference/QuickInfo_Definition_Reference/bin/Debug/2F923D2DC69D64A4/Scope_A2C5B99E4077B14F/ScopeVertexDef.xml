@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScopeVertices helperAssembly="__ScopeCodeGen__.dll" signatureVersion="1">
+  <ScopeVertex id="SV1_Extract_Split" cppReady="true">
+    <EstimatedLimitMemory processMemory="2996488768" managedMemory="1388314624" adapterMemory="0" engineMemory="1083886144" engineIOMemory="83886080" engineOperatorMemory="1000000064" minEngineOperatorMemory="1000000064" />
+    <EstimatedOptimalMemory processMemory="2996488768" managedMemory="1388314624" adapterMemory="0" engineMemory="1083886144" engineIOMemory="83886080" engineOperatorMemory="1000000064" minEngineOperatorMemory="1000000064" />
+    <operator id="Extract_0" uid="1" assemblyName="__ScopeCodeGen__.dll" className="MyTSVExtractor" signature="10194386757308928351!0!Strict">
+      <input id="Extract_0" uid="1" schema="AdId:int,IId:int,Impression:int,IsClicked:int" inputIndex="0" numberOfInputs="ALL" />
+      <output id="Extract_0_Data0" uid="2" schema="AdId:int,IId:int,Impression:int,IsClicked:int" />
+      <ReflectedScopeScript><![CDATA[_var_100001_EXTRACT = EXTRACT AdId:int,IId:int,Impression:int,IsClicked:int FROM @"my/Inputs/AdsLog.txt" USING MyTSVExtractor();
+]]></ReflectedScopeScript>
+    </operator>
+    <operator id="Split_1" uid="3" assemblyName="ScopeRuntime.exe" className="ScopeRuntime.ScopeFilterSelectSplitter">
+      <input id="Extract_0_Data0" uid="2" schema="AdId:int,IId:int,Impression:int,IsClicked:int" />
+      <output id="SV1_Extract_Split_out0" uid="4" schema="AdId:int,IId:int,Impression:int,IsClicked:int" outputIndex="0" numberOfOutputs="1" finalOutput="true" assemblyName="__ScopeCodeGen__.dll" className="ScopeSplitOutputter_1" encoding="Text" args="" />
+      <output id="SV1_Extract_Split_out1" uid="5" schema="AdId:int,IId:int,Impression:int" outputIndex="1" numberOfOutputs="1" assemblyName="__ScopeCodeGen__.dll" className="ScopeSplitOutputter_2" />
+    </operator>
+  </ScopeVertex>
+  <ScopeVertex id="SV2_Process" cppReady="true" nativeOnly="true">
+    <EstimatedLimitMemory processMemory="6442450944" managedMemory="0" adapterMemory="0" engineMemory="5918162944" engineIOMemory="58720256" engineOperatorMemory="5859442688" minEngineOperatorMemory="2147483660" />
+    <EstimatedOptimalMemory processMemory="6442450944" managedMemory="0" adapterMemory="0" engineMemory="5918162944" engineIOMemory="58720256" engineOperatorMemory="5859442688" minEngineOperatorMemory="1073741836" />
+    <operator id="Process_3" uid="7" assemblyName="__ScopeCodeGen__.dll" className="ScopeSorter_1" args="-keys IId" signature="10194386757308928351!0!Strict">
+      <input id="SV1_Extract_Split_out1" uid="5" schema="AdId:int,IId:int,Impression:int" inputIndex="0" numberOfInputs="1" />
+      <output id="SV2_Process_out0" uid="8" schema="AdId:int,IId:int,Impression:int" outputIndex="0" numberOfOutputs="1" />
+      <ReflectedScopeScript><![CDATA[_var_100002_LSORT = SELECT AdId, IId, Impression FROM _var_100001_EXTRACT ORDER BY IId;
+]]></ReflectedScopeScript>
+    </operator>
+  </ScopeVertex>
+  <ScopeVertex id="SV3_Extract_Split" cppReady="true">
+    <EstimatedLimitMemory processMemory="8822377488" managedMemory="1363148800" adapterMemory="0" engineMemory="6934940688" engineIOMemory="4362076160" engineOperatorMemory="2572864528" minEngineOperatorMemory="2572864528" />
+    <EstimatedOptimalMemory processMemory="2172308496" managedMemory="415236096" adapterMemory="0" engineMemory="1232784400" engineIOMemory="226492416" engineOperatorMemory="1006291984" minEngineOperatorMemory="1006291984" />
+    <operator id="Extract_4" uid="9" assemblyName="ScopeRuntime.exe" className="ScopeRuntime.DefaultTextExtractor" signature="6037618571663268348!5!Strict">
+      <input id="Extract_4" uid="9" schema="IId:int,UId:int,Start:DateTime,Market:string,Query:string,DwellTime:int,Results:string,ClickedUrls:string" inputIndex="0" numberOfInputs="ALL" />
+      <output id="Extract_4_Data0" uid="10" schema="IId:int,UId:int,Start:DateTime,Market:string,Query:string,DwellTime:int,Results:string,ClickedUrls:string" />
+      <ReflectedScopeScript><![CDATA[_var_100003_EXTRACT = EXTRACT IId:int,UId:int,Start:DateTime,Market:string,Query:string,DwellTime:int,Results:string,ClickedUrls:string FROM @"my/Inputs/SearchLog.txt" USING ScopeRuntime.DefaultTextExtractor();
+]]></ReflectedScopeScript>
+    </operator>
+    <operator id="Split_5" uid="11" assemblyName="ScopeRuntime.exe" className="ScopeRuntime.ScopeFilterSelectSplitter">
+      <input id="Extract_4_Data0" uid="10" schema="IId:int,UId:int,Start:DateTime,Market:string,Query:string,DwellTime:int,Results:string,ClickedUrls:string" />
+      <output id="SV3_Extract_Split_out0" uid="12" schema="Query:string,IId1:int" outputIndex="0" numberOfOutputs="1" assemblyName="__ScopeCodeGen__.dll" className="ScopeSplitOutputter_3" />
+      <output id="SV3_Extract_Split_out1" uid="13" schema="IId:int,UId:int,Start:DateTime,Market:string,Query:string,DwellTime:int,Results:string,ClickedUrls:string" outputIndex="1" numberOfOutputs="1" finalOutput="true" assemblyName="__ScopeCodeGen__.dll" className="ScopeSplitOutputter_4" encoding="Text" args="" />
+      <output id="SV3_Extract_Split_out2" uid="14" schema="Market:string,Results:string" outputIndex="2" numberOfOutputs="1" assemblyName="__ScopeCodeGen__.dll" className="ScopeSplitOutputter_5" />
+      <output id="SV3_Extract_Split_out3" uid="15" schema="Market:string,DwellTimeDouble:double" outputIndex="3" numberOfOutputs="1" assemblyName="__ScopeCodeGen__.dll" className="ScopeSplitOutputter_6" />
+      <output id="SV3_Extract_Split_out4" uid="16" schema="IId:int,UId:int,Start:DateTime,Market:string,Query:string,DwellTime:int,Results:string,ClickedUrlsCount:string" outputIndex="4" numberOfOutputs="1" finalOutput="true" assemblyName="__ScopeCodeGen__.dll" className="ScopeSplitOutputter_7" encoding="Text" args="" />
+    </operator>
+  </ScopeVertex>
+  <ScopeVertex id="SV4_Process" cppReady="true" nativeOnly="true">
+    <EstimatedLimitMemory processMemory="6442450944" managedMemory="0" adapterMemory="0" engineMemory="5918162944" engineIOMemory="58720256" engineOperatorMemory="5859442688" minEngineOperatorMemory="2409627672" />
+    <EstimatedOptimalMemory processMemory="6442450944" managedMemory="0" adapterMemory="0" engineMemory="5918162944" engineIOMemory="58720256" engineOperatorMemory="5859442688" minEngineOperatorMemory="1074003992" />
+    <operator id="Process_6" uid="17" assemblyName="__ScopeCodeGen__.dll" className="ScopeSorter_2" args="-keys IId1" signature="6037618571663268348!5!Strict">
+      <input id="SV3_Extract_Split_out0" uid="12" schema="Query:string,IId1:int" inputIndex="0" numberOfInputs="1" />
+      <output id="SV4_Process_out0" uid="18" schema="Query:string,IId1:int" outputIndex="0" numberOfOutputs="1" />
+      <ReflectedScopeScript><![CDATA[_var_100004_LSORT = SELECT Query, IId1 FROM _var_100003_EXTRACT ORDER BY IId1;
+]]></ReflectedScopeScript>
+    </operator>
+  </ScopeVertex>
+  <ScopeVertex id="SV5_Combine" cppReady="true" nativeOnly="true">
+    <EstimatedLimitMemory processMemory="6442450944" managedMemory="0" adapterMemory="0" engineMemory="5918162944" engineIOMemory="1656750272" engineOperatorMemory="4261412672" minEngineOperatorMemory="2933915740" />
+    <EstimatedOptimalMemory processMemory="6442450944" managedMemory="0" adapterMemory="0" engineMemory="5918162944" engineIOMemory="109051904" engineOperatorMemory="5809111040" minEngineOperatorMemory="1049362524" />
+    <operator id="Join_7" uid="19" assemblyName="__ScopeCodeGen__.dll" className="ScopeCombineWrapper_1" args="-key IId|IId1" signature="1268859942182306881!11!Strict">
+      <input id="SV2_Process_out0" uid="8" schema="AdId:int,IId:int,Impression:int" inputIndex="0" numberOfInputs="1" />
+      <input id="SV4_Process_out0" uid="18" schema="Query:string,IId1:int" inputIndex="1" numberOfInputs="1" />
+      <output id="Join_7_Data0" uid="20" schema="AdId:int,IId:int,Impression:int,Query:string" />
+      <ReflectedScopeScript><![CDATA[_var_100005_INTERNAL_COMBINE = SELECT AdId, IId, Impression, Query FROM _var_100002_LSORT AS AliasLeft INNER JOIN _var_100004_LSORT AS AliasRight ON AliasLeft.IId == AliasRight.IId1;
+]]></ReflectedScopeScript>
+    </operator>
+    <operator id="Output_8" uid="21" assemblyName="ScopeRuntime.exe" className="ScopeRuntime.DefaultTextOutputter" signature="2807280647120119460!12!Strict">
+      <input id="Join_7_Data0" uid="20" schema="AdId:int,IId:int,Impression:int,Query:string" />
+      <output id="SV5_Combine_out0" uid="21" schema="AdId:int,IId:int,Impression:int,Query:string" outputIndex="0" numberOfOutputs="1" finalOutput="true" />
+      <ReflectedScopeScript><![CDATA[OUTPUT _var_100005_INTERNAL_COMBINE TO @"https://cosmos08.osdinfra.net/cosmos/sandbox/my/Outputs/Processorlog.txt" USING ScopeRuntime.DefaultTextOutputter();
+]]></ReflectedScopeScript>
+    </operator>
+  </ScopeVertex>
+  <ScopeVertex id="SV6_Process" cppReady="true">
+    <EstimatedLimitMemory processMemory="4018143488" managedMemory="1388314624" adapterMemory="0" engineMemory="2105540864" engineIOMemory="1581252800" engineOperatorMemory="524288064" minEngineOperatorMemory="524288064" />
+    <EstimatedOptimalMemory processMemory="1947205696" managedMemory="1388314624" adapterMemory="0" engineMemory="34603072" engineIOMemory="33554432" engineOperatorMemory="1048640" minEngineOperatorMemory="1048640" />
+    <operator id="Process_10" uid="23" assemblyName="__ScopeCodeGen__.dll" className="ScopeCrossApplyProcessor_1" signature="15918842492057360006!23!Strict">
+      <input id="SV3_Extract_Split_out2" uid="14" schema="Market:string,Results:string" inputIndex="0" numberOfInputs="1" />
+      <output id="Process_10_Data0" uid="24" schema="Market:string,SplitResult:string" />
+      <ReflectedScopeScript><![CDATA[_var_100007_CROSSAPPLY = SELECT Market, SplitResult FROM _var_100003_EXTRACT CROSS APPLY MyHelper.Split(Results, ';') AS SplitResult;
+]]></ReflectedScopeScript>
+    </operator>
+    <operator id="Process_11" uid="25" assemblyName="__ScopeCodeGen__.dll" className="ScopeFilterTransformer_12" signature="15918842492057360006!23!Strict">
+      <input id="Process_10_Data0" uid="24" schema="Market:string,SplitResult:string" />
+      <output id="Process_11_Data0" uid="26" schema="Market:string,Result:string" />
+      <ReflectedScopeScript><![CDATA[_var_100008_TRANSFORM = SELECT Market AS Market, SplitResult AS Result FROM _var_100007_CROSSAPPLY;
+]]></ReflectedScopeScript>
+    </operator>
+    <operator id="Output_12" uid="27" assemblyName="ScopeRuntime.exe" className="ScopeRuntime.DefaultTextOutputter" signature="6153997062945705873!25!Strict">
+      <input id="Process_11_Data0" uid="26" schema="Market:string,Result:string" />
+      <output id="SV6_Process_out0" uid="27" schema="Market:string,Result:string" outputIndex="0" numberOfOutputs="1" finalOutput="true" />
+      <ReflectedScopeScript><![CDATA[OUTPUT _var_100008_TRANSFORM TO @"https://cosmos08.osdinfra.net/cosmos/sandbox/my/Outputs/rs2.txt" USING ScopeRuntime.DefaultTextOutputter();
+]]></ReflectedScopeScript>
+    </operator>
+  </ScopeVertex>
+  <ScopeVertex id="SV7_Process" cppReady="true">
+    <EstimatedLimitMemory processMemory="6442450944" managedMemory="1388314624" adapterMemory="0" engineMemory="4529848320" engineIOMemory="1606418576" engineOperatorMemory="2923429744" minEngineOperatorMemory="2671771696" />
+    <EstimatedOptimalMemory processMemory="6442450944" managedMemory="1388314624" adapterMemory="0" engineMemory="4529848320" engineIOMemory="58720256" engineOperatorMemory="4471128064" minEngineOperatorMemory="1074266160" />
+    <operator id="Process_13" uid="28" assemblyName="__ScopeCodeGen__.dll" className="ScopeSorter_3" args="-keys Market" signature="6037618571663268348!5!Strict">
+      <input id="SV3_Extract_Split_out3" uid="15" schema="Market:string,DwellTimeDouble:double" inputIndex="0" numberOfInputs="1" />
+      <output id="Process_13_Data0" uid="29" schema="Market:string,DwellTimeDouble:double" />
+      <ReflectedScopeScript><![CDATA[_var_100010_LSORT = SELECT Market, DwellTimeDouble FROM _var_100003_EXTRACT ORDER BY Market;
+]]></ReflectedScopeScript>
+    </operator>
+    <operator id="Process_14" uid="30" assemblyName="__ScopeCodeGen__.dll" className="ScopeFilterTransformer_13" signature="6037618571663268348!5!Strict">
+      <input id="Process_13_Data0" uid="29" schema="Market:string,DwellTimeDouble:double" />
+      <output id="Process_14_Data0" uid="31" schema="Market:string,TotalDwellTime:double" />
+      <ReflectedScopeScript><![CDATA[_var_100011_TRANSFORM = SELECT Market AS Market, DwellTimeDouble AS TotalDwellTime FROM _var_100010_LSORT;
+]]></ReflectedScopeScript>
+    </operator>
+    <operator id="Process_15" uid="32" assemblyName="__ScopeCodeGen__.dll" className="ScopeGrouper_1" signature="11549663378776413451!31!Strict">
+      <input id="Process_14_Data0" uid="31" schema="Market:string,TotalDwellTime:double" />
+      <output id="Process_15_Data0" uid="33" schema="Market:string,TotalDwellTime:double" />
+      <ReflectedScopeScript><![CDATA[_var_100012_GROUPBY = SELECT FIRST(Market) AS Market, MySum(TotalDwellTime) AS TotalDwellTime FROM _var_100011_TRANSFORM GROUP BY Market;
+]]></ReflectedScopeScript>
+    </operator>
+    <operator id="Output_16" uid="34" assemblyName="ScopeRuntime.exe" className="ScopeRuntime.DefaultTextOutputter" signature="3783544544375134846!32!Strict">
+      <input id="Process_15_Data0" uid="33" schema="Market:string,TotalDwellTime:double" />
+      <output id="SV7_Process_out0" uid="34" schema="Market:string,TotalDwellTime:double" outputIndex="0" numberOfOutputs="1" finalOutput="true" />
+      <ReflectedScopeScript><![CDATA[OUTPUT _var_100012_GROUPBY TO @"https://cosmos08.osdinfra.net/cosmos/sandbox/my/Outputs/rs3.txt" USING ScopeRuntime.DefaultTextOutputter();
+]]></ReflectedScopeScript>
+    </operator>
+  </ScopeVertex>
+</ScopeVertices>

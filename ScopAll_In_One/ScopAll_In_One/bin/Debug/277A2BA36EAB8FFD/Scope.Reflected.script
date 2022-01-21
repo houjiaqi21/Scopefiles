@@ -1,0 +1,77 @@
+_var_100001_GET_SSTREAM = SSTREAM @"D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\users\v-hozhao\All_In_One\Input\Input.ss";
+
+OUTPUT _var_100001_GET_SSTREAM TO SSTREAM @"https://cosmos09.osdinfra.net/cosmos/cosmosAdmin/users/v-hozhao/All_In_One/Output/DataMap_Output.ss";
+
+//Reflected script of operator <MetadataAggregate_2> is not available
+
+//Reflected script of operator <SStreamMetadataOutput_3> is not available
+
+_var_100004_EXTRACT = EXTRACT BingAdsUserId:int,MsAlias:string,UcmUserId:int FROM @"users/v-hozhao/All_In_One/Input/UCMUser_20160711.txt" USING ScopeRuntime.DefaultTextExtractor();
+
+_var_100005_EXTRACT = EXTRACT UserId:int,Start:DateTime,Region:string,Query:string,Duration:int,Urls:string,ClickedUrls:string FROM @"users/v-hozhao/All_In_One/Input/SearchLog.txt" USING ScopeRuntime.DefaultTextExtractor();
+
+//Reflected script of operator <Split_17> is not available
+
+//Reflected script of operator <MetadataAggregate_18> is not available
+
+//Reflected script of operator <SStreamMetadataOutput_19> is not available
+
+_var_100006_EXTRACT = EXTRACT Region:string,Duration:int FROM @"users/v-hozhao/All_In_One/Input/SearchLog.txt" USING ScopeRuntime.DefaultTextExtractor();
+
+_var_100007_LSORT = SELECT Region, Duration FROM _var_100006_EXTRACT ORDER BY Region;
+
+_var_100008_TRANSFORM = SELECT Region AS Region, Duration AS TotalDuration FROM _var_100007_LSORT;
+
+_var_100009_GROUPBY = SELECT FIRST(Region) AS Region, TotalDuration() AS TotalDuration FROM _var_100008_TRANSFORM GROUP BY Region;
+
+OUTPUT _var_100009_GROUPBY TO @"https://cosmos09.osdinfra.net/cosmos/cosmosAdmin/users/v-hozhao/All_In_One/Output/CodeBehind_Aggregatesoutput.txt" USING ScopeRuntime.DefaultTextOutputter();
+
+_var_100011_EXTRACT = EXTRACT IId:int,Start:DateTime,Market:string,Query:string,DwellTime:int,Results:string,ClickedUrls:string FROM @"users/v-hozhao/All_In_One/Input/SearchLog.txt" USING MyTsvExtractor();
+
+OUTPUT _var_100011_EXTRACT TO @"https://cosmos09.osdinfra.net/cosmos/cosmosAdmin/users/v-hozhao/All_In_One/Output/DebugStream_Output.txt" USING ScopeRuntime.DefaultTextOutputter();
+
+_var_100013_EXTRACT = EXTRACT SepalLength:double,SepalWidth:double,PetalLength:double,PetalWidth:double,Name:string FROM @"users/v-hozhao/All_In_One/Input/Python_iris.csv" USING ScopeRuntime.DefaultTextExtractor();
+
+_var_100014_LSORT = SELECT SepalLength, SepalWidth, PetalLength, PetalWidth, Name FROM _var_100013_EXTRACT ORDER BY Name;
+
+_var_100015_REDUCE = REDUCE _var_100014_LSORT ON Name PRODUCE SepalLength_Mean, SepalWidth_Mean, PetalLength_Mean, PetalWidth_Mean, Name, Count USING Scope.SystemOperators.Reducers.Python();
+
+OUTPUT _var_100015_REDUCE TO @"https://cosmos09.osdinfra.net/cosmos/cosmosAdmin/users/v-hozhao/All_In_One/Output/Python_ClusterRun_DataFrame_Reducer_Demo_Output.txt" USING ScopeRuntime.DefaultTextOutputter();
+
+_var_100017_EXTRACT = EXTRACT UserId:string,Start:string,Region:string,Query:string,Duration:string,Urls:string,ClickedUrls:string FROM @"users/v-hozhao/All_In_One/Input/Python_SearchLog.tsv" USING Scope.SystemOperators.Extractors.Python();
+
+OUTPUT _var_100017_EXTRACT TO @"https://cosmos09.osdinfra.net/cosmos/cosmosAdmin/users/v-hozhao/All_In_One/Output/Python_ClusterRun_Extractor_Demo_Output.txt" USING ScopeRuntime.DefaultTextOutputter();
+
+_var_100019_EXTRACT = EXTRACT Id:int,Start:DateTime,Market:string,Query:string,DwellTime:int,Results:string,ClickedUrls:string FROM @"D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\users\v-hozhao\All_In_One\Input\users/v-hozhao/All_In_One/Input/SearchLog.txt" USING ScopeRuntime.DefaultTextExtractor();
+
+OUTPUT _var_100019_EXTRACT TO @"https://cosmos09.osdinfra.net/cosmos/cosmosAdmin/users/v-hozhao/All_In_One/Output/Sample_ImportOutput.tsv" USING ScopeRuntime.DefaultTextOutputter();
+
+_var_100021_EXTRACT = EXTRACT Start:DateTime,Market:string,DwellTime:int FROM @"users/v-hozhao/SearchLog.txt" USING ScopeRuntime.DefaultTextExtractor();
+
+_var_100022_TRANSFORM = SELECT MyHelper.ClassUDO.SecondsToMinutes(DwellTime) AS DwellTimeInMinutes, Start AS Start, Market AS Market FROM _var_100021_EXTRACT;
+_var_100023_TRANSFORM = SELECT Start AS Start, Market AS Market, DwellTimeInMinutes AS DwellTimeInMinutes FROM _var_100022_TRANSFORM;
+
+OUTPUT _var_100023_TRANSFORM TO @"https://cosmos09.osdinfra.net/cosmos/cosmosAdmin/users/v-hozhao/ClusterReference/SearchlogDwellTimeInMinutes.txt" USING ScopeRuntime.DefaultTextOutputter();
+
+_var_100025_GET_SSTREAM = SSTREAM @"D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\users\v-hozhao\All_In_One\Input\HealthCheckUCMUserUsage_MonthAgg.ss";
+
+_var_100026_GET_SSTREAM = SSTREAM @"D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\users\v-hozhao\All_In_One\Input\HealthCheckUCMUserUsage_WeekAgg.ss";
+
+_var_100027_TRANSFORM = SELECT NumofWeek AS NumofWeek, BingAdsUserId AS BingAdsUserId1, MsAlias AS MsAlias2, UcmUserId AS UcmUserId3 FROM _var_100026_GET_SSTREAM;
+
+_var_100028_INTERNAL_COMBINE = SELECT BingAdsUserId, MsAlias, UcmUserId, NumofMonth, LastMonth, TotalUsage, NumofWeek FROM _var_100025_GET_SSTREAM AS AliasLeft INNER JOIN _var_100027_TRANSFORM AS AliasRight ON AliasLeft.BingAdsUserId == AliasRight.BingAdsUserId1 AND AliasLeft.MsAlias == AliasRight.MsAlias2 AND AliasLeft.UcmUserId == AliasRight.UcmUserId3;
+
+_var_100029_TRANSFORM = SELECT NumofMonth AS NumofMonth, LastMonth AS LastMonth, TotalUsage AS TotalUsage, NumofWeek AS NumofWeek, BingAdsUserId AS BingAdsUserId1, MsAlias AS MsAlias2, UcmUserId AS UcmUserId3 FROM _var_100028_INTERNAL_COMBINE;
+
+_var_100030_INTERNAL_COMBINE = SELECT BingAdsUserId, MsAlias, UcmUserId, NumofMonth, LastMonth, TotalUsage, NumofWeek FROM _var_100004_EXTRACT AS AliasLeft LEFT OUTER JOIN _var_100029_TRANSFORM AS AliasRight ON AliasLeft.BingAdsUserId == AliasRight.BingAdsUserId1 AND AliasLeft.MsAlias == AliasRight.MsAlias2 AND AliasLeft.UcmUserId == AliasRight.UcmUserId3;
+
+_var_100031_TRANSFORM = SELECT NumofMonth ?? -1 AS NumofMonth, LastMonth ?? "Non" AS LastMonth, NumofWeek ?? -1 AS NumofWeek, TotalUsage ?? -1 AS TotalUsage, BingAdsUserId AS BingAdsUserId, MsAlias AS MsAlias, UcmUserId AS UcmUserId FROM _var_100030_INTERNAL_COMBINE;
+_var_100032_TRANSFORM = SELECT BingAdsUserId AS BingAdsUserId, MsAlias AS MsAlias, UcmUserId AS UcmUserId, NumofMonth AS NumofMonth, LastMonth AS LastMonth, NumofWeek AS NumofWeek, TotalUsage AS TotalUsage FROM _var_100031_TRANSFORM;
+
+_var_100033_PROCESS = PROCESS _var_100032_TRANSFORM PRODUCE BingAdsUserId, MsAlias, UcmUserId, FreqSegment, NumofMonth, LastMonth, NumofWeek, TotalUsage USING FreqProcessor(@"Jul", @"5", @"2");
+
+OUTPUT _var_100033_PROCESS TO SSTREAM @"https://cosmos09.osdinfra.net/cosmos/cosmosAdmin/users/v-hozhao/All_In_One/Output/MultipleInputs_HealthCheckUCMUserUsage_Freq.ss";
+
+//Reflected script of operator <MetadataAggregate_14> is not available
+
+//Reflected script of operator <SStreamMetadataOutput_15> is not available

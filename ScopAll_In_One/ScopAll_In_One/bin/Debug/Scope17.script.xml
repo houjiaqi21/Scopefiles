@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CompileResult scriptPath="D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\bin\Debug\Scope17.script">
+  <LocalRunInfo CommandLineFile="D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\bin\Debug\277A2BA36EAB8FFD\Scope17_138BA49F1E4513F3\__script__.abr">
+    <LocalRunScriptPaths cachePath="D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\bin\Debug\277A2BA36EAB8FFD\Scope17_138BA49F1E4513F3" tempPath="D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\bin\Debug\277A2BA36EAB8FFD\_Temp\Scope17_138BA49F1E4513F3" runtimePath="D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\bin\Debug\277A2BA36EAB8FFD" />
+  </LocalRunInfo>
+  <Manifest>
+    <DebugInfo>D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\bin\Debug\277A2BA36EAB8FFD\Scope17_138BA49F1E4513F3\47.userdata</DebugInfo>
+    <DebugInfo>D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\bin\Debug\277A2BA36EAB8FFD\Scope17_138BA49F1E4513F3\PartitionLastRows.bin</DebugInfo>
+    <DebugInfo>D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\bin\Debug\277A2BA36EAB8FFD\Scope17_138BA49F1E4513F3\8.userdata</DebugInfo>
+    <DebugInfo>D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\bin\Debug\277A2BA36EAB8FFD\Scope17_138BA49F1E4513F3\__ScopeCodeGen__.pdb</DebugInfo>
+    <DebugInfo>D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\bin\Debug\277A2BA36EAB8FFD\Scope17_138BA49F1E4513F3\__SStreamInfo__.xml</DebugInfo>
+    <DebugInfo>D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\bin\Debug\277A2BA36EAB8FFD\Scope17_138BA49F1E4513F3\__ScopeCodeGen__.dll</DebugInfo>
+    <DebugInfo>D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\bin\Debug\277A2BA36EAB8FFD\Scope17_138BA49F1E4513F3\diagnosticsjson</DebugInfo>
+    <DebugInfo>D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\bin\Debug\277A2BA36EAB8FFD\Scope17_138BA49F1E4513F3\__ScopeCodeGenEngine__.dll</DebugInfo>
+    <DebugInfo>D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\bin\Debug\277A2BA36EAB8FFD\Scope17_138BA49F1E4513F3\__ScopeInternalInfo__.xml</DebugInfo>
+    <DebugInfo>D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\bin\Debug\277A2BA36EAB8FFD\Scope17_138BA49F1E4513F3\__ScopeDiagnosisInfo__.xml</DebugInfo>
+    <DebugInfo>D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\bin\Debug\277A2BA36EAB8FFD\Scope17_138BA49F1E4513F3\__ScopeCodeGen__.dll.cs</DebugInfo>
+    <DebugInfo>D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\bin\Debug\277A2BA36EAB8FFD\Scope17_138BA49F1E4513F3\__script__.abr</DebugInfo>
+    <DebugInfo>D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\bin\Debug\277A2BA36EAB8FFD\Scope17_138BA49F1E4513F3\ScopeInternalStatistics.xml</DebugInfo>
+    <DebugInfo>D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\bin\Debug\277A2BA36EAB8FFD\Scope17_138BA49F1E4513F3\__ScopeCodeGenCompileOptions__.txt</DebugInfo>
+    <DebugInfo>D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\bin\Debug\277A2BA36EAB8FFD\Scope17_138BA49F1E4513F3\__CompilerTrace.log</DebugInfo>
+    <DebugInfo>D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\bin\Debug\277A2BA36EAB8FFD\Scope17_138BA49F1E4513F3\__ScopeCodeGenEngine__.dll.cpp</DebugInfo>
+    <DebugInfo>D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\bin\Debug\277A2BA36EAB8FFD\Scope17_138BA49F1E4513F3\ScopeVertexDef.xml</DebugInfo>
+    <DebugInfo>D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\bin\Debug\277A2BA36EAB8FFD\Scope17_138BA49F1E4513F3\34.userdata</DebugInfo>
+    <DebugInfo>D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\bin\Debug\277A2BA36EAB8FFD\Scope17_138BA49F1E4513F3\__CompilerTimers.xml</DebugInfo>
+    <DebugInfo>D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\bin\Debug\277A2BA36EAB8FFD\Scope17_138BA49F1E4513F3\__Ast__.bin</DebugInfo>
+    <DebugInfo>D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\bin\Debug\277A2BA36EAB8FFD\Scope17_138BA49F1E4513F3\__ScopeCodeGenEngine__.pdb</DebugInfo>
+    <DebugInfo>D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\bin\Debug\277A2BA36EAB8FFD\Scope17_138BA49F1E4513F3\ScopeScript.xml</DebugInfo>
+    <DebugInfo>D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\bin\Debug\277A2BA36EAB8FFD\Scope17_138BA49F1E4513F3\__ScopeCodeGenCompileOutput__.txt</DebugInfo>
+    <ClusterResource>https://cosmos09.osdinfra.net/cosmos/cosmosAdmin/users/v-hozhao/ClusterReference/MyHelper.dll</ClusterResource>
+    <Resource>D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\users\v-hozhao\All_In_One\Input\PrivacyAnnotation.module</Resource>
+    <Resource>D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\users\v-hozhao\All_In_One\Input\SearchLog.module</Resource>
+    <Resource>D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\users\v-hozhao\All_In_One\Input\SearchLog.view</Resource>
+    <Resource>D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\users\v-hozhao\All_In_One\Input\SearchLogImportedScript.script</Resource>
+    <Resource>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\System.Core.dll</Resource>
+    <Resource>D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\Scope1.py</Resource>
+    <Resource>D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\users\v-hozhao\All_In_One\Input\Microsoft.DataMap.CodeAnnotation.Cosmos.dll</Resource>
+    <Resource>D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\users\v-hozhao\All_In_One\Input\Microsoft.PrivacyServices.PrivacyAnnotation.dll</Resource>
+    <Reference>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\System.Core.dll</Reference>
+    <Reference>https://cosmos09.osdinfra.net/cosmos/cosmosAdmin/users/v-hozhao/ClusterReference/MyHelper.dll</Reference>
+    <Reference>D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\users\v-hozhao\All_In_One\Input\Microsoft.DataMap.CodeAnnotation.Cosmos.dll</Reference>
+    <Reference>D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\users\v-hozhao\All_In_One\Input\Microsoft.PrivacyServices.PrivacyAnnotation.dll</Reference>
+    <Input>users/v-hozhao/All_In_One/Input/Python_iris.csv</Input>
+    <Input>users/v-hozhao/All_In_One/Input/Python_SearchLog.tsv</Input>
+    <Input>users/v-hozhao/All_In_One/Input/SearchLog.txt</Input>
+    <Input>users/v-hozhao/SearchLog.txt</Input>
+    <Input>D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\users\v-hozhao\All_In_One\Input\Input.ss</Input>
+    <Input>users/v-hozhao/All_In_One/Input/SearchLog.txt</Input>
+    <Input>users/v-hozhao/All_In_One/Input/SearchLog.txt</Input>
+    <Input>users/v-hozhao/All_In_One/Input/SearchLog.txt</Input>
+    <Input>users/v-hozhao/All_In_One/Input/SearchLog.txt</Input>
+    <Input>users/v-hozhao/All_In_One/Input/SearchLog.txt</Input>
+    <Input>users/v-hozhao/All_In_One/Input/UCMUser_20160711.txt</Input>
+    <Input>D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\users\v-hozhao\All_In_One\Input\HealthCheckUCMUserUsage_MonthAgg.ss</Input>
+    <Input>D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\users\v-hozhao\All_In_One\Input\HealthCheckUCMUserUsage_WeekAgg.ss</Input>
+    <Output>D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\users\v-hozhao\All_In_One\Output\Python_ClusterRun_DataFrame_Reducer_Demo_Output.txt</Output>
+    <Output>D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\users\v-hozhao\All_In_One\Output\Python_ClusterRun_Extractor_Demo_Output.txt</Output>
+    <Output>D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\users\v-hozhao\All_In_One\Output\DebugStream_Output.txt</Output>
+    <Output>D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\users\v-hozhao\ClusterReference\SearchlogDwellTimeInMinutes.txt</Output>
+    <Output>D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\users\v-hozhao\All_In_One\Output\DataMap_Output.ss</Output>
+    <Output>D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\users\v-hozhao\All_In_One\Output\Sample_Output.txt</Output>
+    <Output>D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\users\v-hozhao\All_In_One\Output\Sample_Output.ss</Output>
+    <Output>D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\users\v-hozhao\All_In_One\Output\Sample_ViewOutput.txt</Output>
+    <Output>D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\users\v-hozhao\All_In_One\Output\Sample_MoudleOutput.txt</Output>
+    <Output>D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\users\v-hozhao\All_In_One\Output\Sample_ImportOutput.tsv</Output>
+    <Output>D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\users\v-hozhao\All_In_One\Output\CodeBehind_Aggregatesoutput.txt</Output>
+    <Output>D:\work\hozhao Scope\Scope2015\ScopAll_In_One\ScopAll_In_One\users\v-hozhao\All_In_One\Output\MultipleInputs_HealthCheckUCMUserUsage_Freq.ss</Output>
+    <Warnings>
+      <Warning id="1Warning when compiling C# block. CS1529: A using clause must precede all other elements defined in the namespace except extern alias declarations" line="1" location="&#xA;            output[&quot;TotalUsage&quot;].Set(TotalUsage);&#xD;&#xA;            output[&quot;FreqSegment&quot;].Set(FreqSegment);&#xD;&#xA;            yield return output;&#xD;&#xA;        }&#xD;&#xA;    }&#xD;&#xA;}&#xD;&#xA; ### using Microsoft.SCOPE.Types;&#xD;&#xA;using System;&#xD;&#xA;using System.Collections.Generic;&#xD;&#xA;using System.IO;&#xD;&#xA;using System.Text;&#xD;&#xA;using ScopeRuntime;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;public class MySu" severity="3" message="Warning when compiling C# block. CS1529: A using clause must precede all other elements defined in the namespace except extern alias declarations" description="C# reported that the C# block has a problem." solution="Consult the C# documentation for this warning and rewrite the code accordingly." />
+      <Warning id="1Warning when compiling C# block. CS1529: A using clause must precede all other elements defined in the namespace except extern alias declarations" line="1" location="e&quot;].Set(TotalUsage);&#xD;&#xA;            output[&quot;FreqSegment&quot;].Set(FreqSegment);&#xD;&#xA;            yield return output;&#xD;&#xA;        }&#xD;&#xA;    }&#xD;&#xA;}&#xD;&#xA;using Microsoft.SCOPE.Types;&#xD;&#xA; ### using System;&#xD;&#xA;using System.Collections.Generic;&#xD;&#xA;using System.IO;&#xD;&#xA;using System.Text;&#xD;&#xA;using ScopeRuntime;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;public class MySum_Integer : Aggregate1&lt;int, in" severity="3" message="Warning when compiling C# block. CS1529: A using clause must precede all other elements defined in the namespace except extern alias declarations" description="C# reported that the C# block has a problem." solution="Consult the C# documentation for this warning and rewrite the code accordingly." />
+      <Warning id="1Warning when compiling C# block. CS1529: A using clause must precede all other elements defined in the namespace except extern alias declarations" line="1" location="age);&#xD;&#xA;            output[&quot;FreqSegment&quot;].Set(FreqSegment);&#xD;&#xA;            yield return output;&#xD;&#xA;        }&#xD;&#xA;    }&#xD;&#xA;}&#xD;&#xA;using Microsoft.SCOPE.Types;&#xD;&#xA;using System;&#xD;&#xA; ### using System.Collections.Generic;&#xD;&#xA;using System.IO;&#xD;&#xA;using System.Text;&#xD;&#xA;using ScopeRuntime;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;public class MySum_Integer : Aggregate1&lt;int, int&gt;&#xD;&#xA;{&#xD;&#xA;    int " severity="3" message="Warning when compiling C# block. CS1529: A using clause must precede all other elements defined in the namespace except extern alias declarations" description="C# reported that the C# block has a problem." solution="Consult the C# documentation for this warning and rewrite the code accordingly." />
+      <Warning id="1Warning when compiling C# block. CS1529: A using clause must precede all other elements defined in the namespace except extern alias declarations" line="1" location="ent&quot;].Set(FreqSegment);&#xD;&#xA;            yield return output;&#xD;&#xA;        }&#xD;&#xA;    }&#xD;&#xA;}&#xD;&#xA;using Microsoft.SCOPE.Types;&#xD;&#xA;using System;&#xD;&#xA;using System.Collections.Generic;&#xD;&#xA; ### using System.IO;&#xD;&#xA;using System.Text;&#xD;&#xA;using ScopeRuntime;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;public class MySum_Integer : Aggregate1&lt;int, int&gt;&#xD;&#xA;{&#xD;&#xA;    int sum = 0;&#xD;&#xA;&#xD;&#xA;    public override voi" severity="3" message="Warning when compiling C# block. CS1529: A using clause must precede all other elements defined in the namespace except extern alias declarations" description="C# reported that the C# block has a problem." solution="Consult the C# documentation for this warning and rewrite the code accordingly." />
+      <Warning id="1Warning when compiling C# block. CS1529: A using clause must precede all other elements defined in the namespace except extern alias declarations" line="1" location="ent);&#xD;&#xA;            yield return output;&#xD;&#xA;        }&#xD;&#xA;    }&#xD;&#xA;}&#xD;&#xA;using Microsoft.SCOPE.Types;&#xD;&#xA;using System;&#xD;&#xA;using System.Collections.Generic;&#xD;&#xA;using System.IO;&#xD;&#xA; ### using System.Text;&#xD;&#xA;using ScopeRuntime;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;public class MySum_Integer : Aggregate1&lt;int, int&gt;&#xD;&#xA;{&#xD;&#xA;    int sum = 0;&#xD;&#xA;&#xD;&#xA;    public override void Initialize()&#xD;&#xA;  " severity="3" message="Warning when compiling C# block. CS1529: A using clause must precede all other elements defined in the namespace except extern alias declarations" description="C# reported that the C# block has a problem." solution="Consult the C# documentation for this warning and rewrite the code accordingly." />
+      <Warning id="1Warning when compiling C# block. CS1529: A using clause must precede all other elements defined in the namespace except extern alias declarations" line="1" location="ield return output;&#xD;&#xA;        }&#xD;&#xA;    }&#xD;&#xA;}&#xD;&#xA;using Microsoft.SCOPE.Types;&#xD;&#xA;using System;&#xD;&#xA;using System.Collections.Generic;&#xD;&#xA;using System.IO;&#xD;&#xA;using System.Text;&#xD;&#xA; ### using ScopeRuntime;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;public class MySum_Integer : Aggregate1&lt;int, int&gt;&#xD;&#xA;{&#xD;&#xA;    int sum = 0;&#xD;&#xA;&#xD;&#xA;    public override void Initialize()&#xD;&#xA;    {&#xD;&#xA;        sum = 0" severity="3" message="Warning when compiling C# block. CS1529: A using clause must precede all other elements defined in the namespace except extern alias declarations" description="C# reported that the C# block has a problem." solution="Consult the C# documentation for this warning and rewrite the code accordingly." />
+    </Warnings>
+  </Manifest>
+</CompileResult>

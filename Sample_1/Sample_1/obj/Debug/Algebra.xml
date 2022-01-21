@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScriptAndGraph GraphType="VertexCommands">
+  <Vertices count="2">
+    <Vertex index="1" command="-scopeVertex SV1_Extract_Split  -i users/v-hozhao/SampleScope/SearchLog.txt  -o D:\Sharing\Scope2015\Sample_1\Sample_1\bin\Debug\FEB18BC62E9A8FD3\_Temp\Scope_C74FEC5E34835C21\scopetmpfile._SV1_Extract_Split_out0 -o D:\Sharing\Scope2015\Sample_1\Sample_1\bin\Debug\FEB18BC62E9A8FD3\_Temp\Scope_C74FEC5E34835C21\scopetmpfile._SV1_Extract_Split_out1 -o D:\Sharing\Scope2015\Sample_1\Sample_1\bin\Debug\FEB18BC62E9A8FD3\_Temp\Scope_C74FEC5E34835C21\scopetmpfile._SV1_Extract_Split_out2" />
+    <Vertex index="2" command="-scopeVertex SV2_Aggregate  -i D:\Sharing\Scope2015\Sample_1\Sample_1\bin\Debug\FEB18BC62E9A8FD3\_Temp\Scope_C74FEC5E34835C21\scopetmpfile._SV1_Extract_Split_out1 -ichannel SV1_Extract_Split_out1  -o D:\Sharing\Scope2015\Sample_1\Sample_1\bin\Debug\FEB18BC62E9A8FD3\_Temp\Scope_C74FEC5E34835C21\scopetmpfile._SV2_Aggregate_out0" />
+    <Vertex command="-concatenate -i D:\Sharing\Scope2015\Sample_1\Sample_1\bin\Debug\FEB18BC62E9A8FD3\_Temp\Scope_C74FEC5E34835C21\scopetmpfile._SV1_Extract_Split_out2 -o adl://adityasatest1.azuredatalakestore.net/users/v-hozhao/SampleScope/SampleOutput.txt" />
+    <Vertex command="-concatenate  -i D:\Sharing\Scope2015\Sample_1\Sample_1\bin\Debug\FEB18BC62E9A8FD3\_Temp\Scope_C74FEC5E34835C21\scopetmpfile._SV1_Extract_Split_out0 -ichannel SV1_Extract_Split_out0  -i D:\Sharing\Scope2015\Sample_1\Sample_1\bin\Debug\FEB18BC62E9A8FD3\_Temp\Scope_C74FEC5E34835C21\scopetmpfile._SV2_Aggregate_out0 -ichannel SV2_Aggregate_out0 -o adl://adityasatest1.azuredatalakestore.net/users/v-hozhao/SampleScope/SampleOutput.ss" />
+  </Vertices>
+  <Outputs>
+    <Output path="adl://adityasatest1.azuredatalakestore.net/users/v-hozhao/SampleScope/SampleOutput.ss" isBinary="True" />
+    <Output path="adl://adityasatest1.azuredatalakestore.net/users/v-hozhao/SampleScope/SampleOutput.txt" isBinary="False" schema="UserId:int,Start:DateTime,Region:string,Query:string,Duration:int,Urls:string,ClickedUrls:string" />
+  </Outputs>
+  <graph serveForThirdParty="True" JsonErrors="True" JobType="BatchScopeServerGC" SStreamInfoFilePath="__SStreamInfo__.xml" vertexExecutable="scopehost.exe" BroadcastCopyThroughCommandLine="ScopeEngine.dll -scopeVertex SV_CopyThrough">
+    <process id="SV1_Extract_Split" command="ScopeEngine.dll -scopeVertex SV1_Extract_Split" nativeOnly="true" managedMemorySize="0" engineIOMemorySize="3642754168" engineOperatorMemorySize="2048576352">
+      <input id="Extract_0[ALL]" streamSize="499500000000" cosmosStream="users/v-hozhao/SampleScope/SearchLog.txt">
+        <cosmosStream cosmosPath="users/v-hozhao/SampleScope/SearchLog.txt" />
+      </input>
+      <output id="SV1_Extract_Split_out0" />
+      <output id="SV1_Extract_Split_out1" />
+      <output id="SV1_Extract_Split_out2" cosmosStream="adl://adityasatest1.azuredatalakestore.net/users/v-hozhao/SampleScope/SampleOutput.txt" />
+    </process>
+    <process id="SV2_Aggregate" command="ScopeEngine.dll -scopeVertex SV2_Aggregate" nativeOnly="true" managedMemorySize="0" engineIOMemorySize="947912704" engineOperatorMemorySize="524288000">
+      <input id="SV1_Extract_Split_out1" />
+      <output id="SV2_Aggregate_out0" />
+    </process>
+    <dataset id="Concatenate_6[]" cosmosStream="adl://adityasatest1.azuredatalakestore.net/users/v-hozhao/SampleScope/SampleOutput.ss">
+      <element id="SV1_Extract_Split_out0" />
+      <element id="SV2_Aggregate_out0" />
+    </dataset>
+  </graph>
+  <Scopescript>REFERENCE @"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\System.Core.dll";
+//Script GUID:336f13b9-d0e3-493f-9806-5759d35f2292
+//Used for tracking history
+
+       
+searchlog =
+    EXTRACT UserId : int,
+            Start : DateTime,
+            Region : string,
+            Query : string,
+            Duration : int,
+            Urls : string,
+            ClickedUrls : string
+    FROM @"/users/v-hozhao/SampleScope/SearchLog.txt"
+    USING DefaultTextExtractor();
+                                                                                           
+OUTPUT searchlog
+TO "/users/v-hozhao/SampleScope/SampleOutput.txt"
+USING DefaultTextOutputter(); 
+
+OUTPUT searchlog
+TO SSTREAM @"/users/v-hozhao/SampleScope/SampleOutput.ss";   //Generate ss file
+
+//MonthInput =
+//    EXTRACT BingAdsUserId:int,
+//           MsAlias:string,
+//           UcmUserId:int,
+//           NumofMonth:int,
+//           LastMonth:string,
+//           TotalUsage:int
+//    FROM @"/users/v-hozhao/Multiple/HealthCheckUCMUserUsage_MonthAgg.txt"
+//    USING DefaultTextExtractor(); 
+//
+//OUTPUT MonthInput
+//TO SSTREAM @"/users/v-hozhao/Multiple/HealthCheckUCMUserUsage_MonthAgg.ss";   //Generate ss file
+//
+//WeekInput =
+//    EXTRACT BingAdsUserId:int,
+//           MsAlias:string,
+//           UcmUserId:int,
+//           NumofWeek:int,
+//           TotalUsage:int
+//    FROM @"/users/v-hozhao/Multiple/HealthCheckUCMUserUsage_WeekAgg.txt"
+//    USING DefaultTextExtractor();
+//
+//OUTPUT WeekInput
+//TO SSTREAM @"/users/v-hozhao/Multiple/HealthCheckUCMUserUsage_WeekAgg.ss";   //Generate ss file
+
+// Generated by ScopeStudio, version 2.7.0000.7
+</Scopescript>
+  <Optimization succeeded="true" time="00:00:00.5415819" latency="3379995.00324324" totalCost="6759990.00648649" />
+  <ScopeVertexAnnotations />
+</ScriptAndGraph>

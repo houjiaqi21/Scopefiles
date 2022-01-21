@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <StartFile>1_Write17.script</StartFile>
+    <CurrentWorkingVC>vc://cosmos09/cosmosAdmin</CurrentWorkingVC>
+    <OutputStreamPath>%24(PROJECT_DIR)</OutputStreamPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <ScriptUserData Include="1_Write17.script">
+      <UseLocalComputeAccount>false</UseLocalComputeAccount>
+      <ClusterComputeAccount>CosmosVc:https://cosmos09.osdinfra.net/cosmos/cosmosAdmin/</ClusterComputeAccount>
+      <PersistingSubmitJobAttributes>
+        <SubmitJobAttributes xmlns="">
+  <Vcws>vc://cosmos09/cosmosAdmin</Vcws>
+  <FriendlyName>DebugStream_1_Write17</FriendlyName>
+  <NotificationRecipients />
+  <Priority>1000</Priority>
+  <VcPercentAllocation>0</VcPercentAllocation>
+  <AbsoluteTokenAllocation>0</AbsoluteTokenAllocation>
+  <MaxUnavability>100</MaxUnavability>
+  <ExtraCommandLineArguments> -UserDebugStream user/v-qinzhao/DS.txt</ExtraCommandLineArguments>
+</SubmitJobAttributes>
+      </PersistingSubmitJobAttributes>
+    </ScriptUserData>
+  </ItemGroup>
+</Project>
